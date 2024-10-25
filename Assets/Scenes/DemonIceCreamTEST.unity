@@ -777,7 +777,7 @@ Transform:
   m_GameObject: {fileID: 1303137129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.335, y: 1.004, z: 1.165}
+  m_LocalPosition: {x: -0.375, y: 1.004, z: 1.165}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -976,10 +976,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 172096383686744807, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 332a335e18999674493b4db1d984cafe, type: 2}
     - target: {fileID: 2285041940085022274, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1020,18 +1016,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3889139751597019332, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 9bb97186f1fb580459f1286ec7a1b9a9, type: 2}
-    - target: {fileID: 5149698072863381287, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 87c7065074caade4e8237f7db1819ea0, type: 2}
-    - target: {fileID: 5205851518875593947, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 8c50aab96d41b28489aafd7547905783, type: 2}
     - target: {fileID: 8512330476650051552, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
       propertyPath: m_Name
       value: Ice Cream Machine
