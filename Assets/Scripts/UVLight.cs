@@ -1,16 +1,20 @@
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class UVLight : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private GameObject _spotLightObject;
+    private void Start()
     {
-        
+        Light spotLight = GetComponentInChildren<Light>();
+        _spotLightObject = spotLight.gameObject;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Use()
     {
-        
+        _spotLightObject.SetActive(true);
+    }
+    private void TurnOff()
+    {
+        _spotLightObject.SetActive(false);
     }
 }
