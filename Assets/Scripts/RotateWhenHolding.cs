@@ -8,30 +8,40 @@ public class RotateWhenHolding : MonoBehaviour
     [SerializeField] private float _maxValue;
     [SerializeField] private float _minRotation;
     [SerializeField] private float _maxRotation;
-    private float _currentRotation;
+    [SerializeField] private float visualizeValue;
+    private Vector3 _currentRotation;
     private void Start()
     {
-        Quaternion initRotation = transform.localRotation;
-        Debug.Log($"Clamping {initRotation.z} between: {_minRotation}, {_maxRotation}");
-        initRotation.z = Mathf.Clamp(initRotation.z, _minRotation,_maxRotation);
-        Debug.Log(initRotation.z);
-        transform.localRotation = initRotation;
+        _currentRotation = transform.localRotation.eulerAngles;
+
+        // Debug.Log($"Clamping {initRotation.z} between: {_minRotation}, {_maxRotation}");
+        _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);
+        // Debug.Log(initRotation.z);
+        
+        transform.localRotation = Quaternion.Euler(_currentRotation);
+
+        visualizeValue = TranslateRotationIntoValue();
     }
+    private float mouseMovement;
     private void Update()
     {
+        if (Input.GetMouseButton(0))
+        {
+            mouseMovement = Input.GetAxis("Mouse X") * _sensitivity;
+            
+            _currentRotation.z += mouseMovement;
+            Debug.Log($"rotation z : {_currentRotation.z}");
+            _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);
+
+            transform.localRotation = Quaternion.Euler(_currentRotation);
+
+            visualizeValue = TranslateRotationIntoValue();
+        }
 
     }
-    private float TranslateRotationIntoValue()
+    public float TranslateRotationIntoValue()
     {
-        float value;
-
-        float valueDifference = _maxValue - _minValue;
-        float rotationDifference = _maxRotation - _minRotation;
-
-        value =  valueDifference * _currentRotation / rotationDifference;
-
-        value += _minValue;
-
-        return value;
+        float rotationRatio = (_currentRotation.z - _minRotation) / (_maxRotation - _minRotation);
+        return Mathf.Lerp(_minValue, _maxValue, rotationRatio);
     }
 }
