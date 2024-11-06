@@ -3,18 +3,22 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class UVLight : MonoBehaviour
 {
-    private GameObject _spotLightObject;
+    [SerializeField] private GameObject _uvSpotLightObject;
+    [field:SerializeField] public Light UVSpotLight { get; private set; }
     private void Start()
     {
-        Light spotLight = GetComponentInChildren<Light>();
-        _spotLightObject = spotLight.gameObject;
+        if (_uvSpotLightObject == null)
+        {
+            Light spotLight = GetComponentInChildren<Light>();
+            _uvSpotLightObject = spotLight.gameObject;
+        }
     }
     private void Use()
     {
-        _spotLightObject.SetActive(true);
+        _uvSpotLightObject.SetActive(true);
     }
     private void TurnOff()
     {
-        _spotLightObject.SetActive(false);
+        _uvSpotLightObject.SetActive(false);
     }
 }

@@ -22,7 +22,7 @@ public class RevealUnderUVLight : MonoBehaviour
         UVLight uvLightObject = FindFirstObjectByType<UVLight>();
 
         if (uvLightObject != null)
-            _uvLight = uvLightObject.GetComponentInChildren<Light>();
+            _uvLight = uvLightObject.UVSpotLight;
 
         // If the uv material and uv light isnt referenced or cant be found,
         // the script won't work
@@ -53,10 +53,10 @@ public class RevealUnderUVLight : MonoBehaviour
         _uvMaterial.SetFloat("_LightRange", _uvLight.range);
         _uvMaterial.SetFloat("_InnerSpotAngle", _uvLight.innerSpotAngle);
         _uvMaterial.SetFloat("_OuterSpotAngle", _uvLight.spotAngle);
-        Debug.Log(_uvMaterial.GetFloat("_LightStrengthIntensity"));
-        Debug.Log(_uvMaterial.GetFloat("_LightRange"));
-        Debug.Log(_uvMaterial.GetFloat("_InnerSpotAngle"));
-        Debug.Log(_uvMaterial.GetFloat("_OuterSpotAngle"));
+        // Debug.Log(_uvMaterial.GetFloat("_LightStrengthIntensity"));
+        // Debug.Log(_uvMaterial.GetFloat("_LightRange"));
+        // Debug.Log(_uvMaterial.GetFloat("_InnerSpotAngle"));
+        // Debug.Log(_uvMaterial.GetFloat("_OuterSpotAngle"));
 
         CacheCurrentLightValues();
 
