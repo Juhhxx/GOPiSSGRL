@@ -62,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 85586faebc21e5c4fac31093d039ddfe, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3537c042a4976184983ef4a360b6150c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -139,6 +139,6 @@ Material:
     - _EmissionColor: {r: 0.19339621, g: 0.9674168, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpotLightDir: {r: -0, g: 1.0000001, b: 0.00000011920929, a: 0}
-    - _SpotLightPos: {r: 0.52, g: 2.2, b: -1.52, a: 0}
+    - _SpotLightPos: {r: 0.24, g: 4.69, b: 0.71, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

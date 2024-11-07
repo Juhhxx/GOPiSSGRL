@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f962dfd370725954989840c430ccf4c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uvMaterial: {fileID: 2100000, guid: a3995774dbacef1469894471fc8e01ac, type: 2}
+  _uvMaterialToInstantiate: {fileID: 2100000, guid: a3995774dbacef1469894471fc8e01ac, type: 2}
   _uvTexture: {fileID: 2800000, guid: 85586faebc21e5c4fac31093d039ddfe, type: 3}
 --- !u!65 &468859112
 BoxCollider:
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f962dfd370725954989840c430ccf4c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uvMaterial: {fileID: 2100000, guid: a3995774dbacef1469894471fc8e01ac, type: 2}
+  _uvMaterialToInstantiate: {fileID: 2100000, guid: a3995774dbacef1469894471fc8e01ac, type: 2}
   _uvTexture: {fileID: 2800000, guid: 85586faebc21e5c4fac31093d039ddfe, type: 3}
 --- !u!1 &1330015617
 GameObject:
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uvSpotLightObject: {fileID: 1781143569}
-  <UVSpotLight>k__BackingField: {fileID: 1781143572}
+  _uvMaterial: {fileID: 2100000, guid: a3995774dbacef1469894471fc8e01ac, type: 2}
 --- !u!1 &1724991173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f962dfd370725954989840c430ccf4c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uvMaterial: {fileID: 2100000, guid: a3995774dbacef1469894471fc8e01ac, type: 2}
+  _uvMaterialToInstantiate: {fileID: 2100000, guid: a3995774dbacef1469894471fc8e01ac, type: 2}
   _uvTexture: {fileID: 2800000, guid: 85586faebc21e5c4fac31093d039ddfe, type: 3}
 --- !u!135 &2061738689
 SphereCollider:

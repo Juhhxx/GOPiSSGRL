@@ -206,6 +206,9 @@
         },
         {
             "m_Id": "a1be1287616141d69a40f606a8cf25c2"
+        },
+        {
+            "m_Id": "316c7ed274a5412d9ced4ebc2879e068"
         }
     ],
     "m_GroupDatas": [],
@@ -368,6 +371,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "ac25780ea62c42ce8f4e152296dd584c"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "316c7ed274a5412d9ced4ebc2879e068"
+                },
+                "m_SlotId": 3
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "0c0e67b440a8463f912688c16f624f98"
                 },
                 "m_SlotId": 0
             }
@@ -815,7 +832,7 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "0c0e67b440a8463f912688c16f624f98"
+                    "m_Id": "316c7ed274a5412d9ced4ebc2879e068"
                 },
                 "m_SlotId": 0
             }
@@ -1164,6 +1181,30 @@
     },
     "m_Property": {
         "m_Id": "d063dc7efd7642a0aa487b9af67349a5"
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
+    "m_ObjectId": "06c5252378324675adb5d79d5e0e97b6",
+    "m_Id": 3,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
     }
 }
 
@@ -1821,6 +1862,30 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
+    "m_ObjectId": "2a527c4bf0284e7e81f406659a4c7b23",
+    "m_Id": 0,
+    "m_DisplayName": "In",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "In",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "2b7fd5de2af94e44a9d175e413ce73f1",
     "m_Group": {
@@ -1867,13 +1932,13 @@
     "m_RefNameGeneratedByDisplayName": "LightStrengthIntensity",
     "m_DefaultReferenceName": "_LightStrengthIntensity",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 1,
     "m_Hidden": false,
     "m_Value": 300.0,
     "m_FloatType": 0,
@@ -1996,6 +2061,50 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.ClampNode",
+    "m_ObjectId": "316c7ed274a5412d9ced4ebc2879e068",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Clamp",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 3677.999755859375,
+            "y": 19.00000762939453,
+            "width": 208.0,
+            "height": 325.9999694824219
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "2a527c4bf0284e7e81f406659a4c7b23"
+        },
+        {
+            "m_Id": "357484336df542a4b9105c6c0dce3d65"
+        },
+        {
+            "m_Id": "72a74a6a6e464ff196f0fa23b2cc1249"
+        },
+        {
+            "m_Id": "06c5252378324675adb5d79d5e0e97b6"
+        }
+    ],
+    "synonyms": [
+        "limit"
+    ],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "31dca4ae000f4712b116276cb8691d5d",
     "m_Id": 0,
@@ -2029,6 +2138,30 @@
     "m_ShaderOutputName": "Out",
     "m_StageCapability": 3,
     "m_BareResource": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
+    "m_ObjectId": "357484336df542a4b9105c6c0dce3d65",
+    "m_Id": 1,
+    "m_DisplayName": "Min",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Min",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    }
 }
 
 {
@@ -2106,13 +2239,13 @@
     "m_RefNameGeneratedByDisplayName": "Lighted",
     "m_DefaultReferenceName": "_Lighted",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 0,
     "overrideHLSLDeclaration": true,
-    "hlslDeclarationOverride": 2,
+    "hlslDeclarationOverride": 1,
     "m_Hidden": false,
     "m_Value": true
 }
@@ -2129,13 +2262,13 @@
     "m_RefNameGeneratedByDisplayName": "SpotLightPos",
     "m_DefaultReferenceName": "_SpotLightPos",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 1,
     "m_Hidden": false,
     "m_Value": {
         "x": 0.0,
@@ -2272,6 +2405,9 @@
             "m_Id": "003870afbafd4a6295f83d5c095c2f11"
         },
         {
+            "m_Id": "6e6008d5424b4680b56e999664a21a96"
+        },
+        {
             "m_Id": "39764fe289a44b3da820863a3f1451d4"
         },
         {
@@ -2279,9 +2415,6 @@
         },
         {
             "m_Id": "384c7b2d88d244dca4b2e31b3af32859"
-        },
-        {
-            "m_Id": "6e6008d5424b4680b56e999664a21a96"
         },
         {
             "m_Id": "df53ca80c01947348f3670e92c915385"
@@ -2573,10 +2706,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 3354.0,
-            "y": -242.9999542236328,
-            "width": 208.000244140625,
-            "height": 302.0000305175781
+            "x": 3093.999755859375,
+            "y": -242.99996948242188,
+            "width": 208.0,
+            "height": 302.0
         }
     },
     "m_Slots": [
@@ -3754,6 +3887,30 @@
         "e31": 0.0,
         "e32": 0.0,
         "e33": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
+    "m_ObjectId": "72a74a6a6e464ff196f0fa23b2cc1249",
+    "m_Id": 2,
+    "m_DisplayName": "Max",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Max",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
     }
 }
 
@@ -4984,13 +5141,13 @@
     "m_RefNameGeneratedByDisplayName": "OuterSpotAngle",
     "m_DefaultReferenceName": "_OuterSpotAngle",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 1,
     "m_Hidden": false,
     "m_Value": 59.0,
     "m_FloatType": 0,
@@ -5048,10 +5205,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 3445.0,
-            "y": 117.00000762939453,
-            "width": 117.000244140625,
-            "height": 34.000022888183597
+            "x": 3184.000244140625,
+            "y": 148.00001525878907,
+            "width": 107.0,
+            "height": 33.99995422363281
         }
     },
     "m_Slots": [
@@ -5760,10 +5917,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 3643.0,
-            "y": -242.9999542236328,
-            "width": 208.000244140625,
-            "height": 302.0000305175781
+            "x": 3354.000244140625,
+            "y": -243.00003051757813,
+            "width": 208.0,
+            "height": 301.9999694824219
         }
     },
     "m_Slots": [
@@ -5982,13 +6139,13 @@
     "m_RefNameGeneratedByDisplayName": "LightRange",
     "m_DefaultReferenceName": "_LightRange",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 1,
     "m_Hidden": false,
     "m_Value": 10.0,
     "m_FloatType": 0,
@@ -6010,13 +6167,13 @@
     "m_RefNameGeneratedByDisplayName": "SpotLightDir",
     "m_DefaultReferenceName": "_SpotLightDir",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 1,
     "m_Hidden": false,
     "m_Value": {
         "x": 0.0,
@@ -6186,13 +6343,13 @@
     "m_RefNameGeneratedByDisplayName": "InnerSpotAngle",
     "m_DefaultReferenceName": "_InnerSpotAngle",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 1,
     "m_Hidden": false,
     "m_Value": 44.0,
     "m_FloatType": 0,
