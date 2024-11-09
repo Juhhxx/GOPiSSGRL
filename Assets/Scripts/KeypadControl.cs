@@ -9,24 +9,22 @@ using UnityEngine.UI;
 
 public class KeypadControl : MonoBehaviour
 {
-    [SerializeField] private GameObject _keypadScreen;
-    [SerializeField] private Material _glitchMaterial;
-    private TMP_Text _keypadText;
-    private RawImage _keypadImage;
+    [SerializeField] private TMP_Text _keypadText;
+    [SerializeField] private RawImage _keypadGlitchImage;
     [SerializeField] private int[] _sequence = new int[10] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     [SerializeField, Range(1, 10)] private int _combinationSize;
     [SerializeField] private List<int> _correctCombination;
     private Stack<int> _currentCombination;
 
-    // initializes needed collections
+    // initializes needed collections and sets objects to their needed initial values
     // Generates _combinationSize x of non repeating numbers and orders them by
     // the order of sequence, themn gives them to correctCombination
     // It turns off the keypad UI after its finished initializing everything
     private void Start()
     {
-        _keypadImage = _keypadScreen.GetComponent<RawImage>();
-        _keypadText = _keypadScreen.GetComponentInChildren<TMP_Text>();
-        _keypadImage.material = null;
+        Color color = _keypadGlitchImage.color;
+        color.a = 0f;
+        _keypadGlitchImage.color = color;
 
         _currentCombination = new Stack<int>();
 
@@ -48,7 +46,19 @@ public class KeypadControl : MonoBehaviour
             }
         }
 
-        // gameObject.SetActive(false);
+        gameObject.SetActive(false);
+    }
+
+    // TMP_text component isnt letting me set it directly on enable so i have an
+    // Enumerator to tell me if TMP already exists.
+    private void OnEnable()
+    {
+        StartCoroutine(UpdateScreenIfText());
+    }
+    private IEnumerator UpdateScreenIfText()
+    {
+        yield return new WaitUntil(() => _keypadText != null);
+        UpdateScreen();
     }
 
     // if current combination is bellow the desired size it will add the number
@@ -118,6 +128,10 @@ public class KeypadControl : MonoBehaviour
         Debug.Log("Correct pass");
         StartCoroutine(CorrectCodeOpenDoor());
     }
+
+    // This enumerator is only run after the player put the correct code in, it should
+    // give a nice beepy sound and flash the code that they input.
+    // Still to be tought if other methods in teh script should be disabled after this
     private IEnumerator CorrectCodeOpenDoor()
     {
         // Maybe send the confirmation of correctness back to the door and a nice correct beepy sound
@@ -162,18 +176,36 @@ public class KeypadControl : MonoBehaviour
         _keypadText.text = screenText.ToString();
     }
 
+    // When there is an error in the keypad input, this method turns on the glitch material
+    // that does some flashing and tv scratch stuff, and also flashes the keypadText
+    // and sounds a beep sound for wrongness
     private IEnumerator KeypadError()
     {
         // Maybe add an error sound here?
 
-        _keypadImage.material = _glitchMaterial;
+        Color color =  _keypadGlitchImage.color;
+        
+        color.a = 1f;
+        _keypadGlitchImage.color = color;
 
-        yield return new WaitForSeconds(1.2f);
+        float t = 0f;
+        float flashTime = 0.6f;
+        while ( t < flashTime)
+        {
+            t += Time.deltaTime;
+            _keypadText.enabled = !_keypadText.enabled;
+            yield return null;
+        }
 
-        _keypadImage.material = null;
+        color.a = 0f;
+        _keypadGlitchImage.color = color;
+
+        _keypadText.enabled = true;
     }
+
+    // this method just plays a beep sound for acceptfulness
     private void KeypadSuccessfulPress()
     {
-        // Maybe a pressy beepy sound here to signal acceptfulness
+        // Maybe a pressy beepy sound here to signal acceptableness
     }
 }
