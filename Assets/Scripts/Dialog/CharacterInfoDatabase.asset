@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c08ae7774d149341820e99d7b1d99aa, type: 3}
+  m_Name: CharacterInfoDatabase
+  m_EditorClassIdentifier: 
+  characterList:
+  - characterID: 0
+    audioClip: {fileID: 0}
+    characterName: Demon
+  - characterID: 1
+    audioClip: {fileID: 0}
+    characterName: 
+  - characterID: 2
+    audioClip: {fileID: 8300000, guid: 697bc4f58cdf8804aa52670f184589de, type: 3}
+    characterName: Clerk
+  - characterID: 3
+    audioClip: {fileID: 0}
+    characterName: Radio
+  - characterID: 4
+    audioClip: {fileID: 0}
+    characterName: Necro
