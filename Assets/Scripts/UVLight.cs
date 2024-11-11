@@ -66,9 +66,9 @@ public class UVLight : MonoBehaviour
             Shader.SetGlobalFloat(_lightedID, _uvLight.enabled ? 1f : 0f);
         }
 
-        // The logic bellow this one was giving issues, because shader global
-        // variables apparently need to be updated every frame or the GPU will go like "nah-aw"
-        // Will keep the logic for now in case i can fix it
+// The logic bellow this one was giving issues, because shader global
+// variables apparently need to be updated every frame or the GPU will go like "nah-aw"
+// Will keep the logic for now in case i can fix it
         Shader.SetGlobalVector(_lightPositionID, _uvLight.transform.position);
         Shader.SetGlobalVector(_spotLightDirID, -_uvLight.transform.forward);
 
