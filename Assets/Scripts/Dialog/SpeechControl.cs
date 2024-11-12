@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SpeechControl : MonoBehaviour
@@ -17,7 +16,7 @@ public class SpeechControl : MonoBehaviour
     [SerializeField] private PlayerMovement _player;
 
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField, Range(0, 1)] private float _pitchRange;
+    [SerializeField, MinMaxSlider(-3f, 3f)] private Vector2 _pitchRange;
 
     [SerializeField] private CharacterInfoDatabase _characterInfo;
     // _characterdialogs defines a dialog stream for when interacting with each
@@ -27,9 +26,8 @@ public class SpeechControl : MonoBehaviour
     private WaitForSeconds _waitForTypingSpeed;
     private StringBuilder _stringBuilder;
     private WaitUntil _waitUntilSpace;
-    private WaitUntil _waitUntilNoSpace;
     private WaitUntil _waitUntilSpaceOrDisplayed;
-    private WaitUntil _waitUntilNoSpaceOrDisplayed;
+    private WaitForEndOfFrame _waitForEndOfFrame;
     private Coroutine _typingCoroutine;
     private IEnumerator _dialogCoroutine;
     private bool _isTextFullyDisplayed = false;
@@ -46,10 +44,9 @@ public class SpeechControl : MonoBehaviour
         _stringBuilder = new StringBuilder();
 
         _waitUntilSpace = new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
-        _waitUntilNoSpace = new WaitUntil(() => Input.GetKeyUp(KeyCode.Space));
         _waitUntilSpaceOrDisplayed = new WaitUntil(() => _isTextFullyDisplayed || Input.GetKeyDown(KeyCode.Space));
-        _waitUntilNoSpaceOrDisplayed = new WaitUntil(() => _isTextFullyDisplayed || Input.GetKeyUp(KeyCode.Space));
-
+        _waitForEndOfFrame = new WaitForEndOfFrame();
+        
         _dialogUI.SetActive(false);
     }
 
@@ -185,7 +182,7 @@ public class SpeechControl : MonoBehaviour
             _typingCoroutine = StartCoroutine(BeginTyping(dialogToShow, sound));
 
             yield return _waitUntilSpaceOrDisplayed;
-            yield return _waitUntilNoSpaceOrDisplayed;
+            yield return _waitForEndOfFrame;
 
             if (!_isTextFullyDisplayed)
             {
@@ -198,7 +195,7 @@ public class SpeechControl : MonoBehaviour
             }
 
             yield return _waitUntilSpace;
-            yield return _waitUntilNoSpace;
+            yield return _waitForEndOfFrame;
 
             if (dialogQueue.Count > 1)
             {
@@ -234,10 +231,11 @@ public class SpeechControl : MonoBehaviour
                 yield return _waitForTypingSpeed;
             else if (sound != null)
             {
-                Debug.Log("Sound is not null and letter isnt white or space");
+                // Debug.Log("Sound is not null and letter isnt white or space");
                 _audioSource.pitch =
-                    (float) UnityEngine.Random.Range(1-_pitchRange, 1+_pitchRange);
+                    (float) UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
                 _audioSource.PlayOneShot(sound);
+                Debug.Log("Pitch is: " + _audioSource.pitch);
             }
             
             yield return _waitForTypingSpeed;
