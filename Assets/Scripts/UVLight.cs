@@ -11,9 +11,6 @@ public class UVLight : MonoBehaviour
     private int _spotLightDirID;
     private int _lightedID;
     private bool isOn = false;
-    
-    private Vector3 _lastLightPosition;
-    private Vector3 _lastSpotLightDir;
 
     private void Start()
     {
@@ -50,10 +47,10 @@ public class UVLight : MonoBehaviour
         // Debug.Log(_uvMaterial.GetFloat("_OuterSpotAngle"));
 
         TurnOff();
-
-        // CacheCurrentLightValues();
     }
 
+    // if bool isOn, which is turned on and off a the same time as necessary components
+    // is true, then update the necessary variables for the uvlight to work
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -65,17 +62,22 @@ public class UVLight : MonoBehaviour
         }
     }
 
+    // Turns on all the necessary components to make uvlight work
     public void TurnOn()
     {
         _uvSpotLightObject.SetActive(true);
-        _uvSpotLightReboundObject.SetActive(true);
+        if (_uvSpotLightReboundObject != null)
+            _uvSpotLightReboundObject.SetActive(true);
         Shader.SetGlobalFloat(_lightedID, 1);
         isOn = true;
     }
+
+    // Turns off all the necessary components to make uvlight work
     public void TurnOff()
     {
         _uvSpotLightObject.SetActive(false);
-        _uvSpotLightReboundObject.SetActive(false);
+        if (_uvSpotLightReboundObject != null)
+            _uvSpotLightReboundObject.SetActive(false);
         Shader.SetGlobalFloat(_lightedID, 0);
         isOn = false;
     }
