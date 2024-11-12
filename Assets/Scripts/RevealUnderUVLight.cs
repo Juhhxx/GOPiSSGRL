@@ -13,6 +13,7 @@ public class RevealUnderUVLight : MonoBehaviour
         // If the uv material and uv light isnt referenced or cant be found we just disable it.
         if (_uvMaterialToInstantiate == null)
         {
+            Debug.Log($"{gameObject.name}'s uv material is missing.");
             return;
         }
 

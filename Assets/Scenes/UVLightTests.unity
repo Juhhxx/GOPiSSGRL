@@ -1433,8 +1433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3156eb3c1cd75847807ed46637e107f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogUI: {fileID: 17540009}
-  _dialogText: {fileID: 1229139582}
+  _dialogUI: {fileID: 911958256}
+  _dialogText: {fileID: 773118209}
   _dialogBox: {fileID: 17540011}
   _typingSpeed: 0.03
   _inventoryUI: {fileID: 1592417811}
@@ -4526,7 +4526,7 @@ Transform:
   m_GameObject: {fileID: 1330015617}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.52, y: 2.2, z: -1.52}
+  m_LocalPosition: {x: 1.46, y: 2.44, z: -0.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4547,6 +4547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uvSpotLightObject: {fileID: 1781143569}
+  _uvSpotLightReboundObject: {fileID: 1724991173}
   _uvMaterial: {fileID: 2100000, guid: a3995774dbacef1469894471fc8e01ac, type: 2}
 --- !u!1 &1588867061
 GameObject:
