@@ -1304,7 +1304,7 @@ MonoBehaviour:
   _inventoryUI: {fileID: 1592417811}
   _player: {fileID: 0}
   _audioSource: {fileID: 476709702}
-  _pitchRange: {x: -0.23428178, y: -0.08108097}
+  _pitchRange: {x: 0, y: 2}
   _characterInfo: {fileID: 11400000, guid: e8e5cacaa662c524fab248961ef13a38, type: 2}
 --- !u!82 &476709702
 AudioSource:

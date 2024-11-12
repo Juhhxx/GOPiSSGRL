@@ -16,7 +16,7 @@ public class SpeechControl : MonoBehaviour
     [SerializeField] private PlayerMovement _player;
 
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField, MinMaxSlider(-3f, 3f)] private Vector2 _pitchRange;
+    [SerializeField, MinMaxSlider(0f, 3f)] private Vector2 _pitchRange;
 
     [SerializeField] private CharacterInfoDatabase _characterInfo;
     // _characterdialogs defines a dialog stream for when interacting with each
