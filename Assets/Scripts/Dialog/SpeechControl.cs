@@ -226,21 +226,39 @@ public class SpeechControl : MonoBehaviour
     {
         foreach (char letter in dialogToShow)
         {
-            if (sound != null && !char.IsWhiteSpace(letter))
+            _stringBuilder.Append(letter);
+            _dialogText.text = _stringBuilder.ToString();
+
+            if (IsNotAllowed(letter))
+                // it waits double time on non letters
+                yield return _waitForTypingSpeed;
+            else if (sound != null)
             {
                 Debug.Log("Sound is not null and letter isnt white or space");
                 _audioSource.pitch =
                     (float) UnityEngine.Random.Range(1-_pitchRange, 1+_pitchRange);
                 _audioSource.PlayOneShot(sound);
             }
-
-            _stringBuilder.Append(letter);
-            _dialogText.text = _stringBuilder.ToString();
             
             yield return _waitForTypingSpeed;
         }
 
         _isTextFullyDisplayed = true;
+    }
+
+    // A hashset of characters to not play a sound for in begin typing
+    // it might be usefull to remove some of the symbols later if we want to
+    // write censured bad words
+    private readonly HashSet<char> notAllowedChars = new HashSet<char>()
+    {
+        '+', '=', '/', '\\', '|', '<', '>', '_', '^', '~', '"', '\'', '`','¢',
+        '£', '€', '¥', '{', '}', '[', ']', '(', ')', '\0', '\n', '\t', '␣', ' ',
+        '.', ',', ';', ':', '!', '?', '-', '@', '#', '*', '%', '&', '~', '…'
+    };
+
+    private bool IsNotAllowed(char c)
+    {
+        return notAllowedChars.Contains(c);
     }
 
     // End dialog disables all the necessary objects for the ui, and enables all the
