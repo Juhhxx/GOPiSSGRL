@@ -1304,7 +1304,8 @@ MonoBehaviour:
   _inventoryUI: {fileID: 1592417811}
   _player: {fileID: 0}
   _audioSource: {fileID: 476709702}
-  _pitchRange: {x: 0, y: 2}
+  _audioMixer: {fileID: 24100000, guid: d6a7eb20652649e4fb0bce4591c372e6, type: 2}
+  _pitchRange: {x: 0.8, y: 1.4}
   _characterInfo: {fileID: 11400000, guid: e8e5cacaa662c524fab248961ef13a38, type: 2}
 --- !u!82 &476709702
 AudioSource:
@@ -1315,12 +1316,12 @@ AudioSource:
   m_GameObject: {fileID: 476709696}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: d6a7eb20652649e4fb0bce4591c372e6, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 0.74
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0

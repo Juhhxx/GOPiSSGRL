@@ -4,6 +4,7 @@ using System.Text;
 using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SpeechControl : MonoBehaviour
@@ -16,7 +17,9 @@ public class SpeechControl : MonoBehaviour
     [SerializeField] private PlayerMovement _player;
 
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField, MinMaxSlider(0f, 3f)] private Vector2 _pitchRange;
+    [SerializeField] private AudioMixer _audioMixer;
+    private string _pitchID;
+    [SerializeField, MinMaxSlider(0.5f, 2f)] private Vector2 _pitchRange;
 
     [SerializeField] private CharacterInfoDatabase _characterInfo;
     // _characterdialogs defines a dialog stream for when interacting with each
@@ -38,6 +41,8 @@ public class SpeechControl : MonoBehaviour
     // as hide the ui
     private void Start()
     {
+        _pitchID = "PitchShifterPitch";
+
         _characterDialogs = new Dictionary<CharacterID, Queue<(CharacterID, Queue<string>)>>();
 
         _waitForTypingSpeed = new WaitForSeconds(_typingSpeed);
@@ -232,10 +237,12 @@ public class SpeechControl : MonoBehaviour
             else if (sound != null)
             {
                 // Debug.Log("Sound is not null and letter isnt white or space");
-                _audioSource.pitch =
-                    (float) UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y);
+                _audioMixer.SetFloat(_pitchID,
+                    (float) UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y));
                 _audioSource.PlayOneShot(sound);
-                Debug.Log("Pitch is: " + _audioSource.pitch);
+                /*float f;
+                _audioMixer.GetFloat(_pitchID, out f);
+                Debug.Log("Pitch is: " + f);*/
             }
             
             yield return _waitForTypingSpeed;
