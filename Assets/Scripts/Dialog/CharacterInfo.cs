@@ -3,19 +3,20 @@ using UnityEngine;
 [System.Serializable]
 public class CharacterInfo
 {
-    [SerializeField] private CharacterID characterID;
-    [SerializeField] private AudioClip audioClip;
-    [SerializeField] private string characterName;
+    [SerializeField] private CharacterID _characterID;
+    [SerializeField] private AudioClip _audioClip;
+    [SerializeField] private string _characterName;
 
-    public CharacterID CharacterID => characterID;
+    public CharacterID CharacterID => _characterID;
+    
     public AudioClip CharacterSound
     {
-        get => audioClip;
-        set => audioClip = value;
+        get => _audioClip;
+        set => _audioClip = value;
     }
     public string CharacterName
     {
-        get => characterName;
-        set => characterName = value;
+        get => _characterName;
+        set => _characterName = value;
     }
 }

@@ -97,3 +97,4 @@
 *.prefab linguist-generated
 *.unity linguist-generated
 Assets/Sounds/voice_sans.mp3 filter=lfs diff=lfs merge=lfs -text
+Assets/Audio/FlashLightClick.mp3 filter=lfs diff=lfs merge=lfs -text
