@@ -11,7 +11,6 @@ public class SpeechControl : MonoBehaviour
 {
     [SerializeField] private GameObject _dialogUI;
     [SerializeField] private TMP_Text _dialogText;
-    [SerializeField] private RawImage _dialogBox;
     [SerializeField] private float _typingSpeed = 0.05f;
     [SerializeField] private GameObject _inventoryUI;
     [SerializeField] private PlayerMovement _player;
@@ -174,6 +173,7 @@ public class SpeechControl : MonoBehaviour
 
         string name = _characterInfo.GetName(characterID);
         AudioClip sound = _characterInfo.GetSound(characterID);
+        Debug.Log("name: " + name + " sound: " + sound);
 
         while (true)
         {
