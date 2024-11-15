@@ -6,11 +6,14 @@ public class UVLight : MonoBehaviour
     [SerializeField] private GameObject _uvSpotLightObject;
     [SerializeField] private GameObject _uvSpotLightReboundObject;
     [SerializeField] private Material _uvMaterial;
+    [SerializeField] private Sounds _sounds;
+    [SerializeField] private AudioSource _audioSource;
     private Light _uvLight;
     private int _lightPositionID;
     private int _spotLightDirID;
     private int _lightedID;
-    private bool isOn = false;
+    private bool isOn;
+    private AudioClip _click;
 
     private void Start()
     {
@@ -46,7 +49,22 @@ public class UVLight : MonoBehaviour
         // Debug.Log(_uvMaterial.GetFloat("_InnerSpotAngle"));
         // Debug.Log(_uvMaterial.GetFloat("_OuterSpotAngle"));
 
-        TurnOff();
+        _click = _sounds.GetSound(SoundID.FlashLightClick);
+
+        _uvSpotLightObject.SetActive(false);
+        if (_uvSpotLightReboundObject != null)
+            _uvSpotLightReboundObject.SetActive(false);
+        Shader.SetGlobalFloat(_lightedID, 0);
+        isOn = false;
+    }
+    private void OnEnable()
+    {
+        if (isOn)
+            Shader.SetGlobalFloat(_lightedID, 1);
+    }
+    private void OnDisable()
+    {
+        Shader.SetGlobalFloat(_lightedID, 0);
     }
 
     // if bool isOn, which is turned on and off a the same time as necessary components
@@ -54,7 +72,8 @@ public class UVLight : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
-            TurnOn();
+            ToggleUVLight();
+
         if (isOn)
         {
             Shader.SetGlobalVector(_lightPositionID, _uvLight.transform.position);
@@ -62,23 +81,35 @@ public class UVLight : MonoBehaviour
         }
     }
 
+    // Turns the Light on if its off and off if its on
+    public void ToggleUVLight()
+    {
+        isOn = isOn ? TurnOff() : TurnOn();
+    }
+
     // Turns on all the necessary components to make uvlight work
-    public void TurnOn()
+    public bool TurnOn()
     {
         _uvSpotLightObject.SetActive(true);
         if (_uvSpotLightReboundObject != null)
             _uvSpotLightReboundObject.SetActive(true);
         Shader.SetGlobalFloat(_lightedID, 1);
-        isOn = true;
+
+        _audioSource.PlayOneShot(_click);
+
+        return true;
     }
 
     // Turns off all the necessary components to make uvlight work
-    public void TurnOff()
+    public bool TurnOff()
     {
         _uvSpotLightObject.SetActive(false);
         if (_uvSpotLightReboundObject != null)
             _uvSpotLightReboundObject.SetActive(false);
         Shader.SetGlobalFloat(_lightedID, 0);
-        isOn = false;
+
+        _audioSource.PlayOneShot(_click);
+
+        return false;
     }
 }

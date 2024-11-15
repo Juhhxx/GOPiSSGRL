@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: CharacterInfoDatabase
   m_EditorClassIdentifier: 
   characterList:
-  - characterID: 0
-    audioClip: {fileID: 0}
-    characterName: Demon
-  - characterID: 1
-    audioClip: {fileID: 0}
-    characterName: 
-  - characterID: 2
-    audioClip: {fileID: 8300000, guid: 697bc4f58cdf8804aa52670f184589de, type: 3}
-    characterName: Clerk
-  - characterID: 3
-    audioClip: {fileID: 0}
-    characterName: Radio
-  - characterID: 4
-    audioClip: {fileID: 0}
-    characterName: Necro
+  - _characterID: 0
+    _audioClip: {fileID: 0}
+    _characterName: Demon
+  - _characterID: 1
+    _audioClip: {fileID: 0}
+    _characterName: 
+  - _characterID: 2
+    _audioClip: {fileID: 8300000, guid: 697bc4f58cdf8804aa52670f184589de, type: 3}
+    _characterName: Clerk
+  - _characterID: 3
+    _audioClip: {fileID: 0}
+    _characterName: 
+  - _characterID: 4
+    _audioClip: {fileID: 0}
+    _characterName: 
