@@ -12,5 +12,7 @@ public class InteractiveData : ScriptableObject
     public InteractiveData[]    requirements;
     public string               requirementsMessage;
     public string[]             interactionMessages;
+    public bool                 activatesUI;
+    public GameObject           holdingObject;
 }
 

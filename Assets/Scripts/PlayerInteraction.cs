@@ -24,10 +24,15 @@ public class PlayerInteraction : MonoBehaviour
 
     private void UpdateCurrentInteractive()
     {
+        Debug.DrawRay(_cameraTransform.position,_cameraTransform.forward * _maxInteractionDistance,Color.blue);
+
         if (Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hitInfo, _maxInteractionDistance))
             CheckObjectForInteraction(hitInfo.collider);
         else if (_currentInteractive != null)
             ClearCurrentInteractive();
+
+        Debug.DrawLine(_cameraTransform.position,hitInfo.point,Color.red);
+        Debug.DrawRay(hitInfo.point,hitInfo.normal * 0.5f,Color.green);
     }
 
     private void CheckObjectForInteraction(Collider collider)
