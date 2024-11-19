@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class DrawChalk : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class DrawChalk : MonoBehaviour
     [SerializeField] private GameObject _chalkPrefab;
     [SerializeField] private LayerMask _drawingLayer;
     [SerializeField] private float _drawingDistance;
+    [SerializeField] private List<Texture> _chalkTextures;
     private Transform _cameraTrans;
 
     void Start()
@@ -29,6 +31,7 @@ public class DrawChalk : MonoBehaviour
     {
         GameObject newChalk = Instantiate(_chalkPrefab);
         Transform chalkTrans = newChalk.transform;
+        MeshRenderer chalkMeshR = newChalk.GetComponent<MeshRenderer>();
 
         chalkTrans.LookAt(-hit.normal);
         Vector3 chalkPos = chalkTrans.forward;
@@ -36,6 +39,13 @@ public class DrawChalk : MonoBehaviour
         chalkPos += hit.point;
         chalkTrans.position = chalkPos;
 
+        chalkMeshR.material.mainTexture = ChooseChalkTexture();
+
         Debug.Log($"chalk position is ({chalkTrans.position} + {chalkTrans.up * 0.05f} =){chalkPos}");
+    }
+    private Texture ChooseChalkTexture()
+    {
+        int textureIdx = Random.Range(0,_chalkTextures.Count);
+        return _chalkTextures[textureIdx];
     }
 }
