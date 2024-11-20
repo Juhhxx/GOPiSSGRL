@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private UIManager _uiManager;
+    [SerializeField] private Camera _holdingCamera;
 
     private PlayerInteraction   _playerInteraction;
     private List<Interactive>   _inventory;
     private int                 _selectedSlotIndex;
+    private GameObject          _currentHoldingObject;
 
     void Start()
     {
@@ -55,6 +57,12 @@ public class PlayerInventory : MonoBehaviour
         _selectedSlotIndex = index;
 
         _uiManager.SelectInventorySlot(index);
+
+        if (_currentHoldingObject != null)
+            Destroy(_currentHoldingObject);
+
+        if (_inventory[index].holdingObject != null)
+            _currentHoldingObject = Instantiate(_inventory[index].holdingObject,_holdingCamera.transform);
 
         _playerInteraction.RefreshCurrentInteractive();
     }

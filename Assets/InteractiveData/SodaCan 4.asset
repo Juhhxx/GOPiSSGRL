@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
-  m_Name: SodaCan
+  m_Name: SodaCan 4
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
@@ -21,4 +21,4 @@ MonoBehaviour:
   interactionMessages:
   - Insert Soda Can
   activatesUI: 0
-  holdingObject: {fileID: 0}
+  holdingObject: {fileID: 8866752462327682379, guid: d290e08d18cbd794e930d0a739edfbc7, type: 3}

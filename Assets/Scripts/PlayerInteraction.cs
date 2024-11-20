@@ -74,6 +74,7 @@ public class PlayerInteraction : MonoBehaviour
             _currentInteractive.Interact();
             _refreshCurrentInteractive = true;
         }
+        
     }
 
     public void RefreshCurrentInteractive()

@@ -15,25 +15,14 @@ public class Interactive : MonoBehaviour
 
     public bool isOn;
 
-    public InteractiveData interactiveData
-    {
-        get { return _interactiveData; }
-    }
+    public InteractiveData interactiveData => _interactiveData;
 
-    public string inventoryName
-    {
-        get { return _interactiveData.inventoryName; }
-    }
+    public string inventoryName => _interactiveData.inventoryName;
 
-    public Sprite inventoryIcon
-    {
-        get { return _interactiveData.inventoryIcon; }
-    }
-
-    private bool IsType(InteractiveData.Type type)
-    {
-        return _interactiveData.type == type;
-    }
+    public Sprite inventoryIcon => _interactiveData.inventoryIcon;
+    public GameObject holdingObject => _interactiveData.holdingObject;
+    
+    private bool IsType(InteractiveData.Type type) => _interactiveData.type == type;
 
     void Awake()
     {
