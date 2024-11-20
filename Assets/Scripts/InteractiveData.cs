@@ -11,6 +11,7 @@ public class InteractiveData : ScriptableObject
     public Sprite               inventoryIcon;
     public InteractiveData[]    requirements;
     public string               requirementsMessage;
+    public InteractiveData[]    interactableItems;
     public string[]             interactionMessages;
     public bool                 activatesUI;
     public GameObject           holdingObject;

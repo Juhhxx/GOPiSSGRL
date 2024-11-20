@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5949435641146528526}
   - component: {fileID: 8093666666367399235}
   - component: {fileID: 5385739474082410839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UVLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 6443322717552802928}
   - component: {fileID: 341552420334270107}
   - component: {fileID: 8308758616843370273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 4651212734976199436}
   - component: {fileID: 152293104092434517}
   - component: {fileID: 5831851161888906049}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UV Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,13 +352,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6516821324236702425}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.2}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: -0.002, z: -0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1799557795980993423}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!108 &152293104092434517
 Light:
   m_ObjectHideFlags: 0
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 6282294228406432935}
   - component: {fileID: 8617137591356873327}
   - component: {fileID: 8608302627690648612}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot Light for Rebound Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,8 +473,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6723622781663826383}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.2}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: -0.0019999836, z: -0.40000015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

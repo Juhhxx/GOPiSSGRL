@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
-  m_Name: SodaCan 1
+  m_Name: SodaCan4
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1

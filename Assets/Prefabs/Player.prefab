@@ -222,7 +222,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -237,7 +237,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiManager: {fileID: 0}
-  _maxInteractionDistance: 1.5
+  _maxInteractionDistance: 2.5
 --- !u!114 &7437518743940774994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiManager: {fileID: 0}
+  _holdingCamera: {fileID: 5075372789813321252}
 --- !u!114 &2293550040377858088
 MonoBehaviour:
   m_ObjectHideFlags: 0

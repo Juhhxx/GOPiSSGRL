@@ -15,9 +15,6 @@ public class UVLight : MonoBehaviour
     private int _lightedID;
     private bool isOn;
     private AudioClip _click;
-    private WaitWhile _waitUntilFinishPlaying;
-    private bool _isDisabling;
-
     private void Start()
     {
         // If the spotlightobject and uv light arent referenced or cant be found,
@@ -42,8 +39,6 @@ public class UVLight : MonoBehaviour
             _audioSource = gameObject.AddComponent<AudioSource>();
         }
         
-        _waitUntilFinishPlaying = new WaitWhile(() => _audioSource.isPlaying);
-
         // Convert the strings IDs of the Revealing Shader properties into
         // shader IDs for best performance
         _lightPositionID = Shader.PropertyToID("_SpotLightPos");
@@ -73,33 +68,6 @@ public class UVLight : MonoBehaviour
             Shader.SetGlobalFloat(_lightedID, 0);
             isOn = false;
         }
-        _isDisabling = false;
-    }
-
-    /// <summary>
-    /// If not already disabling, Start disabling coroutine.
-    /// </summary>
-    private void OnDisable()
-    {
-        if (!_isDisabling)
-        {
-            if (!gameObject.activeSelf) return;
-            _isDisabling = true;
-            StartCoroutine(DisableWithDelay());
-        }
-    }
-
-    /// <summary>
-    /// Disable the object only after the click sound stops playing.
-    /// </summary>
-    /// <returns></returns>
-    private IEnumerator DisableWithDelay()
-    {
-        TurnOff();
-
-        yield return _waitUntilFinishPlaying;
-
-        gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -108,10 +76,8 @@ public class UVLight : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        #if UNITY_EDITOR
         if (Input.GetButtonDown("Interact"))
             ToggleUVLight();
-        #endif
 
         if (isOn)
         {

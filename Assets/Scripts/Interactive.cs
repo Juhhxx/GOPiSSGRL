@@ -15,7 +15,11 @@ public class Interactive : MonoBehaviour
 
     public bool isOn;
 
-    public InteractiveData interactiveData => _interactiveData;
+    public InteractiveData interactiveData
+    {
+        get => _interactiveData;
+        set => _interactiveData = value;
+    }
 
     public string inventoryName => _interactiveData.inventoryName;
 
