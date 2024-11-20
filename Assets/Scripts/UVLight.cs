@@ -65,7 +65,14 @@ public class UVLight : MonoBehaviour
     }
     private void OnEnable()
     {
-        Shader.SetGlobalFloat(_lightedID, 0);
+        if (isOn)
+        {
+            _uvSpotLightObject.SetActive(false);
+            if (_uvSpotLightReboundObject != null)
+                _uvSpotLightReboundObject.SetActive(false);
+            Shader.SetGlobalFloat(_lightedID, 0);
+            isOn = false;
+        }
         _isDisabling = false;
     }
 
@@ -102,7 +109,7 @@ public class UVLight : MonoBehaviour
     private void Update()
     {
         #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetButtonDown("Interact"))
             ToggleUVLight();
         #endif
 
