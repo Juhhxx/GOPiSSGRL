@@ -9,6 +9,7 @@ public class Interactive : MonoBehaviour
     private PlayerInventory     _playerInventory;
     private List<Interactive>   _requirements;
     private List<Interactive>   _dependents;
+    private List<Interactive>   _interactables;
     private Animator            _animator;
     private bool                _requirementsMet;
     private int                 _interactionCount;
@@ -22,10 +23,8 @@ public class Interactive : MonoBehaviour
     }
 
     public string inventoryName => _interactiveData.inventoryName;
-
     public Sprite inventoryIcon => _interactiveData.inventoryIcon;
     public GameObject holdingObject => _interactiveData.holdingObject;
-    
     private bool IsType(InteractiveData.Type type) => _interactiveData.type == type;
 
     void Awake()
@@ -42,15 +41,11 @@ public class Interactive : MonoBehaviour
         _interactionManager.RegisterInteractive(this);
     }
 
-    public void AddRequirement(Interactive requirement)
-    {
-        _requirements.Add(requirement);
-    }
+    public void AddRequirement(Interactive requirement) => _requirements.Add(requirement);
 
-    public void AddDependent(Interactive dependent)
-    {
-        _dependents.Add(dependent);
-    }
+    public void AddDependent(Interactive dependent) => _dependents.Add(dependent);
+
+    public void AddInteractable(Interactive interactable) => _interactables.Add(interactable);
 
     public string GetInteractionMessage()
     {

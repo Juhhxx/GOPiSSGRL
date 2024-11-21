@@ -5262,6 +5262,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 339875226267768501, guid: 076a5a85a62111e49a7334843131da65, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359699105848386395, guid: 076a5a85a62111e49a7334843131da65, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 899833843108915712, guid: 076a5a85a62111e49a7334843131da65, type: 3}
       propertyPath: m_Name
       value: UVLight
@@ -5308,6 +5316,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1799557795980993423, guid: 076a5a85a62111e49a7334843131da65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093666666367399235, guid: 076a5a85a62111e49a7334843131da65, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

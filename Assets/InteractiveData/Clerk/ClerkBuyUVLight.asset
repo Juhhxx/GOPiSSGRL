@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
   m_Name: ClerkBuyUVLight
   m_EditorClassIdentifier: 
-  type: 3
+  type: 1
   startsOn: 1
   inventoryName: 
   inventoryIcon: {fileID: 0}
-  requirements: []
-  requirementsMessage: 
+  requirements:
+  - {fileID: 11400000, guid: 28f0174f06f3e8e4a8b9d16e22cce1a0, type: 2}
+  - {fileID: 11400000, guid: 6788b8d1c33383c42b6880b7b9705f4e, type: 2}
+  - {fileID: 11400000, guid: a337a6fa577c4504489fab89c4d2952c, type: 2}
+  - {fileID: 11400000, guid: 47d02f4de5a28044ab4d743609258661, type: 2}
+  requirementsMessage: Not enough money yet
   interactionMessages:
-  - Talk to Clerk
+  - Buy UV Light
   activatesUI: 0
   holdingObject: {fileID: 0}

@@ -16,9 +16,10 @@ MonoBehaviour:
   startsOn: 1
   inventoryName: Empty Soda Can
   inventoryIcon: {fileID: 21300000, guid: a82d582ea9003b944b85c3b65d76ccb0, type: 3}
-  requirements: []
-  requirementsMessage: 
+  requirements:
+  - {fileID: 11400000, guid: f75ae9b776797954582370802d48cb0e, type: 2}
+  requirementsMessage: Just and empty can
   interactionMessages:
   - Insert Soda Can
   activatesUI: 0
-  holdingObject: {fileID: 8866752462327682379, guid: d290e08d18cbd794e930d0a739edfbc7, type: 3}
+  holdingObject: {fileID: 4490522552082893936, guid: ea5c903267804c847bb341c919ca8771, type: 3}

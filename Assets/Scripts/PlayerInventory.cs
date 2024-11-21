@@ -40,6 +40,8 @@ public class PlayerInventory : MonoBehaviour
 
         if (_selectedSlotIndex == _inventory.Count)
             SelectInventorySlot(_selectedSlotIndex - 1);
+        else
+            SelectInventorySlot(_selectedSlotIndex);
     }
 
     public bool Contains(Interactive item)
@@ -58,12 +60,15 @@ public class PlayerInventory : MonoBehaviour
 
         _uiManager.SelectInventorySlot(index);
 
-        if (_currentHoldingObject != null)
-            Destroy(_currentHoldingObject);
+        if (index != -1)
+        {
+            if (_currentHoldingObject != null)
+                Destroy(_currentHoldingObject);
 
-        if (_inventory[index].holdingObject != null)
-            _currentHoldingObject = Instantiate(_inventory[index].holdingObject,_holdingCamera.transform);
-
+            if (_inventory[index].holdingObject != null)
+                _currentHoldingObject = Instantiate(_inventory[index].holdingObject,_holdingCamera.transform);
+        }
+        
         _playerInteraction.RefreshCurrentInteractive();
     }
 

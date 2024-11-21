@@ -55,7 +55,7 @@ public class InteractionManager : MonoBehaviour
         }
     }
 
-    public Interactive FindInteractive(InteractiveData interactiveData)
+    private Interactive FindInteractive(InteractiveData interactiveData)
     {
         foreach (Interactive interactive in _interactives)
             if (interactive.interactiveData == interactiveData)
