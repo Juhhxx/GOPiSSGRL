@@ -23,7 +23,6 @@ public class SpeechControl : MonoBehaviour
     [SerializeField] private CharacterInfoDatabase _characterInfo;
     // _characterdialogs defines a dialog stream for when interacting with each
     // character/object that needs dialog
-    private Dictionary<CharacterID, Queue<(CharacterID, Queue<string>)>> _characterDialogs;
 
     private WaitForSeconds _waitForTypingSpeed;
     private StringBuilder _stringBuilder;
@@ -42,8 +41,6 @@ public class SpeechControl : MonoBehaviour
     {
         _pitchID = "PitchShifterPitch";
 
-        _characterDialogs = new Dictionary<CharacterID, Queue<(CharacterID, Queue<string>)>>();
-
         _waitForTypingSpeed = new WaitForSeconds(_typingSpeed);
         _stringBuilder = new StringBuilder();
 
@@ -54,103 +51,40 @@ public class SpeechControl : MonoBehaviour
         _dialogUI.SetActive(false);
     }
 
-    // update is only here for testing
-    #if UNITY_EDITOR
-    private void Update()
-    {
-        // you can use the bool at the end of set character dialogs as false, to give the character
-        // new dialog and keep it a dynamic enviornment, but at the same time, since you are not
-        // reseting the characters dialog, they can always keep reminding the player on what to focus on
-        // (banter stuff and all)
-        // in resume: bool true for new player objective, no bool or bool false for random stuff
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Queue<string> clerkDialogs = new Queue<string>();
-            clerkDialogs.Enqueue("Shut up");
-            clerkDialogs.Enqueue("Buy this uv light right now.");
-            clerkDialogs.Enqueue("Buy this uv light right now.");
-            clerkDialogs.Enqueue("Buy this uv light right now. Buy this uv light right now. Buy this uv light right now. Buy this uv light right now. Buy this uv light right now. Buy this uv light right now. Buy this uv light right now. Buy this uv light right now. Buy this uv light right now.");
-            SetCharacterDialogs(CharacterID.Clerk, clerkDialogs, CharacterID.Clerk);
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Queue<string> clerkDialogs = new Queue<string>();
-            clerkDialogs.Enqueue("ZZZZZZ");
-            clerkDialogs.Enqueue("(Don't steal my stuff.)");
-            clerkDialogs.Enqueue("ZZZZZzzz zzzzzzzzz zzzz zzzzzZZZZZZZ zzzz zzz zzZZZZZZZZZz zzzzzzz zz z");
-            SetCharacterDialogs(CharacterID.Clerk, clerkDialogs, CharacterID.Clerk, true);
-            clerkDialogs = new Queue<string>();
-            clerkDialogs.Enqueue("psssssssssss");
-            clerkDialogs.Enqueue("Im actually just pissing on you.");
-            clerkDialogs.Enqueue("psssssssssss");
-            SetCharacterDialogs(CharacterID.Clerk, clerkDialogs, CharacterID.Player);
-            clerkDialogs = new Queue<string>();
-            clerkDialogs.Enqueue("Kids these days...");
-            SetCharacterDialogs(CharacterID.Clerk, clerkDialogs, CharacterID.Clerk);
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            ShowDialog(CharacterID.Clerk);
-        }
-    }
-    #endif
-
-    // everytime the player advances in the puzzles, you can enqueue a queue
-    // with a tuple of a character and its dialog, to be the value of the enum key
-    // characterID, for when the player interacts with that character
-    public void SetCharacterDialogs(CharacterID dialogID, Queue<string> dialogs, CharacterID characterID, bool resetCharacterQueue = false)
-    {
-        if (!_characterDialogs.ContainsKey(dialogID))
-        {
-            _characterDialogs.Add(dialogID, new Queue<(CharacterID, Queue<string>)>());
-        }
-
-        if (resetCharacterQueue)
-            _characterDialogs[dialogID].Clear();
-        
-        (CharacterID, Queue<string>) tpl = (characterID, dialogs);
-
-        _characterDialogs[dialogID].Enqueue(tpl);
-    }
-
+    private Queue<(CharacterID, Queue<string>)> _currentDialogs;
     // Show dialog gets a character ID and a name for the character, it checks if
     // the id exists and if so it starts the dialog, starting a coroutine that goes through
     // all the saved IEnumerators saved in dialogQueue
-    public void ShowDialog(CharacterID dialogID)
+    public Queue<(CharacterID, Queue<string>)> ShowDialogs(Queue<(CharacterID, Queue<string>)> newDialogQueue)
     {
-        if (!_characterDialogs.ContainsKey(dialogID) || _characterDialogs[dialogID].Count == 0)
-        {
-            Debug.Log("No dialog available for character ID: " + dialogID);
-            return;
-        }
-
         if (_dialogCoroutine != null)
-            return;
+            return null;
         
         _inventoryUI.SetActive(false);
         // _player.enabled = false;
         _dialogUI.SetActive(true);
 
-        _dialogCoroutine = ShowAllDialogs(dialogID);
+        _currentDialogs = newDialogQueue;
+
+        _dialogCoroutine = ShowAllDialogs();
         StartCoroutine(_dialogCoroutine);
+
+        return _currentDialogs;
     }
 
     // this method shows all the queued up dialogs from characters,
     // if you want to do a dialog that starts with player, goes to clerk and
     // back to player, you only need to set the dialogs in the correct order in setDialogs
     // and then use ShowDialog to set these dialogs in order for when they play together for each character
-    private IEnumerator ShowAllDialogs(CharacterID dialogID)
+    private IEnumerator ShowAllDialogs()
     {
-        Queue<(CharacterID, Queue<string>)> dialogQueue = _characterDialogs[dialogID];
-
         while(true)
         {
-            yield return StartCoroutine(BeginDialog(dialogQueue.Peek()));
+            yield return StartCoroutine(BeginDialog(_currentDialogs.Peek()));
 
-            if (dialogQueue.Count > 1)
+            if (_currentDialogs.Count > 1)
             {
-                dialogQueue.Dequeue();
+                _currentDialogs.Dequeue();
                 continue;
             }
             break;

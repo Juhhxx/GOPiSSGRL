@@ -79,6 +79,8 @@ public class Interactive : MonoBehaviour
             InteractSelf(true);
         else if (PlayerHasRequirementSelected())
             UseRequirementFromInventory();
+
+        PlayAnimation("Talk");
     }
 
     private void InteractSelf(bool direct)
