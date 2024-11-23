@@ -3,9 +3,9 @@ using UnityEngine;
 public class ChalkDrawingPoint : MonoBehaviour
 {
     [SerializeField] float _pointFrequency;
+    public float PointFrequency => _pointFrequency;
     [SerializeField] float _maxDetectDistance = 0.4f;
     private SphereCollider _collider;
-    private Transform _playerTrans;
     private bool _isDrawn;
     public bool IsDrawn => _isDrawn;
 

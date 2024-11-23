@@ -17,7 +17,7 @@ MonoBehaviour:
   inventoryName: 
   inventoryIcon: {fileID: 0}
   requirements: []
-  requirementsMessage: 
+  requirementsMessage: Nachine is broken
   interactionMessages:
   - Make Slushie
   activatesUI: 0

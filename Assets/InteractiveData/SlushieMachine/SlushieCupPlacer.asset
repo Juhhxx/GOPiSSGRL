@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
-  m_Name: CupPlacer
+  m_Name: SlushieCupPlacer
   m_EditorClassIdentifier: 
   type: 2
   startsOn: 1
   inventoryName: 
   inventoryIcon: {fileID: 0}
-  requirements:
-  - {fileID: 11400000, guid: 9e4fb69924de67449a1e2376abffaf75, type: 2}
-  requirementsMessage: I need a cup for this
+  requirements: []
+  requirementsMessage: 
   interactionMessages:
-  - Place cup
+  - Place Cup
   - Take Cup
   activatesUI: 0
   holdingObject: {fileID: 0}
