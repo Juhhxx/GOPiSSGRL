@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -78,8 +79,19 @@ public class Interactive : MonoBehaviour
         if (_requirementsMet)
             InteractSelf(true);
         else if (PlayerHasRequirementSelected())
+        {
             UseRequirementFromInventory();
+            if (_requirementsMet)
+                InteractSelf(true);
+        }
 
+        if (gameObject.activeSelf)
+            StartCoroutine(WaitToTalk());
+    }
+
+    private IEnumerator WaitToTalk()
+    {
+        yield return new WaitForSeconds(0.2f);
         PlayAnimation("Talk");
     }
 

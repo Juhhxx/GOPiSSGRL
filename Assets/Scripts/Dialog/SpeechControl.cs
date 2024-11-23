@@ -13,7 +13,8 @@ public class SpeechControl : MonoBehaviour
     [SerializeField] private TMP_Text _dialogText;
     [SerializeField] private float _typingSpeed = 0.05f;
     [SerializeField] private GameObject _inventoryUI;
-    [SerializeField] private PlayerMovement _player;
+    private PlayerMovement _playerMovement;
+    private PlayerInteraction _playerInteraction;
 
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioMixer _audioMixer;
@@ -23,6 +24,8 @@ public class SpeechControl : MonoBehaviour
     [SerializeField] private CharacterInfoDatabase _characterInfo;
     // _characterdialogs defines a dialog stream for when interacting with each
     // character/object that needs dialog
+
+    private Queue<(CharacterID, Queue<string>)> _currentDialogs;
 
     private WaitForSeconds _waitForTypingSpeed;
     private StringBuilder _stringBuilder;
@@ -39,6 +42,11 @@ public class SpeechControl : MonoBehaviour
     // as hide the ui
     private void Start()
     {
+        _playerMovement = FindFirstObjectByType<PlayerMovement>();
+        _playerInteraction = FindFirstObjectByType<PlayerInteraction>();
+
+        if (_playerMovement == null || _playerInteraction == null) return;
+
         _pitchID = "PitchShifterPitch";
 
         _waitForTypingSpeed = new WaitForSeconds(_typingSpeed);
@@ -51,7 +59,6 @@ public class SpeechControl : MonoBehaviour
         _dialogUI.SetActive(false);
     }
 
-    private Queue<(CharacterID, Queue<string>)> _currentDialogs;
     // Show dialog gets a character ID and a name for the character, it checks if
     // the id exists and if so it starts the dialog, starting a coroutine that goes through
     // all the saved IEnumerators saved in dialogQueue
@@ -61,7 +68,8 @@ public class SpeechControl : MonoBehaviour
             return null;
         
         _inventoryUI.SetActive(false);
-        // _player.enabled = false;
+        _playerMovement.enabled = false;
+        _playerInteraction.enabled = false;
         _dialogUI.SetActive(true);
 
         _currentDialogs = newDialogQueue;
@@ -69,7 +77,10 @@ public class SpeechControl : MonoBehaviour
         _dialogCoroutine = ShowAllDialogs();
         StartCoroutine(_dialogCoroutine);
 
-        return _currentDialogs;
+        if (_currentDialogs != newDialogQueue)
+            return _currentDialogs;
+        else
+            return null;
     }
 
     // this method shows all the queued up dialogs from characters,
@@ -107,7 +118,6 @@ public class SpeechControl : MonoBehaviour
 
         string name = _characterInfo.GetName(characterID);
         AudioClip sound = _characterInfo.GetSound(characterID);
-        Debug.Log("name: " + name + " sound: " + sound);
 
         while (true)
         {
@@ -206,7 +216,8 @@ public class SpeechControl : MonoBehaviour
     {
         _dialogUI.SetActive(false);
         _inventoryUI.SetActive(true);
-        // _player.enabled = true;
+        _playerMovement.enabled = true;
+        _playerInteraction.enabled = true;
 
         _dialogCoroutine = null;
     }
