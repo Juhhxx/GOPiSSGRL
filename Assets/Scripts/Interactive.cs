@@ -71,6 +71,7 @@ public class Interactive : MonoBehaviour
             if (_playerInventory.IsSelected(requirement))
                 return true;
 
+        Debug.Log("Not holding requirement");
         return false;
     }
 
@@ -91,7 +92,7 @@ public class Interactive : MonoBehaviour
 
     private IEnumerator WaitToTalk()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.8f);
         PlayAnimation("Talk");
     }
 

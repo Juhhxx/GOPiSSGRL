@@ -27,6 +27,8 @@ public class RotateWhenHolding : MonoBehaviour
         // Debug.Log(initRotation.z);
         
         transform.localRotation = Quaternion.Euler(_currentRotation);
+
+        enabled = false;
     }
 
     /// <summary>
@@ -51,6 +53,7 @@ public class RotateWhenHolding : MonoBehaviour
     {
         if (!Input.GetButtonUp("Use")) return;
         _player.enabled = true;
+        enabled = false;
         /*Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;*/
     }

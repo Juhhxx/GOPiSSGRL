@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
-  m_Name: SodaCan2
+  m_Name: SodaCan1
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
   inventoryName: Empty Soda Can
   inventoryIcon: {fileID: 21300000, guid: a82d582ea9003b944b85c3b65d76ccb0, type: 3}
-  requirements:
-  - {fileID: 11400000, guid: f75ae9b776797954582370802d48cb0e, type: 2}
+  requirements: []
   requirementsMessage: Just and empty can
   interactionMessages:
   - Insert Soda Can

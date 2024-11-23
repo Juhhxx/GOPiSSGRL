@@ -9,12 +9,7 @@ public class DialogBridge : MonoBehaviour
         _characterSpeech = GetComponentInParent<CharacterSpeech>();
     }
 
-    public void StartDialog()
-    {
-        _characterSpeech.StartDialog();
-    }
-    public void NextDialog()
-    {
-        _characterSpeech.NextDialog();
-    }
+    public void StartDialog() => _characterSpeech.StartDialog();
+    public void NextDialog() => _characterSpeech.NextDialog();
+    public void StopDialog() => _characterSpeech.StopDialog();
 }

@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
-  m_Name: SodaCan3
+  m_Name: ThermostatInsertCent
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   startsOn: 1
-  inventoryName: Empty Soda Can
-  inventoryIcon: {fileID: 21300000, guid: a82d582ea9003b944b85c3b65d76ccb0, type: 3}
+  inventoryName: 
+  inventoryIcon: {fileID: 0}
   requirements:
-  - {fileID: 11400000, guid: f75ae9b776797954582370802d48cb0e, type: 2}
-  requirementsMessage: Just and empty can
+  - {fileID: 11400000, guid: f18f7e0a573a9ef45bbd1b9976866b88, type: 2}
+  requirementsMessage: You need something thin and solid to rotate the thermostat's
+    broken knob.
   interactionMessages:
-  - Insert Soda Can
+  - Thermostat
   activatesUI: 0
-  holdingObject: {fileID: 4490522552082893936, guid: ea5c903267804c847bb341c919ca8771, type: 3}
+  holdingObject: {fileID: 0}

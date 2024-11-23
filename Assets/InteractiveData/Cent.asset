@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
-  m_Name: SodaCan4
+  m_Name: Cent
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
-  inventoryName: Empty Soda Can
-  inventoryIcon: {fileID: 21300000, guid: a82d582ea9003b944b85c3b65d76ccb0, type: 3}
-  requirements:
-  - {fileID: 11400000, guid: f75ae9b776797954582370802d48cb0e, type: 2}
-  requirementsMessage: Just and empty can
+  inventoryName: Cent
+  inventoryIcon: {fileID: 21300000, guid: f8f19ff129a9f9f44893c8e8af06048d, type: 3}
+  requirements: []
+  requirementsMessage: 
   interactionMessages:
-  - Insert Soda Can
+  - "It\xB4s a Cent"
   activatesUI: 0
-  holdingObject: {fileID: 4490522552082893936, guid: ea5c903267804c847bb341c919ca8771, type: 3}
+  holdingObject: {fileID: 1620185913566760650, guid: 1320d94da90b36a498d414236889e2dc, type: 3}

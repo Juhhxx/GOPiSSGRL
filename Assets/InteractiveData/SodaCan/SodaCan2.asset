@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
-  m_Name: UVLight
+  m_Name: SodaCan2
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
-  inventoryName: UV Light
-  inventoryIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  inventoryName: Empty Soda Can
+  inventoryIcon: {fileID: 21300000, guid: a82d582ea9003b944b85c3b65d76ccb0, type: 3}
   requirements: []
-  requirementsMessage: 
+  requirementsMessage: Just and empty can
   interactionMessages:
-  - UV Light Keychain
+  - Insert Soda Can
   activatesUI: 0
-  holdingObject: {fileID: 6254428155093533783, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+  holdingObject: {fileID: 4490522552082893936, guid: ea5c903267804c847bb341c919ca8771, type: 3}
