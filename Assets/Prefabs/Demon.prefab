@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475f0d694f101c74a9785d78b122b53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterSpeech: {fileID: 0}
 --- !u!1 &1895594788601240279
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,9 +248,9 @@ GameObject:
   - component: {fileID: 497938310963606314}
   - component: {fileID: 6000329693879274823}
   - component: {fileID: 865463374928436883}
+  - component: {fileID: 3431115932942895854}
   - component: {fileID: 6675843043076270086}
   - component: {fileID: 4592372995109023562}
-  - component: {fileID: 3431115932942895854}
   - component: {fileID: 8824249192161168472}
   - component: {fileID: 7870365593948039548}
   - component: {fileID: 5600788499183063828}
@@ -318,6 +319,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3431115932942895854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2900693912571390191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c3a2216167f394b99d070c98f43e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _correctCombination: 00000000010000000300000002000000
+  _correctSpeech: {fileID: 5600788499183063828}
+  _wrongSpeech: {fileID: 7870365593948039548}
 --- !u!114 &6675843043076270086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,21 +363,6 @@ MonoBehaviour:
   _playerInventory: {fileID: 0}
   _itemPrefab:
   - {fileID: 0}
---- !u!114 &3431115932942895854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2900693912571390191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05c3a2216167f394b99d070c98f43e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _correcrCombination: 00000000010000000300000002000000
-  _correctSpeech: {fileID: 5600788499183063828}
-  _wrongSpeech: {fileID: 7870365593948039548}
 --- !u!114 &8824249192161168472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,3 +407,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475f0d694f101c74a9785d78b122b53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterSpeech: {fileID: 6034252109690154704}

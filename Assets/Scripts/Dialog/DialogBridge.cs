@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class DialogBridge : MonoBehaviour
 {
-    private CharacterSpeech _characterSpeech;
+    [SerializeField] private CharacterSpeech _characterSpeech;
 
     private void Awake()
     {
-        _characterSpeech = GetComponentInParent<CharacterSpeech>();
+        if (_characterSpeech == null)
+            _characterSpeech = GetComponentInParent<CharacterSpeech>();
     }
 
     public void StartDialog() => _characterSpeech.StartSpeech();

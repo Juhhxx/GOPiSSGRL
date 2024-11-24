@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c3a2216167f394b99d070c98f43e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _correcrCombination: 00000000010000000300000002000000
+  _correctCombination: 
   _correctSpeech: {fileID: 0}
   _wrongSpeech: {fileID: 0}
 --- !u!114 &507703405
