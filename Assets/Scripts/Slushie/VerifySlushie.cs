@@ -8,6 +8,8 @@ public class VerifySlushie : MonoBehaviour
     private SlushieCup _slushieCup;
     private GiveItem _giveItem;
     private TakeItem _takeItem;
+    [SerializeField] private DialogBridge _correctSpeech;
+    [SerializeField] private CharacterSpeech _wrongSpeech;
 
     private void Start()
     {
@@ -18,19 +20,20 @@ public class VerifySlushie : MonoBehaviour
     }
     public void Verify()
     {
-        _slushieCup.ResetFlavours();
-        _slushieCup.ResetPosition();
-
         if (!_slushieCup.CompareSlushies(_correcrCombination))
         {
             Debug.Log("NOT RIGTH!!");
             _interactive.ResetRequirements();
+            _wrongSpeech.StartSpeech();
         }
         else
         {
             Debug.Log("YOU PASSED!");
             _giveItem.GiveItemToPlayer();
             _takeItem.TakeItemFromPlayer();
+            _correctSpeech.NextDialog();
         }
+        _slushieCup.ResetFlavours();
+        _slushieCup.ResetPosition();
     }
 }

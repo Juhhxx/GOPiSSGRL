@@ -35,7 +35,7 @@ public class CharacterSpeech : MonoBehaviour
         }
     }
 
-    public void StartDialog()
+    public void StartSpeech()
     {
         Debug.Log("talking");
         if (_stop) return;
@@ -49,13 +49,13 @@ public class CharacterSpeech : MonoBehaviour
             _dialogQueues.Enqueue(updatedQueue);
         }
     }
-    public void NextDialog()
+    public void NextSpeech()
     {
         if (_dialogQueues.Count > 1)
             _dialogQueues.Dequeue();
     }
 
-    public void StopDialog()
+    public void StopSpeech()
     {
         _stop = true;
     }

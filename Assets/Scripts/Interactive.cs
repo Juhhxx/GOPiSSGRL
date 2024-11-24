@@ -79,23 +79,20 @@ public class Interactive : MonoBehaviour
 
     public void Interact()
     {
+        bool select = false;
+
         if (_requirementsMet)
             InteractSelf(true);
         else if (PlayerHasRequirementSelected())
         {
+            select = true;
             UseRequirementFromInventory();
             if (_requirementsMet)
                 InteractSelf(true);
         }
 
-        if (gameObject.activeSelf)
-            StartCoroutine(WaitToTalk());
-    }
-
-    private IEnumerator WaitToTalk()
-    {
-        yield return new WaitForSeconds(0.8f);
-        PlayAnimation("Talk");
+        if (!select || _requirementsMet)
+            PlayAnimation("Talk");
     }
 
     private void InteractSelf(bool direct)

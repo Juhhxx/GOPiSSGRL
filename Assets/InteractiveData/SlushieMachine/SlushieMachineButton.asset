@@ -16,8 +16,7 @@ MonoBehaviour:
   startsOn: 1
   inventoryName: 
   inventoryIcon: {fileID: 0}
-  requirements:
-  - {fileID: 11400000, guid: 4a1a64d493cbc8147ab9327eae75e5c5, type: 2}
+  requirements: []
   requirementsMessage: Machine is broken
   interactionMessages:
   - Make Slushie
