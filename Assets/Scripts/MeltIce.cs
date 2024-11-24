@@ -4,7 +4,7 @@ using UnityEngine;
 public class MeltIce : MonoBehaviour
 {
     [SerializeField] private RotateWhenHolding _thermostat;
-    [SerializeField] private float _maxTemp;
+    [SerializeField] private float _minTemp;
     private Animator _animator;
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class MeltIce : MonoBehaviour
     {
         while (true)
         {
-            if (_thermostat.GetCurrentValue() < _maxTemp)
+            if (_thermostat.GetCurrentValue() > _minTemp)
             {
                 _animator.SetTrigger("Melt");
                 break;

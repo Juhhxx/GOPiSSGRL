@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6375157369230977509}
   - component: {fileID: 1341417517959139849}
   - component: {fileID: 992944407165670193}
+  - component: {fileID: 779064868817676020}
   m_Layer: 0
   m_Name: Ice
   m_TagString: Untagged
@@ -146,3 +147,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _thermostat: {fileID: 0}
   _maxTemp: 32
+--- !u!114 &779064868817676020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6760997487090471716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200d4b7f1039828448d461f83221465a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactiveData: {fileID: 11400000, guid: 5f902a5b2fb4bd14e9946ea6cc1cd8b9, type: 2}
+  isOn: 0
