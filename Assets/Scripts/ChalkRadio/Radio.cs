@@ -45,6 +45,6 @@ public class Radio : MonoBehaviour
     }  
     private void ChangeAudioVolumeDistance (float distance)
     {
-        _audioSource.volume = 1 - distance/10;
+        _audioSource.volume = 1 - distance/100;
     }
 }
