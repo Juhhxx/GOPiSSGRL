@@ -63,7 +63,10 @@ public class PlayerInventory : MonoBehaviour
         if (index != -1)
         {
             if (_currentHoldingObject != null)
+            {
                 Destroy(_currentHoldingObject);
+                _currentHoldingObject = null;
+            }
 
             if (_inventory[index].holdingObject != null)
                 _currentHoldingObject = Instantiate(_inventory[index].holdingObject,_holdingCamera.transform);

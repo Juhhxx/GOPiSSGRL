@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8125471443157977451}
   - component: {fileID: 5289171792109723695}
   - component: {fileID: 3158953714683533290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RadioHolding
   m_TagString: Untagged
   m_Icon: {fileID: 0}

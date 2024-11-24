@@ -6,7 +6,7 @@ public class GiveItem : MonoBehaviour
     [SerializeField] private PlayerInventory _playerInventory;
     [SerializeField] private List<GameObject> _itemPrefab;
 
-    public void GiveCoinsToPlayer()
+    public void GiveItemToPlayer()
     {
         foreach (GameObject item in _itemPrefab)
         {

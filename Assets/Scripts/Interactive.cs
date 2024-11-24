@@ -179,4 +179,8 @@ public class Interactive : MonoBehaviour
 
         CheckRequirements();
     }
+    public void ResetRequirements()
+    {
+        _requirementsMet = false;
+    }
 }

@@ -16,8 +16,9 @@ MonoBehaviour:
   startsOn: 1
   inventoryName: 
   inventoryIcon: {fileID: 0}
-  requirements: []
-  requirementsMessage: Nachine is broken
+  requirements:
+  - {fileID: 11400000, guid: 4a1a64d493cbc8147ab9327eae75e5c5, type: 2}
+  requirementsMessage: Machine is broken
   interactionMessages:
   - Make Slushie
   activatesUI: 0

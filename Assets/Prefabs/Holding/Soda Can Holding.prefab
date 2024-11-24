@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3696943080472186543}
   - component: {fileID: 2291118296656993458}
   - component: {fileID: 8133074093619741710}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5257258021083750771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Soda Can Holding
   m_TagString: Untagged
   m_Icon: {fileID: 0}

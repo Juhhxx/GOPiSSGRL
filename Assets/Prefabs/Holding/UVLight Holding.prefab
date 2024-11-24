@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3781712140826794166}
   - component: {fileID: 7760296386154615471}
   - component: {fileID: 7409247017715768428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UVLight Holding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 5799791903180097310}
   - component: {fileID: 9058369203384256663}
   - component: {fileID: 3227954069382076911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 8740447243558821274}
   - component: {fileID: 7815109615235755782}
   - component: {fileID: 7780294423978363174}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 7498923469491502886}
   - component: {fileID: 4148921843041327845}
   - component: {fileID: 5411814865026547448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight Rebound
   m_TagString: Untagged
   m_Icon: {fileID: 0}

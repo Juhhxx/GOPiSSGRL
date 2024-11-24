@@ -20,6 +20,5 @@ MonoBehaviour:
   requirementsMessage: 
   interactionMessages:
   - Place Cup
-  - Take Cup
   activatesUI: 0
   holdingObject: {fileID: 0}
