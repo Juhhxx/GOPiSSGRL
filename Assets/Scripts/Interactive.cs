@@ -68,8 +68,10 @@ public class Interactive : MonoBehaviour
     private bool PlayerHasRequirementSelected()
     {
         foreach (Interactive requirement in _requirements)
+        {
             if (_playerInventory.IsSelected(requirement))
                 return true;
+        }
 
         Debug.Log("Not holding requirement");
         return false;

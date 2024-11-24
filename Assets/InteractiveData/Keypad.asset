@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
-  m_Name: UVLightAD
+  m_Name: Keypad
   m_EditorClassIdentifier: 
-  type: 2
+  type: 3
   startsOn: 1
   inventoryName: 
   inventoryIcon: {fileID: 0}
   requirements: []
   requirementsMessage: 
   interactionMessages:
-  - Seams cheap
+  - The Keypad to the Freezer
   activatesUI: 0
   holdingObject: {fileID: 0}

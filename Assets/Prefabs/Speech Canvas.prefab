@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 6782592296207876110}
   - component: {fileID: 7770210473146047700}
   - component: {fileID: 1425293327273140028}
+  - component: {fileID: 6911508633855204063}
   m_Layer: 5
   m_Name: Speech Canvas
   m_TagString: Untagged
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 255
 --- !u!114 &7770210473146047700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +157,6 @@ MonoBehaviour:
   _dialogText: {fileID: 8788129303869717857}
   _typingSpeed: 0.03
   _inventoryUI: {fileID: 0}
-  _player: {fileID: 0}
   _audioSource: {fileID: 1425293327273140028}
   _audioMixer: {fileID: 24100000, guid: d6a7eb20652649e4fb0bce4591c372e6, type: 2}
   _pitchRange: {x: 0.8, y: 1.4}
@@ -258,6 +258,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!225 &6911508633855204063
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585745117597744600}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &4670189018614277161
 GameObject:
   m_ObjectHideFlags: 0

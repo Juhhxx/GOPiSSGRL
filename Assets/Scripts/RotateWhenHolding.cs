@@ -4,21 +4,34 @@ using UnityEngine.UIElements.Experimental;
 
 public class RotateWhenHolding : MonoBehaviour
 {
+    
+    [SerializeField] private GameObject _holdingCamera;
+    [SerializeField] private InteractiveData _UVLightData;
+    private PlayerInventory _playerInventory;
+    private PlayerInteraction _playerInteraction;
+    private PlayerMovement _playerMovement;
     [SerializeField] private float _sensitivity;
     [SerializeField] private float _minValue;
     [SerializeField] private float _maxValue;
     [SerializeField] private float _minRotation;
     [SerializeField] private float _maxRotation;
-    private PlayerMovement _player;
     private Vector3 _currentRotation;
     private float _mouseMovement;
 
     /// <summary>
-    /// Start just gets the initial rotation, but first clamps to the min and max rotations
+    /// Gets the initial rotation, but first clamps to the min and max rotations
     /// </summary>
-    private void Start()
+    private void Awake()
     {
-        _player = FindFirstObjectByType<PlayerMovement>();
+        _playerMovement = FindFirstObjectByType<PlayerMovement>();
+        _playerInventory = FindFirstObjectByType<PlayerInventory>();
+        _playerInteraction = FindFirstObjectByType<PlayerInteraction>();
+
+        Debug.Log($"playerInv: {_playerInventory.name}");
+
+        if (_playerMovement == null || _playerInventory == null ||
+            _playerInteraction == null || _holdingCamera == null)
+                gameObject.SetActive(false);
         
         _currentRotation = transform.localRotation.eulerAngles;
 
@@ -27,45 +40,42 @@ public class RotateWhenHolding : MonoBehaviour
         // Debug.Log(initRotation.z);
         
         transform.localRotation = Quaternion.Euler(_currentRotation);
-
-        enabled = false;
     }
-
-    /// <summary>
-    /// Make sure PlayerMovement is enabled even if, for example, the player
-    /// changes inventory item, and this script is disabled.
-    /// </summary>
-    private void OnDisable()
+    public void EnableRotation()
     {
-        EnableMovement();
-    }
+        if ( _playerInventory.GetSelected() != null &&
+            _playerInventory.GetSelected().interactiveData == _UVLightData)
+                _holdingCamera.SetActive(false);
+        
+        _playerMovement.enabled = false;
+        _playerInteraction.enabled = false;
+        _playerInventory.enabled = false;
 
-    private void Update()
-    {
-        DisableMovement();
-        RotateWithMouse();
-        EnableMovement();
+        /*Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;*/
     }
     /// <summary>
     /// Disables player movement if the interact key was held.
     /// </summary>
-    private void EnableMovement()
+    public void DisableRotation()
     {
-        if (!Input.GetButtonUp("Use")) return;
-        _player.enabled = true;
+        if ( _playerInventory.GetSelected() != null &&
+            _playerInventory.GetSelected().interactiveData == _UVLightData)
+                _holdingCamera.SetActive(true);
+        
+        _playerMovement.enabled = true;
+        _playerInteraction.enabled = true;
+        _playerInventory.enabled = true;
+
         enabled = false;
+
         /*Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;*/
     }
-    /// <summary>
-    /// Disables player movement if the interact key was released.
-    /// </summary>
-    private void DisableMovement()
+
+    private void Update()
     {
-        if (!Input.GetButtonDown("Use")) return;
-        _player.enabled = false;
-        /*Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;*/
+        RotateWithMouse();
     }
 
     /// <summary>
@@ -76,16 +86,13 @@ public class RotateWhenHolding : MonoBehaviour
     ///</summary>
     private void RotateWithMouse()
     {
-        if (Input.GetButton("Use"))
-        {
-            _mouseMovement = Input.GetAxis("Mouse X") * _sensitivity;
-            
-            _currentRotation.z += _mouseMovement;
-            // Debug.Log($"rotation z : {_currentRotation.z}");
-            _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);
+        _mouseMovement = Input.GetAxis("Mouse X") * _sensitivity;
+        
+        _currentRotation.z += _mouseMovement;
+        // Debug.Log($"rotation z : {_currentRotation.z}");
+        _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);
 
-            transform.localRotation = Quaternion.Euler(_currentRotation);
-        }
+        transform.localRotation = Quaternion.Euler(_currentRotation);
     }
 
     /// <summary>

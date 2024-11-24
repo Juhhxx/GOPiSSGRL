@@ -9,18 +9,29 @@ using UnityEngine.UI;
 
 public class KeypadControl : MonoBehaviour
 {
+    [SerializeField] private Animator _doorAnimator;
+    [SerializeField] private GameObject _ui;
+    [SerializeField] private GameObject _holdingCamera;
+    [SerializeField] private InteractiveData _UVLightData;
+    [SerializeField] private GameObject _keypadUI;
     [SerializeField] private TMP_Text _keypadText;
     [SerializeField] private RawImage _keypadGlitchImage;
+    [SerializeField] private List<GameObject> _buttonsZeroToNine;
     [SerializeField] private int[] _sequence = new int[10] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     [SerializeField, Range(1, 10)] private int _combinationSize;
     [SerializeField] private List<int> _correctCombination;
+    [SerializeField] private Material _uvMaterial;
+    [SerializeField] private Texture[] _uvTextures;
     private Stack<int> _currentCombination;
+    private PlayerMovement _playerMovement;
+    private PlayerInteraction _playerInteraction;
+    private PlayerInventory _playerInventory;
 
     // initializes needed collections and sets objects to their needed initial values
     // Generates _combinationSize x of non repeating numbers and orders them by
     // the order of sequence, themn gives them to correctCombination
     // It turns off the keypad UI after its finished initializing everything
-    private void Start()
+    private void Awake()
     {
         Color color = _keypadGlitchImage.color;
         color.a = 0f;
@@ -46,14 +57,44 @@ public class KeypadControl : MonoBehaviour
             }
         }
 
-        gameObject.SetActive(false);
+        RevealUnderUVLight _uv;
+        int ran;
+        for (int i = 0; i < _buttonsZeroToNine.Count; i++)
+        {
+            if (_correctCombination.Contains(i))
+            {
+                _uv = _buttonsZeroToNine[i].AddComponent<RevealUnderUVLight>();
+                ran = Random.Range(0, _uvTextures.Length);
+                _uv.SetMaterialAndTexture(_uvMaterial, _uvTextures[ran]);
+            }
+        }
+    }
+    private void Start()
+    {
+        _playerMovement = FindFirstObjectByType<PlayerMovement>();
+        _playerInteraction = FindFirstObjectByType<PlayerInteraction>();
+        _playerInventory = FindFirstObjectByType<PlayerInventory>();
+
+        if (_playerMovement == null || _playerInteraction == null || _playerInventory == null)
+            gameObject.SetActive(false);
+
+        _keypadUI.SetActive(false);
+        enabled = false;
     }
 
     // TMP_text component isnt letting me set it directly on enable so i have an
     // Enumerator to tell me if TMP already exists.
-    private void OnEnable()
+    public void EnableKeypad()
     {
+        if ( _playerInventory.GetSelected() != null &&
+            _playerInventory.GetSelected().interactiveData == _UVLightData)
+                _holdingCamera.SetActive(false);
+        _keypadUI.SetActive(true);
+        _playerInteraction.enabled = false;
+        _playerMovement.enabled = false;
+        _ui.SetActive(false);
         StartCoroutine(UpdateScreenIfText());
+        Cursor.lockState = CursorLockMode.None;
     }
     private IEnumerator UpdateScreenIfText()
     {
@@ -97,7 +138,14 @@ public class KeypadControl : MonoBehaviour
     // Turns off keypad UI when the player presses the X button
     public void TurnOffKeypadUI()
     {
-        gameObject.SetActive(false);
+        if ( _playerInventory.GetSelected() != null &&
+            _playerInventory.GetSelected().interactiveData == _UVLightData)
+                _holdingCamera.SetActive(true);
+        _keypadUI.SetActive(false);
+        _playerInteraction.enabled = true;
+        _playerMovement.enabled = true;
+        _ui.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // First, if the current combination is not complete, it returns
@@ -145,6 +193,10 @@ public class KeypadControl : MonoBehaviour
         }
         
         _keypadText.enabled = true;
+
+        _doorAnimator.SetTrigger("Open");
+        TurnOffKeypadUI();
+        enabled = false;
     }
 
     // This method is called when the keypad is updated.

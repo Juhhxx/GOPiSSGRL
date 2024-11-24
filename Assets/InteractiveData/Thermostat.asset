@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
-  m_Name: ThermostatRotate
+  m_Name: Thermostat
   m_EditorClassIdentifier: 
   type: 2
   startsOn: 1
   inventoryName: 
   inventoryIcon: {fileID: 0}
-  requirements: []
-  requirementsMessage: 
+  requirements:
+  - {fileID: 11400000, guid: f18f7e0a573a9ef45bbd1b9976866b88, type: 2}
+  requirementsMessage: Needs a Thin and Solid object to rotate the broken knob.
   interactionMessages:
   - Thermostat
+  - Hold to Chnage Temp
   activatesUI: 0
   holdingObject: {fileID: 0}

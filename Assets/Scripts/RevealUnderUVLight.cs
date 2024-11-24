@@ -8,6 +8,12 @@ public class RevealUnderUVLight : MonoBehaviour
     [SerializeField] private Texture _uvTexture;
     private MeshRenderer _meshRenderer;
 
+    public void SetMaterialAndTexture(Material mat, Texture tex)
+    {
+        _uvMaterialToInstantiate = mat;
+        _uvTexture = tex;
+    }
+
     private void Start()
     {
         // If the uv material and uv light isnt referenced or cant be found we just disable it.
