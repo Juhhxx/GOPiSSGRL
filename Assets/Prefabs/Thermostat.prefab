@@ -167,7 +167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2569458326175969765}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40952492, y: 0.9122989, z: 0, w: 0}
+  m_LocalRotation: {x: -0.13182385, y: 0.9912732, z: -0, w: 0}
   m_LocalPosition: {x: -4.349804, y: 8.864201, z: -8.46138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -175,7 +175,7 @@ Transform:
   - {fileID: 4475898212880663639}
   - {fileID: 7198339599198362976}
   m_Father: {fileID: 1760234135909434334}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 48.35}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -15.15}
 --- !u!114 &3306534099066518147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,8 +191,8 @@ MonoBehaviour:
   _holdingCamera: {fileID: 0}
   _UVLightData: {fileID: 11400000, guid: ca230b9d04f55c5448f893f26b016774, type: 2}
   _sensitivity: 3
-  _minValue: 32
-  _maxValue: 212
+  _minValue: 22
+  _maxValue: 222
   _minRotation: -120
   _maxRotation: 45
 --- !u!1 &2666555460678395557

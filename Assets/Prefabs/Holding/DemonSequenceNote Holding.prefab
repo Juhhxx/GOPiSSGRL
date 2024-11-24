@@ -99,5 +99,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 200d4b7f1039828448d461f83221465a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveData: {fileID: 0}
+  _interactiveData: {fileID: 11400000, guid: 8cca491d6bbf8204b947c65f638efc80, type: 2}
   isOn: 0

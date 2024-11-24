@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _thermostat: {fileID: 0}
-  _maxTemp: 32
+  _minTemp: 212
 --- !u!114 &779064868817676020
 MonoBehaviour:
   m_ObjectHideFlags: 0
