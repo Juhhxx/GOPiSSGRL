@@ -87,11 +87,9 @@ public class Interactive : MonoBehaviour
         {
             select = true;
             UseRequirementFromInventory();
-            if (_requirementsMet)
-                InteractSelf(true);
         }
 
-        if (!select || _requirementsMet)
+        if ((!select || _requirementsMet) && !IsType(InteractiveData.Type.Pickable))
             PlayAnimation("Talk");
     }
 
@@ -109,6 +107,7 @@ public class Interactive : MonoBehaviour
 
     private void PickUpInteractive()
     {
+        Debug.Log($"Picking up {gameObject.name}");
         _playerInventory.Add(this);
         gameObject.SetActive(false);
     }
@@ -159,6 +158,7 @@ public class Interactive : MonoBehaviour
  
     private void PlayAnimation(string animation)
     {
+        Debug.Log($"{gameObject.name} is doing animation {animation}");
         if (_animator != null)
         {
             gameObject.SetActive(true);

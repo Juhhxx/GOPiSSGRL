@@ -1,11 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RotateBridge : MonoBehaviour
 {
     [SerializeField] private RotateWhenHolding _rotate;
+    [SerializeField] private bool _disableOnBegin;
     private void OnEnable()
     {
-        _rotate.enabled = false;
+        if (_disableOnBegin) _rotate.enabled = false;
     }
     public void EnableRotation()
     {
@@ -20,5 +22,9 @@ public class RotateBridge : MonoBehaviour
     {
         if (Input.GetButton("Use") || _rotate.enabled == false) return;
         _rotate.DisableRotation();
+    }
+    public float GetCurrentValue()
+    {
+        return _rotate.GetCurrentValue();
     }
 }

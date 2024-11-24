@@ -7,6 +7,7 @@ public class RotateWhenHolding : MonoBehaviour
     
     [SerializeField] private GameObject _holdingCamera;
     [SerializeField] private InteractiveData _UVLightData;
+    [SerializeField] private bool _freezePlayer = true;
     private PlayerInventory _playerInventory;
     private PlayerInteraction _playerInteraction;
     private PlayerMovement _playerMovement;
@@ -29,8 +30,9 @@ public class RotateWhenHolding : MonoBehaviour
 
         Debug.Log($"playerInv: {_playerInventory.name}");
 
-        if (_playerMovement == null || _playerInventory == null ||
-            _playerInteraction == null || _holdingCamera == null)
+        if (_freezePlayer)
+            if (_playerMovement == null || _playerInventory == null ||
+                _playerInteraction == null || _holdingCamera == null)
                 gameObject.SetActive(false);
         
         _currentRotation = transform.localRotation.eulerAngles;
@@ -43,13 +45,17 @@ public class RotateWhenHolding : MonoBehaviour
     }
     public void EnableRotation()
     {
-        if ( _playerInventory.GetSelected() != null &&
-            _playerInventory.GetSelected().interactiveData == _UVLightData)
-                _holdingCamera.SetActive(false);
+        if (_holdingCamera != null)
+            if ( _playerInventory.GetSelected() != null &&
+                _playerInventory.GetSelected().interactiveData == _UVLightData)
+                    _holdingCamera.SetActive(false);
         
-        _playerMovement.enabled = false;
-        _playerInteraction.enabled = false;
-        _playerInventory.enabled = false;
+        if (_freezePlayer)
+        {
+            _playerMovement.enabled = false;
+            _playerInteraction.enabled = false;
+            _playerInventory.enabled = false;
+        }
 
         /*Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;*/
@@ -59,13 +65,17 @@ public class RotateWhenHolding : MonoBehaviour
     /// </summary>
     public void DisableRotation()
     {
-        if ( _playerInventory.GetSelected() != null &&
-            _playerInventory.GetSelected().interactiveData == _UVLightData)
-                _holdingCamera.SetActive(true);
+        if (_holdingCamera != null)
+            if ( _playerInventory.GetSelected() != null &&
+                _playerInventory.GetSelected().interactiveData == _UVLightData)
+                    _holdingCamera.SetActive(true);
         
-        _playerMovement.enabled = true;
-        _playerInteraction.enabled = true;
-        _playerInventory.enabled = true;
+        if (_freezePlayer)
+        {
+            _playerMovement.enabled = true;
+            _playerInteraction.enabled = true;
+            _playerInventory.enabled = true;
+        }
 
         enabled = false;
 

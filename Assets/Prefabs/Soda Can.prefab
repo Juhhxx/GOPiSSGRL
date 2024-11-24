@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6193986232053815531}
   - component: {fileID: 6190727191176223971}
   - component: {fileID: 7336198980173405000}
-  - component: {fileID: 6022509875087771152}
+  - component: {fileID: 5093422834919321465}
   m_Layer: 0
   m_Name: Soda Can
   m_TagString: Untagged
@@ -177,9 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 200d4b7f1039828448d461f83221465a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveData: {fileID: 11400000, guid: 1a19ade76fd88574a81e10716419f6a1, type: 2}
+  _interactiveData: {fileID: 11400000, guid: b7fc04003acf1dc44b249937fc4b0dc7, type: 2}
   isOn: 0
---- !u!114 &6022509875087771152
+--- !u!114 &5093422834919321465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,4 +192,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 0}
-  _itemPrefab: {fileID: 0}
+  _itemPrefab:
+  - {fileID: 0}

@@ -51,6 +51,7 @@ public class InteractionManager : MonoBehaviour
                 Interactive requirement = FindInteractive(requirementData);
                 Debug.Log($"Loading requirement: {requirementData.name}");
                 interactive.AddRequirement(requirement);
+                Debug.Log($"Adding {interactive.gameObject.name} as dependent of {requirementData.name}");
                 requirement.AddDependent(interactive);
             }
         }
