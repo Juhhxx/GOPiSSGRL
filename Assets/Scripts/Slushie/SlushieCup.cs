@@ -31,6 +31,9 @@ public class SlushieCup : MonoBehaviour
     }
     public bool CompareSlushies(List<Flavours> ohterSlushie)
     {
+        if (_slushieFlavours.Count != ohterSlushie.Count)
+            return false;
+        
         for (int i = 0; i < _slushieFlavours.Count; i++)
         {
             if (_slushieFlavours[i] != ohterSlushie[i])
