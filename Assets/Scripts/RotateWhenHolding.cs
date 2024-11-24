@@ -102,9 +102,14 @@ public class RotateWhenHolding : MonoBehaviour
     /// </summary>
     /// <returns> Returns the value of same percentage as current rotation
     /// between mins and maxs.</returns>
-    public float TranslateRotationIntoValue()
+    private float TranslateRotationIntoValue()
     {
         float rotationRatio = (_currentRotation.z - _minRotation) / (_maxRotation - _minRotation);
         return Mathf.Lerp(_minValue, _maxValue, rotationRatio);
+    }
+
+    public float GetCurrentValue()
+    {
+        return TranslateRotationIntoValue();
     }
 }

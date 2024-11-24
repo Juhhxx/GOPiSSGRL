@@ -1448,6 +1448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2214414563523711476}
   - component: {fileID: 8705613527280737249}
+  - component: {fileID: 8481062864605373861}
   m_Layer: 0
   m_Name: Freezer_Door
   m_TagString: Untagged
@@ -1493,3 +1494,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8481062864605373861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963311155118416760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af8c95ddf3f52049885f4b82cb3761e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

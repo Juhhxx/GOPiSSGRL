@@ -49,6 +49,7 @@ public class InteractionManager : MonoBehaviour
             foreach (InteractiveData requirementData in interactive.interactiveData.requirements)
             {
                 Interactive requirement = FindInteractive(requirementData);
+                Debug.Log($"Loading requirement: {requirementData.name}");
                 interactive.AddRequirement(requirement);
                 requirement.AddDependent(interactive);
             }

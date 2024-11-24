@@ -184,7 +184,7 @@ public class KeypadControl : MonoBehaviour
     {
         // Maybe send the confirmation of correctness back to the door and a nice correct beepy sound
 
-        WaitForSeconds wfs = new WaitForSeconds(0.4f);
+        WaitForSeconds wfs = new WaitForSeconds(0.1f);
         
         for (int i = 0; i <= 6 ; i++)
         {
