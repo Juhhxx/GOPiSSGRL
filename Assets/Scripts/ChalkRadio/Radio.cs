@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -26,17 +27,19 @@ public class Radio : MonoBehaviour
     private void Update()
     {
         // _frequency = _rotateBridge.GetCurrentValue();
-        _frequencyDisplay.text = $"{_frequency:000:f1} MHz";
+        _frequencyDisplay.text = $"{_frequency:f1} MHz";
         CheckFrequency();
     }
     
     private void CheckFrequency()
     {
         int pointIndex;
-
-        if (_summonDemon.ChalkFrequencies.Contains(_frequency))
+        float correctedFrequency = Mathf.Floor(_frequency);
+        Debug.Log($"Current Frequency: {correctedFrequency}");
+        if (_summonDemon.ChalkFrequencies.Contains(correctedFrequency))
         {
-                pointIndex = _summonDemon.ChalkFrequencies.IndexOf(_frequency);
+                pointIndex = _summonDemon.ChalkFrequencies.IndexOf(correctedFrequency);
+                Debug.Log(pointIndex);
                 DetectDistance(pointIndex);
         }
         else

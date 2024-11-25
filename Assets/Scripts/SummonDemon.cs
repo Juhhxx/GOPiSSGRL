@@ -13,7 +13,6 @@ public class SummonDemon : MonoBehaviour
     private List<float> _chalkFrequencies = new List<float>();
     public List<float> ChalkFrequencies => _chalkFrequencies;
     private ChalkDrawingPoint _finalPoint;
-    private bool _allMarksDone = false;
 
     private void Start()
     {
