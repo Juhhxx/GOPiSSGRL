@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -13,7 +14,7 @@ public class Radio : MonoBehaviour
     private Transform _playerTrans;
     private RotateBridge _rotateBridge;
     private AudioSource _audioSource;
-    private ChalkDrawingPoint[] _chalkPoints;
+    private List<ChalkDrawingPoint> _chalkPoints;
     private List<float> _chalkFrequencies = new List<float>();
     private ChalkDrawingPoint _finalPoint;
     private bool _allMarksDone;
@@ -24,7 +25,7 @@ public class Radio : MonoBehaviour
         _playerTrans = FindAnyObjectByType<PlayerMovement>().transform;
         _rotateBridge = GetComponent<RotateBridge>();
         _audioSource = GetComponent<AudioSource>();
-        _chalkPoints = FindObjectsByType<ChalkDrawingPoint>(0);
+        _chalkPoints = FindObjectsByType<ChalkDrawingPoint>(0).ToList<ChalkDrawingPoint>();
 
         _rotateBridge.EnableRotation();
         GetFinalPoint();
@@ -33,19 +34,21 @@ public class Radio : MonoBehaviour
     }
     private void Update()
     {
-        _frequency = _rotateBridge.GetCurrentValue();
+        // _frequency = _rotateBridge.GetCurrentValue();
         _frequencyDisplay.text = $"{_frequency:000} MHz";
         CheckFrequency();
         ShowLastFrequency();
         CheckPuzzleComplete();
     }
+    // PASS TO SUMMON DEMON
     private void GetFinalPoint()
     {
         foreach (ChalkDrawingPoint point in _chalkPoints)
             if (point.GetComponent<TAG_FinalChalkPoint>() != null)
             {
                 _finalPoint = point;
-                _finalPoint.gameObject.SetActive(false);
+                _chalkPoints.Remove(_finalPoint);
+                _finalPoint.gameObject.GetComponent<Collider>().enabled = false;
                 return;
             }
     }
@@ -74,6 +77,7 @@ public class Radio : MonoBehaviour
     {
         _audioSource.volume = 1 - distance/10;
     }
+    // PASS TO SUMMON DEMON
     private bool CheckMarksDone()
     {
         foreach (ChalkDrawingPoint point in _chalkPoints)
@@ -83,17 +87,18 @@ public class Radio : MonoBehaviour
         }
         return true;
     }
+    // PASS TO SUMMON DEMON
     private void ShowLastFrequency()
     {
         if (CheckMarksDone())
         {
             _necronomiconMeshR.material = _finalFrequencyMaterial;
-            _finalPoint.gameObject.SetActive(true);
-            Debug.Log("ALL CHALK MARKS DONE");
+            _finalPoint.gameObject.GetComponent<Collider>().enabled = false;
         }
     }
+    // PASS TO SUMMON DEMON
     private void CheckPuzzleComplete()
     {
-        if (_finalPoint.IsDrawn) _allMarksDone = true;
+        if (_finalPoint.IsDrawn) _allMarksDone = true; Debug.Log("ALL CHALK MARKS DONE");
     }
 }
