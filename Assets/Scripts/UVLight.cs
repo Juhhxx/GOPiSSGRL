@@ -9,6 +9,7 @@ public class UVLight : MonoBehaviour
     [SerializeField] private Material _uvMaterial;
     [SerializeField] private Sounds _sounds;
     [SerializeField] private AudioSource _audioSource;
+    private PlayerInteraction _playerInteraction;
     private Light _uvLight;
     private int _lightPositionID;
     private int _spotLightDirID;
@@ -76,9 +77,8 @@ public class UVLight : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (Input.GetButtonDown("Interact"))
+        if (Input.GetButtonDown("Interact") && (_playerInteraction.CurrentInteractive == null))
             ToggleUVLight();
-
         if (isOn)
         {
             Shader.SetGlobalVector(_lightPositionID, _uvLight.transform.position);

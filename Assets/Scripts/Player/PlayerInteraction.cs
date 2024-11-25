@@ -9,6 +9,10 @@ public class PlayerInteraction : MonoBehaviour
     private Interactive _currentInteractive;
     private bool        _refreshCurrentInteractive;
 
+    
+    public Interactive CurrentInteractive => _currentInteractive;
+
+
     void Start()
     {
         _cameraTransform            = GetComponentInChildren<Camera>().transform;
