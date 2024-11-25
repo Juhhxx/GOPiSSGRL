@@ -15,8 +15,9 @@ MonoBehaviour:
   type: 0
   startsOn: 1
   inventoryName: Cent
-  inventoryIcon: {fileID: 21300000, guid: f8f19ff129a9f9f44893c8e8af06048d, type: 3}
+  inventoryIcon: {fileID: 21300000, guid: 804bc3441147dd140b5e20667bfc3b84, type: 3}
   requirements: []
+  deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
   - Use Cent

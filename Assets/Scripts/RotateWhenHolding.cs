@@ -6,9 +6,6 @@ public class RotateWhenHolding : MonoBehaviour
 {
     
     [SerializeField] private GameObject _holdingCamera;
-    [SerializeField] private InteractiveData _UVLightData;
-    [SerializeField] private bool _freezePlayer = true;
-    private PlayerInventory _playerInventory;
     private PlayerInteraction _playerInteraction;
     private PlayerMovement _playerMovement;
     [SerializeField] private float _sensitivity;
@@ -17,6 +14,7 @@ public class RotateWhenHolding : MonoBehaviour
     [SerializeField] private float _minRotation;
     [SerializeField] private float _maxRotation;
     private Vector3 _currentRotation;
+    [SerializeField] private float _visualizeCurrentRotationValue;
     private float _mouseMovement;
 
     /// <summary>
@@ -25,10 +23,7 @@ public class RotateWhenHolding : MonoBehaviour
     private void Awake()
     {
         _playerMovement = FindFirstObjectByType<PlayerMovement>();
-        _playerInventory = FindFirstObjectByType<PlayerInventory>();
         _playerInteraction = FindFirstObjectByType<PlayerInteraction>();
-
-        Debug.Log($"playerInv: {_playerInventory.name}");
         
         _currentRotation = transform.localEulerAngles;
 
@@ -41,16 +36,10 @@ public class RotateWhenHolding : MonoBehaviour
     public void EnableRotation()
     {
         if (_holdingCamera != null)
-            if ( _playerInventory.GetSelected() != null &&
-                _playerInventory.GetSelected().interactiveData == _UVLightData)
-                    _holdingCamera.SetActive(false);
+            _holdingCamera.SetActive(false);
         
-        if (_freezePlayer)
-        {
-            _playerMovement.enabled = false;
-            _playerInteraction.enabled = false;
-            _playerInventory.enabled = false;
-        }
+        _playerMovement.enabled = false;
+        _playerInteraction.enabled = false;
 
         /*Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;*/
@@ -61,16 +50,10 @@ public class RotateWhenHolding : MonoBehaviour
     public void DisableRotation()
     {
         if (_holdingCamera != null)
-            if ( _playerInventory.GetSelected() != null &&
-                _playerInventory.GetSelected().interactiveData == _UVLightData)
-                    _holdingCamera.SetActive(true);
+            _holdingCamera.SetActive(true);
         
-        if (_freezePlayer)
-        {
-            _playerMovement.enabled = true;
-            _playerInteraction.enabled = true;
-            _playerInventory.enabled = true;
-        }
+        _playerMovement.enabled = true;
+        _playerInteraction.enabled = true;
 
         enabled = false;
 
@@ -81,6 +64,7 @@ public class RotateWhenHolding : MonoBehaviour
     private void Update()
     {
         RotateWithMouse();
+        _visualizeCurrentRotationValue = TranslateRotationIntoValue();
     }
 
     /// <summary>

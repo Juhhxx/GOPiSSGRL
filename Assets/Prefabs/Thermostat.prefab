@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 8424672655977508098}
   - component: {fileID: 7255084488749568463}
   - component: {fileID: 3255601264782138154}
+  - component: {fileID: 8692245597115121407}
   m_Layer: 0
   m_Name: Thermostat
   m_TagString: Untagged
@@ -142,6 +143,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotate: {fileID: 3306534099066518147}
+  _disableOnBegin: 1
+--- !u!114 &8692245597115121407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245971598930148150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0447f849750704a8851c9f1bc71438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slushieButtons: []
+  _correctTemprature: 32
 --- !u!1 &2569458326175969765
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,8 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _holdingCamera: {fileID: 0}
-  _UVLightData: {fileID: 11400000, guid: ca230b9d04f55c5448f893f26b016774, type: 2}
-  _sensitivity: 3
+  _freezePlayer: 1
+  _sensitivity: 15
   _minValue: 22
   _maxValue: 222
   _minRotation: -120
