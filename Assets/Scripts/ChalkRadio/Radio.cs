@@ -11,23 +11,22 @@ public class Radio : MonoBehaviour
 {
     [SerializeField] private float _frequency;
     [SerializeField] private TextMeshPro _frequencyDisplay;
+    [SerializeField] private AudioClip[] _radioAudios;
     private Transform _playerTrans;
-    private RotateBridge _rotateBridge;
+    private RotateWhenHolding _rotateHolding;
     private AudioSource _audioSource;
     private SummonDemon _summonDemon;
 
     private void Start()
     {
         _playerTrans = FindAnyObjectByType<PlayerMovement>().transform;
-        _rotateBridge = GetComponent<RotateBridge>();
+        _rotateHolding = GetComponentInChildren<RotateWhenHolding>();
         _audioSource = GetComponent<AudioSource>();
         _summonDemon = FindAnyObjectByType<SummonDemon>();
-
-        _rotateBridge.EnableRotation();
     }
     private void Update()
     {
-        // _frequency = _rotateBridge.GetCurrentValue();
+        _frequency = _rotateHolding.GetCurrentValue();
         _frequencyDisplay.text = $"{_frequency:f1} MHz";
         CheckFrequency();
     }
@@ -42,9 +41,14 @@ public class Radio : MonoBehaviour
                 pointIndex = _summonDemon.ChalkFrequencies.IndexOf(correctedFrequency);
                 Debug.Log(pointIndex);
                 DetectDistance(pointIndex);
+                ChangeAudio(_radioAudios[1]);
         }
         else
+        {
+            ChangeAudio(_radioAudios[0]);
+            ChangeAudioVolumeDistance(0f);
             Debug.Log("No poins in this frequency");
+        }
     }
     private void DetectDistance(int index)
     {
@@ -66,6 +70,14 @@ public class Radio : MonoBehaviour
     private void ChangeAudioVolumeDistance (float distance)
     {
         _audioSource.volume = Mathf.InverseLerp(12f,0.5f,distance);
+    }
+    private void ChangeAudio(AudioClip audio)
+    {
+        if (audio != _audioSource.clip)
+        {
+            _audioSource.clip = audio;
+            _audioSource.Play();
+        }
     }
     
 }

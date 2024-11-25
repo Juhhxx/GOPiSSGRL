@@ -29,11 +29,6 @@ public class RotateWhenHolding : MonoBehaviour
         _playerInteraction = FindFirstObjectByType<PlayerInteraction>();
 
         Debug.Log($"playerInv: {_playerInventory.name}");
-
-        if (_freezePlayer)
-            if (_playerMovement == null || _playerInventory == null ||
-                _playerInteraction == null || _holdingCamera == null)
-                gameObject.SetActive(false);
         
         _currentRotation = transform.localRotation.eulerAngles;
 
@@ -96,7 +91,7 @@ public class RotateWhenHolding : MonoBehaviour
     ///</summary>
     private void RotateWithMouse()
     {
-        _mouseMovement = Input.GetAxis("Mouse X") * _sensitivity;
+        _mouseMovement = Input.GetAxis("Mouse ScrollWheel") * _sensitivity;
         
         _currentRotation.z += _mouseMovement;
         // Debug.Log($"rotation z : {_currentRotation.z}");

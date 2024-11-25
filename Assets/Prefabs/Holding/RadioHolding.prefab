@@ -541,14 +541,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3600487479822208412}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.777146, z: -0, w: 0.62932044}
-  m_LocalPosition: {x: 21.590504, y: 16.099995, z: 16.58976}
+  m_LocalRotation: {x: -0.7344123, y: 0.2541541, z: -0.5947155, w: 0.20580994}
+  m_LocalPosition: {x: 21.685629, y: 16.014454, z: 17.034878}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8768953837221407034}
   m_Father: {fileID: 4246050880731060683}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 102, z: -141.822}
 --- !u!114 &8158417631057144300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,7 +564,7 @@ MonoBehaviour:
   _holdingCamera: {fileID: 0}
   _UVLightData: {fileID: 0}
   _freezePlayer: 0
-  _sensitivity: 0.5
+  _sensitivity: 1
   _minValue: 30
   _maxValue: 400
   _minRotation: 0
@@ -1010,7 +1010,6 @@ GameObject:
   - component: {fileID: 765664391354720177}
   - component: {fileID: 5289171792109723695}
   - component: {fileID: 3158953714683533290}
-  - component: {fileID: 4624849696540326673}
   m_Layer: 6
   m_Name: RadioHolding
   m_TagString: Untagged
@@ -1049,6 +1048,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frequency: 100
   _frequencyDisplay: {fileID: 4052064660836428165}
+  _radioAudios:
+  - {fileID: 8300000, guid: 2d51feffef62dce4eaaeb99bc00e6377, type: 3}
+  - {fileID: 8300000, guid: 71120c4512ae87e459931b1480c24eb7, type: 3}
 --- !u!82 &3158953714683533290
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1146,20 +1148,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4624849696540326673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5072748983818107920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1934f57199bba6840b9bd96bb16cae4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotate: {fileID: 8158417631057144300}
-  _disableOnBegin: 1
 --- !u!1 &5829735989642020315
 GameObject:
   m_ObjectHideFlags: 0

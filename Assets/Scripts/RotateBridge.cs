@@ -7,7 +7,8 @@ public class RotateBridge : MonoBehaviour
     [SerializeField] private bool _disableOnBegin;
     private void OnEnable()
     {
-        if (_disableOnBegin) _rotate.enabled = false;
+        if (!_disableOnBegin) EnableRotation();
+        else DisableRotation();
     }
     public void EnableRotation()
     {
