@@ -25,7 +25,7 @@ public class SlushieCupPlacer : MonoBehaviour
         if (_takeItem.TakeItemFromPlayer(_cupInteractive))
         {
             _cup.gameObject.SetActive(true);
-            _cup.transform.position = transform.position + new Vector3(0f,0.2f,0f);
+            _cup.transform.position = transform.position + new Vector3(0f,0.15f,0f);
         }
     }
     private void ToggleCollider()

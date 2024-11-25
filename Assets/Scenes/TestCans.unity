@@ -141,6 +141,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slushie Cup
       objectReference: {fileID: 0}
+    - target: {fileID: 8024327346583814206, guid: a74a025d2a94a6a488777488d4522f41, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8024327346583814206, guid: a74a025d2a94a6a488777488d4522f41, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 77520d2e51bf8b74d8e22edfd617a0c7, type: 2}
     - target: {fileID: 8197757780432717654, guid: a74a025d2a94a6a488777488d4522f41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.273001
@@ -351,6 +359,10 @@ PrefabInstance:
       propertyPath: _holdingCamera
       value: 
       objectReference: {fileID: 728918244}
+    - target: {fileID: 8424672655977508098, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
+      propertyPath: _interactiveData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a1a64d493cbc8147ab9327eae75e5c5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2240,10 +2252,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 133954523}
     - target: {fileID: 107447257356275652, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
-      propertyPath: _itemPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 107447257356275652, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
       propertyPath: '_itemPrefabs.Array.data[0]'
       value: 
       objectReference: {fileID: 406578146}
@@ -2251,10 +2259,6 @@ PrefabInstance:
       propertyPath: _playerInventory
       value: 
       objectReference: {fileID: 133954523}
-    - target: {fileID: 1491125798758422526, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
-      propertyPath: _itemPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1491125798758422526, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
       propertyPath: '_itemPrefabs.Array.data[0]'
       value: 
@@ -2304,10 +2308,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 133954523}
     - target: {fileID: 7120260246967630222, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
-      propertyPath: _itemPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7120260246967630222, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
       propertyPath: '_itemPrefabs.Array.data[0]'
       value: 
       objectReference: {fileID: 406578146}
@@ -2315,10 +2315,6 @@ PrefabInstance:
       propertyPath: _playerInventory
       value: 
       objectReference: {fileID: 133954523}
-    - target: {fileID: 7737986802264143370, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
-      propertyPath: _itemPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7737986802264143370, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
       propertyPath: '_itemPrefabs.Array.data[0]'
       value: 
