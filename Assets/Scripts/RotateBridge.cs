@@ -5,6 +5,12 @@ public class RotateBridge : MonoBehaviour
 {
     [SerializeField] private RotateWhenHolding _rotate;
     [SerializeField] private bool _disableOnBegin;
+    private FixSlushieMachine _fixMachine;
+
+    private void Start()
+    {
+        _fixMachine = GetComponent<FixSlushieMachine>();
+    }
     private void OnEnable()
     {
         if (!_disableOnBegin) EnableRotation();
@@ -23,6 +29,7 @@ public class RotateBridge : MonoBehaviour
     {
         if (Input.GetButton("Use") || _rotate.enabled == false) return;
         _rotate.DisableRotation();
+        _fixMachine.CheckTemprature();
     }
     public float GetCurrentValue()
     {

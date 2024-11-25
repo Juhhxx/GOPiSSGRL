@@ -13,6 +13,7 @@ public class Interactive : MonoBehaviour
     private List<Interactive>   _interactables;
     private Animator            _animator;
     private bool                _requirementsMet;
+    public bool RequirementsMet => _requirementsMet;
     private int                 _interactionCount;
 
     public bool isOn;

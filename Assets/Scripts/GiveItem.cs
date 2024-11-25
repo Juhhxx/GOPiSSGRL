@@ -10,9 +10,13 @@ public class GiveItem : MonoBehaviour
     {
         foreach (GameObject item in _itemPrefab)
         {
-            Debug.Log($"{gameObject.name} is giving item");
             Interactive itemInteractive = item.GetComponent<Interactive>();
-            _playerInventory.Add(itemInteractive);
+
+            if (!_playerInventory.Contains(itemInteractive))
+            {
+                Debug.Log($"{gameObject.name} is giving item");
+                _playerInventory.Add(itemInteractive);
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ public class UVLight : MonoBehaviour
     private AudioClip _click;
     private void Start()
     {
+        _playerInteraction = FindAnyObjectByType<PlayerInteraction>();
         // If the spotlightobject and uv light arent referenced or cant be found,
         // the script won't work
         // So we just disable it.

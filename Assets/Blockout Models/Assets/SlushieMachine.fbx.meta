@@ -7,13 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Frozen white metal
+      name: Architectural Glass
+    second: {fileID: 2100000, guid: 30bdf0833009ae04f9b6f0e7523bcaa8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
     second: {fileID: 2100000, guid: 8b91fc2ad1035fd4b9a37eb4f95cf033, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass.001
-    second: {fileID: 2100000, guid: 30bdf0833009ae04f9b6f0e7523bcaa8, type: 2}
+      name: Metal scratched
+    second: {fileID: 2100000, guid: 8b91fc2ad1035fd4b9a37eb4f95cf033, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 8b91fc2ad1035fd4b9a37eb4f95cf033, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
