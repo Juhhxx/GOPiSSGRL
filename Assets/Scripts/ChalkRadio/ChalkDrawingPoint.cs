@@ -6,7 +6,7 @@ public class ChalkDrawingPoint : MonoBehaviour
     public float PointFrequency => _pointFrequency;
     [SerializeField] float _maxDetectDistance = 0.4f;
     private SphereCollider _collider;
-    private bool _isDrawn;
+    private bool _isDrawn = false;
     public bool IsDrawn => _isDrawn;
 
     private void Start()

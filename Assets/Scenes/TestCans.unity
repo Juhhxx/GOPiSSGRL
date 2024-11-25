@@ -682,6 +682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Demon
       objectReference: {fileID: 0}
+    - target: {fileID: 1895594788601240279, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2705512392790416992, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -745,7 +749,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1895594788601240279, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2059687640}
   m_SourcePrefab: {fileID: 100100000, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
 --- !u!1 &478645320
 GameObject:
@@ -1027,6 +1034,7 @@ Transform:
   - {fileID: 1217150627}
   - {fileID: 478645325}
   - {fileID: 1619954212}
+  - {fileID: 1599910770}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &572820224
@@ -1970,6 +1978,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fee137b590a704b93edbcbfeb3c445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1140938891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1895594788601240279, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+  m_PrefabInstance: {fileID: 476042593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1180377995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5257258021083750771, guid: b1b2c6e90af1ad147b3f3e380ef92cb7, type: 3}
@@ -2376,6 +2389,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9e27a3648139b47b11484b85fb3c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1599910769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1599910770}
+  - component: {fileID: 1599910771}
+  m_Layer: 0
+  m_Name: Summon Demon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1599910770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599910769}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 545097353}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1599910771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599910769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261b9195cd270044ca432a5b3b0c5f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _necronomiconMeshR: {fileID: 593275875952807397, guid: 8b415feee08b7454c9f518f5a5751669, type: 3}
+  _finalFrequencyMaterial: {fileID: 2100000, guid: 9305766d7c6ecd2469ab43cd10a16add, type: 2}
+  _demonObject: {fileID: 1140938891}
 --- !u!1 &1619954211
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,6 +3161,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8950911561876532059, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
   m_PrefabInstance: {fileID: 476042593}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2059687640
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140938891}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5492e320efb1b04db68a3e05c3d0550, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2122934669
 GameObject:
   m_ObjectHideFlags: 0
