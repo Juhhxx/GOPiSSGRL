@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6788b8d1c33383c42b6880b7b9705f4e, type: 2}
   - {fileID: 11400000, guid: a337a6fa577c4504489fab89c4d2952c, type: 2}
   - {fileID: 11400000, guid: 47d02f4de5a28044ab4d743609258661, type: 2}
+  deleteRequirementsOnUse: 1
   requirementsMessage: Not enough money yet
   interactionMessages:
   - Buy UV Light

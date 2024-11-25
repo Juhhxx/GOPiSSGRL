@@ -30,7 +30,7 @@ public class RotateWhenHolding : MonoBehaviour
 
         Debug.Log($"playerInv: {_playerInventory.name}");
         
-        _currentRotation = transform.localRotation.eulerAngles;
+        _currentRotation = transform.localEulerAngles;
 
         // Debug.Log($"Clamping {initRotation.z} between: {_minRotation}, {_maxRotation}");
         _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);

@@ -18,6 +18,7 @@ MonoBehaviour:
   inventoryIcon: {fileID: 0}
   requirements:
   - {fileID: 11400000, guid: f18f7e0a573a9ef45bbd1b9976866b88, type: 2}
+  deleteRequirementsOnUse: 1
   requirementsMessage: The slider is broken
   interactionMessages:
   - Hold to Change Temprature

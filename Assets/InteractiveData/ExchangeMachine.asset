@@ -21,8 +21,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9bd909335dce2db498d451d18050a9ea, type: 2}
   - {fileID: 11400000, guid: c83eab1640097194ca6e1733d3ca9eff, type: 2}
   - {fileID: 11400000, guid: b7fc04003acf1dc44b249937fc4b0dc7, type: 2}
+  deleteRequirementsOnUse: 1
   requirementsMessage: I have nothing to put in
-  interactableItems: []
   interactionMessages:
   - 
   activatesUI: 0

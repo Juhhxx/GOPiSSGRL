@@ -17,6 +17,7 @@ MonoBehaviour:
   inventoryName: Femur
   inventoryIcon: {fileID: 21300000, guid: 35ee24a0183e55e4fa47335ebbd9354a, type: 3}
   requirements: []
+  deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
   - A half decomposed leg

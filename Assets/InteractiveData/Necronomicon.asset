@@ -18,6 +18,7 @@ MonoBehaviour:
   inventoryIcon: {fileID: 21300000, guid: f4855f1a0e21f804dbf903e07ca5452c, type: 3}
   requirements:
   - {fileID: 11400000, guid: ca230b9d04f55c5448f893f26b016774, type: 2}
+  deleteRequirementsOnUse: 0
   requirementsMessage: Creppy...
   interactionMessages: []
   activatesUI: 0

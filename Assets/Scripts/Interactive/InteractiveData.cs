@@ -10,6 +10,7 @@ public class InteractiveData : ScriptableObject
     public string               inventoryName;
     public Sprite               inventoryIcon;
     public InteractiveData[]    requirements;
+    public bool                 deleteRequirementsOnUse = true;
     public string               requirementsMessage;
     public string[]             interactionMessages;
     public bool                 activatesUI;

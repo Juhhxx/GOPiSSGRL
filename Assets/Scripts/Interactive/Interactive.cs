@@ -17,15 +17,12 @@ public class Interactive : MonoBehaviour
 
     public bool isOn;
 
-    public InteractiveData interactiveData
-    {
-        get => _interactiveData;
-        set => _interactiveData = value;
-    }
+    public InteractiveData interactiveData => _interactiveData;
 
     public string inventoryName => _interactiveData.inventoryName;
     public Sprite inventoryIcon => _interactiveData.inventoryIcon;
     public GameObject holdingObject => _interactiveData.holdingObject;
+    public bool deleteRequirementsOnUse => _interactiveData.deleteRequirementsOnUse;
     private bool IsType(InteractiveData.Type type) => _interactiveData.type == type;
 
     void Awake()
@@ -50,7 +47,7 @@ public class Interactive : MonoBehaviour
 
     public string GetInteractionMessage()
     {
-        if (IsType(InteractiveData.Type.Pickable) && !_playerInventory.Contains(this) && _requirementsMet)
+        if (IsType(InteractiveData.Type.Pickable) && !_playerInventory.Contains(this) && (_requirementsMet && deleteRequirementsOnUse|| PlayerHasRequirement() && !deleteRequirementsOnUse))
             return _interactionManager.pickMessage.Replace("$name", _interactiveData.inventoryName);
         else if (!_requirementsMet)
         {
@@ -76,6 +73,18 @@ public class Interactive : MonoBehaviour
         Debug.Log("Not holding requirement");
         return false;
     }
+    private bool PlayerHasRequirement()
+    {
+        foreach (Interactive requirement in _requirements)
+        {
+            if (_playerInventory.Contains(requirement))
+                return true;
+        }
+
+        Debug.Log("Not have requirement");
+        return false;
+    }
+
 
     public void Interact()
     {
@@ -83,7 +92,12 @@ public class Interactive : MonoBehaviour
 
         if (_requirementsMet)
             InteractSelf(true);
-        else if (PlayerHasRequirementSelected())
+        else if (!deleteRequirementsOnUse && PlayerHasRequirement())
+        {
+            select = true;
+            InteractSelf(true);
+        }
+        else if (deleteRequirementsOnUse && PlayerHasRequirementSelected())
         {
             select = true;
             UseRequirementFromInventory();
@@ -173,7 +187,7 @@ public class Interactive : MonoBehaviour
         _playerInventory.Remove(requirement);
 
         ++requirement._interactionCount;
-
+        
         requirement.PlayAnimation("Interact");
 
         CheckRequirements();
