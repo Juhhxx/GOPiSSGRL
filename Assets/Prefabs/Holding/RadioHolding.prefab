@@ -1049,6 +1049,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frequency: 111
   _frequencyDisplay: {fileID: 4052064660836428165}
+  _necronomiconMeshR: {fileID: 593275875952807397, guid: 8b415feee08b7454c9f518f5a5751669, type: 3}
+  _finalFrequencyMaterial: {fileID: 2100000, guid: 9305766d7c6ecd2469ab43cd10a16add, type: 2}
 --- !u!82 &3158953714683533290
 AudioSource:
   m_ObjectHideFlags: 0

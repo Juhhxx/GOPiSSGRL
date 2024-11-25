@@ -8,11 +8,16 @@ public class Radio : MonoBehaviour
 {
     [SerializeField] private float _frequency;
     [SerializeField] private TextMeshPro _frequencyDisplay;
+    [SerializeField] private MeshRenderer _necronomiconMeshR;
+    [SerializeField] private Material _finalFrequencyMaterial;
     private Transform _playerTrans;
     private RotateBridge _rotateBridge;
     private AudioSource _audioSource;
     private ChalkDrawingPoint[] _chalkPoints;
     private List<float> _chalkFrequencies = new List<float>();
+    private ChalkDrawingPoint _finalPoint;
+    private bool _allMarksDone;
+    public bool AllMarksDone => _allMarksDone;
 
     private void Start()
     {
@@ -22,6 +27,7 @@ public class Radio : MonoBehaviour
         _chalkPoints = FindObjectsByType<ChalkDrawingPoint>(0);
 
         _rotateBridge.EnableRotation();
+        GetFinalPoint();
 
         foreach (ChalkDrawingPoint point in _chalkPoints) _chalkFrequencies.Add(point.PointFrequency);
     }
@@ -30,6 +36,18 @@ public class Radio : MonoBehaviour
         _frequency = _rotateBridge.GetCurrentValue();
         _frequencyDisplay.text = $"{_frequency:000} MHz";
         CheckFrequency();
+        ShowLastFrequency();
+        CheckPuzzleComplete();
+    }
+    private void GetFinalPoint()
+    {
+        foreach (ChalkDrawingPoint point in _chalkPoints)
+            if (point.GetComponent<TAG_FinalChalkPoint>() != null)
+            {
+                _finalPoint = point;
+                _finalPoint.gameObject.SetActive(false);
+                return;
+            }
     }
     private void CheckFrequency()
     {
@@ -54,6 +72,28 @@ public class Radio : MonoBehaviour
     }  
     private void ChangeAudioVolumeDistance (float distance)
     {
-        _audioSource.volume = 1 - distance/100;
+        _audioSource.volume = 1 - distance/10;
+    }
+    private bool CheckMarksDone()
+    {
+        foreach (ChalkDrawingPoint point in _chalkPoints)
+        {
+            if (!point.IsDrawn)
+                return false;
+        }
+        return true;
+    }
+    private void ShowLastFrequency()
+    {
+        if (CheckMarksDone())
+        {
+            _necronomiconMeshR.material = _finalFrequencyMaterial;
+            _finalPoint.gameObject.SetActive(true);
+            Debug.Log("ALL CHALK MARKS DONE");
+        }
+    }
+    private void CheckPuzzleComplete()
+    {
+        if (_finalPoint.IsDrawn) _allMarksDone = true;
     }
 }

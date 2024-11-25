@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class DrawChalk : MonoBehaviour
 {
-    [SerializeField] private bool _hasChalk;
     [SerializeField] private GameObject _chalkPrefab;
     [SerializeField] private LayerMask _drawingLayer;
     [SerializeField] private float _drawingDistance;
@@ -12,12 +11,11 @@ public class DrawChalk : MonoBehaviour
 
     void Start()
     {
-        _cameraTrans = GetComponentInChildren<Camera>().gameObject.transform;
+        _cameraTrans = GetComponentInParent<Camera>().gameObject.transform;
     }
     void Update()
     {
-        if (_hasChalk)
-            CheckForDrawingSpot();
+        CheckForDrawingSpot();
     }
     private void CheckForDrawingSpot()
     {
