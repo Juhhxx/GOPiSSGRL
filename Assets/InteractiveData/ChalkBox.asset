@@ -16,8 +16,9 @@ MonoBehaviour:
   startsOn: 1
   inventoryName: Chalk Box
   inventoryIcon: {fileID: 21300000, guid: 7dfec2d440518f740aafbda8a133fef6, type: 3}
-  requirements: []
-  requirementsMessage: 
+  requirements:
+  - {fileID: 11400000, guid: a7ea8f58cc4050943b281b2e433bcec5, type: 2}
+  requirementsMessage: Summoning Chalk?
   interactionMessages: []
   activatesUI: 0
   holdingObject: {fileID: 3772300437664731849, guid: 9a5d83241a9e5db43b19f0761c90be98, type: 3}

@@ -18,7 +18,7 @@ MonoBehaviour:
   inventoryIcon: {fileID: 0}
   requirements:
   - {fileID: 11400000, guid: 7a0f24a3e55d01243afd1db4799cf2b4, type: 2}
-  requirementsMessage: It's locked and you don't have the key
+  requirementsMessage: It's locked
   interactionMessages:
   - Door to the Bathroom
   activatesUI: 0

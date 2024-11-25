@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UIElements;
@@ -48,7 +49,15 @@ public class Radio : MonoBehaviour
     private void DetectDistance(int index)
     {
         Transform pointTrans = _summonDemon.ChalkPoints[index].transform;
-        float distance = Vector3.Distance(_playerTrans.position,pointTrans.position);
+
+        // Corrects the position so the y value is ignored
+        Vector3 correctedPoint = pointTrans.position;
+        correctedPoint.y = 0f;
+
+        Vector3 correctedPlayer = _playerTrans.position;
+        correctedPlayer.y = 0f;
+
+        float distance = Vector3.Distance(correctedPlayer,correctedPoint);
 
         ChangeAudioVolumeDistance(distance);
 
@@ -56,7 +65,7 @@ public class Radio : MonoBehaviour
     }  
     private void ChangeAudioVolumeDistance (float distance)
     {
-        _audioSource.volume = 1 - distance/10;
+        _audioSource.volume = Mathf.InverseLerp(12f,0.5f,distance);
     }
     
 }

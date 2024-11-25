@@ -16,8 +16,9 @@ MonoBehaviour:
   startsOn: 1
   inventoryName: Necronomicon
   inventoryIcon: {fileID: 21300000, guid: f4855f1a0e21f804dbf903e07ca5452c, type: 3}
-  requirements: []
-  requirementsMessage: 
+  requirements:
+  - {fileID: 11400000, guid: ca230b9d04f55c5448f893f26b016774, type: 2}
+  requirementsMessage: Creppy...
   interactionMessages: []
   activatesUI: 0
   holdingObject: {fileID: 7213500950990017174, guid: 8b415feee08b7454c9f518f5a5751669, type: 3}

@@ -19,6 +19,6 @@ MonoBehaviour:
   requirements: []
   requirementsMessage: 
   interactionMessages:
-  - The Keypad to the Freezer
+  - Use Keypad
   activatesUI: 0
   holdingObject: {fileID: 0}

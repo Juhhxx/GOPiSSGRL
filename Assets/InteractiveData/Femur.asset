@@ -19,6 +19,6 @@ MonoBehaviour:
   requirements: []
   requirementsMessage: 
   interactionMessages:
-  - The half decomposed leg of a comrad
+  - A half decomposed leg
   activatesUI: 0
   holdingObject: {fileID: 774204161524076571, guid: bd5aa6c104fc58240b3e514cd1825fc2, type: 3}
