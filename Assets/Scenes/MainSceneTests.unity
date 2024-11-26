@@ -2971,6 +2971,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1062039362}
     m_Modifications:
+    - target: {fileID: 231178778586401748, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
+      propertyPath: m_Name
+      value: EndGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 231178778586401748, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1213299829650765799, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3055,10 +3063,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 4808400689071256646, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
+      propertyPath: m_text
+      value: 'Congratz!
+
+        You can now piss yourself !!!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328654633030772836, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
+      propertyPath: m_text
+      value: The End
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593700390304201954, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
+      propertyPath: m_text
+      value: Main Menu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1066414358433167347, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 964602635}
   m_SourcePrefab: {fileID: 100100000, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
 --- !u!1 &891945278 stripped
 GameObject:
@@ -3211,6 +3236,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83e766d95ac395741a3d00abd85439f5, type: 3}
+--- !u!1 &964602633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1066414358433167347, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
+  m_PrefabInstance: {fileID: 891945277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &964602635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964602633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e1992447e900b34f923bd6e6af1f7ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonOneScene: 
+  _buttonTwoScene: 
 --- !u!4 &970243286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1884920752237427836, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}

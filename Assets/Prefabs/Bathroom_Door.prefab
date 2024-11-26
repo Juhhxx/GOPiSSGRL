@@ -292,6 +292,7 @@ GameObject:
   - component: {fileID: 7745385271051557755}
   - component: {fileID: 8019567555111881612}
   - component: {fileID: 3231516721470781557}
+  - component: {fileID: 8018369592686590284}
   m_Layer: 0
   m_Name: Bathroom_Door
   m_TagString: Untagged
@@ -374,3 +375,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 22, y: 338, z: 202}
   m_Center: {x: -3.15, y: 167.90762, z: -117.58}
+--- !u!114 &8018369592686590284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6380411798088743403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2977eb5d5fb2c4c9fb8885971d298d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _finnishUI: {fileID: 0}

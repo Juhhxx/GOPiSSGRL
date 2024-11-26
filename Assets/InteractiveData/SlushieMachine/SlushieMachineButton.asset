@@ -16,7 +16,8 @@ MonoBehaviour:
   startsOn: 1
   inventoryName: 
   inventoryIcon: {fileID: 0}
-  requirements: []
+  requirements:
+  - {fileID: 11400000, guid: dba3adf90d446694bb1843c29d98dd5f, type: 2}
   deleteRequirementsOnUse: 1
   requirementsMessage: It's too hot
   interactionMessages:
