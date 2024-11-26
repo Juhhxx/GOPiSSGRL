@@ -917,17 +917,9 @@ PrefabInstance:
       value: Thermostat
       objectReference: {fileID: 0}
     - target: {fileID: 3306534099066518147, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
-      propertyPath: _sensitivity
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306534099066518147, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
       propertyPath: _holdingCamera
       value: 
       objectReference: {fileID: 728918244}
-    - target: {fileID: 8692245597115121407, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
-      propertyPath: _slushieButtons.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8692245597115121407, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
       propertyPath: '_slushieButtons.Array.data[0]'
       value: 
@@ -1551,6 +1543,10 @@ PrefabInstance:
     - target: {fileID: 1895594788601240279, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: m_Name
       value: Demon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895594788601240279, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2159017317475326798, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: _playerInventory
@@ -4015,6 +4011,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6632753968074720611, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
+      propertyPath: _slushieTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7120260246967630222, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
       propertyPath: _playerInventory
       value: 
@@ -4023,6 +4023,10 @@ PrefabInstance:
       propertyPath: '_itemPrefabs.Array.data[0]'
       value: 
       objectReference: {fileID: 406578146}
+    - target: {fileID: 7234259013548860388, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
+      propertyPath: _slushieTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7737986802264143370, guid: 23390ac8c6218534db4432a38b152ae2, type: 3}
       propertyPath: _playerInventory
       value: 

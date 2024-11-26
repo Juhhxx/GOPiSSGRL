@@ -16,6 +16,8 @@ public class SummonDemon : MonoBehaviour
 
     private void Start()
     {
+        _demonObject.SetActive(false);
+
         _chalkPoints = FindObjectsByType<ChalkDrawingPoint>(0).ToList<ChalkDrawingPoint>();
 
         GetFinalPoint();
