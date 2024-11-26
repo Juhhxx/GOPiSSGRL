@@ -22,7 +22,7 @@ public class DrawChalk : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(_cameraTrans.position,_cameraTrans.forward,out hit,_drawingDistance, _drawingLayer))
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Interact"))
                 DrawChalkSpot(hit);
     }
     private void DrawChalkSpot(RaycastHit hit)

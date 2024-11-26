@@ -75,7 +75,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 191
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -329,7 +329,6 @@ GameObject:
   - component: {fileID: 2761203105367862506}
   - component: {fileID: 107595982787153906}
   - component: {fileID: 7437518743940774994}
-  - component: {fileID: 2293550040377858088}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -425,27 +424,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiManager: {fileID: 0}
   _holdingCamera: {fileID: 5075372789813321252}
---- !u!114 &2293550040377858088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8602676614936545698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1945c1d15a84a0742b41af3d3308b976, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hasChalk: 1
-  _chalkPrefab: {fileID: 8473963951135998842, guid: 2533d951d1d126246b3dd9ad4deeb7f4, type: 3}
-  _drawingLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  _drawingDistance: 3
-  _chalkTextures:
-  - {fileID: 2800000, guid: 0c035b6f819fe3c49906fe1cdad11fe9, type: 3}
-  - {fileID: 2800000, guid: 72d8c0f0da7e7994f8e07d7346bb2206, type: 3}
 --- !u!1 &9008667193374631243
 GameObject:
   m_ObjectHideFlags: 0
