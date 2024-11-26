@@ -1,18 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UIElements;
 
 public class Radio : MonoBehaviour
 {
     [SerializeField] private float _frequency;
+    [SerializeField] private float _shakeStrenght = 0.03f;
     [SerializeField] private TextMeshPro _frequencyDisplay;
     [SerializeField] private AudioClip[] _radioAudios;
     private Transform _playerTrans;
+    private Vector3 _intialPosition;
     private RotateWhenHolding _rotateHolding;
     private AudioSource _audioSource;
     private SummonDemon _summonDemon;
@@ -20,6 +17,7 @@ public class Radio : MonoBehaviour
     private void Start()
     {
         _playerTrans = FindAnyObjectByType<PlayerMovement>().transform;
+        _intialPosition = transform.localPosition;
         _rotateHolding = GetComponentInChildren<RotateWhenHolding>();
         _audioSource = GetComponent<AudioSource>();
         _summonDemon = FindAnyObjectByType<SummonDemon>();
@@ -46,7 +44,7 @@ public class Radio : MonoBehaviour
         else
         {
             ChangeAudio(_radioAudios[0]);
-            ChangeAudioVolumeDistance(0f);
+            ChangeAudioVolumeDistance(5f);
             Debug.Log("No poins in this frequency");
         }
     }
@@ -64,12 +62,23 @@ public class Radio : MonoBehaviour
         float distance = Vector3.Distance(correctedPlayer,correctedPoint);
 
         ChangeAudioVolumeDistance(distance);
+        ShakeRadioByDistance(distance);
 
         Debug.Log($"Distance to player : {distance}");
     }  
     private void ChangeAudioVolumeDistance (float distance)
     {
         _audioSource.volume = Mathf.InverseLerp(12f,0.5f,distance);
+    }
+    private void ShakeRadioByDistance(float distance)
+    {
+        float shakeForce = Mathf.InverseLerp(1.5f,0.5f,distance);
+        Vector3 direction = Random.insideUnitSphere;
+        direction *= shakeForce * _shakeStrenght;
+
+        Vector3 currentPos = _intialPosition;
+        currentPos += direction;
+        transform.localPosition = currentPos;
     }
     private void ChangeAudio(AudioClip audio)
     {
