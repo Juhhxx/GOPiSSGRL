@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using System.Collections;
 
 public class VerifySlushie : MonoBehaviour
 {
     [SerializeField] private List<Flavours> _correctCombination;
+    [SerializeField] private Animator _mainAnimator;
     private Interactive _interactive;
     private SlushieCup _slushieCup;
     private GiveItem _giveItem;
@@ -25,7 +27,7 @@ public class VerifySlushie : MonoBehaviour
         {
             
             _wrongSpeech.StartSpeech();
-            Debug.Log("NOT RIGTH!!");
+            Debug.Log("NOT RIGHT!!");
             _interactive.ResetRequirements();
         }
         else
@@ -34,9 +36,24 @@ public class VerifySlushie : MonoBehaviour
             Debug.Log("YOU PASSED!");
             _giveItem.GiveItemToPlayer();
             _takeItem.TakeItemFromPlayer();
+            StartCoroutine(CheckIfDoneSpeaking());
         }
         _slushieCup.ResetFlavours();
         _slushieCup.ResetPosition();
         _slushieCup.gameObject.SetActive(true);
+    }
+
+    private IEnumerator CheckIfDoneSpeaking()
+    {
+        SpeechControl _speech = FindFirstObjectByType<SpeechControl>();
+
+        yield return new WaitUntil(() => _speech.ShowingSpeech());
+
+        while (_speech.ShowingSpeech())
+        {
+            yield return null;
+        }
+        
+        _mainAnimator.SetTrigger("UnSummon");
     }
 }

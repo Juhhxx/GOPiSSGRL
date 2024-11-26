@@ -59,6 +59,11 @@ public class SpeechControl : MonoBehaviour
         _dialogUI.SetActive(false);
     }
 
+    public bool ShowingSpeech()
+    {
+        return _dialogCoroutine != null;
+    }
+
     // Show dialog gets a character ID and a name for the character, it checks if
     // the id exists and if so it starts the dialog, starting a coroutine that goes through
     // all the saved IEnumerators saved in dialogQueue
