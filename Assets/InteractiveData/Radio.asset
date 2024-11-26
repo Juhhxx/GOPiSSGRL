@@ -16,7 +16,8 @@ MonoBehaviour:
   startsOn: 1
   inventoryName: Radio
   inventoryIcon: {fileID: 21300000, guid: e196c5279a7e6d94291d634c7a451acd, type: 3}
-  requirements: []
+  requirements:
+  - {fileID: 11400000, guid: a7ea8f58cc4050943b281b2e433bcec5, type: 2}
   deleteRequirementsOnUse: 0
   requirementsMessage: Just a Radio
   interactionMessages: []
