@@ -44,6 +44,11 @@ public class PlayerInventory : MonoBehaviour
             SelectInventorySlot(_selectedSlotIndex);
     }
 
+    public void Clear()
+    {
+        _inventory.Clear();
+    }
+
     public bool Contains(Interactive item)
     {
         return _inventory.Contains(item);

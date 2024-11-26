@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _holdingCamera: {fileID: 0}
-  _sensitivity: 7
+  _sensitivity: 2
   _minValue: 30
   _maxValue: 400
   _minRotation: 0
@@ -1046,6 +1046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frequency: 100
+  _shakeStrenght: 0.03
   _frequencyDisplay: {fileID: 4052064660836428165}
   _radioAudios:
   - {fileID: 8300000, guid: 2d51feffef62dce4eaaeb99bc00e6377, type: 3}
