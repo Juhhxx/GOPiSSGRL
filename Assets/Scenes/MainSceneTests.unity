@@ -4372,7 +4372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.27
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4380,7 +4380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.07
+      value: 14.08
       objectReference: {fileID: 0}
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4636,7 +4636,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _necronomiconMeshR: {fileID: 593275875952807397, guid: 8b415feee08b7454c9f518f5a5751669, type: 3}
-  _finalFrequencyMaterial: {fileID: 2100000, guid: 9305766d7c6ecd2469ab43cd10a16add, type: 2}
+  _necronomiconMaterials:
+  - {fileID: 2100000, guid: 5048b3632121bcd40a92e3ab7472938f, type: 2}
+  - {fileID: 2100000, guid: 9305766d7c6ecd2469ab43cd10a16add, type: 2}
   _demonObject: {fileID: 1140938891}
 --- !u!1 &1619954211
 GameObject:

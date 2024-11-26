@@ -6,7 +6,7 @@ using UnityEngine;
 public class SummonDemon : MonoBehaviour
 {
     [SerializeField] private MeshRenderer _necronomiconMeshR;
-    [SerializeField] private Material _finalFrequencyMaterial;
+    [SerializeField] private Material[] _necronomiconMaterials;
     [SerializeField] private GameObject _demonObject;
     private List<ChalkDrawingPoint> _chalkPoints;
     public List<ChalkDrawingPoint> ChalkPoints => _chalkPoints;
@@ -18,6 +18,8 @@ public class SummonDemon : MonoBehaviour
     {
         _demonObject.SetActive(false);
 
+        _necronomiconMeshR.material = _necronomiconMaterials[0];
+        
         _chalkPoints = FindObjectsByType<ChalkDrawingPoint>(0).ToList<ChalkDrawingPoint>();
 
         GetFinalPoint();
@@ -53,7 +55,7 @@ public class SummonDemon : MonoBehaviour
     {
         if (CheckMarksDone())
         {
-            _necronomiconMeshR.material = _finalFrequencyMaterial;
+            _necronomiconMeshR.material = _necronomiconMaterials[1];
             _finalPoint.gameObject.GetComponent<Collider>().enabled = true;
         }
     }

@@ -35,7 +35,7 @@ public class DrawChalk : MonoBehaviour
         chalkTrans.LookAt(-hit.normal);
         // Position the Chalk to be 0.05 unity units above the surface where it's drawn
         Vector3 chalkPos = chalkTrans.forward;
-        chalkPos *= -0.05f;
+        chalkPos *= -0.01f;
         chalkPos += hit.point;
         chalkTrans.position = chalkPos;
         // Give the Chalk a random rotation in the Y axis
@@ -45,7 +45,7 @@ public class DrawChalk : MonoBehaviour
 
         chalkMeshR.material.mainTexture = ChooseChalkTexture();
 
-        Debug.Log($"chalk position is ({chalkTrans.position} + {chalkTrans.up * 0.05f} =){chalkPos}");
+        Debug.Log($"chalk position is ({chalkTrans.position} + {chalkTrans.up * 0.01f} =){chalkPos}");
     }
     private Texture ChooseChalkTexture()
     {
