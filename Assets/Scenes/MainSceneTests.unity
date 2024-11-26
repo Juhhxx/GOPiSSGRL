@@ -1564,6 +1564,10 @@ PrefabInstance:
       propertyPath: '_itemPrefabs.Array.data[2]'
       value: 
       objectReference: {fileID: 478645320}
+    - target: {fileID: 3764960205111760930, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ab05af1679a04745940c2c5335f2bbb, type: 2}
     - target: {fileID: 4592372995109023562, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: _playerInventory
       value: 
