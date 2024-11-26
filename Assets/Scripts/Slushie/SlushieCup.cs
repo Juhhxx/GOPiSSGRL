@@ -46,20 +46,21 @@ public class SlushieCup : MonoBehaviour
     }
     private void ChangeSlushieColor()
     {
-        Color32 newColor = new Color(0,0,0,0);
+        Color32 newColor = new Color(0,0,0,1);
+        float median = _slushieFlavours.Count();
 
         foreach (Flavours flavour in _slushieFlavours)
         {
             switch (flavour)
             {
                 case Flavours.Red:
-                    newColor += Color.red/4; break;
+                    newColor += Color.red/median; break;
                 case Flavours.Green:
-                    newColor += Color.green/4; break;
+                    newColor += Color.green/median; break;
                 case Flavours.Blue:
-                    newColor += Color.blue/4; break;
+                    newColor += Color.blue/median; break;
                 case Flavours.Yellow:
-                    newColor += Color.yellow/4; break;
+                    newColor += Color.yellow/median; break;
             }
         }
 
