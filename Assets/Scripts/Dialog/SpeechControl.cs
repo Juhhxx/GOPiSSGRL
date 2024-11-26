@@ -31,7 +31,7 @@ public class SpeechControl : MonoBehaviour
     private StringBuilder _stringBuilder;
     private WaitUntil _waitUntilSpace;
     private WaitUntil _waitUntilSpaceOrDisplayed;
-    private WaitForEndOfFrame _waitForEndOfFrame;
+    private YieldInstruction _waitForEndOfFrame;
     private Coroutine _typingCoroutine;
     private IEnumerator _dialogCoroutine;
     private bool _isTextFullyDisplayed = false;
@@ -54,7 +54,7 @@ public class SpeechControl : MonoBehaviour
 
         _waitUntilSpace = new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         _waitUntilSpaceOrDisplayed = new WaitUntil(() => _isTextFullyDisplayed || Input.GetKeyDown(KeyCode.Space));
-        _waitForEndOfFrame = new WaitForEndOfFrame();
+        _waitForEndOfFrame = new WaitForFixedUpdate();
         
         _dialogUI.SetActive(false);
     }
