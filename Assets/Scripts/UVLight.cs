@@ -127,7 +127,7 @@ public class UVLight : MonoBehaviour
         return false;
     }
 
-    private bool OnDisable()
+    private void OnDisable()
     {
         Shader.SetGlobalFloat(_lightedID, 0);
     }

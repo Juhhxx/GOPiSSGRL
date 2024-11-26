@@ -20,10 +20,12 @@ public class SlushieCup : MonoBehaviour
     {
         if (_slushieFlavours.Count < 4)
             _slushieFlavours.Add(flavour);
+        ChangeSlushieColor();
     }
     public void ResetFlavours()
     {
         _slushieFlavours.Clear();
+        ChangeSlushieColor();
     }
     public void ResetPosition()
     {

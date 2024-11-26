@@ -107,3 +107,5 @@ MonoBehaviour:
   _chalkTextures:
   - {fileID: 2800000, guid: 0c035b6f819fe3c49906fe1cdad11fe9, type: 3}
   - {fileID: 2800000, guid: 72d8c0f0da7e7994f8e07d7346bb2206, type: 3}
+  - {fileID: 2800000, guid: 03ac6ae6855ec9f409eee074af8b5572, type: 3}
+  - {fileID: 2800000, guid: d0ccbac347c53c44eb52b52f9b05a0d0, type: 3}

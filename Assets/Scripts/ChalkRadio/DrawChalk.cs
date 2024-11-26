@@ -31,11 +31,17 @@ public class DrawChalk : MonoBehaviour
         Transform chalkTrans = newChalk.transform;
         MeshRenderer chalkMeshR = newChalk.GetComponent<MeshRenderer>();
 
+        // Rotate Chalk to be facing up from te perspective of the surface where it's drawn
         chalkTrans.LookAt(-hit.normal);
+        // Position the Chalk to be 0.05 unity units above the surface where it's drawn
         Vector3 chalkPos = chalkTrans.forward;
         chalkPos *= -0.05f;
         chalkPos += hit.point;
         chalkTrans.position = chalkPos;
+        // Give the Chalk a random rotation in the Y axis
+        Vector3 chalkRotation = chalkTrans.localEulerAngles;
+        chalkRotation.y = Random.Range(0f,360f);
+        chalkTrans.rotation = Quaternion.Euler(chalkRotation);
 
         chalkMeshR.material.mainTexture = ChooseChalkTexture();
 
