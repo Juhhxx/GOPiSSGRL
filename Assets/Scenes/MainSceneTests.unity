@@ -2977,7 +2977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 231178778586401748, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1213299829650765799, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
       propertyPath: m_Pivot.x
@@ -4409,6 +4409,14 @@ PrefabInstance:
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761203105367862506, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: _maxLookAngle
+      value: 290
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761203105367862506, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: _minLookAngle
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7437518743940774994, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: _uiManager
