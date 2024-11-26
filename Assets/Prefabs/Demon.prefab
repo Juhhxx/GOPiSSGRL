@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6212933252439545861}
   - component: {fileID: 7048890267660812568}
   - component: {fileID: 10785287209053720}
+  - component: {fileID: 2159017317475326798}
   m_Layer: 0
   m_Name: Demon Hello
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 1660297970371329340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.16980334, z: -0, w: 0.985478}
-  m_LocalPosition: {x: -4.151046, y: -1.0977101, z: -1.546454}
+  m_LocalPosition: {x: 0, y: -1.0977101, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -162,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 0}
   _itemPrefab:
-  - {fileID: 979570373860535664, guid: 1c5f46515c41dd74790cfeda66ff84b6, type: 3}
+  - {fileID: 0}
 --- !u!114 &10785287209053720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterSpeech: {fileID: 0}
+--- !u!114 &2159017317475326798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660297970371329340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d7fcea85973a7468156bdbdbe0021f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerInventory: {fileID: 0}
+  _itemPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1895594788601240279
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,13 +204,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8950911561876532059}
   - component: {fileID: 6034252109690154704}
+  - component: {fileID: 7322583586691402081}
   m_Layer: 0
   m_Name: Demon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8950911561876532059
 Transform:
   m_ObjectHideFlags: 0
@@ -237,6 +256,28 @@ MonoBehaviour:
       dialogLines:
       - MORTAL HUMAN! YOU HAVE ACHIEVED A MOST DESIRABLE SLUSHIE!
       - I GRANT YOU THIS PAPER!
+--- !u!95 &7322583586691402081
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895594788601240279}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5492e320efb1b04db68a3e05c3d0550, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2900693912571390191
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 2900693912571390191}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.16980334, z: -0, w: 0.985478}
-  m_LocalPosition: {x: -4.151046, y: -1.0977101, z: -1.546454}
+  m_LocalPosition: {x: 0, y: -1.0977101, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
