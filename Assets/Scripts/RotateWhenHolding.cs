@@ -16,6 +16,7 @@ public class RotateWhenHolding : MonoBehaviour
     private Vector3 _currentRotation;
     [SerializeField] private float _visualizeCurrentRotationValue;
     private float _mouseMovement;
+    private CurrentRadioRotation _currentRotationData;
 
     /// <summary>
     /// Gets the initial rotation, but first clamps to the min and max rotations
@@ -24,14 +25,24 @@ public class RotateWhenHolding : MonoBehaviour
     {
         _playerMovement = FindFirstObjectByType<PlayerMovement>();
         _playerInteraction = FindFirstObjectByType<PlayerInteraction>();
-        
-        _currentRotation = transform.localEulerAngles;
 
-        // Debug.Log($"Clamping {initRotation.z} between: {_minRotation}, {_maxRotation}");
-        _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);
-        // Debug.Log(initRotation.z);
-        
-        transform.localRotation = Quaternion.Euler(_currentRotation);
+        _currentRotationData = GetComponentInParent<CurrentRadioRotation>();
+    }
+    private void Start()
+    {
+        if (_currentRotationData != null
+            && _currentRotationData.Rotation.HasValue)
+            {
+                Debug.Log("Starting");
+                _currentRotation = _currentRotationData.Rotation.Value;
+            }
+        else
+        {
+            _currentRotation = transform.localRotation.eulerAngles;
+            _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);
+            
+            transform.localRotation = Quaternion.Euler(_currentRotation);
+        }
     }
     public void EnableRotation()
     {
@@ -61,6 +72,12 @@ public class RotateWhenHolding : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;*/
     }
 
+    private void OnDisable()
+    {
+        if (_currentRotationData != null)
+            _currentRotationData.Rotation = _currentRotation;
+    }
+
     private void Update()
     {
         RotateWithMouse();
@@ -81,6 +98,7 @@ public class RotateWhenHolding : MonoBehaviour
         // Debug.Log($"rotation z : {_currentRotation.z}");
         _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);
 
+        Debug.Log($"rot: {_currentRotation}");
         transform.localRotation = Quaternion.Euler(_currentRotation);
     }
 

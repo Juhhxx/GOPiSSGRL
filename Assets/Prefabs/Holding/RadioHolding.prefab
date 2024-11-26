@@ -562,13 +562,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _holdingCamera: {fileID: 0}
-  _UVLightData: {fileID: 0}
-  _freezePlayer: 0
-  _sensitivity: 1
+  _sensitivity: 15
   _minValue: 30
   _maxValue: 400
   _minRotation: 0
   _maxRotation: 180
+  _visualizeCurrentRotationValue: 0
 --- !u!1 &4142499104372690686
 GameObject:
   m_ObjectHideFlags: 0
