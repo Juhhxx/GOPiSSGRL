@@ -26,13 +26,16 @@ public class SpecialCommands : MonoBehaviour
     }
     private void Cheats()
     {   
-        if (Input.GetKeyDown(KeyCode.Z) && Input.GetKeyDown(KeyCode.C)) CansPuzzle();
-        if (Input.GetKeyDown(KeyCode.Z) && Input.GetKeyDown(KeyCode.U)) UVLight();
-        if (Input.GetKeyDown(KeyCode.Z) && Input.GetKeyDown(KeyCode.M)) SummonDemon();
-        if (Input.GetKeyDown(KeyCode.Z) && Input.GetKeyDown(KeyCode.L)) CorrectSlushie();
-        if (Input.GetKeyDown(KeyCode.Z) && Input.GetKeyDown(KeyCode.T)) ThermostatCent();
-        if (Input.GetKeyDown(KeyCode.Z) && Input.GetKeyDown(KeyCode.O)) OpenFrezeerDoor();
-        if (Input.GetKeyDown(KeyCode.Z) && Input.GetKeyDown(KeyCode.F)) FemurPuzzle();
+        if (Input.GetKey(KeyCode.Z))
+        {
+            if (Input.GetKeyDown(KeyCode.C)) CansPuzzle();
+            if (Input.GetKeyDown(KeyCode.U)) UVLight();
+            if (Input.GetKeyDown(KeyCode.M)) SummonDemon();
+            if (Input.GetKeyDown(KeyCode.L)) CorrectSlushie();
+            if (Input.GetKeyDown(KeyCode.T)) ThermostatCent();
+            if (Input.GetKeyDown(KeyCode.O)) OpenFrezeerDoor();
+            if (Input.GetKeyDown(KeyCode.F)) FemurPuzzle();
+        }
     }
     private void CheatsGive(Interactive interactive) => _playerInv.Add(interactive);
 

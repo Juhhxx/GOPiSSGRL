@@ -318,6 +318,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3205483265170216284, guid: 83e766d95ac395741a3d00abd85439f5, type: 3}
   m_PrefabInstance: {fileID: 1190341144}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &63221803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 231178778586401748, guid: 73292fa8a09a4b1479ddd07c3590f7f7, type: 3}
+  m_PrefabInstance: {fileID: 891945277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &66684756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5765,6 +5770,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bathroom_Door
       objectReference: {fileID: 0}
+    - target: {fileID: 8018369592686590284, guid: f0f43ac8d8563d14ab9d48b7aad2a44b, type: 3}
+      propertyPath: _finnishUI
+      value: 
+      objectReference: {fileID: 63221803}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
