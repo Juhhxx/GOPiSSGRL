@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   startsOn: 1
   inventoryName: UV Light
-  inventoryIcon: {fileID: 21300000, guid: 80886d9ed9a6e894e8fe61d1d189155e, type: 3}
+  inventoryIcon: {fileID: 21300000, guid: 272e1d4542c6f394c85641efd60b926e, type: 3}
   requirements: []
   deleteRequirementsOnUse: 1
   requirementsMessage: 
