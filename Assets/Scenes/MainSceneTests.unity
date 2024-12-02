@@ -3308,7 +3308,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -3318,7 +3318,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -5258,7 +5258,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -5268,7 +5268,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 3
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -6681,6 +6681,22 @@ PrefabInstance:
       propertyPath: _maxInteractionDistance
       value: 3.8
       objectReference: {fileID: 0}
+    - target: {fileID: 117518014794013450, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.76285547
+      objectReference: {fileID: 0}
+    - target: {fileID: 117518014794013450, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6465691
+      objectReference: {fileID: 0}
+    - target: {fileID: 117518014794013450, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -80.567
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396375226764982198, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: far clip plane
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.25
@@ -6728,6 +6744,10 @@ PrefabInstance:
     - target: {fileID: 2761203105367862506, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: _minLookAngle
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075372789813321252, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: far clip plane
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7437518743940774994, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: _uiManager
@@ -7183,7 +7203,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -7193,7 +7213,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 2
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
