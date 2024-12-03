@@ -3,81 +3,97 @@ using UnityEngine;
 
 public class SecurityCameraSwitcher : MonoBehaviour
 {
-    [SerializeField] private Camera _playerCamera;
-    [SerializeField] private Camera[] _securityCameras;
+    [SerializeField] private GameObject _playerCamera;
+    [SerializeField] private GameObject[] _securityCameras;
     [SerializeField] private bool _runningTrailer;
-    private Dictionary<Camera, Animator> _animators;
-    private bool _running;
-    private Camera _currentCamera;
-    private int _currentIndex;
+    private Dictionary<GameObject, Animator> _animators = new();
+    private bool _running = false;
+    private GameObject _currentCamera;
+    private int _currentIndex = -1;
 
     private void Awake()
     {
-        _animators = new Dictionary<Camera, Animator>();
-        _playerCamera.enabled = true;
-        _currentCamera = _playerCamera;
-        _currentIndex = 1;
+        _playerCamera.SetActive(true);
     }
+
     private void Start()
     {
         if (!_runningTrailer) return;
 
-        foreach (Camera cam in _securityCameras)
+        foreach (GameObject cam in _securityCameras)
         {
             _animators[cam] = cam.GetComponentInParent<Animator>();
-            cam.enabled = false;
+            _animators[cam].SetFloat("MoveSpeed", 1f);
+            cam.SetActive(false);
         }
     }
 
+    #if UNITY_EDITOR
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F12))
         {
             if (_running)
             {
-                _playerCamera.enabled = true;
-                _currentCamera = _playerCamera;
-                SwitchSecurityCamera(-1);
-                _running = false;
+                SwitchToPlayerCamera();
             }
             else
             {
-                SwitchSecurityCamera(_currentIndex);
-                _running = true;
+                SwitchSecurityCamera(_currentIndex >= 0 ? _currentIndex : 0);
             }
+            _running = !_running;
         }
 
         if (!_running) return;
 
-        if (Input.GetKeyDown(KeyCode.F9))
-            SwitchSecurityCamera(0);
-        if (Input.GetKeyDown(KeyCode.F10))
-            SwitchSecurityCamera(1);
-        if (Input.GetKeyDown(KeyCode.F11))
-            SwitchSecurityCamera(2);
-        
-        if (Input.GetKeyDown(KeyCode.F8))
-            MoveCurrentCamera();
+        if (Input.GetKeyDown(KeyCode.F9)) SwitchSecurityCamera(0);
+        if (Input.GetKeyDown(KeyCode.F10)) SwitchSecurityCamera(1);
+        if (Input.GetKeyDown(KeyCode.F11)) SwitchSecurityCamera(2);
+
+        if (Input.GetKey(KeyCode.F8)) ToggleCurrentCameraMovement(true);
+        else ToggleCurrentCameraMovement(false);
     }
-    private void MoveCurrentCamera()
+    private float moveSpeed = 0f;
+    private void ToggleCurrentCameraMovement(bool isMoving)
     {
-        _animators[_currentCamera].SetBool("Move",
-             !_animators[_currentCamera].GetBool("Move"));
+        if (_currentCamera == null) return;
+
+        Animator animator = _animators[_currentCamera];
+
+        float targetMoveSpeed = isMoving ? 1f : 0f;
+        moveSpeed = Mathf.Lerp(moveSpeed, targetMoveSpeed, Time.deltaTime / 1.3f);
+
+        animator.SetFloat("MoveSpeed", moveSpeed);
+    }
+
+    private void SwitchToPlayerCamera()
+    {
+        if (_currentCamera != null)
+        {
+            _currentCamera.SetActive(false);
+            _animators[_currentCamera].SetFloat("MoveSpeed", 1f);
+        }
+        
+
+        _playerCamera.SetActive(true);
+        _currentCamera = null;
     }
 
     private void SwitchSecurityCamera(int index)
     {
-        if (index == -1) return;
+        if (index < 0 || index >= _securityCameras.Length) return;
 
-        for (int i = 0; i < _securityCameras.Length; i++)
+        if (_currentCamera == null)
+            _playerCamera.SetActive(false);
+        else
         {
-            if (i == index)
-            {
-                _securityCameras[i].enabled = true;
-                _currentCamera = _securityCameras[i];
-            }
-            else _securityCameras[i].enabled = false;
+            _currentCamera.SetActive(false);
+            _animators[_currentCamera].SetFloat("MoveSpeed", 1f);
         }
+        
+        _currentCamera = _securityCameras[index];
+        _currentCamera.SetActive(true);
+        _currentIndex = index;
     }
-
+    #endif
 }

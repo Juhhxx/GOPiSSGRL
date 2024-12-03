@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 52394764}
   - component: {fileID: 52394766}
   - component: {fileID: 52394765}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 61233701}
   - component: {fileID: 61233703}
   - component: {fileID: 61233702}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 142533221}
   - component: {fileID: 142533223}
   - component: {fileID: 142533222}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:polySurface81
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1036,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 185440980}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,7 +1134,7 @@ GameObject:
   - component: {fileID: 212779607}
   - component: {fileID: 212779609}
   - component: {fileID: 212779608}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:polySurface81
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1579,7 +1579,7 @@ GameObject:
   - component: {fileID: 322022822}
   - component: {fileID: 322022824}
   - component: {fileID: 322022823}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1987,7 +1987,7 @@ GameObject:
   - component: {fileID: 437121068}
   - component: {fileID: 437121070}
   - component: {fileID: 437121069}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2492,7 +2492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487034487}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2642,7 +2642,7 @@ GameObject:
   - component: {fileID: 499807012}
   - component: {fileID: 499807014}
   - component: {fileID: 499807013}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2900,7 +2900,7 @@ GameObject:
   - component: {fileID: 519282083}
   - component: {fileID: 519282085}
   - component: {fileID: 519282084}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pCylinder5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3063,11 +3063,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f81bb172fc669b4b8aa70c61fca0809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerCamera: {fileID: 1336743489}
+  _playerCamera: {fileID: 594853746}
   _securityCameras:
-  - {fileID: 588796262}
-  - {fileID: 1642144221}
-  - {fileID: 1034453173}
+  - {fileID: 588796259}
+  - {fileID: 1642144218}
+  - {fileID: 1034453172}
   _runningTrailer: 1
 --- !u!1001 &552270798
 PrefabInstance:
@@ -3222,6 +3222,7 @@ GameObject:
   - component: {fileID: 588796260}
   - component: {fileID: 588796262}
   - component: {fileID: 588796261}
+  - component: {fileID: 588796263}
   m_Layer: 0
   m_Name: Security Cam 1
   m_TagString: Untagged
@@ -3238,7 +3239,7 @@ Transform:
   m_GameObject: {fileID: 588796259}
   serializedVersion: 2
   m_LocalRotation: {x: 0.065223776, y: -0.3948933, z: 0.15380733, w: 0.9034093}
-  m_LocalPosition: {x: -17.9, y: 5.2, z: 14.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3319,18 +3320,18 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 255
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -3339,6 +3340,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!81 &588796263
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588796259}
+  m_Enabled: 1
+--- !u!1 &594853746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1283671582116311622, guid: f13e948752912db47912b897752824ee, type: 3}
+  m_PrefabInstance: {fileID: 1458801444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &610582319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8197757780432717654, guid: a74a025d2a94a6a488777488d4522f41, type: 3}
@@ -3552,7 +3566,7 @@ GameObject:
   - component: {fileID: 639312673}
   - component: {fileID: 639312675}
   - component: {fileID: 639312674}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3906,7 +3920,7 @@ GameObject:
   - component: {fileID: 731285274}
   - component: {fileID: 731285276}
   - component: {fileID: 731285275}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:polySurface81
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4461,7 +4475,7 @@ GameObject:
   - component: {fileID: 934124059}
   - component: {fileID: 934124061}
   - component: {fileID: 934124060}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4547,7 +4561,7 @@ GameObject:
   - component: {fileID: 941957208}
   - component: {fileID: 941957210}
   - component: {fileID: 941957209}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4799,7 +4813,7 @@ GameObject:
   - component: {fileID: 991670334}
   - component: {fileID: 991670336}
   - component: {fileID: 991670335}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4942,7 +4956,7 @@ GameObject:
   - component: {fileID: 1009362865}
   - component: {fileID: 1009362867}
   - component: {fileID: 1009362866}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pCylinder5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5028,7 +5042,7 @@ GameObject:
   - component: {fileID: 1030277286}
   - component: {fileID: 1030277288}
   - component: {fileID: 1030277287}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:polySurface82
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5202,7 +5216,7 @@ Transform:
   m_GameObject: {fileID: 1032120534}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.421066, y: 9.38999, z: 0.000002424732}
+  m_LocalPosition: {x: -30.42107, y: 9.38999, z: 0.000002424732}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5243,6 +5257,7 @@ GameObject:
   - component: {fileID: 1034453175}
   - component: {fileID: 1034453173}
   - component: {fileID: 1034453174}
+  - component: {fileID: 1034453176}
   m_Layer: 0
   m_Name: Security Cam 3
   m_TagString: Untagged
@@ -5281,18 +5296,18 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 255
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 3
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -5354,12 +5369,20 @@ Transform:
   m_GameObject: {fileID: 1034453172}
   serializedVersion: 2
   m_LocalRotation: {x: -0.023885831, y: 0.9756522, z: -0.16860864, w: -0.13821514}
-  m_LocalPosition: {x: -6, y: 0, z: -29.6}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1398326332}
   m_LocalEulerAnglesHint: {x: 19.61, y: 196.126, z: 0}
+--- !u!81 &1034453176
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034453172}
+  m_Enabled: 1
 --- !u!1001 &1036363393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5434,7 +5457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1052678882}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5751,7 +5774,7 @@ GameObject:
   - component: {fileID: 1121232580}
   - component: {fileID: 1121232582}
   - component: {fileID: 1121232581}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6210,7 +6233,7 @@ GameObject:
   - component: {fileID: 1312881977}
   - component: {fileID: 1312881979}
   - component: {fileID: 1312881978}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6285,11 +6308,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312881976}
   m_Mesh: {fileID: -8024300070951009845, guid: 71c5c59dc57687745aa7bb3868adb231, type: 3}
---- !u!20 &1336743489 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 1396375226764982198, guid: f13e948752912db47912b897752824ee, type: 3}
-  m_PrefabInstance: {fileID: 1458801444}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1338014327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3205483265170216284, guid: 83e766d95ac395741a3d00abd85439f5, type: 3}
@@ -6341,7 +6359,7 @@ GameObject:
   - component: {fileID: 1342931578}
   - component: {fileID: 1342931580}
   - component: {fileID: 1342931579}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pCylinder5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6576,15 +6594,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398326331}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00003801238, y: 9.38999, z: -29.652882}
+  m_LocalRotation: {x: -0.012612578, y: -0.092364, z: 0.028454283, w: 0.9952388}
+  m_LocalPosition: {x: 0, y: 9.389973, z: -29.652977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1052678882}
   - {fileID: 1034453175}
   m_Father: {fileID: 740687700}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.137, y: -10.638, z: 3.381}
 --- !u!95 &1398326333
 Animator:
   serializedVersion: 7
@@ -6731,9 +6749,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1283671582116311622, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1396375226764982198, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: far clip plane
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396375226764982198, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 16777407
       objectReference: {fileID: 0}
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7143,6 +7169,7 @@ GameObject:
   - component: {fileID: 1642144219}
   - component: {fileID: 1642144221}
   - component: {fileID: 1642144220}
+  - component: {fileID: 1642144222}
   m_Layer: 0
   m_Name: Security Cam 2
   m_TagString: Untagged
@@ -7159,7 +7186,7 @@ Transform:
   m_GameObject: {fileID: 1642144218}
   serializedVersion: 2
   m_LocalRotation: {x: 0.105770625, y: 0.54883313, z: -0.1488746, w: 0.8157397}
-  m_LocalPosition: {x: 27.2, y: 3.2, z: 11.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7240,18 +7267,18 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 255
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 2
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -7260,6 +7287,14 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!81 &1642144222
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642144218}
+  m_Enabled: 1
 --- !u!1 &1658096724
 GameObject:
   m_ObjectHideFlags: 0
@@ -7271,7 +7306,7 @@ GameObject:
   - component: {fileID: 1658096725}
   - component: {fileID: 1658096727}
   - component: {fileID: 1658096726}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7536,7 +7571,7 @@ GameObject:
   - component: {fileID: 1695261681}
   - component: {fileID: 1695261683}
   - component: {fileID: 1695261682}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:polySurface82
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7622,7 +7657,7 @@ GameObject:
   - component: {fileID: 1700431926}
   - component: {fileID: 1700431928}
   - component: {fileID: 1700431927}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7984,7 +8019,7 @@ GameObject:
   - component: {fileID: 1878762471}
   - component: {fileID: 1878762473}
   - component: {fileID: 1878762472}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:polySurface82
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8137,7 +8172,7 @@ GameObject:
   - component: {fileID: 1955420354}
   - component: {fileID: 1955420356}
   - component: {fileID: 1955420355}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8239,7 +8274,7 @@ GameObject:
   - component: {fileID: 1976394674}
   - component: {fileID: 1976394676}
   - component: {fileID: 1976394675}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8509,7 +8544,7 @@ GameObject:
   - component: {fileID: 2010250853}
   - component: {fileID: 2010250855}
   - component: {fileID: 2010250854}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8605,7 +8640,7 @@ GameObject:
   - component: {fileID: 2065190335}
   - component: {fileID: 2065190337}
   - component: {fileID: 2065190336}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8751,7 +8786,7 @@ GameObject:
   - component: {fileID: 2076542931}
   - component: {fileID: 2076542933}
   - component: {fileID: 2076542932}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Blockout_GasStationStore_1:pSphere1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
