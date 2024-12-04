@@ -9255,6 +9255,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6467325650110982105, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
+      propertyPath: '_dialogList.Array.data[1].characterDialogs.Array.data[0].dialogLines.Array.data[3]'
+      value: My coworker. Last thing I remember....
+      objectReference: {fileID: 0}
     - target: {fileID: 9024066270162390463, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
       propertyPath: _playerInventory
       value: 
