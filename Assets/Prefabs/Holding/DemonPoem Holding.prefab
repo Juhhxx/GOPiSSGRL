@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7371867528902293591}
   - component: {fileID: 1405960366288820765}
   - component: {fileID: 2280665288575269084}
+  - component: {fileID: -2276751490297312916}
   m_Layer: 6
   m_Name: DemonPoem Holding
   m_TagString: Untagged
@@ -86,3 +87,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-2276751490297312916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310751724994561192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d83d07480fd95e4c92f2cf04e4c024d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _viewUI: {fileID: 8690401023422727191, guid: 3dd9863adcfc6e2499a2b9e85ca14ba9, type: 3}

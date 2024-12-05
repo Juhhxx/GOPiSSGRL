@@ -646,7 +646,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7437518743940774994, guid: f13e948752912db47912b897752824ee, type: 3}
   m_PrefabInstance: {fileID: 1458801444}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1188219038}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d11e6aa863af4a54287dc1daace15303, type: 3}
@@ -1554,6 +1554,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2280665288575269084, guid: 01ccf25c9b8b7d34586c998d5c51ec26, type: 3}
     - {fileID: 1405960366288820765, guid: 01ccf25c9b8b7d34586c998d5c51ec26, type: 3}
+    - {fileID: -2915048230003009476, guid: 01ccf25c9b8b7d34586c998d5c51ec26, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3032,7 +3033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &551209268
 Transform:
   m_ObjectHideFlags: 0
@@ -6059,6 +6060,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1086610777}
   m_SourcePrefab: {fileID: 100100000, guid: cb9b5e9b3b44e8b46adf704813bcb6fe, type: 3}
+--- !u!1 &1188219038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8602676614936545698, guid: f13e948752912db47912b897752824ee, type: 3}
+  m_PrefabInstance: {fileID: 1458801444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1190341144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7137,7 +7143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1599910769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261b9195cd270044ca432a5b3b0c5f3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e039b533081d0046ab7a28228c6b70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _necronomiconMeshR: {fileID: 593275875952807397, guid: 8b415feee08b7454c9f518f5a5751669, type: 3}
@@ -7145,9 +7151,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5048b3632121bcd40a92e3ab7472938f, type: 2}
   - {fileID: 2100000, guid: 9305766d7c6ecd2469ab43cd10a16add, type: 2}
   _demonObject: {fileID: 1140938891}
-  _chalkPoints: []
-  _chalkFrequencies: []
-  _finalPoint: {fileID: 0}
 --- !u!1 &1619954211
 GameObject:
   m_ObjectHideFlags: 0
@@ -9136,6 +9139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bathroom_Door
       objectReference: {fileID: 0}
+    - target: {fileID: 8018369592686590284, guid: f0f43ac8d8563d14ab9d48b7aad2a44b, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1188219038}
     - target: {fileID: 8018369592686590284, guid: f0f43ac8d8563d14ab9d48b7aad2a44b, type: 3}
       propertyPath: _finnishUI
       value: 

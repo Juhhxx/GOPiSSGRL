@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6639107023455728770}
   - component: {fileID: 3946720160359301695}
   - component: {fileID: 593275875952807397}
+  - component: {fileID: 4396967083950489655}
   m_Layer: 6
   m_Name: Necronomicon Holding
   m_TagString: Untagged
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9305766d7c6ecd2469ab43cd10a16add, type: 2}
+  - {fileID: 2100000, guid: 5048b3632121bcd40a92e3ab7472938f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,3 +87,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4396967083950489655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213500950990017174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d83d07480fd95e4c92f2cf04e4c024d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _viewUI: {fileID: 8690401023422727191, guid: 3dd9863adcfc6e2499a2b9e85ca14ba9, type: 3}

@@ -58,6 +58,7 @@ public class SummonDemon : MonoBehaviour
             _necronomiconMeshR.material = _necronomiconMaterials[1];
             _finalPoint.gameObject.GetComponent<Collider>().enabled = true;
             _chalkFrequencies.Add(_finalPoint.PointFrequency);
+            _chalkPoints.Add(_finalPoint);
         }
     }
     private void CheckPuzzleComplete()
