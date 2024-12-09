@@ -1047,6 +1047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frequency: 100
   _shakeStrenght: 0.03
+  _volumeChangeDistance: 100
   _frequencyDisplay: {fileID: 4052064660836428165}
   _radioAudios:
   - {fileID: 8300000, guid: 2d51feffef62dce4eaaeb99bc00e6377, type: 3}

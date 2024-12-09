@@ -6,9 +6,10 @@ public class Radio : MonoBehaviour
 {
     [SerializeField] private float _frequency;
     [SerializeField] private float _shakeStrenght = 0.03f;
+    [SerializeField] private float _volumeChangeDistance;
     [SerializeField] private TextMeshPro _frequencyDisplay;
     [SerializeField] private AudioClip[] _radioAudios;
-    private Transform _playerTrans;
+    // private Transform _playerTrans;
     private Vector3 _intialPosition;
     private RotateWhenHolding _rotateHolding;
     private AudioSource _audioSource;
@@ -16,7 +17,7 @@ public class Radio : MonoBehaviour
 
     private void Start()
     {
-        _playerTrans = FindAnyObjectByType<PlayerMovement>().transform;
+        // _playerTrans = FindAnyObjectByType<PlayerMovement>().transform;
         _intialPosition = transform.localPosition;
         _rotateHolding = GetComponentInChildren<RotateWhenHolding>();
         _audioSource = GetComponent<AudioSource>();
@@ -56,7 +57,7 @@ public class Radio : MonoBehaviour
         Vector3 correctedPoint = pointTrans.position;
         correctedPoint.y = 0f;
 
-        Vector3 correctedPlayer = _playerTrans.position;
+        Vector3 correctedPlayer = transform.position; //testar usar a posição do radio em vezda do jogador
         correctedPlayer.y = 0f;
 
         float distance = Vector3.Distance(correctedPlayer,correctedPoint);
@@ -64,11 +65,12 @@ public class Radio : MonoBehaviour
         ChangeAudioVolumeDistance(distance);
         ShakeRadioByDistance(distance);
 
-        Debug.Log($"Distance to player : {distance}");
+        Debug.Log($"Distance to Radio : {distance}");
     }  
     private void ChangeAudioVolumeDistance (float distance)
     {
-        _audioSource.volume = Mathf.InverseLerp(12f,0.5f,distance);
+        // _audioSource.volume = Mathf.InverseLerp(12f,0.5f,distance); testing new volume control methods
+        _audioSource.volume = Mathf.Lerp(0.1f,1f,distance);
     }
     private void ShakeRadioByDistance(float distance)
     {
