@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class SecurityCameraSwitcher : MonoBehaviour
 {
-    [SerializeField] private GameObject _playerCamera;
+    [SerializeField] private Camera[] _playerCameras;
+    [SerializeField] private AudioListener[] _playerListeners;
     [SerializeField] private GameObject[] _securityCameras;
+    [SerializeField] private GameObject[] _uis;
     [SerializeField] private bool _runningTrailer;
     private Dictionary<GameObject, Animator> _animators = new();
     private bool _running = false;
@@ -13,7 +15,7 @@ public class SecurityCameraSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        _playerCamera.SetActive(true);
+        TurnPlayer(true);
     }
 
     private void Start()
@@ -50,18 +52,18 @@ public class SecurityCameraSwitcher : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F10)) SwitchSecurityCamera(1);
         if (Input.GetKeyDown(KeyCode.F11)) SwitchSecurityCamera(2);
 
-        if (Input.GetKey(KeyCode.F8)) ToggleCurrentCameraMovement(true);
-        else ToggleCurrentCameraMovement(false);
+        if (Input.GetKey(KeyCode.LeftArrow)) ToggleCurrentCameraMovement(2f);
+        else if (Input.GetKey(KeyCode.RightArrow)) ToggleCurrentCameraMovement(-2f);
+        else ToggleCurrentCameraMovement(0f);
     }
     private float moveSpeed = 0f;
-    private void ToggleCurrentCameraMovement(bool isMoving)
+    private void ToggleCurrentCameraMovement(float dir)
     {
         if (_currentCamera == null) return;
 
         Animator animator = _animators[_currentCamera];
 
-        float targetMoveSpeed = isMoving ? 1f : 0f;
-        moveSpeed = Mathf.Lerp(moveSpeed, targetMoveSpeed, Time.deltaTime / 1.3f);
+        moveSpeed = Mathf.Lerp(moveSpeed, dir, Time.deltaTime / 1.3f);
 
         animator.SetFloat("MoveSpeed", moveSpeed);
     }
@@ -75,8 +77,9 @@ public class SecurityCameraSwitcher : MonoBehaviour
         }
         
 
-        _playerCamera.SetActive(true);
+        TurnPlayer(true);
         _currentCamera = null;
+        TurnUIs(true);
     }
 
     private void SwitchSecurityCamera(int index)
@@ -84,7 +87,10 @@ public class SecurityCameraSwitcher : MonoBehaviour
         if (index < 0 || index >= _securityCameras.Length) return;
 
         if (_currentCamera == null)
-            _playerCamera.SetActive(false);
+        {
+            TurnPlayer(false);
+            TurnUIs(false);
+        }
         else
         {
             _currentCamera.SetActive(false);
@@ -94,6 +100,24 @@ public class SecurityCameraSwitcher : MonoBehaviour
         _currentCamera = _securityCameras[index];
         _currentCamera.SetActive(true);
         _currentIndex = index;
+    }
+    private void TurnUIs(bool on = true)
+    {
+        foreach (GameObject ui in _uis)
+        {
+            ui.SetActive(on);
+        }
+    }
+    private void TurnPlayer(bool on)
+    {
+        foreach (Camera component in _playerCameras)
+        {
+            component.enabled = on;
+        }
+        foreach (AudioListener component in _playerListeners)
+        {
+            component.enabled = on;
+        }
     }
     #endif
 }
