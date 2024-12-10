@@ -15,6 +15,7 @@ public class RotateWhenHolding : MonoBehaviour
     [SerializeField] private float _maxValue;
     [SerializeField] private float _minRotation;
     [SerializeField] private float _maxRotation;
+    [SerializeField] private bool _wrapRotation = false;
     private Vector3 _currentRotation;
     [SerializeField] private float _visualizeCurrentRotationValue;
     private float _mouseMovement;
@@ -101,6 +102,13 @@ public class RotateWhenHolding : MonoBehaviour
         
         _currentRotation.z += _mouseMovement;
         // Debug.Log($"rotation z : {_currentRotation.z}");
+
+        if (_wrapRotation)
+        {
+            _currentRotation.z = _minRotation + (_currentRotation.z - _minRotation) % (_maxRotation - _minRotation);
+            if (_currentRotation.z < _minRotation)
+                _currentRotation.z += _maxRotation - _minRotation;
+        }
         _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);
 
         Debug.Log($"rot: {_currentRotation}");

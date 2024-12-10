@@ -567,6 +567,7 @@ MonoBehaviour:
   _maxValue: 400
   _minRotation: 0
   _maxRotation: 180
+  _wrapRotation: 1
   _visualizeCurrentRotationValue: 0
 --- !u!1 &4142499104372690686
 GameObject:
