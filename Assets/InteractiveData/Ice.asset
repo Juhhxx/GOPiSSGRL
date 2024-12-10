@@ -17,8 +17,9 @@ MonoBehaviour:
   inventoryName: 
   inventoryIcon: {fileID: 0}
   requirements: []
+  deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - The ice has a leg frozen inside.
+  - The ice has a body inside.
   activatesUI: 0
   holdingObject: {fileID: 0}

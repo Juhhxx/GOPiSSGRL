@@ -22,6 +22,7 @@ public class KeypadControl : MonoBehaviour
     [SerializeField] private List<int> _correctCombination;
     [SerializeField] private Material _uvMaterial;
     [SerializeField] private Texture[] _uvTextures;
+    [SerializeField] private Interactive _requirement;
     private Stack<int> _currentCombination;
     private PlayerMovement _playerMovement;
     private PlayerInteraction _playerInteraction;
@@ -159,6 +160,13 @@ public class KeypadControl : MonoBehaviour
             StartCoroutine(KeypadError());
             return;
         }
+
+        if (!_playerInventory.Contains(_requirement))
+        {
+            Debug.Log("Player not allowed to move on yet.");
+            StartCoroutine(KeypadError());
+            return;
+        }
             
         _currentCombinationList = _currentCombination.Reverse().ToList();
         Debug.Log("count: " + _currentCombinationList.Count);
@@ -253,6 +261,9 @@ public class KeypadControl : MonoBehaviour
         _keypadGlitchImage.color = color;
 
         _keypadText.enabled = true;
+
+        _currentCombination.Clear();
+        UpdateScreen();
     }
 
     // this method just plays a beep sound for acceptfulness

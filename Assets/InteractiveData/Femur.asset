@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - A half decomposed leg
+  - A half decomposed tibia.
   activatesUI: 0
   holdingObject: {fileID: 774204161524076571, guid: bd5aa6c104fc58240b3e514cd1825fc2, type: 3}

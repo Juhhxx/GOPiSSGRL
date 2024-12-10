@@ -17,8 +17,9 @@ MonoBehaviour:
   inventoryName: 
   inventoryIcon: {fileID: 0}
   requirements: []
+  deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - Place Cup
+  - Place slushie cup.
   activatesUI: 0
   holdingObject: {fileID: 0}

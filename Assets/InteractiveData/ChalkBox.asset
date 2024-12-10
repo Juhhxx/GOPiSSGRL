@@ -19,7 +19,7 @@ MonoBehaviour:
   requirements:
   - {fileID: 11400000, guid: a7ea8f58cc4050943b281b2e433bcec5, type: 2}
   deleteRequirementsOnUse: 0
-  requirementsMessage: Summoning Chalk?
+  requirementsMessage: Family size summoning chalk?
   interactionMessages: []
   activatesUI: 0
   holdingObject: {fileID: 3772300437664731849, guid: 9a5d83241a9e5db43b19f0761c90be98, type: 3}

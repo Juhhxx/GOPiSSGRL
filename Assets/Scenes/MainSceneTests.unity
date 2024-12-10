@@ -42,7 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -1569,6 +1570,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7371867528902293591, guid: 01ccf25c9b8b7d34586c998d5c51ec26, type: 3}
   m_PrefabInstance: {fileID: 318970508}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &318970511 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2151881209037953434, guid: 01ccf25c9b8b7d34586c998d5c51ec26, type: 3}
+  m_PrefabInstance: {fileID: 318970508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318970509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200d4b7f1039828448d461f83221465a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &322022821
 GameObject:
   m_ObjectHideFlags: 0
@@ -9741,9 +9753,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3578539117269475916}
     - target: {fileID: 8445476866641001249, guid: fb9797117f3151749acac93710bd7d74, type: 3}
+      propertyPath: _requirement
+      value: 
+      objectReference: {fileID: 318970511}
+    - target: {fileID: 8445476866641001249, guid: fb9797117f3151749acac93710bd7d74, type: 3}
       propertyPath: _holdingCamera
       value: 
       objectReference: {fileID: 728918244}
+    - target: {fileID: 8445476866641001249, guid: fb9797117f3151749acac93710bd7d74, type: 3}
+      propertyPath: _combinationSize
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8445476866641001249, guid: fb9797117f3151749acac93710bd7d74, type: 3}
       propertyPath: _keypadGlitchImage
       value: 

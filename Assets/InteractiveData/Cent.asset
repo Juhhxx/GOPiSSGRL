@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - Use Cent
+  - Use cent.
   activatesUI: 0
   holdingObject: {fileID: 1620185913566760650, guid: 1320d94da90b36a498d414236889e2dc, type: 3}

@@ -19,8 +19,8 @@ MonoBehaviour:
   requirements:
   - {fileID: 11400000, guid: 9e4fb69924de67449a1e2376abffaf75, type: 2}
   deleteRequirementsOnUse: 1
-  requirementsMessage: Give him what he wants
+  requirementsMessage: Give him what he wants.
   interactionMessages:
-  - Talk to Demon
+  - Talk to Demon.
   activatesUI: 0
   holdingObject: {fileID: 0}

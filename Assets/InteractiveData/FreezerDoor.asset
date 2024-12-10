@@ -17,8 +17,9 @@ MonoBehaviour:
   inventoryName: 
   inventoryIcon: {fileID: 0}
   requirements: []
+  deleteRequirementsOnUse: 1
   requirementsMessage: It's locked.
   interactionMessages:
-  - The Door to the Freezer
+  - The door to the freezer.
   activatesUI: 0
   holdingObject: {fileID: 0}

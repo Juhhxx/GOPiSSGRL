@@ -27,7 +27,7 @@ public class RotateBridge : MonoBehaviour
     }
     private void DisableRotation()
     {
-        if (Input.GetButton("Use") || _rotate.enabled == false) return;
+        if (Input.GetButton("Interact") || _rotate.enabled == false) return;
         Debug.Log($"disabling {_rotate.gameObject.name}");
         _rotate.DisableRotation();
         _fixMachine.CheckTemprature();

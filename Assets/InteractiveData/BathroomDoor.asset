@@ -19,8 +19,7 @@ MonoBehaviour:
   requirements:
   - {fileID: 11400000, guid: 7a0f24a3e55d01243afd1db4799cf2b4, type: 2}
   deleteRequirementsOnUse: 1
-  requirementsMessage: I really need to get in...
-  interactionMessages:
-  - Door to the Bathroom
+  requirementsMessage: Door to the bathroom.
+  interactionMessages: []
   activatesUI: 0
   holdingObject: {fileID: 0}
