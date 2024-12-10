@@ -54,8 +54,8 @@ public class SpeechControl : MonoBehaviour
         _waitForTypingSpeed = new WaitForSeconds(_typingSpeed);
         _stringBuilder = new StringBuilder();
 
-        _waitUntil = new WaitUntil(() => Input.GetKeyDown("Talk"));
-        _waitUntilOrDisplayed = new WaitUntil(() => _isTextFullyDisplayed || Input.GetKeyDown("Talk"));
+        _waitUntil = new WaitUntil(() => Input.GetButtonDown("Talk"));
+        _waitUntilOrDisplayed = new WaitUntil(() => _isTextFullyDisplayed || Input.GetButtonDown("Talk"));
         _waitForEndOfFrame = new WaitForFixedUpdate();
         
         _dialogUI.SetActive(false);
@@ -103,6 +103,9 @@ public class SpeechControl : MonoBehaviour
     /// <returns></returns>
     private IEnumerator ShowAllDialogs()
     {
+        _dialogText.text = null;
+        yield return _waitForEndOfFrame;
+
         while(true)
         {
             yield return StartCoroutine(BeginDialog(_currentDialogs.Peek()));
