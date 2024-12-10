@@ -29,17 +29,19 @@ public class SpeechControl : MonoBehaviour
 
     private WaitForSeconds _waitForTypingSpeed;
     private StringBuilder _stringBuilder;
-    private WaitUntil _waitUntilSpace;
-    private WaitUntil _waitUntilSpaceOrDisplayed;
+    private WaitUntil _waitUntil;
+    private WaitUntil _waitUntilOrDisplayed;
     private YieldInstruction _waitForEndOfFrame;
     private Coroutine _typingCoroutine;
     private IEnumerator _dialogCoroutine;
     private bool _isTextFullyDisplayed = false;
 
-    // In start we just see if the text should be displayed based on if we have a
-    // image box for the dialog,
-    // and we initialize the waitforseconds that we will be using a lot, as well
-    // as hide the ui
+    /// <summary>
+    /// In start we just see if the text should be displayed based on if we have a
+    /// image box for the dialog,
+    /// and we initialize the waitforseconds that we will be using a lot, as well
+    /// as hide the ui
+    /// </summary>
     private void Start()
     {
         _playerMovement = FindFirstObjectByType<PlayerMovement>();
@@ -52,8 +54,8 @@ public class SpeechControl : MonoBehaviour
         _waitForTypingSpeed = new WaitForSeconds(_typingSpeed);
         _stringBuilder = new StringBuilder();
 
-        _waitUntilSpace = new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
-        _waitUntilSpaceOrDisplayed = new WaitUntil(() => _isTextFullyDisplayed || Input.GetKeyDown(KeyCode.Space));
+        _waitUntil = new WaitUntil(() => Input.GetKeyDown("Talk"));
+        _waitUntilOrDisplayed = new WaitUntil(() => _isTextFullyDisplayed || Input.GetKeyDown("Talk"));
         _waitForEndOfFrame = new WaitForFixedUpdate();
         
         _dialogUI.SetActive(false);
@@ -64,9 +66,13 @@ public class SpeechControl : MonoBehaviour
         return _dialogCoroutine != null;
     }
 
-    // Show dialog gets a character ID and a name for the character, it checks if
-    // the id exists and if so it starts the dialog, starting a coroutine that goes through
-    // all the saved IEnumerators saved in dialogQueue
+    /// <summary>
+    /// Show dialog gets a character ID and a name for the character, it checks if
+    /// the id exists and if so it starts the dialog, starting a coroutine that goes through
+    /// all the saved IEnumerators saved in dialogQueue
+    /// </summary>
+    /// <param name="newDialogQueue"></param>
+    /// <returns></returns>
     public Queue<(CharacterID, Queue<string>)> ShowDialogs(Queue<(CharacterID, Queue<string>)> newDialogQueue)
     {
         if (_dialogCoroutine != null)
@@ -88,10 +94,13 @@ public class SpeechControl : MonoBehaviour
             return null;
     }
 
-    // this method shows all the queued up dialogs from characters,
-    // if you want to do a dialog that starts with player, goes to clerk and
-    // back to player, you only need to set the dialogs in the correct order in setDialogs
-    // and then use ShowDialog to set these dialogs in order for when they play together for each character
+    /// <summary>
+    /// this method shows all the queued up dialogs from characters,
+    /// if you want to do a dialog that starts with player, goes to clerk and
+    /// back to player, you only need to set the dialogs in the correct order in setDialogs
+    /// and then use ShowDialog to set these dialogs in order for when they play together for each character
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ShowAllDialogs()
     {
         while(true)
@@ -109,11 +118,15 @@ public class SpeechControl : MonoBehaviour
         EndDialog();
     }
 
-    // This coroutine is called by showdialog and is used to go through all the
-    // dialog lines in a characters dialog queue, every string is sent to begin typing,
-    // if during the typing of these strings space is pressed, the dialog will just skip
-    // to being complete, and only if space is pressed when its already complete,
-    // it will go to the next dialog or stop displaying
+    /// <summary>
+    /// This coroutine is called by showdialog and is used to go through all the
+    /// dialog lines in a characters dialog queue, every string is sent to begin typing,
+    /// if during the typing of these strings Talk is pressed, the dialog will just skip
+    /// to being complete, and only if Talk is pressed when its already complete,
+    /// it will go to the next dialog or stop displaying
+    /// </summary>
+    /// <param name="dialogData"></param>
+    /// <returns></returns>
     private IEnumerator BeginDialog((CharacterID, Queue<string>) dialogData)
     {
         string dialogToShow;
@@ -135,7 +148,7 @@ public class SpeechControl : MonoBehaviour
 
             _typingCoroutine = StartCoroutine(BeginTyping(dialogToShow, sound));
 
-            yield return _waitUntilSpaceOrDisplayed;
+            yield return _waitUntilOrDisplayed;
             yield return _waitForEndOfFrame;
 
             if (!_isTextFullyDisplayed)
@@ -148,7 +161,7 @@ public class SpeechControl : MonoBehaviour
                 _dialogText.text = _stringBuilder.ToString();
             }
 
-            yield return _waitUntilSpace;
+            yield return _waitUntil;
             yield return _waitForEndOfFrame;
 
             if (dialogQueue.Count > 1)
@@ -160,9 +173,12 @@ public class SpeechControl : MonoBehaviour
         }
     }
 
-    // this method just clears the streamwriter that we are using in begindialog and
-    // begin typing both, and adds a name if there is a name to add.
-    // its only here to make code more clear
+    /// <summary>
+    ///This method just clears the streamwriter that we are using in begindialog and
+    /// begin typing both, and adds a name if there is a name to add.
+    /// its only here to make code more clear
+    /// </summary>
+    /// <param name="name"></param>
     private void ClearStringBuilder(string name)
     {
         _stringBuilder.Clear();
@@ -170,9 +186,14 @@ public class SpeechControl : MonoBehaviour
             _stringBuilder.Append(name).Append(": ");
     }
 
-    // begin typing just receives a string which it will interpolate between all its
-    // chars and add them to the stringbuilder and give that stringbuilder to the ui
-    // text and then wait for typingspeed
+    /// <summary>
+    ///begin typing just receives a string which it will interpolate between all its
+    /// chars and add them to the stringbuilder and give that stringbuilder to the ui
+    /// text and then wait for typingspeed
+    /// </summary>
+    /// <param name="dialogToShow"></param>
+    /// <param name="sound"></param>
+    /// <returns></returns>
     private IEnumerator BeginTyping(string dialogToShow, AudioClip sound)
     {
         foreach (char letter in dialogToShow)
@@ -185,7 +206,7 @@ public class SpeechControl : MonoBehaviour
                 yield return _waitForTypingSpeed;
             else if (sound != null)
             {
-                // Debug.Log("Sound is not null and letter isnt white or space");
+                // Debug.Log("Sound is not null and letter isnt white or pressed talk");
                 _audioMixer.SetFloat(_pitchID,
                     (float) UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y));
                 _audioSource.PlayOneShot(sound);
@@ -200,9 +221,11 @@ public class SpeechControl : MonoBehaviour
         _isTextFullyDisplayed = true;
     }
 
-    // A hashset of characters to not play a sound for in begin typing
-    // it might be usefull to remove some of the symbols later if we want to
-    // write censured bad words
+    /// <summary>
+    ///A hashset of characters to not play a sound for in begin typing
+    /// it might be usefull to remove some of the symbols later if we want to
+    /// write censured bad words
+    /// </summary>
     private readonly HashSet<char> notAllowedChars = new HashSet<char>()
     {
         '+', '=', '/', '\\', '|', '<', '>', '_', '^', '~', '"', '\'', '`','¢',
@@ -215,8 +238,10 @@ public class SpeechControl : MonoBehaviour
         return notAllowedChars.Contains(c);
     }
 
-    // End dialog disables all the necessary objects for the ui, and enables all the
-    // ones that it had to disables when showDialog was first called
+    /// <summary>
+    /// End dialog disables all the necessary objects for the ui, and enables all the
+    /// ones that it had to disables when showDialog was first called
+    /// </summary>
     private void EndDialog()
     {
         _dialogUI.SetActive(false);
