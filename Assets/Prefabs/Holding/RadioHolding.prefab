@@ -561,8 +561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9e27a3648139b47b11484b85fb3c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holdingCamera: {fileID: 0}
-  _sensitivity: 2
+  _scrollSensitivity: 4.888
+  _mouseSensitivity: 0.6
   _minValue: 30
   _maxValue: 400
   _minRotation: 0

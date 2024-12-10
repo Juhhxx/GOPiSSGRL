@@ -1395,6 +1395,10 @@ PrefabInstance:
       propertyPath: _holdingCamera
       value: 
       objectReference: {fileID: 728918244}
+    - target: {fileID: 3306534099066518147, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
+      propertyPath: _mouseSensitivity
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8692245597115121407, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
       propertyPath: '_slushieButtons.Array.data[0]'
       value: 

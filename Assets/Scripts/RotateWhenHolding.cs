@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements.Experimental;
 
 public class RotateWhenHolding : MonoBehaviour
@@ -8,7 +9,8 @@ public class RotateWhenHolding : MonoBehaviour
     // [SerializeField] private GameObject _holdingCamera;
     private PlayerInteraction _playerInteraction;
     private PlayerMovement _playerMovement;
-    [SerializeField] private float _sensitivity;
+    [SerializeField] private float _scrollSensitivity = 45f;
+    [SerializeField] private float _mouseSensitivity = 0.5f;
     [SerializeField] private float _minValue;
     [SerializeField] private float _maxValue;
     [SerializeField] private float _minRotation;
@@ -92,7 +94,10 @@ public class RotateWhenHolding : MonoBehaviour
     ///</summary>
     private void RotateWithMouse()
     {
-        _mouseMovement = Input.GetAxis("Mouse ScrollWheel") * _sensitivity;
+        _mouseMovement = Input.GetAxis("Mouse ScrollWheel") * _scrollSensitivity;
+
+        if (Input.GetButton("Interact"))
+            _mouseMovement += Input.GetAxis("Mouse X") * _mouseSensitivity;
         
         _currentRotation.z += _mouseMovement;
         // Debug.Log($"rotation z : {_currentRotation.z}");
