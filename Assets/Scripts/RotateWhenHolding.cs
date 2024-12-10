@@ -5,7 +5,7 @@ using UnityEngine.UIElements.Experimental;
 public class RotateWhenHolding : MonoBehaviour
 {
     
-    [SerializeField] private GameObject _holdingCamera;
+    // [SerializeField] private GameObject _holdingCamera;
     private PlayerInteraction _playerInteraction;
     private PlayerMovement _playerMovement;
     [SerializeField] private float _sensitivity;
@@ -46,8 +46,8 @@ public class RotateWhenHolding : MonoBehaviour
     }
     public void EnableRotation()
     {
-        if (_holdingCamera != null)
-            _holdingCamera.SetActive(false);
+        /*if (_holdingCamera != null)
+            _holdingCamera.SetActive(false);*/
         
         _playerMovement.enabled = false;
         _playerInteraction.enabled = false;
@@ -60,8 +60,8 @@ public class RotateWhenHolding : MonoBehaviour
     /// </summary>
     public void DisableRotation()
     {
-        if (_holdingCamera != null)
-            _holdingCamera.SetActive(true);
+        /*if (_holdingCamera != null)
+            _holdingCamera.SetActive(true);*/
         
         _playerMovement.enabled = true;
         _playerInteraction.enabled = true;
