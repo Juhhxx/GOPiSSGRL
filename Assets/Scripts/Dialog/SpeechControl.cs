@@ -204,6 +204,9 @@ public class SpeechControl : MonoBehaviour
             _stringBuilder.Append(letter);
             _dialogText.text = _stringBuilder.ToString();
 
+            if (letter == '\\')
+                continue;
+
             if (IsNotAllowed(letter))
                 // it waits double time on non letters
                 yield return _waitForTypingSpeed;
@@ -217,7 +220,7 @@ public class SpeechControl : MonoBehaviour
                 _audioMixer.GetFloat(_pitchID, out f);
                 Debug.Log("Pitch is: " + f);*/
             }
-            
+
             yield return _waitForTypingSpeed;
         }
 

@@ -1218,9 +1218,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1062039362}
     m_Modifications:
+    - target: {fileID: 694174373068098705, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 666
+      objectReference: {fileID: 0}
     - target: {fileID: 713719640852122799, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1425293327273140028, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}
       propertyPath: m_Volume
@@ -2269,6 +2273,14 @@ PrefabInstance:
       propertyPath: '_itemPrefab.Array.data[0]'
       value: 
       objectReference: {fileID: 318970509}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[2]'
+      value: FOR ME TO HELP WITH YOUR QUEST,\nYOU MUST FIRST MEET MY REQUEST!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: '_dialogList.Array.data[1].characterDialogs.Array.data[1].dialogLines.Array.data[0]'
+      value: MORTAL HUMAN!\nYOU HAVE ACHIEVED A MOST DESIRABLE SLUSHIE!
+      objectReference: {fileID: 0}
     - target: {fileID: 7048890267660812568, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: _playerInventory
       value: 
@@ -9537,6 +9549,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6467325650110982105, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[3].dialogLines.Array.data[2]'
+      value: We have keychains on sale, I guess.\n0.99$ bi-- I mean, dear customer.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467325650110982105, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
       propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[3].dialogLines.Array.data[3]'
       value: 
       objectReference: {fileID: 0}
@@ -9558,7 +9574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6467325650110982105, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
       propertyPath: '_dialogList.Array.data[2].characterDialogs.Array.data[0].dialogLines.Array.data[2]'
-      value: I would give you the key too, but the last person who tried to piss
+      value: I would give you the key too,\nbut the last person who tried to piss
         didn't return it.
       objectReference: {fileID: 0}
     - target: {fileID: 6467325650110982105, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
@@ -9567,16 +9583,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6467325650110982105, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
       propertyPath: '_dialogList.Array.data[2].characterDialogs.Array.data[0].dialogLines.Array.data[4]'
-      value: She went into the freezer. I don't know... Like three weeks ago?
+      value: She went into the freezer. I don't know...\nLike three weeks ago?
       objectReference: {fileID: 0}
     - target: {fileID: 6467325650110982105, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
       propertyPath: '_dialogList.Array.data[2].characterDialogs.Array.data[0].dialogLines.Array.data[5]'
-      value: Good luck trying to get the key though, I forgot the password to the
+      value: Good luck trying to get the key though,\nI forgot the password to the
         freezer door.
       objectReference: {fileID: 0}
     - target: {fileID: 6467325650110982105, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
       propertyPath: '_dialogList.Array.data[2].characterDialogs.Array.data[0].dialogLines.Array.data[6]'
-      value: Hey can you uh... Keep an eye on the place for a while?
+      value: Hey can you uh...\nKeep an eye on the place for a while?
       objectReference: {fileID: 0}
     - target: {fileID: 6467325650110982105, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
       propertyPath: '_dialogList.Array.data[2].characterDialogs.Array.data[0].dialogLines.Array.data[7]'
