@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpecialCommands : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class SpecialCommands : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.T)) ThermostatCent();
             if (Input.GetKeyDown(KeyCode.O)) OpenFrezeerDoor();
             if (Input.GetKeyDown(KeyCode.F)) FemurPuzzle();
+            if (Input.GetKeyDown(KeyCode.R)) ResetGame();
         }
     }
     private void CheatsGive(Interactive interactive) => _playerInv.Add(interactive);
@@ -67,4 +69,6 @@ public class SpecialCommands : MonoBehaviour
         _animFrezeerDoor.SetTrigger("Open");
     }
     private void FemurPuzzle() => CheatsGive(_femur);
+    private void ResetGame() => 
+    SceneManager.LoadScene("MainSceneTests");
 }
