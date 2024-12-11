@@ -21,7 +21,7 @@ public class ViewBookUI : MonoBehaviour
         if (Input.GetButtonDown("Interact") && _uiObject == null && 
         _playerInteraction.CurrentInteractive == null) 
             ShowUI();
-        else if (Input.GetButtonDown("Interact")) HideUI();
+        else if (Input.GetButtonDown("Exit")) HideUI();
     }
 
     private void ShowUI()
