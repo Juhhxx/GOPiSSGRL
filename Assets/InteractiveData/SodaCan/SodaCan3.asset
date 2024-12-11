@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: Just and empty soda can.
   interactionMessages:
-  - Insert soda can.
+  - Insert soda can
   activatesUI: 0
   holdingObject: {fileID: 4490522552082893936, guid: ea5c903267804c847bb341c919ca8771, type: 3}

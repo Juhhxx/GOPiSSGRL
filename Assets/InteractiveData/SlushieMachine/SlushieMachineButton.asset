@@ -21,6 +21,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: Room's too hot for slushie.
   interactionMessages:
-  - Add slushie flavour.
+  - Add slushie flavour
   activatesUI: 0
   holdingObject: {fileID: 0}

@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - He's sleeping.
+  - He's sleeping
   activatesUI: 0
   holdingObject: {fileID: 0}

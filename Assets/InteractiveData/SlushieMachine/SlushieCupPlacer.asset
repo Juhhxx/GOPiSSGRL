@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - Place slushie cup.
+  - Place slushie cup
   activatesUI: 0
   holdingObject: {fileID: 0}

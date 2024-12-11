@@ -19,7 +19,7 @@ MonoBehaviour:
   requirements:
   - {fileID: 11400000, guid: a7ea8f58cc4050943b281b2e433bcec5, type: 2}
   deleteRequirementsOnUse: 0
-  requirementsMessage: Radio's playing a dirty beat.
+  requirementsMessage: Radio's playing a dirty beat
   interactionMessages: []
   activatesUI: 0
   holdingObject: {fileID: 5072748983818107920, guid: 34d60e3d05eed70498e86aa3ec051a4e, type: 3}

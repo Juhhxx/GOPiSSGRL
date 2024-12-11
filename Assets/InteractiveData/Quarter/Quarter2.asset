@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - Give quarter.
+  - Give quarter
   activatesUI: 0
   holdingObject: {fileID: 1620185913566760650, guid: b87ae51dbc8b6264d87398c8dd4c9fd4, type: 3}

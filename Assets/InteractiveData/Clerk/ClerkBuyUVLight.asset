@@ -24,6 +24,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: Not enough money yet.
   interactionMessages:
-  - Buy UV light.
+  - Buy UV light
   activatesUI: 0
   holdingObject: {fileID: 0}

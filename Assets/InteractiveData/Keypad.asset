@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - Use keypad.
+  - Use keypad
   activatesUI: 0
   holdingObject: {fileID: 0}

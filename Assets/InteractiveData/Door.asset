@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - Go piss girl.
+  - Go piss girl!
   activatesUI: 0
   holdingObject: {fileID: 0}

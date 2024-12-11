@@ -49,7 +49,7 @@ public class Interactive : MonoBehaviour
     public string GetInteractionMessage()
     {
         if (IsType(InteractiveData.Type.Pickable) && !_playerInventory.Contains(this) && (_requirementsMet && deleteRequirementsOnUse|| PlayerHasRequirement() && !deleteRequirementsOnUse))
-            return _interactionManager.pickMessage.Replace("$name", _interactiveData.inventoryName);
+            return _interactionManager.pickMessage.Replace("$name", _interactiveData.inventoryName.ToLower());
         else if (!_requirementsMet)
         {
             if (PlayerHasRequirementSelected())

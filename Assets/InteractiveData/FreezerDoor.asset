@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: It's locked.
   interactionMessages:
-  - The door to the freezer.
+  - The door to the freezer
   activatesUI: 0
   holdingObject: {fileID: 0}

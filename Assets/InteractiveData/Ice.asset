@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - The ice has a body inside.
+  - The ice has a body inside
   activatesUI: 0
   holdingObject: {fileID: 0}

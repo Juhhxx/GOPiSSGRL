@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - Talk to Clerk.
+  - Talk to Clerk
   activatesUI: 0
   holdingObject: {fileID: 0}

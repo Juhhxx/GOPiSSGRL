@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - Change temperature.
+  - Change temperature
   activatesUI: 0
   holdingObject: {fileID: 0}

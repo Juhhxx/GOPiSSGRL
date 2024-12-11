@@ -5,6 +5,7 @@ using UnityEngine.Experimental.GlobalIllumination;
 public class UVLight : MonoBehaviour
 {
     [SerializeField] private GameObject _uvSpotLightObject;
+    [SerializeField] private Collider _necroCollider;
     [SerializeField] private GameObject _uvSpotLightReboundObject;
     [SerializeField] private Material _uvMaterial;
     [SerializeField] private Sounds _sounds;
@@ -59,6 +60,11 @@ public class UVLight : MonoBehaviour
             _uvSpotLightReboundObject.SetActive(false);
         Shader.SetGlobalFloat(_lightedID, 0);
         isOn = false;
+        TAG_Necro necro = FindAnyObjectByType<TAG_Necro>();
+        if (necro != null)
+            _necroCollider = necro.GetComponent<Collider>();
+        if (_necroCollider != null)
+            _necroCollider.enabled = false;
     }
     private void OnEnable()
     {
@@ -108,6 +114,9 @@ public class UVLight : MonoBehaviour
             _uvSpotLightReboundObject.SetActive(true);
         Shader.SetGlobalFloat(_lightedID, 1);
 
+        if (_necroCollider != null)
+            _necroCollider.enabled = true;
+
         return true;
     }
 
@@ -123,6 +132,9 @@ public class UVLight : MonoBehaviour
         if (_uvSpotLightReboundObject != null)
             _uvSpotLightReboundObject.SetActive(false);
         Shader.SetGlobalFloat(_lightedID, 0);
+
+        if (_necroCollider != null)
+            _necroCollider.enabled = false;
 
         return false;
     }
