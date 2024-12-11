@@ -11,7 +11,6 @@ public class KeypadControl : MonoBehaviour
 {
     [SerializeField] private Animator _doorAnimator;
     [SerializeField] private GameObject _ui;
-    [SerializeField] private GameObject _holdingCamera;
     [SerializeField] private InteractiveData _UVLightData;
     [SerializeField] private GameObject _keypadUI;
     [SerializeField] private TMP_Text _keypadText;
@@ -80,16 +79,12 @@ public class KeypadControl : MonoBehaviour
             gameObject.SetActive(false);
 
         _keypadUI.SetActive(false);
-        enabled = false;
     }
 
     // TMP_text component isnt letting me set it directly on enable so i have an
     // Enumerator to tell me if TMP already exists.
     public void EnableKeypad()
     {
-        if ( _playerInventory.GetSelected() != null &&
-            _playerInventory.GetSelected().interactiveData == _UVLightData)
-                _holdingCamera.SetActive(false);
         _keypadUI.SetActive(true);
         _playerInteraction.enabled = false;
         _playerMovement.enabled = false;
@@ -135,13 +130,15 @@ public class KeypadControl : MonoBehaviour
             StartCoroutine(KeypadError());
         }
     }
+    private void Update()
+    {
+        Debug.Log("Check exit?");
+        if (Input.GetButtonDown("Exit")) TurnOffKeypadUI();
+    }
 
     // Turns off keypad UI when the player presses the X button
     public void TurnOffKeypadUI()
     {
-        if ( _playerInventory.GetSelected() != null &&
-            _playerInventory.GetSelected().interactiveData == _UVLightData)
-                _holdingCamera.SetActive(true);
         _keypadUI.SetActive(false);
         _playerInteraction.enabled = true;
         _playerMovement.enabled = true;
