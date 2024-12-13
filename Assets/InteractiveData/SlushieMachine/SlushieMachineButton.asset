@@ -19,7 +19,7 @@ MonoBehaviour:
   requirements:
   - {fileID: 11400000, guid: dba3adf90d446694bb1843c29d98dd5f, type: 2}
   deleteRequirementsOnUse: 1
-  requirementsMessage: Room's too hot for slushie.
+  requirementsMessage: Room's too hot for slushie
   interactionMessages:
   - Add slushie flavour
   activatesUI: 0

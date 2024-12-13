@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
   m_Name: BathroomDoor
   m_EditorClassIdentifier: 
-  type: 1
+  type: 3
   startsOn: 1
   inventoryName: 
   inventoryIcon: {fileID: 0}
   requirements:
   - {fileID: 11400000, guid: 7a0f24a3e55d01243afd1db4799cf2b4, type: 2}
   deleteRequirementsOnUse: 1
-  requirementsMessage: Door to the bathroom
-  interactionMessages: []
+  requirementsMessage: Bathroom's door is locked
+  interactionMessages:
+  - 
   activatesUI: 0
   holdingObject: {fileID: 0}

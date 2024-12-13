@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uvSpotLightObject: {fileID: 6573220878977929074}
+  _necroCollider: {fileID: 0}
   _uvSpotLightReboundObject: {fileID: 8933951508552200264}
   _uvMaterial: {fileID: 2100000, guid: a3995774dbacef1469894471fc8e01ac, type: 2}
   _sounds: {fileID: 11400000, guid: 5ac7902ca99a98644b36433b0d68ab21, type: 2}
@@ -66,13 +67,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.08
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 83
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -110,7 +111,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.58
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -125,7 +126,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.21111111
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -140,7 +141,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

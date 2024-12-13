@@ -18,7 +18,7 @@ MonoBehaviour:
   inventoryIcon: {fileID: 21300000, guid: a82d582ea9003b944b85c3b65d76ccb0, type: 3}
   requirements: []
   deleteRequirementsOnUse: 1
-  requirementsMessage: Just and empty soda can.
+  requirementsMessage: Just and empty soda can
   interactionMessages:
   - Insert soda can
   activatesUI: 0

@@ -18,8 +18,8 @@ MonoBehaviour:
   inventoryIcon: {fileID: 21300000, guid: 35ee24a0183e55e4fa47335ebbd9354a, type: 3}
   requirements: []
   deleteRequirementsOnUse: 1
-  requirementsMessage: 
+  requirementsMessage: A half decomposed tibia
   interactionMessages:
-  - A half decomposed tibia
+  - Pry open the door with tibia
   activatesUI: 0
   holdingObject: {fileID: 774204161524076571, guid: bd5aa6c104fc58240b3e514cd1825fc2, type: 3}
