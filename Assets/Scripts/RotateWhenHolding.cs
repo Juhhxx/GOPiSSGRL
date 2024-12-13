@@ -16,6 +16,7 @@ public class RotateWhenHolding : MonoBehaviour
     [SerializeField] private float _minRotation;
     [SerializeField] private float _maxRotation;
     [SerializeField] private bool _wrapRotation = false;
+    private float _currentValue;
     private Vector3 _currentRotation;
     [SerializeField] private float _visualizeCurrentRotationValue;
     private float _mouseMovement;
@@ -34,17 +35,19 @@ public class RotateWhenHolding : MonoBehaviour
     private void Start()
     {
         if (_currentRotationData != null
-            && _currentRotationData.Rotation.HasValue)
+            && _currentRotationData.Value.HasValue)
             {
                 Debug.Log("Starting");
-                _currentRotation = _currentRotationData.Rotation.Value;
+                _currentValue = _currentRotationData.Value.Value;
             }
         else
         {
             _currentRotation = transform.localRotation.eulerAngles;
             _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);
-            
             transform.localRotation = Quaternion.Euler(_currentRotation);
+
+            float rotationRatio = (_currentRotation.z - _minRotation) / (_maxRotation - _minRotation);
+            _currentValue = Mathf.Lerp(_minValue, _maxValue, rotationRatio);
         }
     }
     public void EnableRotation()
@@ -78,13 +81,13 @@ public class RotateWhenHolding : MonoBehaviour
     private void OnDisable()
     {
         if (_currentRotationData != null)
-            _currentRotationData.Rotation = _currentRotation;
+            _currentRotationData.Value = _currentValue;
     }
 
     private void Update()
     {
         RotateWithMouse();
-        _visualizeCurrentRotationValue = TranslateRotationIntoValue();
+        transform.localRotation = Quaternion.Euler(TranslateValueIntoRotation());
     }
 
     /// <summary>
@@ -95,24 +98,21 @@ public class RotateWhenHolding : MonoBehaviour
     ///</summary>
     private void RotateWithMouse()
     {
-        _mouseMovement = Input.GetAxis("Mouse ScrollWheel") * _scrollSensitivity;
+        _mouseMovement = Input.GetAxisRaw("Mouse ScrollWheel") * _scrollSensitivity * 10;
 
         if (Input.GetButton("Interact"))
             _mouseMovement += Input.GetAxis("Mouse X") * _mouseSensitivity;
         
-        _currentRotation.z += _mouseMovement;
+        _currentValue += _mouseMovement;
         // Debug.Log($"rotation z : {_currentRotation.z}");
 
         if (_wrapRotation)
         {
-            _currentRotation.z = _minRotation + (_currentRotation.z - _minRotation) % (_maxRotation - _minRotation);
-            if (_currentRotation.z < _minRotation)
-                _currentRotation.z += _maxRotation - _minRotation;
+            _currentValue = _minValue + (_currentValue - _minValue) % (_maxValue - _minValue);
+            if (_currentValue < _minValue)
+                _currentValue += _maxValue - _minValue;
         }
-        _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);
-
-        Debug.Log($"rot: {_currentRotation}");
-        transform.localRotation = Quaternion.Euler(_currentRotation);
+        _currentValue = Mathf.Clamp(_currentValue, _minValue,_maxValue);
     }
 
     /// <summary>
@@ -122,14 +122,16 @@ public class RotateWhenHolding : MonoBehaviour
     /// </summary>
     /// <returns> Returns the value of same percentage as current rotation
     /// between mins and maxs.</returns>
-    private float TranslateRotationIntoValue()
+    private Vector3 TranslateValueIntoRotation()
     {
-        float rotationRatio = (_currentRotation.z - _minRotation) / (_maxRotation - _minRotation);
-        return Mathf.Lerp(_minValue, _maxValue, rotationRatio);
+        float valueRatio = (_currentValue - _minValue) / (_maxValue - _minValue);
+        _currentRotation.z = Mathf.Lerp(_minRotation, _maxRotation, valueRatio);
+
+        return _currentRotation;
     }
 
     public float GetCurrentValue()
     {
-        return TranslateRotationIntoValue();
+        return _currentValue;
     }
 }
