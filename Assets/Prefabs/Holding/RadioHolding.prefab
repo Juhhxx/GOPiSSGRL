@@ -563,8 +563,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollSensitivity: 1
   _mouseSensitivity: 0.6
-  _minValue: 30
-  _maxValue: 400
+  _minValue: 78
+  _maxValue: 108
   _minRotation: 0
   _maxRotation: 360
   _wrapRotation: 1

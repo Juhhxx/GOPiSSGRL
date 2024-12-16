@@ -132,8 +132,7 @@ public class KeypadControl : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log("Check exit?");
-        if (Input.GetButtonDown("Exit")) TurnOffKeypadUI();
+        if (Input.GetButtonDown("Exit") && _keypadUI.activeSelf) TurnOffKeypadUI();
     }
 
     // Turns off keypad UI when the player presses the X button

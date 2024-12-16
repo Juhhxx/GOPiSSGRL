@@ -68,3 +68,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointFrequency: 111
   _maxDetectDistance: 0.8
+  _shiningMaterial: {fileID: -876546973899608171, guid: b300b98a983df4842a08d4f22d284e36, type: 3}

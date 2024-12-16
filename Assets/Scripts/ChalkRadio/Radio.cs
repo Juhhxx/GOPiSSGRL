@@ -69,8 +69,7 @@ public class Radio : MonoBehaviour
     }  
     private void ChangeAudioVolumeDistance (float distance)
     {
-        // _audioSource.volume = Mathf.InverseLerp(12f,0.5f,distance); testing new volume control methods
-        _audioSource.volume = Mathf.Lerp(0.1f,1f,distance);
+        _audioSource.volume = Mathf.InverseLerp(20f,0.5f,distance);
     }
     private void ShakeRadioByDistance(float distance)
     {

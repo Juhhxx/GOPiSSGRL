@@ -13,15 +13,14 @@ public class SecurityCameraSwitcher : MonoBehaviour
     private GameObject _currentCamera;
     private int _currentIndex = -1;
 
-    private void Awake()
-    {
-        TurnPlayer(true);
-    }
-
     private void Start()
     {
-        if (!_runningTrailer) return;
-
+        if (!_runningTrailer)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        
         foreach (GameObject cam in _securityCameras)
         {
             _animators[cam] = cam.GetComponentInParent<Animator>();
@@ -31,6 +30,10 @@ public class SecurityCameraSwitcher : MonoBehaviour
     }
 
     #if UNITY_EDITOR
+    private void Awake()
+    {
+        TurnPlayer(true);
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F12))
