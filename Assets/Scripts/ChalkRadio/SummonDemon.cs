@@ -24,7 +24,8 @@ public class SummonDemon : MonoBehaviour
 
         GetFinalPoint();
 
-        foreach (ChalkDrawingPoint point in _chalkPoints) _chalkFrequencies.Add(point.PointFrequency);
+        foreach (ChalkDrawingPoint point in _chalkPoints)
+            _chalkFrequencies.Add(Mathf.Floor(Mathf.Round(point.PointFrequency * 10.0f) * 0.1f));
     }
     private void Update()
     {

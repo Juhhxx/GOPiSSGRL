@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.TextCore;
 
 public class Radio : MonoBehaviour
 {
@@ -25,22 +26,25 @@ public class Radio : MonoBehaviour
     }
     private void Update()
     {
-        _frequency = _rotateHolding.GetCurrentValue();
-        _frequencyDisplay.text = $"{_frequency:f1} MHz";
+        // You need to first round the frequency to the correct number of decimals because otherwise
+        // _frequencyDisplay.text wont match the corrected frequency later (because the text is rounding it, so when the
+        // frequency value gets there and is floored, if its ex: 80.95 it will display 81.0 but correctedFrequency it will be floored to 80)
+        _frequency = Mathf.Round(_rotateHolding.GetCurrentValue() * 10.0f) * 0.1f;
+
         CheckFrequency();
+        _frequencyDisplay.text =  $"{_frequency} MHz";
     }
     
     private void CheckFrequency()
     {
         int pointIndex;
         float correctedFrequency = Mathf.Floor(_frequency);
-        Debug.Log($"Current Frequency: {correctedFrequency}");
         if (_summonDemon.ChalkFrequencies.Contains(correctedFrequency))
         {
-                pointIndex = _summonDemon.ChalkFrequencies.IndexOf(correctedFrequency);
-                Debug.Log(pointIndex);
-                DetectDistance(pointIndex);
-                ChangeAudio(_radioAudios[1]);
+            pointIndex = _summonDemon.ChalkFrequencies.IndexOf(correctedFrequency);
+            Debug.Log(pointIndex);
+            DetectDistance(pointIndex);
+            ChangeAudio(_radioAudios[1]);
         }
         else
         {
@@ -65,7 +69,7 @@ public class Radio : MonoBehaviour
         ChangeAudioVolumeDistance(distance);
         ShakeRadioByDistance(distance);
 
-        Debug.Log($"Distance to Radio : {distance}");
+        // Debug.Log($"Distance to Radio : {distance}");
     }  
     private void ChangeAudioVolumeDistance (float distance)
     {
