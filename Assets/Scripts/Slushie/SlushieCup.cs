@@ -46,6 +46,12 @@ public class SlushieCup : MonoBehaviour
     }
     private void ChangeSlushieColor()
     {
+        if (_slushieFlavours.Count() == 0) 
+        {
+            _material.color = Color.white; 
+            return;
+        }
+        
         Color32 newColor = new Color(0,0,0,1);
         float median = _slushieFlavours.Count();
 
