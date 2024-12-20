@@ -8,8 +8,8 @@ public class PauseMenu : MonoBehaviour
     private PlayerMovement _playerMovement;
     private void Awake()
     {
-        _playerInteraction = _player.GetComponent<PlayerInteraction>();
-        _playerMovement = _player.GetComponent<PlayerMovement>();
+        // _playerInteraction = _player.GetComponent<PlayerInteraction>();
+        // _playerMovement = _player.GetComponent<PlayerMovement>();
     }
     void Update()
     {
@@ -21,8 +21,9 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         Cursor.lockState = CursorLockMode.None;
-        _playerInteraction.enabled = false;
-        _playerMovement.enabled = false;
+        Time.timeScale = 0;
+        // _playerInteraction.enabled = false;
+        // _playerMovement.enabled = false;
         _holdingCamera.SetActive(false);
         _pause.SetActive(true);
     }
@@ -30,8 +31,9 @@ public class PauseMenu : MonoBehaviour
     {
         _pause.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        _playerInteraction.enabled = true;
-        _playerMovement.enabled = true;
+        Time.timeScale = 1;
+        // _playerInteraction.enabled = true;
+        // _playerMovement.enabled = true;
         _holdingCamera.SetActive(true);
     }
 }

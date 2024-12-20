@@ -18,7 +18,7 @@ public class TakeItem : MonoBehaviour
     }
     public bool TakeItemFromPlayer(Interactive item)
     {
-        bool result = _playerInventory.Contains(item);
+        bool result = _playerInventory.IsSelected(item);
 
         if (result)
             _playerInventory.Remove(item);
