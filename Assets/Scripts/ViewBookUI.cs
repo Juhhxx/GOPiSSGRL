@@ -43,4 +43,9 @@ public class ViewBookUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         _playerControl.EnableDisablePlayer(true);
     }
+
+    private void OnDestroy()
+    {
+        HideUI();
+    }
 }
