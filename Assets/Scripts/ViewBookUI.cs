@@ -20,7 +20,7 @@ public class ViewBookUI : MonoBehaviour
         if (Input.GetButtonDown("Interact") && _uiObject == null && 
         _playerControl.CanInteract()) 
             ShowUI();
-        else if (Input.GetButtonDown("Exit") && _uiObject != null) HideUI();
+        else if (Input.GetButtonDown("Interact") && _uiObject != null) HideUI();
     }
 
     private void ShowUI()
