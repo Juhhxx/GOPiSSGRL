@@ -7,8 +7,7 @@ public class RotateWhenHolding : MonoBehaviour
 {
     
     // [SerializeField] private GameObject _holdingCamera;
-    private PlayerInteraction _playerInteraction;
-    private PlayerMovement _playerMovement;
+    private PlayerBehaviorControl _playerControl;
     [SerializeField] private float _scrollSensitivity = 45f;
     [SerializeField] private float _mouseSensitivity = 0.5f;
     [SerializeField] private float _minValue;
@@ -27,8 +26,7 @@ public class RotateWhenHolding : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        _playerMovement = FindFirstObjectByType<PlayerMovement>();
-        _playerInteraction = FindFirstObjectByType<PlayerInteraction>();
+        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
 
         _currentRotationData = GetComponentInParent<CurrentRadioRotation>();
     }
@@ -55,8 +53,7 @@ public class RotateWhenHolding : MonoBehaviour
         /*if (_holdingCamera != null)
             _holdingCamera.SetActive(false);*/
         
-        _playerMovement.enabled = false;
-        _playerInteraction.enabled = false;
+        _playerControl.EnableDisablePlayer(false);
 
         /*Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;*/
@@ -69,8 +66,7 @@ public class RotateWhenHolding : MonoBehaviour
         /*if (_holdingCamera != null)
             _holdingCamera.SetActive(true);*/
         
-        _playerMovement.enabled = true;
-        _playerInteraction.enabled = true;
+        _playerControl.EnableDisablePlayer(true);
 
         enabled = false;
 

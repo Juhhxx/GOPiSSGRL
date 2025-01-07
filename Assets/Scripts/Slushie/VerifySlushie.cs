@@ -45,7 +45,7 @@ public class VerifySlushie : MonoBehaviour
 
     private IEnumerator CheckIfDoneSpeaking()
     {
-        SpeechControl _speech = FindFirstObjectByType<SpeechControl>();
+        SpeechControl _speech = FindAnyObjectByType<SpeechControl>();
 
         yield return new WaitUntil(() => _speech.ShowingSpeech());
 

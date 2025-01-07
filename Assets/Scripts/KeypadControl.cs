@@ -23,9 +23,7 @@ public class KeypadControl : MonoBehaviour
     [SerializeField] private Texture[] _uvTextures;
     [SerializeField] private Interactive _requirement;
     private Stack<int> _currentCombination;
-    private PlayerMovement _playerMovement;
-    private PlayerInteraction _playerInteraction;
-    private PlayerInventory _playerInventory;
+    private PlayerBehaviorControl _playerControl;
 
     // initializes needed collections and sets objects to their needed initial values
     // Generates _combinationSize x of non repeating numbers and orders them by
@@ -71,12 +69,7 @@ public class KeypadControl : MonoBehaviour
     }
     private void Start()
     {
-        _playerMovement = FindFirstObjectByType<PlayerMovement>();
-        _playerInteraction = FindFirstObjectByType<PlayerInteraction>();
-        _playerInventory = FindFirstObjectByType<PlayerInventory>();
-
-        if (_playerMovement == null || _playerInteraction == null || _playerInventory == null)
-            gameObject.SetActive(false);
+        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
 
         _keypadUI.SetActive(false);
     }
@@ -86,8 +79,9 @@ public class KeypadControl : MonoBehaviour
     public void EnableKeypad()
     {
         _keypadUI.SetActive(true);
-        _playerInteraction.enabled = false;
-        _playerMovement.enabled = false;
+
+        _playerControl.EnableDisablePlayer(false);
+
         _ui.SetActive(false);
         StartCoroutine(UpdateScreenIfText());
         Cursor.lockState = CursorLockMode.None;
@@ -139,8 +133,9 @@ public class KeypadControl : MonoBehaviour
     public void TurnOffKeypadUI()
     {
         _keypadUI.SetActive(false);
-        _playerInteraction.enabled = true;
-        _playerMovement.enabled = true;
+
+        _playerControl.EnableDisablePlayer(true);
+
         _ui.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -157,7 +152,7 @@ public class KeypadControl : MonoBehaviour
             return;
         }
 
-        if (!_playerInventory.Contains(_requirement))
+        if (!_playerControl.InventoryContains(_requirement))
         {
             Debug.Log("Player not allowed to move on yet.");
             StartCoroutine(KeypadError());

@@ -10,7 +10,7 @@ public class CharacterSpeech : MonoBehaviour
     
     private void Awake()
     {
-        _speechControl = FindFirstObjectByType<SpeechControl>();
+        _speechControl = FindAnyObjectByType<SpeechControl>();
 
         if (_speechControl == null)
         {

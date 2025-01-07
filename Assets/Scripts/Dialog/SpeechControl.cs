@@ -13,8 +13,6 @@ public class SpeechControl : MonoBehaviour
     [SerializeField] private TMP_Text _dialogText;
     [SerializeField] private float _typingSpeed = 0.05f;
     [SerializeField] private GameObject _inventoryUI;
-    private PlayerMovement _playerMovement;
-    private PlayerInteraction _playerInteraction;
 
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioMixer _audioMixer;
@@ -36,6 +34,8 @@ public class SpeechControl : MonoBehaviour
     private IEnumerator _dialogCoroutine;
     private bool _isTextFullyDisplayed = false;
 
+    private PlayerBehaviorControl _playerControl;
+
     /// <summary>
     /// In start we just see if the text should be displayed based on if we have a
     /// image box for the dialog,
@@ -44,10 +44,7 @@ public class SpeechControl : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        _playerMovement = FindFirstObjectByType<PlayerMovement>();
-        _playerInteraction = FindFirstObjectByType<PlayerInteraction>();
-
-        if (_playerMovement == null || _playerInteraction == null) return;
+        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
 
         _pitchID = "PitchShifterPitch";
 
@@ -79,8 +76,9 @@ public class SpeechControl : MonoBehaviour
             return null;
         
         _inventoryUI.SetActive(false);
-        _playerMovement.enabled = false;
-        _playerInteraction.enabled = false;
+
+        _playerControl.EnableDisablePlayer(false);
+
         _dialogUI.SetActive(true);
 
         _currentDialogs = newDialogQueue;
@@ -252,8 +250,8 @@ public class SpeechControl : MonoBehaviour
     {
         _dialogUI.SetActive(false);
         _inventoryUI.SetActive(true);
-        _playerMovement.enabled = true;
-        _playerInteraction.enabled = true;
+
+        _playerControl.EnableDisablePlayer(true);
 
         _dialogCoroutine = null;
     }

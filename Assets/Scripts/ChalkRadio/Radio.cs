@@ -18,7 +18,6 @@ public class Radio : MonoBehaviour
 
     private void Start()
     {
-        // _playerTrans = FindAnyObjectByType<PlayerMovement>().transform;
         _intialPosition = transform.localPosition;
         _rotateHolding = GetComponentInChildren<RotateWhenHolding>();
         _audioSource = GetComponent<AudioSource>();

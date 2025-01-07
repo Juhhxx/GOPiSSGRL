@@ -3,15 +3,17 @@ using UnityEngine;
 public class EndTest : MonoBehaviour
 {
     [SerializeField] private GameObject _finnishUI;
-    [SerializeField] private GameObject _player;
+    [SerializeField] private PlayerBehaviorControl _playerControl;
     [SerializeField] private GameObject _holdingCamera;
 
     public void ActivateUI()
     {
         _holdingCamera.SetActive(false);
         _finnishUI.SetActive(true);
-        _player.GetComponent<PlayerMovement>().enabled = false;
-        _player.GetComponent<PlayerInteraction>().enabled = false;
+
+        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
+        _playerControl.EnableDisablePlayer(false);
+
         Cursor.lockState = CursorLockMode.None;
     }
     public void OpenForm()

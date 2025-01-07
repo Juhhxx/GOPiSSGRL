@@ -5,7 +5,7 @@ public class WarnIce : MonoBehaviour
     private MeltIce _ice;
     private void Awake()
     {
-        _ice = FindFirstObjectByType<MeltIce>();
+        _ice = FindAnyObjectByType<MeltIce>();
 
         if (_ice == null) Debug.Log("Ice not found. ");
     }
