@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283671582116311622}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.9, z: 0.225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -68,14 +68,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 191
+    m_Bits: 16777407
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -254,7 +254,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60.000004
   orthographic: 0
   orthographic size: 5
@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 2761203105367862506}
   - component: {fileID: 107595982787153906}
   - component: {fileID: 7437518743940774994}
+  - component: {fileID: 2064826685155883090}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -406,8 +407,8 @@ MonoBehaviour:
   _maxForwardSpeed: 5
   _maxBackwardSpeed: 2
   _maxStrafeSpeed: 3
-  _maxLookAngle: 70
-  _minLookAngle: 290
+  _maxLookAngle: 290
+  _minLookAngle: 80
   _sensitivity: 1.5
 --- !u!114 &107595982787153906
 MonoBehaviour:
@@ -422,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiManager: {fileID: 0}
-  _maxInteractionDistance: 3
+  _maxInteractionDistance: 3.8
 --- !u!114 &7437518743940774994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +438,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiManager: {fileID: 0}
   _holdingCamera: {fileID: 5075372789813321252}
+--- !u!114 &2064826685155883090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8602676614936545698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a286aa3ea3ba9004286753bae6562ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMovement: {fileID: 2761203105367862506}
+  _playerInteraction: {fileID: 107595982787153906}
+  _playerInventory: {fileID: 7437518743940774994}
 --- !u!1 &9008667193374631243
 GameObject:
   m_ObjectHideFlags: 0

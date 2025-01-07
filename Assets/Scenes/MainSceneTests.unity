@@ -8717,42 +8717,6 @@ PrefabInstance:
       propertyPath: _uiManager
       value: 
       objectReference: {fileID: 1401897910}
-    - target: {fileID: 107595982787153906, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: _maxInteractionDistance
-      value: 3.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 117518014794013450, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 117518014794013450, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 117518014794013450, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 117518014794013450, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 117518014794013450, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283671582116311622, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396375226764982198, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: far clip plane
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396375226764982198, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 16777407
-      objectReference: {fileID: 0}
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.25
@@ -8793,18 +8757,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2761203105367862506, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: _maxLookAngle
-      value: 290
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761203105367862506, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: _minLookAngle
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 5075372789813321252, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: far clip plane
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 7437518743940774994, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: _uiManager
       value: 
@@ -8812,10 +8764,6 @@ PrefabInstance:
     - target: {fileID: 8602676614936545698, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8602676614936545698, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
