@@ -10,7 +10,7 @@ public class UVLight : MonoBehaviour
     [SerializeField] private Material _uvMaterial;
     [SerializeField] private Sounds _sounds;
     [SerializeField] private AudioSource _audioSource;
-    private PlayerInteraction _playerInteraction;
+    private PlayerBehaviorControl _playerControl;
     private Light _uvLight;
     private int _lightPositionID;
     private int _spotLightDirID;
@@ -19,7 +19,7 @@ public class UVLight : MonoBehaviour
     private AudioClip _click;
     private void Start()
     {
-        _playerInteraction = FindAnyObjectByType<PlayerInteraction>();
+        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
         // If the spotlightobject and uv light arent referenced or cant be found,
         // the script won't work
         // So we just disable it.
@@ -84,7 +84,7 @@ public class UVLight : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (Input.GetButtonDown("Interact") && (_playerInteraction.CurrentInteractive == null))
+        if (Input.GetButtonDown("Interact") && _playerControl.CanInteract())
             ToggleUVLight();
         if (isOn)
         {

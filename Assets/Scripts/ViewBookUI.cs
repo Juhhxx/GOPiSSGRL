@@ -5,7 +5,6 @@ public class ViewBookUI : MonoBehaviour
 {
     [SerializeField] GameObject _viewUI;
     private Texture2D _bookTexture;
-    private PlayerInteraction _playerInteraction;
     private PlayerBehaviorControl _playerControl;
     private GameObject _uiObject;
 
@@ -19,7 +18,7 @@ public class ViewBookUI : MonoBehaviour
     private void Update()
     {
         if (Input.GetButtonDown("Interact") && _uiObject == null && 
-        _playerInteraction.CurrentInteractive == null) 
+        _playerControl.CanInteract()) 
             ShowUI();
         else if (Input.GetButtonDown("Exit") && _uiObject != null) HideUI();
     }
@@ -35,13 +34,13 @@ public class ViewBookUI : MonoBehaviour
         uiImage.sprite = bookSprite;
 
         Cursor.lockState = CursorLockMode.None;
-        _playerControl.EnableDisablePlayer(true);
+        _playerControl.EnableDisablePlayer(false);
     }
     private void HideUI()
     {
         Destroy(_uiObject);
         _uiObject = null;
         Cursor.lockState = CursorLockMode.Locked;
-        _playerControl.EnableDisablePlayer(false);
+        _playerControl.EnableDisablePlayer(true);
     }
 }

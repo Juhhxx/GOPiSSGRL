@@ -15,6 +15,12 @@ public class PlayerBehaviorControl : MonoBehaviour
         _playerMovement.enabled = falseOrTrue;
         _playerInteraction.enabled = falseOrTrue;
     }
+    public bool CanInteract()
+    {
+        if ( ! _playerInteraction.enabled ) return true;
+
+        return _playerInteraction.CurrentInteractive == null;
+    }
 
     public bool InventoryContains(Interactive requirement) => _playerInventory.Contains(requirement);
 }
