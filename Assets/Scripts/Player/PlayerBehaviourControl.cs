@@ -17,7 +17,7 @@ public class PlayerBehaviorControl : MonoBehaviour
     }
     public bool CanInteract()
     {
-        if ( ! _playerInteraction.enabled ) return true;
+        if ( ! _playerInteraction.enabled ) return false;
 
         return _playerInteraction.CurrentInteractive == null;
     }

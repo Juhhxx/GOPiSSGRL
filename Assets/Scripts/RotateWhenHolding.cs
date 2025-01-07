@@ -1,7 +1,4 @@
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements.Experimental;
 
 public class RotateWhenHolding : MonoBehaviour
 {
