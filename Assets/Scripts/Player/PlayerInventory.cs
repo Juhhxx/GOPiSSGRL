@@ -61,9 +61,17 @@ public class PlayerInventory : MonoBehaviour
 
     private void SelectInventorySlot(int index)
     {
-        _selectedSlotIndex = index;
+        if (index < 0)
+            _selectedSlotIndex = _inventory.Count -1;
+        else if (index >= _inventory.Count)
+        {
+            _selectedSlotIndex = 0;
+            Debug.Log("index: " + _selectedSlotIndex + " inv count: " + _inventory.Count);
+        }
+        else
+            _selectedSlotIndex = index;
 
-        _uiManager.SelectInventorySlot(index);
+        _uiManager.SelectInventorySlot(_selectedSlotIndex);
 
         
         if (_currentHoldingObject != null)
@@ -71,10 +79,10 @@ public class PlayerInventory : MonoBehaviour
             Destroy(_currentHoldingObject);
             _currentHoldingObject = null;
         }
-        if (index != -1)
+        if (_selectedSlotIndex != -1)
         {
-            if (_inventory[index].holdingObject != null)
-                _currentHoldingObject = Instantiate(_inventory[index].holdingObject,_holdingCamera.transform);
+            if (_inventory[_selectedSlotIndex].holdingObject != null)
+                _currentHoldingObject = Instantiate(_inventory[_selectedSlotIndex].holdingObject,_holdingCamera.transform);
         }
         
         _playerInteraction.RefreshCurrentInteractive();
@@ -102,8 +110,15 @@ public class PlayerInventory : MonoBehaviour
 
     private void CheckForPlayerSlotSelection()
     {
+        if (_inventory.Count <= 0) return;
+        
         for (int i = 0; i < _inventory.Count; ++i)
             if (Input.GetKeyDown(KeyCode.Alpha1 + i) && i != _selectedSlotIndex)
                 SelectInventorySlot(i);
+        
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+
+        if (scroll < 0) SelectInventorySlot(_selectedSlotIndex -1);
+        else if (scroll > 0) SelectInventorySlot(_selectedSlotIndex +1);
     }
 }
