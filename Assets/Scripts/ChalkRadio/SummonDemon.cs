@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 
 public class SummonDemon : MonoBehaviour
@@ -13,9 +12,11 @@ public class SummonDemon : MonoBehaviour
     private List<float> _chalkFrequencies = new List<float>();
     public List<float> ChalkFrequencies => _chalkFrequencies;
     private ChalkDrawingPoint _finalPoint;
+    private CutsceneControl _cutsceneContol;
 
     private void Start()
     {
+        _cutsceneContol = FindFirstObjectByType<CutsceneControl>();
         _demonObject.SetActive(false);
 
         _necronomiconMeshR.material = _necronomiconMaterials[0];
@@ -66,8 +67,12 @@ public class SummonDemon : MonoBehaviour
     {
         if (_finalPoint.IsDrawn) 
         {
-            _demonObject.SetActive(true);
-            gameObject.SetActive(false);
+            _cutsceneContol.AwakeDemon();
         }
+    }
+    public void AwakeDemon()
+    {
+        _demonObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
