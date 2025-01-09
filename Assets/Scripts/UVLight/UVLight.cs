@@ -5,7 +5,6 @@ using UnityEngine.Experimental.GlobalIllumination;
 public class UVLight : MonoBehaviour
 {
     [SerializeField] private GameObject _uvSpotLightObject;
-    [SerializeField] private Collider _necroCollider;
     [SerializeField] private GameObject _uvSpotLightReboundObject;
     [SerializeField] private Material _uvMaterial;
     [SerializeField] private Sounds _sounds;
@@ -17,6 +16,8 @@ public class UVLight : MonoBehaviour
     private int _lightedID;
     private bool isOn;
     private AudioClip _click;
+    private Collider _necroCollider;
+
     private void Start()
     {
         _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
