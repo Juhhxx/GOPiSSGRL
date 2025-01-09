@@ -1,19 +1,25 @@
 using UnityEngine;
+using Unity.VisualScripting;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 
 public class SlushieCup : MonoBehaviour
 {
     [SerializeField] private List<Flavours> _slushieFlavours = new List<Flavours>();
+    [SerializeField] private GameObject _slushieObject;
+    [SerializeField] private float _slushieUpdateSpeed = 0.01f;
     private Material _material;
     private Vector3 _initialPos;
-    public bool IsUsed = false;
+    public bool IsUsed { get; private set; }
+    private WaitForEndOfFrame wait = new WaitForEndOfFrame();
 
     private void Start()
     {
-        _material = GetComponent<MeshRenderer>().material;
-        _material.color = Color.white;
+        _material = _slushieObject.GetComponentInChildren<MeshRenderer>().material;
+        _slushieObject.SetActive(false);
         _initialPos = transform.position;
+        IsUsed = false;
     }
     
     public void GiveSlushie(PlayerInventory inventory)
@@ -45,22 +51,23 @@ public class SlushieCup : MonoBehaviour
     {
         if (_slushieFlavours.Count < 4)
             _slushieFlavours.Add(flavour);
-        ChangeSlushieColor();
+        ChangeSlushie();
     }
     public void ResetFlavours()
     {
         _slushieFlavours.Clear();
-        ChangeSlushieColor();
+        ChangeSlushie();
     }
-    private void ChangeSlushieColor()
+    private void ChangeSlushie()
     {
         if (_slushieFlavours.Count() == 0) 
         {
             _material.color = Color.white; 
+            _slushieObject.SetActive(false);
             return;
         }
         
-        Color32 newColor = new Color(0,0,0,1);
+        Color32 newColor = new Color(0,0,0,200);
         float median = _slushieFlavours.Count();
 
         foreach (Flavours flavour in _slushieFlavours)
@@ -78,7 +85,49 @@ public class SlushieCup : MonoBehaviour
             }
         }
 
-        _material.color = newColor;
+        if (median == 1) _slushieObject.SetActive(true);
+
+        StartCoroutine(ChangeSlushieColor(_material.color,newColor));
+        StartCoroutine(ChangeSlushieScale(_slushieObject.transform.localScale.y, median));
+
+    }
+    private IEnumerator ChangeSlushieScale(float currentScale, float scale)
+    {
+        float newScale = currentScale;
+        float i = 0;
+
+        Debug.Log("CHANGING SCALE");
+        while (newScale != scale)
+        {
+            newScale = Mathf.Lerp(currentScale,scale,i);
+
+            Debug.Log($"{newScale} = {scale} ? {newScale == scale}");
+
+            _slushieObject.transform.localScale = new Vector3(1f,newScale,1f);
+
+            i += _slushieUpdateSpeed;
+
+            yield return wait;
+        }
+    }
+    private IEnumerator ChangeSlushieColor(Color currentColor, Color color)
+    {
+        Color newColor = currentColor;
+        float i = 0;
+
+        Debug.Log("CHANGING COLOR");
+        while (newColor != color)
+        {
+            newColor = Color.Lerp(currentColor,color,i);
+
+            Debug.Log($"COLOR {newColor} = {color} ? {newColor == color}");
+
+            _material.color = newColor;
+
+            i += _slushieUpdateSpeed;
+
+            yield return wait;
+        }
     }
 
 }
