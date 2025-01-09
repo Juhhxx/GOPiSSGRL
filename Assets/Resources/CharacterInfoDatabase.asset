@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c08ae7774d149341820e99d7b1d99aa, type: 3}
+  m_Script: {fileID: 11500000, guid: d963c68dc954a7a4fb9fca4ccd78fd2e, type: 3}
   m_Name: CharacterInfoDatabase
   m_EditorClassIdentifier: 
   characterList:
