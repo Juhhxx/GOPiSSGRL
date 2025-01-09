@@ -13,7 +13,9 @@ public class Mouse : MonoBehaviour
     }
     public void UpdateSensitivity()
     {
-        _globalSensitivity = _slider.value;
+        _globalSensitivity = _slider.value / 20f * 2f;
+        _globalSensitivity = Mathf.Max(0.1f, _globalSensitivity);
+        Debug.Log("sensitivy " + _globalSensitivity);
     }
     public static float GetAxisX()
     {
