@@ -11,7 +11,7 @@ public class SlushieCup : MonoBehaviour
 
     private void Start()
     {
-        _material = GetComponent<MeshRenderer>().sharedMaterial;
+        _material = GetComponent<MeshRenderer>().material;
         _material.color = Color.white;
         _initialPos = transform.position;
     }
