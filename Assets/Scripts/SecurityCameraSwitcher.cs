@@ -70,6 +70,25 @@ public class SecurityCameraSwitcher : MonoBehaviour
 
         animator.SetFloat("MoveSpeed", moveSpeed);
     }
+    private void TurnUIs(bool on = true)
+    {
+        foreach (GameObject ui in _uis)
+        {
+            ui.SetActive(on);
+        }
+    }
+    private void TurnPlayer(bool on)
+    {
+        foreach (Camera component in _playerCameras)
+        {
+            component.enabled = on;
+        }
+        foreach (AudioListener component in _playerListeners)
+        {
+            component.enabled = on;
+        }
+    }
+    #endif
 
     private void SwitchToPlayerCamera()
     {
@@ -104,23 +123,4 @@ public class SecurityCameraSwitcher : MonoBehaviour
         _currentCamera.SetActive(true);
         _currentIndex = index;
     }
-    private void TurnUIs(bool on = true)
-    {
-        foreach (GameObject ui in _uis)
-        {
-            ui.SetActive(on);
-        }
-    }
-    private void TurnPlayer(bool on)
-    {
-        foreach (Camera component in _playerCameras)
-        {
-            component.enabled = on;
-        }
-        foreach (AudioListener component in _playerListeners)
-        {
-            component.enabled = on;
-        }
-    }
-    #endif
 }
