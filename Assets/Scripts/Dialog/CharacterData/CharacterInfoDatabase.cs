@@ -10,7 +10,7 @@ public class CharacterInfoDatabase : ScriptableObject
     private Dictionary<CharacterID, AudioClip> _audioDictionary;
     private Dictionary<CharacterID, string> _nameDictionary;
 
-    private void OnEnable()
+    public void ReadDictionaries()
     {
         _audioDictionary = new Dictionary<CharacterID, AudioClip>();
         _nameDictionary = new Dictionary<CharacterID, string>();

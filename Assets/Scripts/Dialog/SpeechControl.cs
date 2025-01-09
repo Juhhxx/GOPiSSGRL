@@ -44,6 +44,8 @@ public class SpeechControl : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        _characterInfo.ReadDictionaries();
+        
         _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
 
         _pitchID = "PitchShifterPitch";

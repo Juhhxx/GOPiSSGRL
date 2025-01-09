@@ -1469,6 +1469,10 @@ PrefabInstance:
       propertyPath: _pitchRange.y
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7770210473146047700, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}
+      propertyPath: _characterInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f0391887459925489b0b3831041c145, type: 2}
     - target: {fileID: 8788129303869717857, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}
       propertyPath: m_fontSize
       value: 25
