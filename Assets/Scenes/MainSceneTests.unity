@@ -2538,10 +2538,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1220585882}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &356749005
 MonoBehaviour:
@@ -2555,8 +2555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 2fb142db7cf758e4c9df0f5f6466a73a, type: 2}
+  m_Color: {r: 0.9245283, g: 0.19246918, b: 0.17007834, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4227,6 +4227,7 @@ MonoBehaviour:
   _uis:
   - {fileID: 891945278}
   _runningTrailer: 1
+  _static: {fileID: 356749005}
 --- !u!1001 &552270798
 PrefabInstance:
   m_ObjectHideFlags: 0
