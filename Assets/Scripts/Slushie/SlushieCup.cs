@@ -7,26 +7,23 @@ public class SlushieCup : MonoBehaviour
     [SerializeField] private List<Flavours> _slushieFlavours = new List<Flavours>();
     private Material _material;
     private Vector3 _initialPos;
+    public bool IsUsed = false;
 
     private void Start()
     {
-        _material = GetComponent<MeshRenderer>().sharedMaterial;
+        _material = GetComponent<MeshRenderer>().material;
         _material.color = Color.white;
         _initialPos = transform.position;
     }
-    private void Update()
+    
+    public void GiveSlushie(PlayerInventory inventory)
     {
-    }
-    public void AddFlavour(Flavours flavour)
-    {
-        if (_slushieFlavours.Count < 4)
-            _slushieFlavours.Add(flavour);
-        ChangeSlushieColor();
-    }
-    public void ResetFlavours()
-    {
-        _slushieFlavours.Clear();
-        ChangeSlushieColor();
+        Interactive slushie = gameObject.GetComponent<Interactive>();
+        if (!IsUsed)
+        {
+            IsUsed = true;
+            inventory.Add(slushie);
+        }
     }
     public void ResetPosition()
     {
@@ -43,6 +40,17 @@ public class SlushieCup : MonoBehaviour
                 return false;
         }
         return true;
+    }
+    public void AddFlavour(Flavours flavour)
+    {
+        if (_slushieFlavours.Count < 4)
+            _slushieFlavours.Add(flavour);
+        ChangeSlushieColor();
+    }
+    public void ResetFlavours()
+    {
+        _slushieFlavours.Clear();
+        ChangeSlushieColor();
     }
     private void ChangeSlushieColor()
     {

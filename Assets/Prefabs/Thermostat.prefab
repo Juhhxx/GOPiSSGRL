@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 8621159329091437081}
   - component: {fileID: 8424672655977508098}
   - component: {fileID: 7255084488749568463}
-  - component: {fileID: 3255601264782138154}
   - component: {fileID: 8692245597115121407}
+  - component: {fileID: 1088709350449939267}
   m_Layer: 0
   m_Name: Thermostat
   m_TagString: Untagged
@@ -130,20 +130,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3255601264782138154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2245971598930148150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1934f57199bba6840b9bd96bb16cae4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotate: {fileID: 3306534099066518147}
-  _disableOnBegin: 1
 --- !u!114 &8692245597115121407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +148,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _correctTemprature: 32
+--- !u!114 &1088709350449939267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245971598930148150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7ddbcbdaefaa8448f8da62545dd3dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotate: {fileID: 4899747905679833344}
+  _disableOnBegin: 1
 --- !u!1 &2569458326175969765
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4646641582959253672}
-  - component: {fileID: 3306534099066518147}
+  - component: {fileID: 4899747905679833344}
   m_Layer: 0
   m_Name: RotatingButton
   m_TagString: Untagged
@@ -196,7 +196,7 @@ Transform:
   - {fileID: 7198339599198362976}
   m_Father: {fileID: 1760234135909434334}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &3306534099066518147
+--- !u!114 &4899747905679833344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2569458326175969765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa9e27a3648139b47b11484b85fb3c32, type: 3}
+  m_Script: {fileID: 11500000, guid: a65ac1da5a5f5ba4290e7b23d08902e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _scrollSensitivity: 10
