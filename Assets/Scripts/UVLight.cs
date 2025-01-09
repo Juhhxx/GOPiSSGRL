@@ -60,7 +60,7 @@ public class UVLight : MonoBehaviour
             _uvSpotLightReboundObject.SetActive(false);
         Shader.SetGlobalFloat(_lightedID, 0);
         isOn = false;
-        TAG_Necro necro = FindAnyObjectByType<TAG_Necro>();
+        TagNecro necro = FindAnyObjectByType<TagNecro>();
         if (necro != null)
             _necroCollider = necro.GetComponent<Collider>();
         if (_necroCollider != null)

@@ -3140,12 +3140,52 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 318970509}
     - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: _dialogList.Array.data[0].characterDialogs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: _dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: _dialogList.Array.data[0].characterDialogs.Array.data[1].dialogLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[1]'
+      value: YOU NEED TO GET TO THE BATHROOM ?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[2]'
+      value: FOR ME TO HELP WITH YOUR QUEST ,\nYOU MUST FIRST MEET MY REQUEST !
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[3]'
+      value: MY FIERY REALM IS SCORCHING HOT ,\nBEYOND ALL HUMAN GRIEF .
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[4]'
+      value: I CRAVE A FROZEN TREAT !
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[1].dialogLines.Array.data[0]'
+      value: HELLO MORTAL !
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[1].dialogLines.Array.data[1]'
+      value: YOU NEED TO GET TO THE BATHROOM?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[1].dialogLines.Array.data[2]'
       value: FOR ME TO HELP WITH YOUR QUEST,\nYOU MUST FIRST MEET MY REQUEST!
       objectReference: {fileID: 0}
     - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: '_dialogList.Array.data[1].characterDialogs.Array.data[1].dialogLines.Array.data[0]'
-      value: MORTAL HUMAN!\nYOU HAVE ACHIEVED A MOST DESIRABLE SLUSHIE!
+      value: MORTAL HUMAN !\nYOU HAVE ACHIEVED A MOST DESIRABLE SLUSHIE !
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: '_dialogList.Array.data[1].characterDialogs.Array.data[1].dialogLines.Array.data[1]'
+      value: I GRANT YOU THIS PAPER !
       objectReference: {fileID: 0}
     - target: {fileID: 7048890267660812568, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: _playerInventory
@@ -12996,6 +13036,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sensitivitySlider: {fileID: 682929566}
   _volumeSlider: {fileID: 332428734}
+  _maxSensitivity: 10
+  _maxVolume: 3
 --- !u!4 &2036302200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3205483265170216284, guid: 83e766d95ac395741a3d00abd85439f5, type: 3}
