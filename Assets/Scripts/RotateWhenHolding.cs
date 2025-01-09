@@ -94,7 +94,7 @@ public class RotateWhenHolding : MonoBehaviour
         _mouseMovement = Input.GetAxisRaw("Mouse ScrollWheel") * _scrollSensitivity * 10;
 
         if (Input.GetButton("Interact"))
-            _mouseMovement += Input.GetAxis("Mouse X") * _mouseSensitivity;
+            _mouseMovement += Mouse.GetAxisX() * _mouseSensitivity;
         
         _currentValue += _mouseMovement;
         // Debug.Log($"rotation z : {_currentRotation.z}");
