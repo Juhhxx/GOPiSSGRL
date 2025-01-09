@@ -35,7 +35,7 @@ public class SummonDemon : MonoBehaviour
     private void GetFinalPoint()
     {
         foreach (ChalkDrawingPoint point in _chalkPoints)
-            if (point.GetComponent<TAG_FinalChalkPoint>() != null)
+            if (point.GetComponent<TagFinalChalkPoint>() != null)
             {
                 _finalPoint = point;
                 _chalkPoints.Remove(_finalPoint);

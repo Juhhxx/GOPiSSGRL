@@ -21,7 +21,7 @@ public class ChalkDrawingPoint : MonoBehaviour
     }
     private void CheckIfChalkDrawn(GameObject drawn, Collider chalkObject)
     {
-        if (drawn.GetComponent<TAG_Chalk>() != null && !_isDrawn)
+        if (drawn.GetComponent<TagChalk>() != null && !_isDrawn)
         {
             Debug.Log("CHALK WAS DRAWN IN THE RIGHT SPOT");
             _isDrawn = true;
