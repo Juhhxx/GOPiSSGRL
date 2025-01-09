@@ -5069,7 +5069,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 50
+  m_Value: 30
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -12994,7 +12994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1658d69fcd63dc14d90f88e34b32fe34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 682929566}
+  _sensitivitySlider: {fileID: 682929566}
+  _volumeSlider: {fileID: 332428734}
 --- !u!4 &2036302200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3205483265170216284, guid: 83e766d95ac395741a3d00abd85439f5, type: 3}

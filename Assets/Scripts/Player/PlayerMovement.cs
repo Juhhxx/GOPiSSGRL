@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void UpdateRotation()
     {
-        float rotation = Mouse.GetAxisX() * _sensitivity;
+        float rotation = GlobalValues.GetAxisX() * _sensitivity;
 
         transform.Rotate(0f,rotation,0f);
     }
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _headRotation = _head.localEulerAngles;
 
-        _headRotation.x -= Mouse.GetAxisY() * _sensitivity;
+        _headRotation.x -= GlobalValues.GetAxisY() * _sensitivity;
 
         if (_headRotation.x >180f)
             _headRotation.x =Mathf.Max(_maxLookAngle,_headRotation.x);
