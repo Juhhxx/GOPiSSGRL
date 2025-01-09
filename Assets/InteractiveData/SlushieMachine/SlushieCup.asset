@@ -16,7 +16,8 @@ MonoBehaviour:
   startsOn: 1
   inventoryName: Slushie cup
   inventoryIcon: {fileID: 21300000, guid: e5d68ee7ffe7d70468047f1febd4d2c8, type: 3}
-  requirements: []
+  requirements:
+  - {fileID: 11400000, guid: 0603bd160477c724d836cfec711d5c4d, type: 2}
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:

@@ -5,7 +5,6 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _holdingCamera;
     private PlayerBehaviorControl _pbc;
-    private GameObject _holdingObject;
     private void Awake()
     {
         _pbc = _player.GetComponent<PlayerBehaviorControl>();
@@ -17,12 +16,18 @@ public class PauseMenu : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Escape))
             Continue();
     }
+    private void CheckIfInteractiveHolding()
+    {
+        ViewBookUI scriptUI = _holdingCamera.GetComponentInChildren<ViewBookUI>();
+
+        if (scriptUI != null)
+            scriptUI.enabled = !scriptUI.enabled;
+    }
     public void Pause()
     {
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
-        _holdingObject = _holdingCamera.transform.GetChild(0).gameObject;
-        _holdingObject.SetActive(false);
+        CheckIfInteractiveHolding();
         _pbc.EnableDisablePlayer(false);
         _pause.SetActive(true);
     }
@@ -31,7 +36,7 @@ public class PauseMenu : MonoBehaviour
         _pause.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
-        _holdingObject.SetActive(true);
+        CheckIfInteractiveHolding();
         _pbc.EnableDisablePlayer(true);
     }
 }
