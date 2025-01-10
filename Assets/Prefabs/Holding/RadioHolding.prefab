@@ -568,6 +568,8 @@ MonoBehaviour:
   _minRotation: 0
   _maxRotation: 359
   _wrapRotation: 1
+  _invertRotationValues: 0
+  _currentValue: 0
   _visualizeCurrentRotationValue: 0
 --- !u!1 &4142499104372690686
 GameObject:
@@ -1050,9 +1052,8 @@ MonoBehaviour:
   _shakeStrenght: 0.03
   _volumeChangeDistance: 100
   _frequencyDisplay: {fileID: 4052064660836428165}
-  _radioAudios:
-  - {fileID: 8300000, guid: 2d51feffef62dce4eaaeb99bc00e6377, type: 3}
-  - {fileID: 8300000, guid: 71120c4512ae87e459931b1480c24eb7, type: 3}
+  _defaultSound: {fileID: 8300000, guid: 2d51feffef62dce4eaaeb99bc00e6377, type: 3}
+  _radioChannels: []
 --- !u!82 &3158953714683533290
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1063,8 +1064,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 8332554c952ad044db05adf8f71005ee, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2d51feffef62dce4eaaeb99bc00e6377, type: 3}
-  m_Resource: {fileID: 8300000, guid: 2d51feffef62dce4eaaeb99bc00e6377, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
