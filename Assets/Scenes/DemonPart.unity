@@ -395,6 +395,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 873468097}
+    - target: {fileID: 4368986812456210788, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4860607906900162843, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
       propertyPath: m_Name
       value: DemonScene
