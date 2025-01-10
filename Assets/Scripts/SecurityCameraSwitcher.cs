@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SecurityCameraSwitcher : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class SecurityCameraSwitcher : MonoBehaviour
     private bool _running = false;
     private GameObject _currentCamera;
     private int _currentIndex = -1;
+
+    [SerializeField] private Image _static;
 
     private void Start()
     {
@@ -70,40 +74,6 @@ public class SecurityCameraSwitcher : MonoBehaviour
 
         animator.SetFloat("MoveSpeed", moveSpeed);
     }
-
-    private void SwitchToPlayerCamera()
-    {
-        if (_currentCamera != null)
-        {
-            _currentCamera.SetActive(false);
-            _animators[_currentCamera].SetFloat("MoveSpeed", 1f);
-        }
-        
-
-        TurnPlayer(true);
-        _currentCamera = null;
-        TurnUIs(true);
-    }
-
-    private void SwitchSecurityCamera(int index)
-    {
-        if (index < 0 || index >= _securityCameras.Length) return;
-
-        if (_currentCamera == null)
-        {
-            TurnPlayer(false);
-            TurnUIs(false);
-        }
-        else
-        {
-            _currentCamera.SetActive(false);
-            _animators[_currentCamera].SetFloat("MoveSpeed", 1f);
-        }
-        
-        _currentCamera = _securityCameras[index];
-        _currentCamera.SetActive(true);
-        _currentIndex = index;
-    }
     private void TurnUIs(bool on = true)
     {
         foreach (GameObject ui in _uis)
@@ -123,4 +93,56 @@ public class SecurityCameraSwitcher : MonoBehaviour
         }
     }
     #endif
+
+    public void SwitchToPlayerCamera()
+    {
+        if (_currentCamera != null)
+        {
+            _currentCamera.SetActive(false);
+            _animators[_currentCamera].SetFloat("MoveSpeed", 1f);
+        }
+        
+
+        TurnPlayer(true);
+        _currentCamera = null;
+        TurnUIs(true);
+    }
+
+    public void SwitchSecurityCamera(int index)
+    {
+        if (index < 0 || index >= _securityCameras.Length) return;
+
+        if (_currentCamera == null)
+        {
+            TurnPlayer(false);
+            TurnUIs(false);
+        }
+        else
+        {
+            _currentCamera.SetActive(false);
+            _animators[_currentCamera].SetFloat("MoveSpeed", 1f);
+        }
+        
+        _currentCamera = _securityCameras[index];
+        _currentCamera.SetActive(true);
+        _currentIndex = index;
+
+        StartCoroutine(StartStatic());
+    }
+
+    private IEnumerator StartStatic()
+    {
+        float passedTime = 0f;
+
+        while (passedTime < 0.09f)
+        {
+            _static.enabled = !_static.enabled;
+
+            passedTime += Time.deltaTime;
+
+            yield return new WaitForSeconds(0.1f - passedTime);
+        }
+
+        _static.enabled = false;
+    }
 }

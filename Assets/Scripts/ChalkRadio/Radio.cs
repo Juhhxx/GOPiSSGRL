@@ -49,7 +49,7 @@ public class Radio : MonoBehaviour
         {
             ChangeAudio(_radioAudios[0]);
             ChangeAudioVolumeDistance(5f);
-            Debug.Log("No poins in this frequency");
+            // Debug.Log("No poins in this frequency");
         }
     }
     private void DetectDistance(int index)

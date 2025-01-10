@@ -26,6 +26,7 @@ public class RotateWhenHolding : MonoBehaviour
         _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
 
         _currentRotationData = GetComponentInParent<CurrentRadioRotation>();
+        _currentRotation = transform.localRotation.eulerAngles;
     }
     private void Start()
     {
@@ -37,7 +38,6 @@ public class RotateWhenHolding : MonoBehaviour
             }
         else
         {
-            _currentRotation = transform.localRotation.eulerAngles;
             _currentRotation.z = Mathf.Clamp(_currentRotation.z, _minRotation,_maxRotation);
             transform.localRotation = Quaternion.Euler(_currentRotation);
 
@@ -91,10 +91,11 @@ public class RotateWhenHolding : MonoBehaviour
     ///</summary>
     private void RotateWithMouse()
     {
+        if ( ! Input.GetButton("Interact")) return;
+
         _mouseMovement = Input.GetAxisRaw("Mouse ScrollWheel") * _scrollSensitivity * 10;
 
-        if (Input.GetButton("Interact"))
-            _mouseMovement += GlobalValues.GetAxisX() * _mouseSensitivity;
+        _mouseMovement += GlobalValues.GetAxisX() * _mouseSensitivity;
         
         _currentValue += _mouseMovement;
         // Debug.Log($"rotation z : {_currentRotation.z}");

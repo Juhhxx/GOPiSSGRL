@@ -115,6 +115,8 @@ public class PlayerInventory : MonoBehaviour
         for (int i = 0; i < _inventory.Count; ++i)
             if (Input.GetKeyDown(KeyCode.Alpha1 + i) && i != _selectedSlotIndex)
                 SelectInventorySlot(i);
+
+        if (Input.GetButton("Interact")) return;
         
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
