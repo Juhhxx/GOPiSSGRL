@@ -75,6 +75,6 @@ public class CutsceneControl : MonoBehaviour
         Shaker shaker = _cameraSwitcher.GetCurrenIndexCam()?.GetComponent<Shaker>();
 
         if (shaker != null)
-            shaker.Shake(time, 20f);
+            shaker.Shake(time, 18f);
     }
 }
