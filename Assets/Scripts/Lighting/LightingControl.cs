@@ -5,6 +5,26 @@ public class LightingControl : MonoBehaviour
 {
     public void ChangeLighting(LightingPresets preset)
     {
-        Lightmapping.lightingSettings = preset.LightingSettings;
+        if (preset.LightingSettings != null)
+        {
+            Lightmapping.lightingSettings = preset.LightingSettings;
+        }
+
+        if (preset.SkyboxMaterial != null)
+        {
+            RenderSettings.skybox = preset.SkyboxMaterial;
+        }
+
+        if (preset.FogEnabled)
+        {
+            RenderSettings.fog = true;
+            RenderSettings.fogMode = preset.FogMode;
+            RenderSettings.fogColor = preset.FogColor;
+            RenderSettings.fogDensity = preset.FogDensity;
+        }
+        else
+        {
+            RenderSettings.fog = false;
+        }
     }
 }
