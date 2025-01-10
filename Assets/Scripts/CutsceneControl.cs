@@ -5,8 +5,11 @@ using UnityEngine.Playables;
 public class CutsceneControl : MonoBehaviour
 {
     [SerializeField] private SecurityCameraSwitcher _cameraSwitcher;
+    [SerializeField] private LightingControl _lightingControl;
     [SerializeField] private GameObject _baseScene;
+    [SerializeField] private LightingPresets _basePreset;
     [SerializeField] private GameObject _demonScene;
+    [SerializeField] private LightingPresets _demonPreset;
     [SerializeField] private Transform _newPlayerPosition;
     [SerializeField] private Transform _newPlayerDirection;
     [SerializeField] private GameObject _demonObject;
@@ -42,10 +45,12 @@ public class CutsceneControl : MonoBehaviour
         float passedTime = 0f;
         bool onOrOff = false;
 
+        _lightingControl.ChangeLighting(_demonPreset);
+
         while (passedTime < 0.13f)
         {
             _baseScene.SetActive(onOrOff);
-            _demonScene.SetActive(onOrOff);
+            _demonScene.SetActive(!onOrOff);
 
             onOrOff = !onOrOff;
 

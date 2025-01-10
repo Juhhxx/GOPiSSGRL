@@ -6294,6 +6294,7 @@ GameObject:
   - component: {fileID: 642313093}
   - component: {fileID: 642313094}
   - component: {fileID: 642313095}
+  - component: {fileID: 642313096}
   m_Layer: 0
   m_Name: CutsceneControl
   m_TagString: Untagged
@@ -6331,8 +6332,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraSwitcher: {fileID: 551209269}
+  _lightingControl: {fileID: 642313096}
   _baseScene: {fileID: 1213763006345028945}
+  _basePreset: {fileID: 11400000, guid: c4a19af483ca6584182b878d1f67f958, type: 2}
   _demonScene: {fileID: 806804177}
+  _demonPreset: {fileID: 11400000, guid: 9a17fa6830b697e4fbd3e670791fbf9d, type: 2}
   _newPlayerPosition: {fileID: 210183895}
   _newPlayerDirection: {fileID: 850349982}
   _demonObject: {fileID: 1140938891}
@@ -6378,6 +6382,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &642313096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642313091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1380f658112354a98d2deea0846076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &652158381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3205483265170216284, guid: 83e766d95ac395741a3d00abd85439f5, type: 3}
