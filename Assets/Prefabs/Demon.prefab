@@ -981,9 +981,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 0}
   _itemPrefabs:
-  - {fileID: 5072748983818107920, guid: 34d60e3d05eed70498e86aa3ec051a4e, type: 3}
-  - {fileID: 7213500950990017174, guid: 8b415feee08b7454c9f518f5a5751669, type: 3}
-  - {fileID: 3772300437664731849, guid: 9a5d83241a9e5db43b19f0761c90be98, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1927903502528386313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,8 +1405,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.29
-  m_Height: 2.1
+  m_Radius: 1.27
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: -0.18, y: 0, z: -0.46}
 --- !u!95 &865463374928436883
