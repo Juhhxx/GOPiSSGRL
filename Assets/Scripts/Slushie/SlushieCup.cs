@@ -105,7 +105,7 @@ public class SlushieCup : MonoBehaviour
 
             _slushieObject.transform.localScale = new Vector3(1f,newScale,1f);
 
-            i += _slushieUpdateSpeed;
+            i += _slushieUpdateSpeed * Time.deltaTime;
 
             yield return wait;
         }
@@ -124,7 +124,7 @@ public class SlushieCup : MonoBehaviour
 
             _material.color = newColor;
 
-            i += _slushieUpdateSpeed;
+            i += _slushieUpdateSpeed * Time.deltaTime;
 
             yield return wait;
         }
