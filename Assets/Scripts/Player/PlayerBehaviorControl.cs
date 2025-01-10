@@ -31,15 +31,17 @@ public class PlayerBehaviorControl : MonoBehaviour
     }
     public void PlayerLookAt(Vector3 position)
     {
-        Vector3 direction = position - _playerMovement.transform.position;
-        direction.y = 0f;
+        Vector3 directionY = position - _playerMovement.transform.position;
+        directionY.y = 0f;
 
-        if (direction.sqrMagnitude > 0.001f)
-        {
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
-            Quaternion tiltRotation = Quaternion.Euler(-3f, 0f, 0f);
+        if (directionY.sqrMagnitude > 0.001f)
+            _playerMovement.transform.rotation = Quaternion.LookRotation(directionY);
 
-            _playerMovement.transform.rotation = lookRotation * tiltRotation;
-        }
+        Vector3 headDirection = position - _playerMovement.Head.position;
+        float headRotationX = Mathf.Atan2(headDirection.y, headDirection.z) * Mathf.Rad2Deg;
+        headRotationX -= 180f;
+
+        if (headDirection.sqrMagnitude > 0.001f)
+            _playerMovement.Head.localRotation = Quaternion.Euler(headRotationX, 0f, 0f);
     }
 }

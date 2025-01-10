@@ -8,6 +8,7 @@ public class CutsceneControl : MonoBehaviour
     [SerializeField] private GameObject _baseScene;
     [SerializeField] private GameObject _demonScene;
     [SerializeField] private Transform _newPlayerPosition;
+    [SerializeField] private Transform _newPlayerDirection;
     [SerializeField] private GameObject _demonObject;
     [SerializeField] private PlayableDirector _timeLine;
     private PlayerBehaviorControl _playerBehaviorControl;
@@ -24,7 +25,7 @@ public class CutsceneControl : MonoBehaviour
         _playerBehaviorControl.EnableDisablePlayer(false);
         
         _playerBehaviorControl.ChangePlayerPosition(_newPlayerPosition.position);
-        _playerBehaviorControl.PlayerLookAt(_demonObject.transform.position);
+        _playerBehaviorControl.PlayerLookAt(_newPlayerDirection.position);
         _cameraSwitcher.SwitchSecurityCamera(0, false);
 
         _timeLine.Play();

@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _velocity;
     private Vector3 _motion;
     private Transform _head;
+    public Transform Head { get => _head; }
     private Vector3 _headRotation;
 
     void Start()
