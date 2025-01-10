@@ -27,9 +27,11 @@ public class CutsceneControl : MonoBehaviour
         _playerBehaviorControl.PlayerLookAt(_demonObject.transform.position);
         _cameraSwitcher.SwitchSecurityCamera(0, false);
 
-        StartSceneSwitch();
-
         _timeLine.Play();
+
+        StartCoroutine(StartSceneSwitch());
+
+        ShakeSecurityCam(1.0f);
     }
 
     private IEnumerator StartSceneSwitch()
@@ -39,7 +41,7 @@ public class CutsceneControl : MonoBehaviour
         float passedTime = 0f;
         bool onOrOff = false;
 
-        while (passedTime < 0.14f)
+        while (passedTime < 0.13f)
         {
             _baseScene.SetActive(onOrOff);
             _demonScene.SetActive(onOrOff);
@@ -64,6 +66,15 @@ public class CutsceneControl : MonoBehaviour
 
     public void SummonDemon()
     {
+        ShakeSecurityCam(2.0f);
         _demonObject.SetActive(true);
+    }
+
+    private void ShakeSecurityCam(float time)
+    {
+        Shaker shaker = _cameraSwitcher.GetCurrenIndexCam()?.GetComponent<Shaker>();
+
+        if (shaker != null)
+            shaker.Shake(time, 20f);
     }
 }

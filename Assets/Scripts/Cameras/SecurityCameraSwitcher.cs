@@ -141,13 +141,13 @@ public class SecurityCameraSwitcher : MonoBehaviour
 
         float passedTime = 0f;
 
-        while (passedTime < 0.14f)
+        while (passedTime < 0.18f)
         {
             _static.enabled = !_static.enabled;
 
             passedTime += Time.deltaTime;
 
-            yield return new WaitForSeconds(0.16f - passedTime);
+            yield return new WaitForSeconds(0.22f - passedTime);
         }
 
         _static.enabled = false;
@@ -160,5 +160,10 @@ public class SecurityCameraSwitcher : MonoBehaviour
     public int IsCurrentCameraPlayer()
     {
         return _currentCamera == null ? -1 : _currentIndex;
+    }
+
+    public Camera GetCurrenIndexCam()
+    {
+        return _securityCameras[_currentIndex].GetComponentInChildren<Camera>();
     }
 }
