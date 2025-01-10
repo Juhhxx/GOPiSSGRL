@@ -1033,7 +1033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &180852148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4708,6 +4708,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c03ce7fa8290dd341a551cccc81fb09b, type: 3}
   m_PrefabInstance: {fileID: 614186003}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &619077647
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4860607906900162843, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_Name
+      value: DemonScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953706444994765981, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953706444994765981, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953706444994765981, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 72.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953706444994765981, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953706444994765981, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953706444994765981, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953706444994765981, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953706444994765981, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953706444994765981, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953706444994765981, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23072a44df0cfcf45a5b13550ca7be24, type: 3}
 --- !u!1 &622737480
 GameObject:
   m_ObjectHideFlags: 0
@@ -7336,6 +7393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f943e218c2b16fd459a691df132fafe6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2274387309438175944, guid: f943e218c2b16fd459a691df132fafe6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -8078,7 +8139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1070064493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9616,7 +9677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 38.99152
+      value: 68.47
       objectReference: {fileID: 0}
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10164,7 +10225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1368974690
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11385,6 +11446,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoP!SScene
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5226efe74e4b83d4794446e9aebff8dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1494893050352805567, guid: 5226efe74e4b83d4794446e9aebff8dd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -11956,6 +12021,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7fb0762ef481b03428d1d14b2093166c, type: 3}
       propertyPath: m_Name
       value: MiniFridge2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7fb0762ef481b03428d1d14b2093166c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572696264727990412, guid: 7fb0762ef481b03428d1d14b2093166c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -12677,7 +12746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1648825214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15391,7 +15460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!220 &2098278853
 LightProbeGroup:
   m_ObjectHideFlags: 0
@@ -16111,6 +16180,7 @@ SceneRoots:
   - {fileID: 2098278854}
   - {fileID: 1368974693}
   - {fileID: 672422100}
-  - {fileID: 1287707099}
   - {fileID: 987112869}
   - {fileID: 1580965198}
+  - {fileID: 619077647}
+  - {fileID: 1287707099}

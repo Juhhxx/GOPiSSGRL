@@ -3805,7 +3805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &585145078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15701,12 +15701,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5075372789813321252, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075372789813321252, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5133805531466037624, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058029251902141585, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_CameraType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058029251902141585, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058029251902141585, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_RequiresDepthTextureOption
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8602676614936545698, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_Name
