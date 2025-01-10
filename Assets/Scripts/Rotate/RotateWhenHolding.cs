@@ -12,7 +12,8 @@ public class RotateWhenHolding : MonoBehaviour
     [SerializeField] private float _minRotation;
     [SerializeField] private float _maxRotation;
     [SerializeField] private bool _wrapRotation = false;
-    private float _currentValue;
+    [SerializeField] private bool _invertRotationValues = false;
+    [SerializeField] private float _currentValue;
     private Vector3 _currentRotation;
     [SerializeField] private float _visualizeCurrentRotationValue;
     private float _mouseMovement;
@@ -126,6 +127,9 @@ public class RotateWhenHolding : MonoBehaviour
 
     public float GetCurrentValue()
     {
-        return _currentValue;
+        if (_invertRotationValues)
+            return _maxValue - _currentValue;
+        else
+            return _currentValue;
     }
 }
