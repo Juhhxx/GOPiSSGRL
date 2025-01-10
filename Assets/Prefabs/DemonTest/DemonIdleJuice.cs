@@ -12,8 +12,7 @@ public class FollowPlayer : MonoBehaviour
 
     void Start()
     {
-        Vector3 originalPosition = transform.position;
-        startPosition = transform.position;
+        startPosition = transform.localPosition;
     }
     void Update()
     {
@@ -48,6 +47,6 @@ public class FollowPlayer : MonoBehaviour
         float newY = startPosition.y + Mathf.Sin(Time.time * floatSpeed) * floatHeight;
 
         // Apply the floating effect to the object's position
-        transform.position = new Vector3(startPosition.x, newY, startPosition.z);
+        transform.localPosition = new Vector3(startPosition.x, newY, startPosition.z);
     }
 }

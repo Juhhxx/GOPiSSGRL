@@ -35,6 +35,11 @@ public class PlayerBehaviorControl : MonoBehaviour
         direction.y = 0f;
 
         if (direction.sqrMagnitude > 0.001f)
-             _playerMovement.transform.rotation = Quaternion.LookRotation(direction);
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            Quaternion tiltRotation = Quaternion.Euler(-3f, 0f, 0f);
+
+            _playerMovement.transform.rotation = lookRotation * tiltRotation;
+        }
     }
 }

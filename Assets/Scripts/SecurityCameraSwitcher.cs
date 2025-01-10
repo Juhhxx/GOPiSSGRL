@@ -141,13 +141,13 @@ public class SecurityCameraSwitcher : MonoBehaviour
 
         float passedTime = 0f;
 
-        while (passedTime < 0.11f)
+        while (passedTime < 0.14f)
         {
             _static.enabled = !_static.enabled;
 
             passedTime += Time.deltaTime;
 
-            yield return new WaitForSeconds(0.12f - passedTime);
+            yield return new WaitForSeconds(0.16f - passedTime);
         }
 
         _static.enabled = false;

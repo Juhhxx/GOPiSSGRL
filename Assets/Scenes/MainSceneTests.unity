@@ -5063,7 +5063,7 @@ GameObject:
   - component: {fileID: 519282085}
   - component: {fileID: 519282084}
   m_Layer: 24
-  m_Name: Blockout_GasStationStore_1:pCylinder5
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6355,6 +6355,7 @@ GameObject:
   - component: {fileID: 642313092}
   - component: {fileID: 642313093}
   - component: {fileID: 642313094}
+  - component: {fileID: 642313095}
   m_Layer: 0
   m_Name: CutsceneControl
   m_TagString: Untagged
@@ -6410,9 +6411,33 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: -7821018363864745173, guid: 19f9b6b7d1485854aad8e07fd2a46499, type: 2}
+    value: {fileID: 642313095}
   m_ExposedReferences:
     m_References: []
+--- !u!95 &642313095
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642313091}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd2ac9033b786d04f825d09dfb652913, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &652158381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3205483265170216284, guid: 83e766d95ac395741a3d00abd85439f5, type: 3}
@@ -9369,7 +9394,7 @@ GameObject:
   - component: {fileID: 1009362867}
   - component: {fileID: 1009362866}
   m_Layer: 24
-  m_Name: Blockout_GasStationStore_1:pCylinder5
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12295,7 +12320,7 @@ GameObject:
   - component: {fileID: 1342931580}
   - component: {fileID: 1342931579}
   m_Layer: 24
-  m_Name: Blockout_GasStationStore_1:pCylinder5
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
