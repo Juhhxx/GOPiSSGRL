@@ -63,11 +63,15 @@ public class CutsceneControl : MonoBehaviour
         _demonScene.SetActive(true);
     }
 
+    public void EndTimeline()
+    {
+        _timeLine.Stop();
+    }
+
     public void EndCutscene()
     {
         _cameraSwitcher.SwitchToPlayerCamera();
         _playerBehaviorControl.EnableDisablePlayer(true);
-        _timeLine.Stop();
     }
 
     public void SummonDemon()
@@ -81,6 +85,6 @@ public class CutsceneControl : MonoBehaviour
         Shaker shaker = _cameraSwitcher.GetCurrenIndexCam()?.GetComponent<Shaker>();
 
         if (shaker != null)
-            shaker.Shake(time, 18f);
+            shaker.Shake(time, 15f);
     }
 }
