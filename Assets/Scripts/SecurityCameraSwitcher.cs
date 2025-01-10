@@ -48,16 +48,16 @@ public class SecurityCameraSwitcher : MonoBehaviour
             }
             else
             {
-                SwitchSecurityCamera(_currentIndex >= 0 ? _currentIndex : 0);
+                SwitchSecurityCamera(_currentIndex >= 0 ? _currentIndex : 0, false);
             }
             _running = !_running;
         }
 
         if (!_running) return;
 
-        if (Input.GetKeyDown(KeyCode.F9)) SwitchSecurityCamera(0);
-        if (Input.GetKeyDown(KeyCode.F10)) SwitchSecurityCamera(1);
-        if (Input.GetKeyDown(KeyCode.F11)) SwitchSecurityCamera(2);
+        if (Input.GetKeyDown(KeyCode.F9)) SwitchSecurityCamera(0, false);
+        if (Input.GetKeyDown(KeyCode.F10)) SwitchSecurityCamera(1, false);
+        if (Input.GetKeyDown(KeyCode.F11)) SwitchSecurityCamera(2, false);
 
         if (Input.GetKey(KeyCode.LeftArrow)) ToggleCurrentCameraMovement(2f);
         else if (Input.GetKey(KeyCode.RightArrow)) ToggleCurrentCameraMovement(-2f);
@@ -106,9 +106,11 @@ public class SecurityCameraSwitcher : MonoBehaviour
         TurnPlayer(true);
         _currentCamera = null;
         TurnUIs(true);
+
+        _static.enabled = false;
     }
 
-    public void SwitchSecurityCamera(int index)
+    public void SwitchSecurityCamera(int index, bool keepStatic = true)
     {
         if (index < 0 || index >= _securityCameras.Length) return;
 
@@ -127,7 +129,10 @@ public class SecurityCameraSwitcher : MonoBehaviour
         _currentCamera.SetActive(true);
         _currentIndex = index;
 
-        StartCoroutine(StartStatic());
+        if (keepStatic)
+            _static.enabled = true;
+        else
+            StartCoroutine(StartStatic());
     }
 
     private IEnumerator StartStatic()
@@ -144,5 +149,14 @@ public class SecurityCameraSwitcher : MonoBehaviour
         }
 
         _static.enabled = false;
+    }
+
+    /// <summary>
+    /// Use this to see if in pause menu you need to switch the camera back or not.
+    /// </summary>
+    /// <returns> Returns -1 if the last camera is player or the index of the last security camera. </returns>
+    public int IsCurrentCameraPlayer()
+    {
+        return _currentCamera == null ? -1 : _currentIndex;
     }
 }

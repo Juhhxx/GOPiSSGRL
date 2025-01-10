@@ -15,7 +15,7 @@ public class CutsceneControl : MonoBehaviour
     public void AwakeDemon()
     {
         _playerBehaviorControl.EnableDisablePlayer(false);
-        _cameraSwitcher.SwitchSecurityCamera(0);
+        _cameraSwitcher.SwitchSecurityCamera(0, false);
         _timeLine.SetActive(true);
     }
 
