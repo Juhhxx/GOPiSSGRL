@@ -23,4 +23,18 @@ public class PlayerBehaviorControl : MonoBehaviour
     }
 
     public bool InventoryContains(Interactive requirement) => _playerInventory.Contains(requirement);
+
+    public void ChangePlayerPosition(Vector3 position)
+    {
+        _playerMovement.transform.position =
+            new Vector3(position.x, _playerMovement.transform.position.y, position.z);
+    }
+    public void PlayerLookAt(Vector3 position)
+    {
+        Vector3 direction = position - _playerMovement.transform.position;
+        direction.y = 0f;
+
+        if (direction.sqrMagnitude > 0.001f)
+             _playerMovement.transform.rotation = Quaternion.LookRotation(direction);
+    }
 }

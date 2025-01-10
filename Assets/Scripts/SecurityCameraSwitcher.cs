@@ -137,15 +137,17 @@ public class SecurityCameraSwitcher : MonoBehaviour
 
     private IEnumerator StartStatic()
     {
+        Debug.Log("Started temporary glitch. ");
+
         float passedTime = 0f;
 
-        while (passedTime < 0.09f)
+        while (passedTime < 0.11f)
         {
             _static.enabled = !_static.enabled;
 
             passedTime += Time.deltaTime;
 
-            yield return new WaitForSeconds(0.1f - passedTime);
+            yield return new WaitForSeconds(0.12f - passedTime);
         }
 
         _static.enabled = false;

@@ -6,7 +6,6 @@ public class SummonDemon : MonoBehaviour
 {
     [SerializeField] private MeshRenderer _necronomiconMeshR;
     [SerializeField] private Material[] _necronomiconMaterials;
-    [SerializeField] private GameObject _demonObject;
     private List<ChalkDrawingPoint> _chalkPoints;
     public List<ChalkDrawingPoint> ChalkPoints => _chalkPoints;
     private List<float> _chalkFrequencies = new List<float>();
@@ -17,7 +16,6 @@ public class SummonDemon : MonoBehaviour
     private void Start()
     {
         _cutsceneContol = FindFirstObjectByType<CutsceneControl>();
-        _demonObject.SetActive(false);
 
         _necronomiconMeshR.material = _necronomiconMaterials[0];
         
@@ -68,11 +66,7 @@ public class SummonDemon : MonoBehaviour
         if (_finalPoint.IsDrawn) 
         {
             _cutsceneContol.AwakeDemon();
+            gameObject.SetActive(false);
         }
-    }
-    public void AwakeDemon()
-    {
-        _demonObject.SetActive(true);
-        gameObject.SetActive(false);
     }
 }
