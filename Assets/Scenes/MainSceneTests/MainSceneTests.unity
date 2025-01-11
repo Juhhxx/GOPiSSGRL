@@ -1428,6 +1428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Tornado
       objectReference: {fileID: 0}
+    - target: {fileID: 920193124716290369, guid: 3b699a1e0efcc2b4fb6c5a16de4d9a97, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1742527201375090725, guid: 3b699a1e0efcc2b4fb6c5a16de4d9a97, type: 3}
       propertyPath: m_LocalPosition.y
       value: 6
@@ -3256,18 +3260,6 @@ PrefabInstance:
       propertyPath: '_itemPrefab.Array.data[0]'
       value: 
       objectReference: {fileID: 1030488216}
-    - target: {fileID: 8053000707414377658, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.05490193
-      objectReference: {fileID: 0}
-    - target: {fileID: 8053000707414377658, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.08676908
-      objectReference: {fileID: 0}
-    - target: {fileID: 8053000707414377658, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8862745
-      objectReference: {fileID: 0}
     - target: {fileID: 8950911561876532059, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.25
@@ -5001,6 +4993,8 @@ PlayableDirector:
     value: {fileID: 642313095}
   - key: {fileID: -5664048059901239745, guid: 19f9b6b7d1485854aad8e07fd2a46499, type: 2}
     value: {fileID: 1296525250}
+  - key: {fileID: 1778665142679858439, guid: 19f9b6b7d1485854aad8e07fd2a46499, type: 2}
+    value: {fileID: 642313095}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &642313095
