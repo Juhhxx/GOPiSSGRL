@@ -1052,11 +1052,8 @@ MonoBehaviour:
   _shakeStrenght: 0.03
   _volumeChangeDistance: 100
   _frequencyDisplay: {fileID: 4052064660836428165}
-  _demonSound: {fileID: 8300000, guid: 71120c4512ae87e459931b1480c24eb7, type: 3}
   _defaultSound: {fileID: 8300000, guid: 2d51feffef62dce4eaaeb99bc00e6377, type: 3}
-  _radioChannels:
-  - <Frequency>k__BackingField: 100
-    <Audio>k__BackingField: {fileID: 8300000, guid: 9e9d70cf4df82704098fe0be55f11f77, type: 3}
+  _radioChannels: []
 --- !u!82 &3158953714683533290
 AudioSource:
   m_ObjectHideFlags: 0
