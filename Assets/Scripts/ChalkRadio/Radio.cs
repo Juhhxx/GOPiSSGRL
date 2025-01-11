@@ -38,6 +38,19 @@ public class Radio : MonoBehaviour
     {
         int pointIndex;
         float correctedFrequency = Mathf.Floor(_frequency);
+        if (_summonDemon.ChalkFrequencies.Contains(correctedFrequency))
+        {
+            pointIndex = _summonDemon.ChalkFrequencies.IndexOf(correctedFrequency);
+            Debug.Log(pointIndex);
+            DetectDistance(pointIndex);
+            ChangeAudio(_defaultSound);
+        }
+        else
+        {
+            ChangeAudio(_defaultSound);
+            ChangeAudioVolumeDistance(5f);
+            // Debug.Log("No poins in this frequency");
+        }
     }
     private void DetectDistance(int index)
     {

@@ -5,12 +5,31 @@ public class PlayerBehaviorControl : MonoBehaviour
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private PlayerInteraction _playerInteraction;
     [SerializeField] private PlayerInventory _playerInventory;
-
+    private int _disabledNumber = 0;
 
     public void EnableDisablePlayer(bool falseOrTrue)
     {
+        if (falseOrTrue == true)
+        {
+            _disabledNumber -= 1;
+        }
+        
+        Debug.Log($"Diabled Player Times : {_disabledNumber}");
+
+        if (_disabledNumber == 0)
+        {
             _playerMovement.enabled = falseOrTrue;
             _playerInteraction.enabled = falseOrTrue;
+            _disabledNumber = 0;
+        }
+
+        if (falseOrTrue == false)
+        {
+            _disabledNumber += 1;
+        }
+
+        Debug.Log($"Diabled Player Times : {_disabledNumber}");
+
     }
 
     public bool CanInteract()
