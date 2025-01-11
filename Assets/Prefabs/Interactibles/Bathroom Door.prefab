@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 3231516721470781557}
   - component: {fileID: 8018369592686590284}
   m_Layer: 0
-  m_Name: Bathroom_Door
+  m_Name: Bathroom Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

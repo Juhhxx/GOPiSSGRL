@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 8234852303442331435}
   - component: {fileID: 2918187887041079148}
   m_Layer: 0
-  m_Name: firetornado
+  m_Name: Fire Tornado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8902757104098393506
 Transform:
   m_ObjectHideFlags: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920193124716290369}
-  m_Mesh: {fileID: 6099800089077584851, guid: 1ae6f0bb858a45543b8a4aec84b341da, type: 3}
+  m_Mesh: {fileID: 6099800089077584851, guid: 897ad90a9c8a3674d941d99071a5b385, type: 3}
 --- !u!23 &2918187887041079148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0.00029036403}
   m_LocalPosition: {x: 0, y: 6.653963, z: -0.00045394897}
-  m_LocalScale: {x: 1.9818002, y: 1.5539622, z: 1.9818002}
+  m_LocalScale: {x: 1.9818002, y: 0.5, z: 1.9818002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8902757104098393506}
@@ -129,7 +129,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935236681553474214}
-  m_Mesh: {fileID: 1865056248366311061, guid: 1a739875bd8f91b4b8da08392545d2a3, type: 3}
+  m_Mesh: {fileID: 1865056248366311061, guid: d82ec8d4b2b4d8e4fa6a387b400fd907, type: 3}
 --- !u!23 &1953113778493567540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2635088809923214171}
-  m_Mesh: {fileID: 1865056248366311061, guid: 1a739875bd8f91b4b8da08392545d2a3, type: 3}
+  m_Mesh: {fileID: 1865056248366311061, guid: d82ec8d4b2b4d8e4fa6a387b400fd907, type: 3}
 --- !u!23 &2621540714082026756
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -289,7 +289,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.026077, z: 0}
-  m_LocalScale: {x: 1.9818002, y: 1.5539622, z: 1.9818002}
+  m_LocalScale: {x: 1.1, y: 1, z: 1.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4168284243093646655}
@@ -301,7 +301,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2917046495394808950}
-  m_Mesh: {fileID: 1865056248366311061, guid: 1a739875bd8f91b4b8da08392545d2a3, type: 3}
+  m_Mesh: {fileID: 6099800089077584851, guid: 897ad90a9c8a3674d941d99071a5b385, type: 3}
 --- !u!23 &86207052711593261
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4035499018390283597}
-  m_Mesh: {fileID: 6099800089077584851, guid: 1ae6f0bb858a45543b8a4aec84b341da, type: 3}
+  m_Mesh: {fileID: 6099800089077584851, guid: 897ad90a9c8a3674d941d99071a5b385, type: 3}
 --- !u!23 &5802240688770458000
 MeshRenderer:
   m_ObjectHideFlags: 0

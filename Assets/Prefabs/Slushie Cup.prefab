@@ -256,5 +256,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slushieFlavours: 
-  _slushieObject: {fileID: 0}
-  IsUsed: 0
+  _slushieObject: {fileID: 3978211361513734094}
+  _slushieUpdateSpeed: 0.02

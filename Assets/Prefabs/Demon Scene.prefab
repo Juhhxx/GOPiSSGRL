@@ -52868,7 +52868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4953706444994765981}
   m_Layer: 0
-  m_Name: DemonScene
+  m_Name: Demon Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

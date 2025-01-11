@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2416871598193625541}
   - component: {fileID: 5868122157909882201}
-  - component: {fileID: 375720632851398360}
+  - component: {fileID: 8850818587926787206}
   m_Layer: 0
-  m_Name: UVLight
+  m_Name: UV Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactiveData: {fileID: 11400000, guid: ca230b9d04f55c5448f893f26b016774, type: 2}
   isOn: 0
---- !u!114 &375720632851398360
+--- !u!114 &8850818587926787206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,6 +56,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 292873549946595957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be344809d0a388344a90c10e64b26637, type: 3}
+  m_Script: {fileID: 11500000, guid: 064757f2af43082409731eeea9755de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

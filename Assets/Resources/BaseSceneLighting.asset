@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: BaseSceneLighting
   m_EditorClassIdentifier: 
   LightingSettings: {fileID: 4890085278179872738, guid: af2386bd10076d34b975df19fee581f9, type: 2}
-  SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  SkyboxMaterial: {fileID: 2100000, guid: c494c335823f54b52b2e87e1b7a63a23, type: 2}
   FogEnabled: 0
   FogMode: 0
   FogColor: {r: 0, g: 0, b: 0, a: 0}
   FogDensity: 0
-  HaloStrength: 0.5

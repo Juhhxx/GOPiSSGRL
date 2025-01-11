@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 7371867528902293591}
   - component: {fileID: 1405960366288820765}
   - component: {fileID: 2280665288575269084}
-  - component: {fileID: 2151881209037953434}
-  - component: {fileID: -2915048230003009476}
+  - component: {fileID: -2276751490297312916}
   m_Layer: 6
-  m_Name: DemonSequenceNote Holding
+  m_Name: Demon Poem Holding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: def7b0539583bea4990e3f6ab12f12a0, type: 2}
+  - {fileID: 2100000, guid: ce8e75f370fd5314ab7e9caa4c46fedc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,21 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2151881209037953434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3310751724994561192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 200d4b7f1039828448d461f83221465a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactiveData: {fileID: 11400000, guid: 8cca491d6bbf8204b947c65f638efc80, type: 2}
-  isOn: 0
---- !u!114 &-2915048230003009476
+--- !u!114 &-2276751490297312916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

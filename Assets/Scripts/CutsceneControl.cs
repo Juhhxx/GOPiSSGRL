@@ -21,6 +21,8 @@ public class CutsceneControl : MonoBehaviour
         _playerBehaviorControl = FindFirstObjectByType<PlayerBehaviorControl>();
         _demonObject.SetActive(false);
         _demonScene.SetActive(false);
+
+        _lightingControl.ChangeLighting(_basePreset);
     }
 
     public void AwakeDemon()
@@ -75,6 +77,12 @@ public class CutsceneControl : MonoBehaviour
     }
 
     public void SummonDemon()
+    {
+        ShakeSecurityCam(2.0f);
+        _demonObject.SetActive(true);
+    }
+
+    public void UnSummonDemon()
     {
         ShakeSecurityCam(2.0f);
         _demonObject.SetActive(true);

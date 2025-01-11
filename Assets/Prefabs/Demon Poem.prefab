@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1620185913566760650
+--- !u!1 &979570373860535664
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6401403473677378491}
-  - component: {fileID: 8848637646396094462}
+  - component: {fileID: 8311390280563097614}
+  - component: {fileID: 4964981270982697877}
   m_Layer: 0
-  m_Name: Quarter
+  m_Name: Demon Poem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6401403473677378491
+--- !u!4 &8311390280563097614
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620185913566760650}
+  m_GameObject: {fileID: 979570373860535664}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.638, y: 1.573, z: 15.035}
-  m_LocalScale: {x: 0.1, y: 0.01, z: 0.1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0.037274558, y: 0.83427155, z: -0.5471491, w: -0.05682838}
+  m_LocalPosition: {x: 0.424, y: -11.01, z: 0.27100003}
+  m_LocalScale: {x: 0.050000034, y: 0.06250001, z: 0.028125009}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8848637646396094462
+  m_LocalEulerAnglesHint: {x: 66.517, y: 187.793, z: -0.001}
+--- !u!114 &4964981270982697877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620185913566760650}
+  m_GameObject: {fileID: 979570373860535664}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 200d4b7f1039828448d461f83221465a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveData: {fileID: 11400000, guid: 28f0174f06f3e8e4a8b9d16e22cce1a0, type: 2}
+  _interactiveData: {fileID: 11400000, guid: 594685362c5507344a4d677796e89bbd, type: 2}
   isOn: 0

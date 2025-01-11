@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5425200209777498128}
   - component: {fileID: 686110095011248487}
   m_Layer: 0
-  m_Name: ChalkDrawingPoint
+  m_Name: Chalk Drawing Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

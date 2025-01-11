@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7409247017715768428}
   - component: {fileID: 6895464141063688337}
   m_Layer: 6
-  m_Name: UVLight Holding
+  m_Name: UV Light Holding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
