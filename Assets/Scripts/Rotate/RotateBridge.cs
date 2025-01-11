@@ -5,7 +5,7 @@ public class RotateBridge : MonoBehaviour
 {
     [SerializeField] private RotateWhenHolding _rotate;
     [SerializeField] private bool _disableOnBegin;
-    private FixSlushieMachine _fixMachine;
+    [SerializeField] private FixSlushieMachine _fixMachine;
 
     private void Awake()
     {
@@ -27,13 +27,14 @@ public class RotateBridge : MonoBehaviour
     }
     private void DisableRotation()
     {
-        if (Input.GetButton("Interact") || _rotate.enabled == false) return;
+        if (!Input.GetButtonUp("Interact") || _rotate.enabled == false) return;
         Debug.Log($"disabling {_rotate.gameObject.name}");
+        _fixMachine.CheckTemprature(GetCurrentValue());
         _rotate.DisableRotation();
-        _fixMachine.CheckTemprature();
     }
     public float GetCurrentValue()
     {
+        Debug.Log("Current rotate bridge value: " + _rotate.GetCurrentValue());
         return _rotate.GetCurrentValue();
     }
 }
