@@ -9,6 +9,7 @@ public class UVLightOld : MonoBehaviour
     private int _spotLightDirID;
     private int _lightedID;
     private bool isOn;
+    private Collider _necroCollider;
 
     private void Start()
     {
@@ -31,6 +32,13 @@ public class UVLightOld : MonoBehaviour
         _uvSpotLightObject.SetActive(true);
         Shader.SetGlobalFloat(_lightedID, 1);
         isOn = true;
+
+
+        TagNecro necro = FindAnyObjectByType<TagNecro>();
+        if (necro != null)
+            _necroCollider = necro.GetComponent<Collider>();
+        if (_necroCollider != null)
+            _necroCollider.enabled = false;
     }
 
     private void OnEnable()
@@ -62,6 +70,10 @@ public class UVLightOld : MonoBehaviour
     {
         _uvSpotLightObject.SetActive(true);
         Shader.SetGlobalFloat(_lightedID, 1);
+
+        if (_necroCollider != null)
+            _necroCollider.enabled = true;
+        
         return true;
     }
 
@@ -69,6 +81,10 @@ public class UVLightOld : MonoBehaviour
     {
         _uvSpotLightObject.SetActive(false);
         Shader.SetGlobalFloat(_lightedID, 0);
+
+        if (_necroCollider != null)
+            _necroCollider.enabled = false;
+
         return false;
     }
 
