@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class CutsceneControl : MonoBehaviour
 {
@@ -17,8 +18,9 @@ public class CutsceneControl : MonoBehaviour
 
     [SerializeField] private Transform _endPlayerPosition;
     [SerializeField] private GameObject _demonObject;
-    [SerializeField] private PlayableDirector _demonTimeline;
-    [SerializeField] private PlayableDirector _endTimeline;
+    [SerializeField] private PlayableDirector _timeline;
+    [SerializeField] private TimelineAsset _demonTimeline;
+    [SerializeField] private TimelineAsset _endTimeline;
     [SerializeField] private Animator _pissyMissy;
     private PlayerBehaviorControl _playerBehaviorControl;
 
@@ -40,7 +42,8 @@ public class CutsceneControl : MonoBehaviour
         _playerBehaviorControl.PlayerLookAt(_newPlayerDirection.position);
         _cameraSwitcher.SwitchSecurityCamera(0, false);
 
-        _demonTimeline.Play();
+        _timeline.playableAsset = _demonTimeline;
+        _timeline.Play();
 
         StartCoroutine(StartSceneSwitch(_baseScene, _demonPreset, _demonScene));
 
@@ -74,8 +77,7 @@ public class CutsceneControl : MonoBehaviour
 
     public void EndTimeline()
     {
-        _demonTimeline.Stop();
-        _endTimeline.Stop();
+        _timeline.Stop();
     }
 
     public void EndCutscene()
@@ -124,6 +126,7 @@ public class CutsceneControl : MonoBehaviour
         _demonScene.SetActive(false);
         _endScene.SetActive(true);
 
-        _endTimeline.Play();
+        _timeline.playableAsset = _endTimeline;
+        _timeline.Play();
     }
 }
