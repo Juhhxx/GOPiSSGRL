@@ -18301,21 +18301,9 @@ PrefabInstance:
       propertyPath: '_itemPrefab.Array.data[1]'
       value: 
       objectReference: {fileID: 1742809300}
-    - target: {fileID: 477726158189080398, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 477726158189080398, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
-      propertyPath: startDelay.scalar
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 1474622522908833109, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
       propertyPath: m_Name
       value: Clerk
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638851106748772295, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1884920752237427836, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
       propertyPath: m_LocalPosition.x
