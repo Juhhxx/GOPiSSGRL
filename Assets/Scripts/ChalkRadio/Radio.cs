@@ -9,6 +9,7 @@ public class Radio : MonoBehaviour
     [SerializeField] private float _shakeStrenght = 0.03f;
     [SerializeField] private float _volumeChangeDistance;
     [SerializeField] private TextMeshPro _frequencyDisplay;
+    [SerializeField] private AudioClip _demonSound;
     [SerializeField] private AudioClip _defaultSound;
     [SerializeField] private RadioChannels[] _radioChannels;
     private Vector3 _intialPosition;
@@ -38,18 +39,28 @@ public class Radio : MonoBehaviour
     {
         int pointIndex;
         float correctedFrequency = Mathf.Floor(_frequency);
+
         if (_summonDemon.ChalkFrequencies.Contains(correctedFrequency))
         {
             pointIndex = _summonDemon.ChalkFrequencies.IndexOf(correctedFrequency);
             Debug.Log(pointIndex);
             DetectDistance(pointIndex);
-            ChangeAudio(_defaultSound);
+            ChangeAudio(_demonSound);
         }
         else
         {
-            ChangeAudio(_defaultSound);
             ChangeAudioVolumeDistance(5f);
-            // Debug.Log("No poins in this frequency");
+            
+            foreach (RadioChannels channel in _radioChannels)
+            {
+                if (channel.Frequency == correctedFrequency)
+                {
+                    ChangeAudio(channel.Audio);
+                    return;
+                }
+            }
+
+            ChangeAudio(_defaultSound);
         }
     }
     private void DetectDistance(int index)
