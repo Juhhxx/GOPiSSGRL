@@ -37,9 +37,9 @@ public class UVLightOld : MonoBehaviour
 
         _click = _sounds.GetSound(SoundID.FlashLightClick);
 
-        _uvSpotLightObject.SetActive(true);
-        Shader.SetGlobalFloat(_lightedID, 1);
-        isOn = true;
+        _uvSpotLightObject.SetActive(false);
+        Shader.SetGlobalFloat(_lightedID, 0);
+        isOn = false;
 
 
         TagNecro necro = FindAnyObjectByType<TagNecro>();
