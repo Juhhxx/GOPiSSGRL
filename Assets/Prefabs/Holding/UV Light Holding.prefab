@@ -146,6 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uvSpotLightObject: {fileID: 6573220878977929074}
   _uvLight: {fileID: 9058369203384256663}
+  _sounds: {fileID: 11400000, guid: 5ac7902ca99a98644b36433b0d68ab21, type: 2}
+  _audioSource: {fileID: 7409247017715768428}
 --- !u!1 &6573220878977929074
 GameObject:
   m_ObjectHideFlags: 0

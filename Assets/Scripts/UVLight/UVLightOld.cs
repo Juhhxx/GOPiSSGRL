@@ -5,14 +5,20 @@ public class UVLightOld : MonoBehaviour
 {
     [SerializeField] private GameObject _uvSpotLightObject;
     [SerializeField] private Light _uvLight;
+    [SerializeField] private Sounds _sounds;
+    [SerializeField] private AudioSource _audioSource;
     private int _lightPositionID;
     private int _spotLightDirID;
     private int _lightedID;
     private bool isOn;
+    private AudioClip _click;
     private Collider _necroCollider;
+    private PlayerBehaviorControl _playerControl;
 
     private void Start()
     {
+        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
+
         // Convert the strings IDs of the Revealing Shader properties into
         // shader IDs for best performance
         _lightPositionID = Shader.PropertyToID("_SpotLightPos");
@@ -28,6 +34,8 @@ public class UVLightOld : MonoBehaviour
         // Here to test the old shader graph
         Shader.SetGlobalFloat("_InnerSpotAngleOld", _uvLight.innerSpotAngle);
         Shader.SetGlobalFloat("_OuterSpotAngleOld", _uvLight.spotAngle);
+
+        _click = _sounds.GetSound(SoundID.FlashLightClick);
 
         _uvSpotLightObject.SetActive(true);
         Shader.SetGlobalFloat(_lightedID, 1);
@@ -51,7 +59,7 @@ public class UVLightOld : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetButtonDown("Interact") && _playerControl.CanInteract())
             ToggleUVLight();
 
         if (isOn)
@@ -68,6 +76,8 @@ public class UVLightOld : MonoBehaviour
 
     private bool TurnOn()
     {
+        _audioSource.PlayOneShot(_click);
+
         _uvSpotLightObject.SetActive(true);
         Shader.SetGlobalFloat(_lightedID, 1);
 
@@ -79,6 +89,8 @@ public class UVLightOld : MonoBehaviour
 
     private bool TurnOff()
     {
+        _audioSource.PlayOneShot(_click);
+
         _uvSpotLightObject.SetActive(false);
         Shader.SetGlobalFloat(_lightedID, 0);
 
