@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7283185021321091853
+--- !u!114 &-1279163588782769315
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FireTop
-  m_Shader: {fileID: -6465566751694194690, guid: 902356f3344f7324e87cd8edd92477e6, type: 3}
+  m_Name: UIHighlight
+  m_Shader: {fileID: -6465566751694194690, guid: 7ad70d130a3e61c43a92bac7ff0372a4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -29,7 +29,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
@@ -37,8 +37,12 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _HighlightTex:
+        m_Texture: {fileID: 2800000, guid: 4c66131a75358f94aa1d5fccf435b12c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1bf1c81049152144a971b32fd8bcd878, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4c66131a75358f94aa1d5fccf435b12c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -55,16 +59,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Dissolve: 0.898
-    - _Noise: 1.55
-    - _NosieScale: 26.46
-    - _QueueControl: 0
+    - _HighlightAlpha: 1
+    - _QueueControl: 1
     - _QueueOffset: 0
-    - _ScrollSpeed: 0.3
-    - _TwirlAmount: 4.3
     m_Colors:
-    - _MainColor: {r: 0, g: 14.035363, b: 0.6482938, a: 0}
-    - _TwirlCenter: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _TwirlSpeed: {r: 0, g: 0.5, b: 0, a: 0}
+    - _MainColor: {r: 1, g: 0.8506645, b: 0.004716992, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

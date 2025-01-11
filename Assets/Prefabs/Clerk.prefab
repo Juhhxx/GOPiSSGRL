@@ -64,19 +64,23 @@ MonoBehaviour:
       dialogLines:
       - Ugh.
       - Sure. You just need to make a purchase first.
-      - We have keychains on sale, I guess. 0.99$ bi-- I mean, dear customer.
+      - We have keychains on sale, I guess.\n0.99$ bi-- I mean, dear customer.
+  - characterDialogs:
+    - characterID: 2
+      dialogLines:
+      - No purchase, no bathroom. Simple as that.
   - characterDialogs:
     - characterID: 2
       dialogLines:
       - Well that took you long enough.
       - Here's your UV Light keychain.
-      - I would give you the key too, but the last person who tried to piss didn't
+      - I would give you the key too,\nbut the last person who tried to piss didn't
         return it.
-      - My coworker. Last thing I remmeber....
-      - She went into the freezer. I don't know... Like three weeks ago?
-      - Good luck trying to get the key though, I forgot the password to the freezer
+      - My coworker. Last thing I remember....
+      - She went into the freezer. I don't know...\nLike three weeks ago?
+      - Good luck trying to get the key though,\nI forgot the password to the freezer
         door.
-      - Hey can you uh... Keep an eye on the place for a while?
+      - Hey can you uh...\nKeep an eye on the place for a while?
       - It's time for my daily nap sooo...
       - Zzzzzz...
 --- !u!1 &3676345881158259900
@@ -92,7 +96,7 @@ GameObject:
   - component: {fileID: 406345619044650737}
   - component: {fileID: 2917759075968844741}
   - component: {fileID: 4033287090093591541}
-  - component: {fileID: 9024066270162390463}
+  - component: {fileID: 7677379648503681297}
   m_Layer: 0
   m_Name: Scaleman_Clerk_Downloaded_ (1)
   m_TagString: Untagged
@@ -184,7 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475f0d694f101c74a9785d78b122b53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9024066270162390463
+  _characterSpeech: {fileID: 0}
+--- !u!114 &7677379648503681297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,7 +198,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3676345881158259900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90592a77801f70747b06de0d2ac8c9d9, type: 3}
+  m_Script: {fileID: 11500000, guid: f6a534c070cceda4cbe47e287024e86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 0}
@@ -359,6 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475f0d694f101c74a9785d78b122b53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterSpeech: {fileID: 0}
 --- !u!1 &8210881964978317644
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,3 +469,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475f0d694f101c74a9785d78b122b53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterSpeech: {fileID: 0}
