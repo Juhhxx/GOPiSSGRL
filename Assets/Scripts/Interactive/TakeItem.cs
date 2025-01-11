@@ -3,8 +3,14 @@ using UnityEngine;
 
 public class TakeItem : MonoBehaviour
 {
-    [SerializeField] private PlayerInventory _playerInventory;
     [SerializeField] private List<GameObject> _itemPrefabs; 
+
+    private PlayerInventory _playerInventory;
+
+    private void Awake()
+    {
+        _playerInventory = FindFirstObjectByType<PlayerInventory>();
+    }
 
     public void TakeItemFromPlayer()
     {

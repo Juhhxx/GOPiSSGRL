@@ -54,15 +54,23 @@ public class KeypadControl : MonoBehaviour
             }
         }
 
-        RevealUnderUVLight _uv;
         int ran;
         for (int i = 0; i < _buttonsZeroToNine.Count; i++)
         {
             if (_correctCombination.Contains(i))
             {
-                _uv = _buttonsZeroToNine[i].AddComponent<RevealUnderUVLight>();
                 ran = Random.Range(0, _uvTextures.Length);
-                _uv.SetMaterialAndTexture(_uvMaterial, _uvTextures[ran]);
+
+
+                Material _newUV = new Material(_uvMaterial);
+
+
+                // Set the (uv texture) texture that should appear on th material when
+                // the uv light is shined on it
+                _newUV.SetTexture("_MainTex", _uvTextures[ran]);
+                Renderer renderer = _buttonsZeroToNine[i].GetComponent<MeshRenderer>();
+
+                renderer.material = _newUV;
             }
         }
     }

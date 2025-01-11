@@ -127,8 +127,9 @@ public class RotateWhenHolding : MonoBehaviour
 
     public float GetCurrentValue()
     {
+        Debug.Log("Current when holding rotation value: " + _currentValue);
         if (_invertRotationValues)
-            return _maxValue - _currentValue;
+            return _maxValue - _currentValue + _minValue;
         else
             return _currentValue;
     }

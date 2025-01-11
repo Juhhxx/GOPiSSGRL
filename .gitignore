@@ -10,9 +10,6 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
-# 3D Models can get very heavy in size.
-/[Aa]ssets/[Mm]odels/
-
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/

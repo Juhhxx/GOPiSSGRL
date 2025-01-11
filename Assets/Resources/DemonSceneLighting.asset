@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: DemonSceneLighting
   m_EditorClassIdentifier: 
   LightingSettings: {fileID: 4890085278179872738, guid: 98ee975b74776234986f4d35f14c4ccc, type: 2}
-  SkyboxMaterial: {fileID: 0}
+  SkyboxMaterial: {fileID: 2100000, guid: c82a334cf5a5e47978749c210cee72a7, type: 2}
   FogEnabled: 1
   FogMode: 3
   FogColor: {r: 0.23529412, g: 0.047058824, b: 0.05882353, a: 0}
   FogDensity: 0.08
-  HaloStrength: 0.519

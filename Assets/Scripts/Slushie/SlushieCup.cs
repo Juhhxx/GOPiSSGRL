@@ -24,7 +24,7 @@ public class SlushieCup : MonoBehaviour
     
     public void GiveSlushie(PlayerInventory inventory)
     {
-        Interactive slushie = gameObject.GetComponent<Interactive>();
+        Interactive slushie = GetComponent<Interactive>();
         if (!IsUsed)
         {
             IsUsed = true;
