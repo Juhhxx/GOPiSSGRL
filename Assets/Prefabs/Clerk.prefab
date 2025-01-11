@@ -571,7 +571,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 15
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -5535,6 +5535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7623631289269896545}
+  - component: {fileID: 3941882195037677202}
   m_Layer: 0
   m_Name: ClerkSleep
   m_TagString: Untagged
@@ -5560,6 +5561,28 @@ Transform:
   - {fileID: 4997433579303662146}
   m_Father: {fileID: 7887816429333393162}
   m_LocalEulerAnglesHint: {x: -35, y: 180, z: 16}
+--- !u!95 &3941882195037677202
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638851106748772295}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c0bf7a8d51d8ed40b7af7d89df608fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1748742569046773698
 GameObject:
   m_ObjectHideFlags: 0
@@ -5602,6 +5625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4542548626469063716}
+  - component: {fileID: 7650018220567168339}
   m_Layer: 0
   m_Name: ClerkIdle
   m_TagString: Untagged
@@ -5626,6 +5650,28 @@ Transform:
   - {fileID: 4144622871379931781}
   m_Father: {fileID: 7887816429333393162}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 16.04}
+--- !u!95 &7650018220567168339
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945730302956862615}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8b7dd4d7317b044bb52bdb43720a4ac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2172343617749596428
 GameObject:
   m_ObjectHideFlags: 0
