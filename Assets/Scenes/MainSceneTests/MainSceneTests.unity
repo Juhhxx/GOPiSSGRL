@@ -14627,10 +14627,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Radio
       objectReference: {fileID: 0}
-    - target: {fileID: 5729456878080202761, guid: b225e1fae78787f4db36cfb9f5f160e5, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: c4ec3a87f19be6846bb3140bb815f8b0, type: 2}
     - target: {fileID: 7470494794457022424, guid: b225e1fae78787f4db36cfb9f5f160e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -14671,10 +14667,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8540951384055699834, guid: b225e1fae78787f4db36cfb9f5f160e5, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: c4ec3a87f19be6846bb3140bb815f8b0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
