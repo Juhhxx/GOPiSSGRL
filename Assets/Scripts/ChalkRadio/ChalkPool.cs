@@ -23,7 +23,7 @@ public class ChalkPool : MonoBehaviour
     }
     private GameObject CreateObject()
     {
-        GameObject newObject = Instantiate(_objectPrefab,gameObject.transform);
+        GameObject newObject = Instantiate(_objectPrefab);
         newObject.GetComponent<ChalkController>().SetPool(this);
         _pool.Push(newObject);
         return newObject;
@@ -37,7 +37,7 @@ public class ChalkPool : MonoBehaviour
         GameObject chalk = _pool.Pop();
 
         Transform chalkTrans = chalk.transform;
-        Renderer chalkMeshR = chalk.GetComponent<Renderer>();
+        Renderer  chalkMeshR = chalk.GetComponent<Renderer>();
 
         // Rotate Chalk to be facing up from te perspective of the surface where it's drawn
         chalkTrans.LookAt(-hit.normal);
@@ -52,6 +52,9 @@ public class ChalkPool : MonoBehaviour
         chalkTrans.rotation = Quaternion.Euler(chalkRotation);
 
         chalkMeshR.material.mainTexture = ChooseChalkTexture();
+        Color resetColor = chalkMeshR.material.color;
+        resetColor.a = 1;
+        chalkMeshR.material.color = resetColor;
 
         Debug.Log($"chalk position is ({chalkTrans.position} + {chalkTrans.up * 0.01f} =){chalkPos}");
 

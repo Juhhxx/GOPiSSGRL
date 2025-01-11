@@ -149,5 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd85e31c9ea1007479a1239cffcfe0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _chalkmaterial: {fileID: 2100000, guid: f94d0b7e51ede3244a3960e47070a896, type: 2}
   _shiningMaterial: {fileID: 2100000, guid: 5bb2ec01baca8a744a282bdc61d56bc6, type: 2}
-  _disappearSpeed: 0.2
+  _disappearSpeed: 0.5
