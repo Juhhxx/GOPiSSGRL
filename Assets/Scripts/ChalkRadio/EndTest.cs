@@ -6,17 +6,20 @@ public class EndTest : MonoBehaviour
     [SerializeField] private PlayerBehaviorControl _playerControl;
     [SerializeField] private GameObject _holdingCamera;
 
-    public void ActivateUI()
+    public void StartEndCutscene()
     {
-        _holdingCamera.SetActive(false);
+        CutsceneControl cutsceneContol = FindFirstObjectByType<CutsceneControl>();
+        cutsceneContol.StartEndCutscene();
+        
+        /*_holdingCamera.SetActive(false);
         _finnishUI.SetActive(true);
 
         _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
         _playerControl.EnableDisablePlayer(false);
 
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.None;*/
     }
-    public void OpenForm()
+    /*public void OpenForm()
     {
         Application.OpenURL("https://forms.gle/wNbjW4ipwmmDH9Rk8");
         Application.Quit();
@@ -24,5 +27,5 @@ public class EndTest : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-    }
+    }*/
 }

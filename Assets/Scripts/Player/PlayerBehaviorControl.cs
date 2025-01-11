@@ -45,6 +45,7 @@ public class PlayerBehaviorControl : MonoBehaviour
     {
         transform.position =
             new Vector3(position.x, transform.position.y, position.z);
+        Debug.Log("Changed player pos: " + transform.position);
     }
 
     public void PlayerLookAt(Vector3 position)
@@ -61,5 +62,7 @@ public class PlayerBehaviorControl : MonoBehaviour
 
         if (headDirection.sqrMagnitude > 0.001f)
             _playerMovement.Head.localRotation = Quaternion.Euler(headRotationX, 0f, 0f);
+        
+        Debug.Log("Current player pos: " + transform.position);
     }
 }

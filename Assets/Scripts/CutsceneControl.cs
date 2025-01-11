@@ -10,11 +10,18 @@ public class CutsceneControl : MonoBehaviour
     [SerializeField] private LightingPresets _basePreset;
     [SerializeField] private GameObject _demonScene;
     [SerializeField] private LightingPresets _demonPreset;
+    [SerializeField] private GameObject _endScene;
+    [SerializeField] private LightingPresets _endPreset;
     [SerializeField] private Transform _newPlayerPosition;
     [SerializeField] private Transform _newPlayerDirection;
+
+    [SerializeField] private Transform _endPlayerPosition;
     [SerializeField] private GameObject _demonObject;
-    [SerializeField] private PlayableDirector _timeLine;
+    [SerializeField] private PlayableDirector _demonTimeline;
+    [SerializeField] private PlayableDirector _endTimeline;
+    [SerializeField] private Animator _pissyMissy;
     private PlayerBehaviorControl _playerBehaviorControl;
+
 
     private void Start()
     {
@@ -33,26 +40,26 @@ public class CutsceneControl : MonoBehaviour
         _playerBehaviorControl.PlayerLookAt(_newPlayerDirection.position);
         _cameraSwitcher.SwitchSecurityCamera(0, false);
 
-        _timeLine.Play();
+        _demonTimeline.Play();
 
-        StartCoroutine(StartSceneSwitch());
+        StartCoroutine(StartSceneSwitch(_baseScene, _demonPreset, _demonScene));
 
         ShakeSecurityCam(1.0f);
     }
 
-    private IEnumerator StartSceneSwitch()
+    private IEnumerator StartSceneSwitch(GameObject scene1, LightingPresets pres2, GameObject scene2)
     {
         Debug.Log("Started Scene Switch. ");
 
         float passedTime = 0f;
         bool onOrOff = false;
 
-        _lightingControl.ChangeLighting(_demonPreset);
+        _lightingControl.ChangeLighting(pres2);
 
         while (passedTime < 0.13f)
         {
-            _baseScene.SetActive(onOrOff);
-            _demonScene.SetActive(!onOrOff);
+            scene1.SetActive(onOrOff);
+            scene2.SetActive(!onOrOff);
 
             onOrOff = !onOrOff;
 
@@ -61,25 +68,36 @@ public class CutsceneControl : MonoBehaviour
             yield return new WaitForSeconds(0.16f - passedTime);
         }
 
-        _baseScene.SetActive(false);
-        _demonScene.SetActive(true);
+        scene1.SetActive(false);
+        scene2.SetActive(true);
     }
 
     public void EndTimeline()
     {
-        _timeLine.Stop();
+        _demonTimeline.Stop();
+        _endTimeline.Stop();
     }
 
     public void EndCutscene()
     {
         _cameraSwitcher.SwitchToPlayerCamera();
         _playerBehaviorControl.EnableDisablePlayer(true);
+        _pissyMissy.SetTrigger("Idle");
     }
 
     public void SummonDemon()
     {
         ShakeSecurityCam(2.0f);
         _demonObject.SetActive(true);
+    }
+    public void ScarePlayer()
+    {
+        _pissyMissy.SetTrigger("Scare");
+    }
+
+    public void PlayerDie()
+    {
+        _pissyMissy.SetTrigger("Die");
     }
 
     public void UnSummonDemon()
@@ -94,5 +112,18 @@ public class CutsceneControl : MonoBehaviour
 
         if (shaker != null)
             shaker.Shake(time, 15f);
+    }
+
+    public void StartEndCutscene()
+    {
+        _playerBehaviorControl.EnableDisablePlayer(false);
+        _playerBehaviorControl.ChangePlayerPosition(_endPlayerPosition.position);
+
+        _lightingControl.ChangeLighting(_endPreset);
+
+        _demonScene.SetActive(false);
+        _endScene.SetActive(true);
+
+        _endTimeline.Play();
     }
 }

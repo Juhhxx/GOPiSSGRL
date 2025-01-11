@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 8019567555111881612}
   - component: {fileID: 3231516721470781557}
   - component: {fileID: 8018369592686590284}
+  - component: {fileID: 7118141774737006456}
   m_Layer: 0
   m_Name: Bathroom Door
   m_TagString: Untagged
@@ -162,6 +163,23 @@ MonoBehaviour:
   _finnishUI: {fileID: 0}
   _playerControl: {fileID: 0}
   _holdingCamera: {fileID: 0}
+--- !u!114 &7118141774737006456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6380411798088743403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37fd987f098d7b4da49a126f73f65b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogList:
+  - characterDialogs:
+    - characterID: 1
+      dialogLines:
+      - I really need to go...
 --- !u!1 &9027889284217862641
 GameObject:
   m_ObjectHideFlags: 0
