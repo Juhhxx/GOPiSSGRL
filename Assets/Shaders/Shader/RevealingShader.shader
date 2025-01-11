@@ -170,7 +170,8 @@ Shader "Custom/RevealingShader"
 
                 half4 color = GetColor();
 
-                float4 texColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv) * color;
+                float4 texColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
+                texColor.rgb = half3(1.0, 1.0, 1.0) * color;
                 texColor.a *= shadowDepth * rangeAttenuation * angleAttenuation * _Lighted;
 
                 // Unused phosphorescence and fluorescence calculations

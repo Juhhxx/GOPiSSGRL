@@ -5,7 +5,6 @@ public class UVLightOld : MonoBehaviour
 {
     [SerializeField] private GameObject _uvSpotLightObject;
     [SerializeField] private Light _uvLight;
-    [SerializeField] private RawImage _shadowDebugger;
     private int _lightPositionID;
     private int _spotLightDirID;
     private int _lightedID;

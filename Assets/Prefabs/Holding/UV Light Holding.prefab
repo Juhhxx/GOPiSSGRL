@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3781712140826794166}
   - component: {fileID: 7409247017715768428}
-  - component: {fileID: 6895464141063688337}
+  - component: {fileID: 20630390816265981}
   m_Layer: 6
   m_Name: UV Light Holding
   m_TagString: Untagged
@@ -132,7 +132,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6895464141063688337
+--- !u!114 &20630390816265981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,14 +141,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6254428155093533783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b01d7593c4df544b5e687c82d2d6c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cab441c2c48e834f8879eb5256a5a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _uvSpotLightObject: {fileID: 6573220878977929074}
-  _uvSpotLightReboundObject: {fileID: 0}
-  _uvMaterial: {fileID: 2100000, guid: a3995774dbacef1469894471fc8e01ac, type: 2}
-  _sounds: {fileID: 11400000, guid: 5ac7902ca99a98644b36433b0d68ab21, type: 2}
-  _audioSource: {fileID: 7409247017715768428}
+  _uvLight: {fileID: 9058369203384256663}
 --- !u!1 &6573220878977929074
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,10 +190,10 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 0.035300255, g: 0, b: 1, a: 1}
-  m_Intensity: 105
-  m_Range: 25
-  m_SpotAngle: 62.130768
-  m_InnerSpotAngle: 29.264854
+  m_Intensity: 30
+  m_Range: 15
+  m_SpotAngle: 70
+  m_InnerSpotAngle: 40
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0

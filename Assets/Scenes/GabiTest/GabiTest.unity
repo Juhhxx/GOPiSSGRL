@@ -308,11 +308,72 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bathroom Door
       objectReference: {fileID: 0}
+    - target: {fileID: 6380411798088743403, guid: f0f43ac8d8563d14ab9d48b7aad2a44b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0f43ac8d8563d14ab9d48b7aad2a44b, type: 3}
+--- !u!1001 &409006121
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3781712140826794166, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781712140826794166, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.654
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781712140826794166, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.334
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781712140826794166, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7442518
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781712140826794166, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6669554
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781712140826794166, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.02752084
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781712140826794166, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.022413243
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781712140826794166, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 83.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781712140826794166, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -5.807
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781712140826794166, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -1.754
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254428155093533783, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_Name
+      value: UV Light Holding
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
 --- !u!1 &585145077
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keypad
       objectReference: {fileID: 0}
+    - target: {fileID: 2902565454402515783, guid: fb9797117f3151749acac93710bd7d74, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3218180783702683550, guid: fb9797117f3151749acac93710bd7d74, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18
@@ -503,6 +568,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb9797117f3151749acac93710bd7d74, type: 3}
+--- !u!1001 &1000280931
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2465467054113356829, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465467054113356829, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465467054113356829, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465467054113356829, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.17364825
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465467054113356829, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465467054113356829, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9848078
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465467054113356829, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465467054113356829, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465467054113356829, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -160
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465467054113356829, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188669787458855544, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
+      propertyPath: m_Name
+      value: Necronomicon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c6da058fb9ac754788b53c69aa6048d, type: 3}
 --- !u!1001 &1228199942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -554,6 +676,10 @@ PrefabInstance:
     - target: {fileID: 2245971598930148150, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
       propertyPath: m_Name
       value: Thermostat
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245971598930148150, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -952,3 +1078,5 @@ SceneRoots:
   - {fileID: 2115893107}
   - {fileID: 977224614}
   - {fileID: 37093088}
+  - {fileID: 1000280931}
+  - {fileID: 409006121}
