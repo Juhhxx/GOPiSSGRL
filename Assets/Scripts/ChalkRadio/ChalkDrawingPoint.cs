@@ -5,7 +5,6 @@ public class ChalkDrawingPoint : MonoBehaviour
     [SerializeField] float _pointFrequency;
     public float PointFrequency => _pointFrequency;
     [SerializeField] float _maxDetectDistance = 0.4f;
-    [SerializeField] private Material _shiningMaterial;
     private SphereCollider _collider;
     private bool _isDrawn = false;
     public bool IsDrawn => _isDrawn;
@@ -21,24 +20,18 @@ public class ChalkDrawingPoint : MonoBehaviour
     }
     private void CheckIfChalkDrawn(GameObject drawn, Collider chalkObject)
     {
-        if (drawn.GetComponent<TagChalk>() != null && !_isDrawn)
+        ChalkController chalk = drawn.GetComponent<ChalkController>();
+
+        if (chalk != null && !_isDrawn)
         {
             Debug.Log("CHALK WAS DRAWN IN THE RIGHT SPOT");
             _isDrawn = true;
-            ChangeChalkMaterial(chalkObject);
+            chalk.ChangeChalkMaterial();
         }
-    }
-    private void ChangeChalkMaterial(Collider other)
-    {
-        Renderer renderer = other.gameObject.GetComponent<Renderer>();
-        Texture texture = renderer.material.mainTexture;
-        renderer.material = _shiningMaterial;
-        renderer.material.mainTexture = texture;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         CheckIfChalkDrawn(other.gameObject, other);
-
     }
 }

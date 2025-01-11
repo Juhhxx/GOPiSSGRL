@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5445321939506885404}
   - component: {fileID: -8411168053438915510}
   - component: {fileID: 6444403030977569312}
-  - component: {fileID: -4263929983339076491}
+  - component: {fileID: 7423772793481660040}
   m_Layer: 0
   m_Name: Chalk
   m_TagString: Untagged
@@ -137,7 +137,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &-4263929983339076491
+--- !u!114 &7423772793481660040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,3 +149,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd85e31c9ea1007479a1239cffcfe0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shiningMaterial: {fileID: 2100000, guid: 5bb2ec01baca8a744a282bdc61d56bc6, type: 2}
+  _disappearSpeed: 0.2
