@@ -1876,10 +1876,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thermostat
       objectReference: {fileID: 0}
+    - target: {fileID: 2815285220022407421, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815285220022407421, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815285220022407421, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646641582959253672, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646641582959253672, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646641582959253672, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4899747905679833344, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
       propertyPath: _invertRotationValues
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6421539724253169597, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 706e8d30bb71af242a3370f5b4c50adb, type: 2}
     - target: {fileID: 8429971380115544416, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -13286,6 +13314,7 @@ MonoBehaviour:
   _pause: {fileID: 289525743}
   _player: {fileID: 1188219038}
   _holdingCamera: {fileID: 728918244}
+  _cameraSwitcher: {fileID: 551209269}
 --- !u!114 &2014757923
 MonoBehaviour:
   m_ObjectHideFlags: 0

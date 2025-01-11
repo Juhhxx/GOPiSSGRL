@@ -8,6 +8,7 @@ public class SecurityCameraSwitcher : MonoBehaviour
     [SerializeField] private Camera[] _playerCameras;
     [SerializeField] private AudioListener[] _playerListeners;
     [SerializeField] private GameObject[] _securityCameras;
+    public int SecurityCameraAmount => _securityCameras.Length; 
     [SerializeField] private GameObject[] _uis;
     [SerializeField] private bool _runningTrailer;
     private Dictionary<GameObject, Animator> _animators = new();
