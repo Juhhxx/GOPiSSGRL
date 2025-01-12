@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 7862880643369609742}
   - component: {fileID: 570902938181538020}
   - component: {fileID: 1588861939358468625}
-  - component: {fileID: 6996832822649687062}
+  - component: {fileID: 8101809407192928269}
   m_Layer: 0
   m_Name: Scaled View
   m_TagString: Untagged
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &6996832822649687062
+--- !u!114 &8101809407192928269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,11 +427,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8690401023422727191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Script: {fileID: 11500000, guid: 98df24dbab2bb4847a640259343570b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295

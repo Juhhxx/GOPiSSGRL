@@ -7,45 +7,64 @@ public class ViewBookUI : MonoBehaviour
     private Texture2D _bookTexture;
     private PlayerBehaviorControl _playerControl;
     private GameObject _uiObject;
+    private PauseMenu _pause;
+
+    private void OnEnable()
+    {
+        _pause = FindFirstObjectByType<PauseMenu>();
+    }
 
     private void Start()
     {
         _bookTexture = GetComponent<Renderer>().material.mainTexture as Texture2D;
 
         _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
-    }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("Interact") && _uiObject == null && 
-        _playerControl.CanInteract()) 
-            ShowUI();
-        else if (Input.GetButtonDown("Interact") && _uiObject != null) HideUI();
-    }
-
-    private void ShowUI()
-    {
         _uiObject = Instantiate(_viewUI);
         _uiObject.GetComponentInChildren<Button>().onClick.AddListener(HideUI);
+
+        // _pause.AddRemoveUIToCheck(_uiObject.GetComponentInChildren<Canvas>(), true);
 
         Image uiImage = _uiObject.GetComponentInChildren<Image>();
         Rect textureRect = new Rect(0f,0f,_bookTexture.width,_bookTexture.height);
         Sprite bookSprite = Sprite.Create(_bookTexture,textureRect,Vector2.zero);
         uiImage.sprite = bookSprite;
 
+        HideUI();
+    }
+
+    private void Update()
+    {
+        if ( ! _playerControl.CanInteract() ) return;
+
+        if (Input.GetButtonDown("Interact") && ! _uiObject.activeSelf) 
+            ShowUI();
+        else if (Input.GetButtonDown("Interact") && _uiObject.activeSelf)
+            HideUI();
+    }
+
+    private void ShowUI()
+    {
+        _uiObject.SetActive(true);
+
         Cursor.lockState = CursorLockMode.None;
         _playerControl.EnableDisablePlayer(false);
     }
     private void HideUI()
     {
-        Destroy(_uiObject);
-        _uiObject = null;
+        _uiObject.SetActive(false);
+
         Cursor.lockState = CursorLockMode.Locked;
         _playerControl.EnableDisablePlayer(true);
     }
 
     private void OnDestroy()
     {
-        HideUI();
+        // _pause.AddRemoveUIToCheck(_uiObject.GetComponentInChildren<Canvas>(), false);
+
+        Destroy(_uiObject);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        _playerControl.EnableDisablePlayer(true);
     }
 }

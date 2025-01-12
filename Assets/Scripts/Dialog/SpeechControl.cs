@@ -38,7 +38,6 @@ public class SpeechControl : MonoBehaviour
 
     public bool Paused { get; set;} = false;
     private WaitUntil _waitUntilNotPaused;
-    private WaitUntil _waitUntilNotPausedOrUntil;
 
     /// <summary>
     /// In start we just see if the text should be displayed based on if we have a
@@ -61,7 +60,6 @@ public class SpeechControl : MonoBehaviour
         _waitUntilOrDisplayed = new WaitUntil(() => _isTextFullyDisplayed || Input.GetButtonDown("Talk"));
         _waitForEndOfFrame = new WaitForFixedUpdate();
         _waitUntilNotPaused = new WaitUntil(() => !Paused);
-        _waitUntilNotPausedOrUntil = new WaitUntil(() => !Paused || (Paused  && Input.GetButtonDown("Talk")));
         
         _dialogUI.SetActive(false);
     }
@@ -83,7 +81,7 @@ public class SpeechControl : MonoBehaviour
         if (_dialogCoroutine != null)
             return null;
         
-        _inventoryUI.SetActive(false);
+        // _inventoryUI.SetActive(false);
 
         _playerControl.EnableDisablePlayer(false);
 
@@ -182,7 +180,7 @@ public class SpeechControl : MonoBehaviour
 
             if (!_isTextFullyDisplayed)
             {
-                Debug.Log("Skipping");
+                // Debug.Log("Skipping");
 
                 StopCoroutine(_typingCoroutine);
 
@@ -291,7 +289,7 @@ public class SpeechControl : MonoBehaviour
     private void EndDialog()
     {
         _dialogUI.SetActive(false);
-        _inventoryUI.SetActive(true);
+        // _inventoryUI.SetActive(true);
 
         _playerControl.EnableDisablePlayer(true);
 

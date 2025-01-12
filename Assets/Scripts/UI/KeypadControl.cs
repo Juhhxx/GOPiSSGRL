@@ -76,7 +76,7 @@ public class KeypadControl : MonoBehaviour
     }
     private void Start()
     {
-        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
+        _playerControl = FindFirstObjectByType<PlayerBehaviorControl>();
 
         _keypadUI.SetActive(false);
     }
@@ -89,7 +89,7 @@ public class KeypadControl : MonoBehaviour
 
         _playerControl.EnableDisablePlayer(false);
 
-        _ui.SetActive(false);
+        // _ui.SetActive(false);
         StartCoroutine(UpdateScreenIfText());
         Cursor.lockState = CursorLockMode.None;
     }
@@ -133,18 +133,19 @@ public class KeypadControl : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Exit") && _keypadUI.activeSelf) TurnOffKeypadUI();
+        if (Input.GetButtonDown("Exit") && _keypadUI.activeSelf && _playerControl.CanInteract())
+            TurnOffKeypadUI();
     }
 
     // Turns off keypad UI when the player presses the X button
     public void TurnOffKeypadUI()
     {
-        _keypadUI.SetActive(false);
-
         _playerControl.EnableDisablePlayer(true);
 
-        _ui.SetActive(true);
+        // _ui.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
+
+        _keypadUI.SetActive(false);
     }
 
     // First, if the current combination is not complete, it returns

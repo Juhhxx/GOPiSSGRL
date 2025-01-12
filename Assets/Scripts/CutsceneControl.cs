@@ -17,6 +17,7 @@ public class CutsceneControl : MonoBehaviour
     [SerializeField] private Transform _newPlayerDirection;
 
     [SerializeField] private Transform _endPlayerPosition;
+
     [SerializeField] private GameObject _demonObject;
     [SerializeField] private PlayableDirector _timeline;
     [SerializeField] private TimelineAsset _demonTimeline;
@@ -32,14 +33,16 @@ public class CutsceneControl : MonoBehaviour
         _demonScene.SetActive(false);
 
         _lightingControl.ChangeLighting(_basePreset);
+
+        _timeline.playableAsset = null;
     }
 
     public void AwakeDemon()
     {
+        Debug.Log("pt pos: " + _newPlayerPosition.position);
+        _playerBehaviorControl.PlayerLookAt(_newPlayerPosition.position, _newPlayerDirection.position);
+
         _playerBehaviorControl.EnableDisablePlayer(false);
-        
-        _playerBehaviorControl.ChangePlayerPosition(_newPlayerPosition.position);
-        _playerBehaviorControl.PlayerLookAt(_newPlayerDirection.position);
         _cameraSwitcher.SwitchSecurityCamera(0, false);
 
         _timeline.playableAsset = _demonTimeline;
@@ -78,6 +81,7 @@ public class CutsceneControl : MonoBehaviour
     public void EndTimeline()
     {
         _timeline.Stop();
+        _timeline.playableAsset = null;
     }
 
     public void EndCutscene()
@@ -128,5 +132,12 @@ public class CutsceneControl : MonoBehaviour
 
         _timeline.playableAsset = _endTimeline;
         _timeline.Play();
+    }
+
+    public void Pause(bool pauseOrNot)
+    {
+        if (pauseOrNot)
+            _timeline.Pause();
+        else _timeline.Play();
     }
 }

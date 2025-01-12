@@ -37,7 +37,7 @@ public class CharacterSpeech : MonoBehaviour
 
     public void StartSpeech()
     {
-        Debug.Log("talking");
+        // Debug.Log("talking");
         if (_stop) return;
         
         Queue<(CharacterID, Queue<string>)> updatedQueue =

@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _pause;
@@ -7,21 +7,41 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _holdingCamera;
     [SerializeField] private SecurityCameraSwitcher _cameraSwitcher;
     [SerializeField] private PlayerBehaviorControl _playerBehaviorControl;
+    [SerializeField] private CutsceneControl _cutsceneControl;
+    [SerializeField] private List<Canvas> _uiToCheck;
+    private List<bool> _uiSetting;
     private int _lastCameraIndex = -1;
+    private void Start()
+    {
+        _uiSetting = new List<bool>(_uiToCheck.Count);
+        for (int i = 0; i < _uiToCheck.Count; i++)
+        {
+            _uiSetting.Add(false);
+        }
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !_pause.activeSelf && !_settings.activeSelf)
-            Pause();
-        else if (Input.GetKeyDown(KeyCode.Escape) && !_settings.activeSelf)
-            Continue();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!_pause.activeSelf && !_settings.activeSelf)
+                Pause();
+            else if (!_settings.activeSelf)
+                Continue();
+        }
     }
     public void Pause()
     {
-        Cursor.lockState = CursorLockMode.None;
+        SaveLastSetting();
+
         // Time.timeScale = 0;
         _holdingCamera.SetActive(false);
-        _playerBehaviorControl.PlayPauseSpeech(true);
+        
         _playerBehaviorControl.EnableDisablePlayer(false);
+        Cursor.lockState = CursorLockMode.None;
+
+        _playerBehaviorControl.PlayPauseSpeech(true);
+
+        _cutsceneControl.Pause(true);
 
         // check what was teh last camera
         _lastCameraIndex = _cameraSwitcher.IsCurrentCameraPlayer();
@@ -34,11 +54,17 @@ public class PauseMenu : MonoBehaviour
         SwitchToLastCam();
 
         _pause.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
+        
         // Time.timeScale = 1;
         _holdingCamera.SetActive(true);
-        _playerBehaviorControl.PlayPauseSpeech(false);
         _playerBehaviorControl.EnableDisablePlayer(true);
+        Cursor.lockState = CursorLockMode.Locked;
+
+        _playerBehaviorControl.PlayPauseSpeech(false);
+
+        _cutsceneControl.Pause(false);
+
+        SetLastSetting();
     }
     private void SwitchToRandomCam()
     {
@@ -51,5 +77,37 @@ public class PauseMenu : MonoBehaviour
             _cameraSwitcher.SwitchToPlayerCamera();
         else
             _cameraSwitcher.SwitchSecurityCamera(_lastCameraIndex);
+    }
+
+    private void SaveLastSetting()
+    {
+        for(int i = 0; i < _uiToCheck.Count; i++)
+        {
+            _uiSetting[i] = _uiToCheck[i].gameObject.activeSelf;
+            // Debug.Log(_uiSetting[i]);
+            _uiToCheck[i].gameObject.SetActive(false);
+        }
+    }
+    private void SetLastSetting()
+    {
+        for (int i = 0; i < _uiToCheck.Count; i++)
+        {
+            if (i >= _uiSetting.Count)
+            {
+                _uiSetting.Add(_uiToCheck[i].gameObject.activeSelf);
+            }
+
+            _uiToCheck[i].gameObject.SetActive(_uiSetting[i]);
+        }
+    }
+    public void AddRemoveUIToCheck(Canvas ui, bool addOrRemove)
+    {
+        if (ui == null) return;
+
+        if (addOrRemove)
+            _uiToCheck.Add(ui);
+
+        else
+            _uiToCheck.Remove(ui);
     }
 }

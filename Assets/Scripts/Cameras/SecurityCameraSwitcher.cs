@@ -9,7 +9,6 @@ public class SecurityCameraSwitcher : MonoBehaviour
     [SerializeField] private AudioListener[] _playerListeners;
     [SerializeField] private GameObject[] _securityCameras;
     public int SecurityCameraAmount => _securityCameras.Length; 
-    [SerializeField] private GameObject[] _uis;
     [SerializeField] private bool _runningTrailer;
     private Dictionary<GameObject, Animator> _animators = new();
     private bool _running = false;
@@ -75,13 +74,6 @@ public class SecurityCameraSwitcher : MonoBehaviour
 
         animator.SetFloat("MoveSpeed", moveSpeed);
     }
-    private void TurnUIs(bool on = true)
-    {
-        foreach (GameObject ui in _uis)
-        {
-            ui.SetActive(on);
-        }
-    }
     private void TurnPlayer(bool on)
     {
         foreach (Camera component in _playerCameras)
@@ -106,7 +98,6 @@ public class SecurityCameraSwitcher : MonoBehaviour
 
         TurnPlayer(true);
         _currentCamera = null;
-        TurnUIs(true);
 
         _static.enabled = false;
     }
@@ -118,7 +109,6 @@ public class SecurityCameraSwitcher : MonoBehaviour
         if (_currentCamera == null)
         {
             TurnPlayer(false);
-            TurnUIs(false);
         }
         else
         {
