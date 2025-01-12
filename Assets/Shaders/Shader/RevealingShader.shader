@@ -5,7 +5,7 @@ Shader "Custom/RevealingShader"
         _MainTex ("Texture to be Revealed", 2D) = "white" {}
         _Blue ("Blue - Fluorescence", Range(0, 1)) = 1
         _AlphaClip ("Alpha Clip", Range(0, 1)) = 0.01
-        _Emission ("Emission", Range(0, 100)) = 4.0
+        _Emission ("Emission", Range(0, 10000)) = 4.0
     }
     SubShader
     {
