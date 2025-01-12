@@ -16,7 +16,7 @@ public class PlayerBehaviorControl : MonoBehaviour
             _disabledNumber -= 1;
         }
         
-        Debug.Log($"Diabled Player Times : {_disabledNumber}");
+        // Debug.Log($"Diabled Player Times : {_disabledNumber}");
 
         if (_disabledNumber == 0)
         {
@@ -30,7 +30,7 @@ public class PlayerBehaviorControl : MonoBehaviour
             _disabledNumber += 1;
         }
 
-        Debug.Log($"Diabled Player Times : {_disabledNumber}");
+        // Debug.Log($"Diabled Player Times : {_disabledNumber}");
 
     }
 
@@ -78,10 +78,7 @@ public class PlayerBehaviorControl : MonoBehaviour
 
     private IEnumerator WaitForNextFrame()
     {
-        Debug.Log("sc: " + _speechControl?.gameObject.name + "  tlk: " + Input.GetButtonDown("Talk") + Input.GetButton("Talk") + Input.GetButtonUp("Talk"));
         yield return  new WaitUntil(() => ! Input.GetButtonDown("Talk"));
-        Debug.Log("sc: " + _speechControl?.gameObject.name + "  tlk: " + Input.GetButtonDown("Talk") + Input.GetButton("Talk") + Input.GetButtonUp("Talk"));
-
         _speechControl.Paused = false;
     }
 }

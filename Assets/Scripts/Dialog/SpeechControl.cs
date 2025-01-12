@@ -38,6 +38,7 @@ public class SpeechControl : MonoBehaviour
 
     public bool Paused { get; set;} = false;
     private WaitUntil _waitUntilNotPaused;
+    private WaitUntil _waitUntilNotPausedOrUntil;
 
     /// <summary>
     /// In start we just see if the text should be displayed based on if we have a
@@ -60,6 +61,7 @@ public class SpeechControl : MonoBehaviour
         _waitUntilOrDisplayed = new WaitUntil(() => _isTextFullyDisplayed || Input.GetButtonDown("Talk"));
         _waitForEndOfFrame = new WaitForFixedUpdate();
         _waitUntilNotPaused = new WaitUntil(() => !Paused);
+        _waitUntilNotPausedOrUntil = new WaitUntil(() => !Paused  && Input.GetButtonDown("Talk"));
         
         _dialogUI.SetActive(false);
     }
@@ -151,7 +153,9 @@ public class SpeechControl : MonoBehaviour
         {
             // dont play if pause menu is on
             yield return _waitUntilNotPaused;
+            // Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
             yield return _waitForEndOfFrame;
+            // Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
 
             _isTextFullyDisplayed = false;
 
@@ -163,7 +167,13 @@ public class SpeechControl : MonoBehaviour
             _typingCoroutine = StartCoroutine(BeginTyping(dialogToShow, sound));
 
             yield return _waitUntilOrDisplayed;
+            // Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
+
             yield return _waitForEndOfFrame;
+            // Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
+
+            yield return _waitUntilNotPausedOrUntil;
+            // Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
 
             if (!_isTextFullyDisplayed)
             {
@@ -175,11 +185,14 @@ public class SpeechControl : MonoBehaviour
                 _dialogText.text = _stringBuilder.ToString();
             }
 
-            yield return _waitUntilNotPaused;
-            yield return _waitForEndOfFrame;
-
             yield return _waitUntil;
+            // Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
+
             yield return _waitForEndOfFrame;
+            // Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
+
+            yield return _waitUntilNotPausedOrUntil;
+            // Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
 
             if (dialogQueue.Count > 1)
             {
