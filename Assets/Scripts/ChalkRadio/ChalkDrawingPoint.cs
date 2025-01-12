@@ -13,12 +13,8 @@ public class ChalkDrawingPoint : MonoBehaviour
     {
         _collider = GetComponent<SphereCollider>();
         _collider.radius = _maxDetectDistance;
-        if (_isDrawn)
-        {
-
-        }
     }
-    private void CheckIfChalkDrawn(GameObject drawn, Collider chalkObject)
+    private void CheckIfChalkDrawn(GameObject drawn)
     {
         ChalkController chalk = drawn.GetComponent<ChalkController>();
 
@@ -29,9 +25,8 @@ public class ChalkDrawingPoint : MonoBehaviour
             chalk.ChangeChalkMaterial();
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
-        CheckIfChalkDrawn(other.gameObject, other);
+        CheckIfChalkDrawn(other.gameObject);
     }
 }

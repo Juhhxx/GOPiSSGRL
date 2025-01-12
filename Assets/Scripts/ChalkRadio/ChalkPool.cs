@@ -40,7 +40,8 @@ public class ChalkPool : MonoBehaviour
         Renderer  chalkMeshR = chalk.GetComponent<Renderer>();
 
         // Rotate Chalk to be facing up from te perspective of the surface where it's drawn
-        chalkTrans.LookAt(-hit.normal);
+        // chalkTrans.LookAt(-hit.normal);
+        // Debug.Log($"Chalk looking at ({-hit.normal})");
         // Position the Chalk to be 0.05 unity units above the surface where it's drawn
         Vector3 chalkPos = chalkTrans.forward;
         chalkPos *= -0.01f;
