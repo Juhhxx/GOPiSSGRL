@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8113584010291932411
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: 2418188099958749353}
   - component: {fileID: 5877836125936743623}
   - component: {fileID: 2753748246170433647}
-  - component: {fileID: 6782592296207876110}
   - component: {fileID: 7770210473146047700}
   - component: {fileID: 1425293327273140028}
   - component: {fileID: 6911508633855204063}
@@ -89,7 +88,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -118,29 +117,12 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &6782592296207876110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585745117597744600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 255
 --- !u!114 &7770210473146047700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,8 +141,8 @@ MonoBehaviour:
   _inventoryUI: {fileID: 0}
   _audioSource: {fileID: 1425293327273140028}
   _audioMixer: {fileID: 24100000, guid: d6a7eb20652649e4fb0bce4591c372e6, type: 2}
-  _pitchRange: {x: 0.8, y: 1.4}
-  _characterInfo: {fileID: 11400000, guid: e8e5cacaa662c524fab248961ef13a38, type: 2}
+  _pitchRange: {x: 0.8, y: 1.2}
+  _characterInfo: {fileID: 11400000, guid: 4f0391887459925489b0b3831041c145, type: 2}
 --- !u!82 &1425293327273140028
 AudioSource:
   m_ObjectHideFlags: 0
@@ -174,7 +156,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.118
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -233,7 +215,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.50555557
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -304,8 +286,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 60}
-  m_SizeDelta: {x: 900, y: 80}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 666, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2907004182346135465
 CanvasRenderer:
@@ -362,14 +344,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -379,7 +361,7 @@ MonoBehaviour:
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
+  m_wordWrappingRatios: 0.029
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
