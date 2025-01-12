@@ -38,8 +38,7 @@ public class VerifySlushie : MonoBehaviour
             _takeItem.TakeItemFromPlayer();
             StartCoroutine(CheckIfDoneSpeaking());
         }
-        _slushieCup.ResetFlavours();
-        _slushieCup.ResetPosition();
+        _slushieCup.ResetSlushie();
         _slushieCup.gameObject.SetActive(true);
     }
 

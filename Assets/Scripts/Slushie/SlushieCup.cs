@@ -25,16 +25,28 @@ public class SlushieCup : MonoBehaviour
     public void GiveSlushie(PlayerInventory inventory)
     {
         Interactive slushie = GetComponent<Interactive>();
+        Debug.Log($"Is Slushie being used? {IsUsed}");
         if (!IsUsed)
         {
             IsUsed = true;
             inventory.Add(slushie);
         }
     }
-    public void ResetPosition()
+    public void ResetSlushie()
+    {
+        IsUsed = false;
+        ResetPosition();
+        ResetFlavours();
+        Debug.Log("Reseting Slushie");
+    }
+    private void ResetPosition()
     {
         transform.position = _initialPos;
-        IsUsed = false;
+    }
+    private void ResetFlavours()
+    {
+        _slushieFlavours.Clear();
+        ChangeSlushie();
     }
     public bool CompareSlushies(List<Flavours> ohterSlushie)
     {
@@ -52,11 +64,6 @@ public class SlushieCup : MonoBehaviour
     {
         if (_slushieFlavours.Count < 4)
             _slushieFlavours.Add(flavour);
-        ChangeSlushie();
-    }
-    public void ResetFlavours()
-    {
-        _slushieFlavours.Clear();
         ChangeSlushie();
     }
     private void ChangeSlushie()
