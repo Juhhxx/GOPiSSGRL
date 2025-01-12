@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UVLightOld : MonoBehaviour
 {
@@ -14,6 +14,8 @@ public class UVLightOld : MonoBehaviour
     private AudioClip _click;
     private Collider _necroCollider;
     private PlayerBehaviorControl _playerControl;
+
+    private Dictionary<Light, float> _lights;
 
     private void Start()
     {
@@ -36,6 +38,19 @@ public class UVLightOld : MonoBehaviour
         Shader.SetGlobalFloat("_OuterSpotAngleOld", _uvLight.spotAngle);
 
         _click = _sounds.GetSound(SoundID.FlashLightClick);
+
+        
+        Light[] lights = FindObjectsByType<Light>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+        _lights = new Dictionary<Light, float>();
+
+        foreach(Light l in lights)
+        {
+            if (l != _uvLight)
+            {
+                _lights[l] = l.intensity;
+            }
+        }
 
         _uvSpotLightObject.SetActive(false);
         Shader.SetGlobalFloat(_lightedID, 0);
@@ -76,6 +91,8 @@ public class UVLightOld : MonoBehaviour
 
     private bool TurnOn()
     {
+        DimLights(true);
+
         _audioSource.PlayOneShot(_click);
 
         _uvSpotLightObject.SetActive(true);
@@ -89,6 +106,8 @@ public class UVLightOld : MonoBehaviour
 
     private bool TurnOff()
     {
+        DimLights(false);
+        
         _audioSource.PlayOneShot(_click);
 
         _uvSpotLightObject.SetActive(false);
@@ -103,5 +122,16 @@ public class UVLightOld : MonoBehaviour
     private void OnDisable()
     {
         Shader.SetGlobalFloat(_lightedID, 0);
+    }
+
+    private void DimLights(bool trueOrFalse)
+    {
+        foreach(Light light in _lights.Keys)
+        {
+            if (trueOrFalse)
+                light.intensity = _lights[light] * 0.5f;
+            else
+                light.intensity = _lights[light];
+        }
     }
 }
