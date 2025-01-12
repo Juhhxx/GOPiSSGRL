@@ -21,7 +21,6 @@ public class ViewBookUI : MonoBehaviour
         _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
 
         _uiObject = Instantiate(_viewUI);
-        _uiObject.GetComponentInChildren<Button>().onClick.AddListener(HideUI);
 
         _pause.AddRemoveUIToCheck(_uiObject.GetComponentInChildren<Canvas>(), true);
 
@@ -37,7 +36,7 @@ public class ViewBookUI : MonoBehaviour
     {
         // if ( ! _playerControl.CanInteract() ) return;
 
-        if (Input.GetButtonDown("Interact"))
+        if (Input.GetButtonDown("Interact") && _playerControl.CanInteractItems())
         {
             if (!_uiObject.activeSelf)
                 ShowUI();
@@ -52,25 +51,25 @@ public class ViewBookUI : MonoBehaviour
         _uiObject.SetActive(true);
 
         // Cursor.lockState = CursorLockMode.None;
-        // _playerControl.EnableDisablePlayer(false);
+        _playerControl.EnableDisablePlayer(false);
     }
     private void HideUI()
     {
         _uiObject.SetActive(false);
 
         // Cursor.lockState = CursorLockMode.Locked;
-        // _playerControl.EnableDisablePlayer(true);
+        _playerControl.EnableDisablePlayer(true);
     }
 
     private void OnDestroy()
     {
         _pause.AddRemoveUIToCheck(_uiObject.GetComponentInChildren<Canvas>(), false);
 
-        /*if ( _uiObject.activeSelf )
+        if ( _uiObject.activeSelf )
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            // Cursor.lockState = CursorLockMode.Locked;
             _playerControl.EnableDisablePlayer(true);
-        }*/
+        }
 
         Destroy(_uiObject);
     }
