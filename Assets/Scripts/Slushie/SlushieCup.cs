@@ -34,6 +34,7 @@ public class SlushieCup : MonoBehaviour
     public void ResetPosition()
     {
         transform.position = _initialPos;
+        IsUsed = false;
     }
     public bool CompareSlushies(List<Flavours> ohterSlushie)
     {
