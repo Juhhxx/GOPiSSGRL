@@ -36,6 +36,9 @@ public class SpeechControl : MonoBehaviour
 
     private PlayerBehaviorControl _playerControl;
 
+    public bool Paused { get; set;} = false;
+    private WaitUntil _waitUntilNotPaused;
+
     /// <summary>
     /// In start we just see if the text should be displayed based on if we have a
     /// image box for the dialog,
@@ -53,9 +56,10 @@ public class SpeechControl : MonoBehaviour
         _waitForTypingSpeed = new WaitForSeconds(_typingSpeed);
         _stringBuilder = new StringBuilder();
 
-        _waitUntil = new WaitUntil(() => Input.GetButtonDown("Talk"));
+        _waitUntil = new WaitUntil(() => Input.GetButtonDown("Talk") );
         _waitUntilOrDisplayed = new WaitUntil(() => _isTextFullyDisplayed || Input.GetButtonDown("Talk"));
         _waitForEndOfFrame = new WaitForFixedUpdate();
+        _waitUntilNotPaused = new WaitUntil(() => !Paused);
         
         _dialogUI.SetActive(false);
     }
@@ -108,6 +112,9 @@ public class SpeechControl : MonoBehaviour
 
         while(true)
         {
+            // dont play if pause menu is on
+            yield return _waitUntilNotPaused;
+
             yield return StartCoroutine(BeginDialog(_currentDialogs.Peek()));
 
             if (_currentDialogs.Count > 1)
@@ -142,6 +149,10 @@ public class SpeechControl : MonoBehaviour
 
         while (true)
         {
+            // dont play if pause menu is on
+            yield return _waitUntilNotPaused;
+            yield return _waitForEndOfFrame;
+
             _isTextFullyDisplayed = false;
 
             ClearStringBuilder(name);
@@ -163,6 +174,9 @@ public class SpeechControl : MonoBehaviour
                 _stringBuilder.Append(dialogToShow);
                 _dialogText.text = _stringBuilder.ToString();
             }
+
+            yield return _waitUntilNotPaused;
+            yield return _waitForEndOfFrame;
 
             yield return _waitUntil;
             yield return _waitForEndOfFrame;
@@ -201,6 +215,9 @@ public class SpeechControl : MonoBehaviour
     {
         foreach (char letter in dialogToShow)
         {
+            // dont play if pause menu is on
+            yield return _waitUntilNotPaused;
+
             _stringBuilder.Append(letter);
             _dialogText.text = _stringBuilder.ToString();
 

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerBehaviorControl : MonoBehaviour
@@ -5,6 +6,7 @@ public class PlayerBehaviorControl : MonoBehaviour
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private PlayerInteraction _playerInteraction;
     [SerializeField] private PlayerInventory _playerInventory;
+    [SerializeField] private SpeechControl _speechControl;
     private int _disabledNumber = 0;
 
     public void EnableDisablePlayer(bool falseOrTrue)
@@ -64,5 +66,22 @@ public class PlayerBehaviorControl : MonoBehaviour
             _playerMovement.Head.localRotation = Quaternion.Euler(headRotationX, 0f, 0f);
         
         Debug.Log("Current player pos: " + transform.position);
+    }
+
+    public void PlayPauseSpeech(bool playOrPause)
+    {
+        if (!playOrPause)
+            StartCoroutine(WaitForNextFrame());
+        else
+            _speechControl.Paused = true;
+    }
+
+    private IEnumerator WaitForNextFrame()
+    {
+        Debug.Log("sc: " + _speechControl?.gameObject.name + "  tlk: " + Input.GetButtonDown("Talk") + Input.GetButton("Talk") + Input.GetButtonUp("Talk"));
+        yield return  new WaitUntil(() => ! Input.GetButtonDown("Talk"));
+        Debug.Log("sc: " + _speechControl?.gameObject.name + "  tlk: " + Input.GetButtonDown("Talk") + Input.GetButton("Talk") + Input.GetButtonUp("Talk"));
+
+        _speechControl.Paused = false;
     }
 }

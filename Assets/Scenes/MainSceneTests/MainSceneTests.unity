@@ -1189,9 +1189,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4915833615071308870, guid: 0d5fa3c7009972a4a801719f40630655, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0427
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495928304333520780, guid: 0d5fa3c7009972a4a801719f40630655, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0427
+      objectReference: {fileID: 0}
     - target: {fileID: 8037290049072555323, guid: 0d5fa3c7009972a4a801719f40630655, type: 3}
       propertyPath: m_Name
       value: BaseScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157516737102018630, guid: 0d5fa3c7009972a4a801719f40630655, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0427
       objectReference: {fileID: 0}
     - target: {fileID: 8348134189294851343, guid: 0d5fa3c7009972a4a801719f40630655, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10487,6 +10499,10 @@ PrefabInstance:
       propertyPath: _uiManager
       value: 
       objectReference: {fileID: 1401897910}
+    - target: {fileID: 2064826685155883090, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: _speechControl
+      value: 
+      objectReference: {fileID: 1966783835}
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.25
@@ -12644,6 +12660,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956072265}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1966783835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7770210473146047700, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}
+  m_PrefabInstance: {fileID: 254100484}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3156eb3c1cd75847807ed46637e107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1969943934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3133698748599035052, guid: cb9b5e9b3b44e8b46adf704813bcb6fe, type: 3}
@@ -13097,6 +13124,7 @@ MonoBehaviour:
   _player: {fileID: 1188219038}
   _holdingCamera: {fileID: 728918244}
   _cameraSwitcher: {fileID: 551209269}
+  _playerBehaviorControl: {fileID: 1188219040}
 --- !u!114 &2014757923
 MonoBehaviour:
   m_ObjectHideFlags: 0
