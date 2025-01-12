@@ -1,8 +1,9 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.TextCore;
+using NaughtyAttributes;
+using UnityEngine.Rendering;
+using Unity.VisualScripting;
 
 public class Radio : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Radio : MonoBehaviour
     [SerializeField] private AudioSource _mainAudio;
     [SerializeField] private AudioSource _staticAudio;
     [SerializeField] private float _fadeAudioSpeed;
+    [MinMaxSlider(0.0f, 1.0f)][SerializeField] private Vector2 _staticVolumeChange;
     [SerializeField] private AudioClip _demonSound;
     [SerializeField] private RadioChannels[] _radioChannels;
     private Vector3 _intialPosition;
@@ -26,6 +28,14 @@ public class Radio : MonoBehaviour
         _summonDemon = FindAnyObjectByType<SummonDemon>();
         _wff = new WaitForEndOfFrame();
     }
+    private void OnEnable()
+    {
+        StartCoroutine(StaticVolumeChanger());
+    }
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
     private void Update()
     {
         // You need to first round the frequency to the correct number of decimals because otherwise
@@ -36,7 +46,6 @@ public class Radio : MonoBehaviour
         CheckFrequency();
         _frequencyDisplay.text = $"{_frequency} MHz";
     }
-    
     private void CheckFrequency()
     {
         int pointIndex;
@@ -51,8 +60,6 @@ public class Radio : MonoBehaviour
         }
         else
         {
-            ChangeAudioVolumeDistance(5f);
-            
             foreach (RadioChannels channel in _radioChannels)
             {
                 if (channel.Frequency == correctedFrequency)
@@ -61,6 +68,7 @@ public class Radio : MonoBehaviour
                     return;
                 }
             }
+            TurnOffAudio();
         }
     }
     private void DetectDistance(int index)
@@ -100,13 +108,30 @@ public class Radio : MonoBehaviour
         if (audio != _mainAudio.clip)
         {
             _mainAudio.clip = audio;
-            _mainAudio.Play();
+            FadeAudio(true, audio);
         }
     }
-    private IEnumerator FadeAudio()
+    private void TurnOffAudio()
     {
+        FadeAudio(false);
+    }
+    private IEnumerator FadeAudio(bool onOff, AudioClip audio = null)
+    {
+        if (onOff)
+        {
+            _mainAudio.clip = audio;
+            _staticVolumeChange.y -= _staticVolumeChange.x;
+            _staticVolumeChange.x -= _staticVolumeChange.x;
+        }
+        else
+        {
+            _mainAudio.clip = null;
+            _staticVolumeChange.x += _staticVolumeChange.y;
+            _staticVolumeChange.y += _staticVolumeChange.y;
+        }
+
         float startVolume = _mainAudio.volume;
-        float   endVolume = 0.6f;
+        float   endVolume = onOff ? 0.6f : 0.0f;
         float   newVolume = startVolume;
         float           i = 0;
 
@@ -121,5 +146,14 @@ public class Radio : MonoBehaviour
             yield return _wff;
         }
     }
-    
+    private IEnumerator StaticVolumeChanger()
+    {
+        while(true)
+        {
+            float volume = Random.Range(_staticVolumeChange.x,_staticVolumeChange.y);
+            _staticAudio.volume = volume;
+
+            yield return _wff;
+        }
+    }
 }
