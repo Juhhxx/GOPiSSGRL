@@ -153,9 +153,9 @@ public class SpeechControl : MonoBehaviour
         {
             // dont play if pause menu is on
             yield return _waitUntilNotPaused;
-            Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
+            // Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
             yield return _waitForEndOfFrame;
-            Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
+            // Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
 
             _isTextFullyDisplayed = false;
 
