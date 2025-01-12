@@ -13121,6 +13121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pause: {fileID: 289525743}
+  _settings: {fileID: 690903784}
   _player: {fileID: 1188219038}
   _holdingCamera: {fileID: 728918244}
   _cameraSwitcher: {fileID: 551209269}
