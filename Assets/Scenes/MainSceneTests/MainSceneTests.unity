@@ -8405,7 +8405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1062039362}
   m_Layer: 0
-  m_Name: Ui Objects
+  m_Name: UI Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13121,6 +13121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pause: {fileID: 289525743}
+  _settings: {fileID: 690903784}
   _player: {fileID: 1188219038}
   _holdingCamera: {fileID: 728918244}
   _cameraSwitcher: {fileID: 551209269}

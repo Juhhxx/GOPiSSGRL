@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -7,22 +8,23 @@ public class Radio : MonoBehaviour
 {
     [SerializeField] private float _frequency;
     [SerializeField] private float _shakeStrenght = 0.03f;
-    [SerializeField] private float _volumeChangeDistance;
     [SerializeField] private TextMeshPro _frequencyDisplay;
+    [SerializeField] private AudioSource _mainAudio;
+    [SerializeField] private AudioSource _staticAudio;
+    [SerializeField] private float _fadeAudioSpeed;
     [SerializeField] private AudioClip _demonSound;
-    [SerializeField] private AudioClip _defaultSound;
     [SerializeField] private RadioChannels[] _radioChannels;
     private Vector3 _intialPosition;
     private RotateWhenHolding _rotateHolding;
-    private AudioSource _audioSource;
     private SummonDemon _summonDemon;
+    private YieldInstruction _wff;
 
     private void Start()
     {
         _intialPosition = transform.localPosition;
         _rotateHolding = GetComponentInChildren<RotateWhenHolding>();
-        _audioSource = GetComponent<AudioSource>();
         _summonDemon = FindAnyObjectByType<SummonDemon>();
+        _wff = new WaitForEndOfFrame();
     }
     private void Update()
     {
@@ -32,7 +34,7 @@ public class Radio : MonoBehaviour
         _frequency = Mathf.Round(_rotateHolding.GetCurrentValue() * 10.0f) * 0.1f;
 
         CheckFrequency();
-        _frequencyDisplay.text =  $"{_frequency} MHz";
+        _frequencyDisplay.text = $"{_frequency} MHz";
     }
     
     private void CheckFrequency()
@@ -59,8 +61,6 @@ public class Radio : MonoBehaviour
                     return;
                 }
             }
-
-            ChangeAudio(_defaultSound);
         }
     }
     private void DetectDistance(int index)
@@ -83,11 +83,11 @@ public class Radio : MonoBehaviour
     }  
     private void ChangeAudioVolumeDistance (float distance)
     {
-        _audioSource.volume = Mathf.InverseLerp(20f,0.5f,distance);
+        _mainAudio.volume = Mathf.InverseLerp(20f,0.5f,distance);
     }
     private void ShakeRadioByDistance(float distance)
     {
-        float shakeForce = Mathf.InverseLerp(1.5f,0.5f,distance);
+        float shakeForce = Mathf.InverseLerp(1f,0.5f,distance);
         Vector3 direction = Random.insideUnitSphere;
         direction *= shakeForce * _shakeStrenght;
 
@@ -97,10 +97,28 @@ public class Radio : MonoBehaviour
     }
     private void ChangeAudio(AudioClip audio)
     {
-        if (audio != _audioSource.clip)
+        if (audio != _mainAudio.clip)
         {
-            _audioSource.clip = audio;
-            _audioSource.Play();
+            _mainAudio.clip = audio;
+            _mainAudio.Play();
+        }
+    }
+    private IEnumerator FadeAudio()
+    {
+        float startVolume = _mainAudio.volume;
+        float   endVolume = 0.6f;
+        float   newVolume = startVolume;
+        float           i = 0;
+
+        while(newVolume >= endVolume)
+        {
+            newVolume = Mathf.Lerp(startVolume,endVolume,i);
+
+            _mainAudio.volume = newVolume;
+
+            i = _fadeAudioSpeed * Time.deltaTime;
+
+            yield return _wff;
         }
     }
     
