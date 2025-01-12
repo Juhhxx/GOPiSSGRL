@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7166820061559973538}
   - component: {fileID: 9053720025717954609}
   - component: {fileID: 4773598066125278517}
-  - component: {fileID: 3774683343856413112}
   m_Layer: 6
   m_Name: Chalk Holding
   m_TagString: Untagged
@@ -105,15 +104,3 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _drawingDistance: 3.5
---- !u!114 &3774683343856413112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3772300437664731849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f30fcd58ab6a03949b1f8cffa212dd4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
