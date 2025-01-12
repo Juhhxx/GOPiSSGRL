@@ -842,6 +842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseScene
       objectReference: {fileID: 0}
+    - target: {fileID: 8037290049072555323, guid: 0d5fa3c7009972a4a801719f40630655, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094341629318812687, guid: 0d5fa3c7009972a4a801719f40630655, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 3
@@ -10212,6 +10216,10 @@ PrefabInstance:
       propertyPath: _uiManager
       value: 
       objectReference: {fileID: 1401897910}
+    - target: {fileID: 1283671582116311622, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1396375226764982198, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 16785567
@@ -10269,7 +10277,27 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3743064849333952974, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: field of view
+      value: 60.000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743064849333952974, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_FocalLength
+      value: 20.78461
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743064849333952974, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_CullingMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743064849333952974, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501629409349251277, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058029251902141585, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: m_RenderPostProcessing
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7437518743940774994, guid: f13e948752912db47912b897752824ee, type: 3}
