@@ -83,6 +83,11 @@ public class PauseMenu : MonoBehaviour
     {
         for(int i = 0; i < _uiToCheck.Count; i++)
         {
+            if (i >= _uiSetting.Count)
+            {
+                _uiSetting.Add(_uiToCheck[i].gameObject.activeSelf);
+            }
+
             _uiSetting[i] = _uiToCheck[i].gameObject.activeSelf;
             // Debug.Log(_uiSetting[i]);
             _uiToCheck[i].gameObject.SetActive(false);
