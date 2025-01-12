@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4540727820438148621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 2793416506500839711}
   - component: {fileID: 4831054350529865553}
   - component: {fileID: 8223428066686929436}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Radio_Final:Visor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 7553154291895046566}
   - component: {fileID: 5919349879352226137}
   - component: {fileID: 1526554653484111996}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
