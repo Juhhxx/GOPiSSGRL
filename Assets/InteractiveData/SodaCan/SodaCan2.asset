@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
-  inventoryName: Empty Soda Can
+  inventoryName: Empty Can
   inventoryIcon: {fileID: 21300000, guid: a82d582ea9003b944b85c3b65d76ccb0, type: 3}
   requirements: []
   deleteRequirementsOnUse: 1
-  requirementsMessage: Just and empty soda can
+  requirementsMessage: 
   interactionMessages:
-  - Insert soda can
+  - Insert can
   activatesUI: 0
   holdingObject: {fileID: 4490522552082893936, guid: ea5c903267804c847bb341c919ca8771, type: 3}
