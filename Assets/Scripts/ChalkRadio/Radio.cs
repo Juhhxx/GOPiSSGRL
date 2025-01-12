@@ -68,7 +68,9 @@ public class Radio : MonoBehaviour
                     return;
                 }
             }
-            TurnOffAudio();
+
+            if (_mainAudio.clip = null)
+                TurnOffAudio();
         }
     }
     private void DetectDistance(int index)
@@ -105,33 +107,50 @@ public class Radio : MonoBehaviour
     }
     private void ChangeAudio(AudioClip audio)
     {
+        Debug.Log("Changing AUDIO");
         if (audio != _mainAudio.clip)
         {
-            _mainAudio.clip = audio;
-            FadeAudio(true, audio);
+            StartCoroutine(FadeInAudio(audio));
         }
     }
     private void TurnOffAudio()
     {
-        FadeAudio(false);
+        Debug.Log("Tunr off Audio");
+        StartCoroutine(FadeOutAudio());
     }
-    private IEnumerator FadeAudio(bool onOff, AudioClip audio = null)
+    private IEnumerator FadeInAudio(AudioClip audio)
     {
-        if (onOff)
-        {
-            _mainAudio.clip = audio;
-            _staticVolumeChange.y -= _staticVolumeChange.x;
-            _staticVolumeChange.x -= _staticVolumeChange.x;
-        }
-        else
-        {
-            _mainAudio.clip = null;
-            _staticVolumeChange.x += _staticVolumeChange.y;
-            _staticVolumeChange.y += _staticVolumeChange.y;
-        }
+        _mainAudio.clip = audio;
+        _mainAudio.Play();
+        _staticVolumeChange.y -= _staticVolumeChange.x;
+        _staticVolumeChange.x -= _staticVolumeChange.x;
+        //     _mainAudio.clip = null;
+        //     _staticVolumeChange.x += _staticVolumeChange.y;
+        //     _staticVolumeChange.y += _staticVolumeChange.y;
 
         float startVolume = _mainAudio.volume;
-        float   endVolume = onOff ? 0.6f : 0.0f;
+        float   endVolume = 0.4f;
+        float   newVolume = startVolume;
+        float           i = 0;
+
+        while(newVolume <= endVolume)
+        {
+            newVolume = Mathf.Lerp(startVolume,endVolume,i);
+
+            _mainAudio.volume = newVolume;
+
+            i += _fadeAudioSpeed * Time.deltaTime;
+
+            yield return _wff;
+        }
+    }
+    private IEnumerator FadeOutAudio()
+    {
+        _staticVolumeChange.x += _staticVolumeChange.y;
+        _staticVolumeChange.y += _staticVolumeChange.y;
+
+        float startVolume = _mainAudio.volume;
+        float   endVolume = 0.0f;
         float   newVolume = startVolume;
         float           i = 0;
 
@@ -141,10 +160,12 @@ public class Radio : MonoBehaviour
 
             _mainAudio.volume = newVolume;
 
-            i = _fadeAudioSpeed * Time.deltaTime;
+            i += _fadeAudioSpeed * Time.deltaTime;
 
             yield return _wff;
         }
+
+        _mainAudio.clip = null;
     }
     private IEnumerator StaticVolumeChanger()
     {
