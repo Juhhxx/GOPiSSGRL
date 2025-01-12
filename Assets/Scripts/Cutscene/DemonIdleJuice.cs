@@ -1,8 +1,6 @@
-using Unity.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem.Utilities;
 
-public class FollowPlayer : MonoBehaviour
+public class DemonIdlejuice : MonoBehaviour
 {
     public Transform player;
     public bool onlyHorizontal;

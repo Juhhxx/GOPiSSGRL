@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        _interactionMessage = GetComponentInChildren<TextMeshProUGUI>();
+        _interactionMessage = _interactionPanel.GetComponentInChildren<TextMeshProUGUI>();
         _inventorySlots     = _inventorySlotsContainer.GetComponentsInChildren<Image>();
         _inventoryIcons     = _inventoryIconsContainer.GetComponentsInChildren<Image>();
         _selectedSlotIndex  = -1;

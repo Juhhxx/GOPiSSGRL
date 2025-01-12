@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3946720160359301695}
   - component: {fileID: 593275875952807397}
   - component: {fileID: 4396967083950489655}
+  - component: {fileID: -8276930224133670595}
   m_Layer: 6
   m_Name: Necronomicon Holding
   m_TagString: Untagged
@@ -100,3 +101,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _viewUI: {fileID: 8690401023422727191, guid: 3dd9863adcfc6e2499a2b9e85ca14ba9, type: 3}
+--- !u!114 &-8276930224133670595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213500950990017174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30fcd58ab6a03949b1f8cffa212dd4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
