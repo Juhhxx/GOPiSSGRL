@@ -129,7 +129,7 @@ public class UVLightOld : MonoBehaviour
         foreach(Light light in _lights.Keys)
         {
             if (trueOrFalse)
-                light.intensity = _lights[light] * 0.5f;
+                light.intensity = _lights[light] * 0.35f;
             else
                 light.intensity = _lights[light];
         }
