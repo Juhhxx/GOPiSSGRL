@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8473963951135998842}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &488331894871589492
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -151,4 +151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chalkmaterial: {fileID: 2100000, guid: f94d0b7e51ede3244a3960e47070a896, type: 2}
   _shiningMaterial: {fileID: 2100000, guid: 5bb2ec01baca8a744a282bdc61d56bc6, type: 2}
+  _disappearWait: 1
   _disappearSpeed: 0.5
+  InSpot: 0

@@ -3,6 +3,7 @@ using UnityEngine.Rendering;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _pause;
+    [SerializeField] private GameObject _settings;
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _holdingCamera;
     [SerializeField] private SecurityCameraSwitcher _cameraSwitcher;
@@ -10,32 +11,29 @@ public class PauseMenu : MonoBehaviour
     private int _lastCameraIndex = -1;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !_pause.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && !_pause.activeSelf && !_settings.activeSelf)
             Pause();
-        else if (Input.GetKeyDown(KeyCode.Escape))
+        else if (Input.GetKeyDown(KeyCode.Escape) && !_settings.activeSelf)
             Continue();
     }
-    private void CheckIfInteractiveHolding()
+    private void CheckIfInteractiveHolding(bool set)
     {
         ViewBookUI scriptUI = _holdingCamera.GetComponentInChildren<ViewBookUI>();
 
         if (scriptUI != null)
-            scriptUI.enabled = !scriptUI.enabled;
+            scriptUI.enabled = set;
     }
     public void Pause()
     {
-        _playerBehaviorControl.PlayPauseSpeech(true);
-
         Cursor.lockState = CursorLockMode.None;
         // Time.timeScale = 0;
-        CheckIfInteractiveHolding();
+        CheckIfInteractiveHolding(false);
+        _playerBehaviorControl.PlayPauseSpeech(true);
         _playerBehaviorControl.EnableDisablePlayer(false);
-
 
         // check what was teh last camera
         _lastCameraIndex = _cameraSwitcher.IsCurrentCameraPlayer();
         SwitchToRandomCam();
-
 
         _pause.SetActive(true);
     }
@@ -46,12 +44,10 @@ public class PauseMenu : MonoBehaviour
         _pause.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         // Time.timeScale = 1;
-        CheckIfInteractiveHolding();
-        _playerBehaviorControl.EnableDisablePlayer(true);
-
+        CheckIfInteractiveHolding(true);
         _playerBehaviorControl.PlayPauseSpeech(false);
+        _playerBehaviorControl.EnableDisablePlayer(true);
     }
-
     private void SwitchToRandomCam()
     {
         int ran = Random.Range(0, _cameraSwitcher.SecurityCameraAmount);

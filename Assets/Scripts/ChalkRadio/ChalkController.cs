@@ -5,19 +5,25 @@ public class ChalkController : MonoBehaviour
 {
     [SerializeField] private Material _chalkmaterial;
     [SerializeField] private Material _shiningMaterial;
+    [SerializeField] private float    _disappearWait;
     [SerializeField] private float    _disappearSpeed;
 
     private ChalkPool        _chalkPool;
     private Renderer         _renderer;
     private YieldInstruction _wfs;
     private YieldInstruction _wff;
+    
+    public bool InSpot = false;
 
     private void Start()
     {
         _renderer = GetComponent<Renderer>();
         _renderer.material = _chalkmaterial;
-        _wfs = new WaitForSeconds(2.0f);
+        _wfs = new WaitForSeconds(_disappearWait);
         _wff = new WaitForEndOfFrame();
+    }
+    private void OnEnable()
+    {
         StartCoroutine(Disapear());
     }
     public void SetPool(ChalkPool pool)
@@ -38,7 +44,7 @@ public class ChalkController : MonoBehaviour
 
         lastColor.a = 0.0f;
 
-        while(!finished)
+        while(!finished && !InSpot)
         {
             newColor = Color.Lerp(initColor,lastColor,i);
 
@@ -57,10 +63,11 @@ public class ChalkController : MonoBehaviour
     }
     public void ChangeChalkMaterial()
     {
+        InSpot = true;
+        StopCoroutine(Disapear());
         Renderer renderer = GetComponent<Renderer>();
         Texture texture = renderer.material.mainTexture;
         renderer.material = _shiningMaterial;
         renderer.material.mainTexture = texture;
-        StopCoroutine(Disapear());
     }
 }
