@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 998007349648693269}
   - component: {fileID: 312820466440566658}
   - component: {fileID: 5486271617848722905}
+  - component: {fileID: -3954592411274476237}
   m_Layer: 6
   m_Name: Cup Holding
   m_TagString: Untagged
@@ -87,3 +88,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-3954592411274476237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866752462327682379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30fcd58ab6a03949b1f8cffa212dd4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

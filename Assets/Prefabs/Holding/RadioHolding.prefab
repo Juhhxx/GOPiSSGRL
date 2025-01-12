@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 5289171792109723695}
   - component: {fileID: 3158953714683533290}
   - component: {fileID: 8626895259712936745}
+  - component: {fileID: 5843888127405089853}
   m_Layer: 6
   m_Name: RadioHolding
   m_TagString: Untagged
@@ -428,6 +429,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5843888127405089853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072748983818107920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30fcd58ab6a03949b1f8cffa212dd4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7558166879529991093
 GameObject:
   m_ObjectHideFlags: 0

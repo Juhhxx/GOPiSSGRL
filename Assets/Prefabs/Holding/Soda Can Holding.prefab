@@ -95,6 +95,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5257258021083750771}
+  - component: {fileID: -3872681197923251939}
   m_Layer: 6
   m_Name: Soda Can Holding
   m_TagString: Untagged
@@ -119,6 +120,18 @@ Transform:
   - {fileID: 401420489905038819}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &-3872681197923251939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490522552082893936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30fcd58ab6a03949b1f8cffa212dd4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &151038479749808648
 PrefabInstance:
   m_ObjectHideFlags: 0
