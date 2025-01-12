@@ -6,12 +6,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _holdingCamera;
     [SerializeField] private SecurityCameraSwitcher _cameraSwitcher;
-    private PlayerBehaviorControl _pbc;
+    [SerializeField] private PlayerBehaviorControl _playerBehaviorControl;
     private int _lastCameraIndex = -1;
-    private void Awake()
-    {
-        _pbc = _player.GetComponent<PlayerBehaviorControl>();
-    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !_pause.activeSelf)
@@ -28,10 +24,12 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
+        _playerBehaviorControl.PlayPauseSpeech(true);
+
         Cursor.lockState = CursorLockMode.None;
         // Time.timeScale = 0;
         CheckIfInteractiveHolding();
-        _pbc.EnableDisablePlayer(false);
+        _playerBehaviorControl.EnableDisablePlayer(false);
 
 
         // check what was teh last camera
@@ -49,7 +47,9 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         // Time.timeScale = 1;
         CheckIfInteractiveHolding();
-        _pbc.EnableDisablePlayer(true);
+        _playerBehaviorControl.EnableDisablePlayer(true);
+
+        _playerBehaviorControl.PlayPauseSpeech(false);
     }
 
     private void SwitchToRandomCam()
