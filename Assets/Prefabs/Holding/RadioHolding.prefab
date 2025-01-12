@@ -228,8 +228,8 @@ MonoBehaviour:
   _frequencyDisplay: {fileID: 4052064660836428165}
   _mainAudio: {fileID: 3158953714683533290}
   _staticAudio: {fileID: 8626895259712936745}
-  _fadeAudioSpeed: 0.2
-  _staticVolumeChange: {x: 0.3, y: 0.6}
+  _fadeAudioSpeed: 1.5
+  _staticVolumeChange: {x: 0.1, y: 0.4}
   _demonSound: {fileID: 8300000, guid: 71120c4512ae87e459931b1480c24eb7, type: 3}
   _radioChannels:
   - <Frequency>k__BackingField: 100

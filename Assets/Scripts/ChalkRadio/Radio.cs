@@ -20,6 +20,7 @@ public class Radio : MonoBehaviour
     private RotateWhenHolding _rotateHolding;
     private SummonDemon _summonDemon;
     private YieldInstruction _wff;
+    private bool _isTurningOff;
 
     private void Start()
     {
@@ -31,6 +32,8 @@ public class Radio : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(StaticVolumeChanger());
+        if (_mainAudio.clip != null) _mainAudio.Play();
+        _isTurningOff = false;
     }
     private void OnDestroy()
     {
@@ -55,8 +58,7 @@ public class Radio : MonoBehaviour
         {
             pointIndex = _summonDemon.ChalkFrequencies.IndexOf(correctedFrequency);
             Debug.Log(pointIndex);
-            DetectDistance(pointIndex);
-            ChangeAudio(_demonSound);
+            PlayDemonSound(pointIndex);
         }
         else
         {
@@ -69,9 +71,15 @@ public class Radio : MonoBehaviour
                 }
             }
 
-            if (_mainAudio.clip = null)
+            if (!_isTurningOff && _mainAudio.clip != null)
                 TurnOffAudio();
         }
+    }
+    private void PlayDemonSound(int index)
+    {
+        _mainAudio.clip = _demonSound;
+        if (!_mainAudio.isPlaying) _mainAudio.Play();
+        DetectDistance(index);
     }
     private void DetectDistance(int index)
     {
@@ -97,7 +105,7 @@ public class Radio : MonoBehaviour
     }
     private void ShakeRadioByDistance(float distance)
     {
-        float shakeForce = Mathf.InverseLerp(1f,0.5f,distance);
+        float shakeForce = Mathf.InverseLerp(1.5f,0.5f,distance);
         Vector3 direction = Random.insideUnitSphere;
         direction *= shakeForce * _shakeStrenght;
 
@@ -107,26 +115,25 @@ public class Radio : MonoBehaviour
     }
     private void ChangeAudio(AudioClip audio)
     {
-        Debug.Log("Changing AUDIO");
         if (audio != _mainAudio.clip)
         {
+            Debug.Log("Changing AUDIO");
+            StopAllCoroutines();
             StartCoroutine(FadeInAudio(audio));
         }
     }
     private void TurnOffAudio()
     {
-        Debug.Log("Tunr off Audio");
+        Debug.Log("Turn off Audio");
+        StopAllCoroutines();
         StartCoroutine(FadeOutAudio());
     }
     private IEnumerator FadeInAudio(AudioClip audio)
     {
         _mainAudio.clip = audio;
         _mainAudio.Play();
-        _staticVolumeChange.y -= _staticVolumeChange.x;
-        _staticVolumeChange.x -= _staticVolumeChange.x;
-        //     _mainAudio.clip = null;
-        //     _staticVolumeChange.x += _staticVolumeChange.y;
-        //     _staticVolumeChange.y += _staticVolumeChange.y;
+        // _staticVolumeChange.y -= _staticVolumeChange.x;
+        // _staticVolumeChange.x -= _staticVolumeChange.x;
 
         float startVolume = _mainAudio.volume;
         float   endVolume = 0.4f;
@@ -146,8 +153,10 @@ public class Radio : MonoBehaviour
     }
     private IEnumerator FadeOutAudio()
     {
-        _staticVolumeChange.x += _staticVolumeChange.y;
-        _staticVolumeChange.y += _staticVolumeChange.y;
+        // _staticVolumeChange.x += _staticVolumeChange.y;
+        // _staticVolumeChange.y += _staticVolumeChange.y;
+
+        _isTurningOff = true;
 
         float startVolume = _mainAudio.volume;
         float   endVolume = 0.0f;
@@ -162,10 +171,15 @@ public class Radio : MonoBehaviour
 
             i += _fadeAudioSpeed * Time.deltaTime;
 
+            if (newVolume == endVolume)
+            {
+                _mainAudio.clip = null;
+                _isTurningOff   = false;
+                Debug.Log("Finish Fade Out");
+            }
+
             yield return _wff;
         }
-
-        _mainAudio.clip = null;
     }
     private IEnumerator StaticVolumeChanger()
     {
