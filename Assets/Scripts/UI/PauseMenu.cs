@@ -4,7 +4,6 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _pause;
     [SerializeField] private GameObject _settings;
-    [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _holdingCamera;
     [SerializeField] private SecurityCameraSwitcher _cameraSwitcher;
     [SerializeField] private PlayerBehaviorControl _playerBehaviorControl;
@@ -16,19 +15,11 @@ public class PauseMenu : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Escape) && !_settings.activeSelf)
             Continue();
     }
-    private void CheckIfInteractiveHolding(bool set)
-    {
-        if (_holdingCamera.transform.childCount > 0)
-        {
-            GameObject holdingObject = _holdingCamera.transform.GetChild(0).gameObject;
-            holdingObject.SetActive(set);
-        }
-    }
     public void Pause()
     {
         Cursor.lockState = CursorLockMode.None;
         // Time.timeScale = 0;
-        CheckIfInteractiveHolding(false);
+        _holdingCamera.SetActive(false);
         _playerBehaviorControl.PlayPauseSpeech(true);
         _playerBehaviorControl.EnableDisablePlayer(false);
 
@@ -45,7 +36,7 @@ public class PauseMenu : MonoBehaviour
         _pause.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         // Time.timeScale = 1;
-        CheckIfInteractiveHolding(true);
+        _holdingCamera.SetActive(true);
         _playerBehaviorControl.PlayPauseSpeech(false);
         _playerBehaviorControl.EnableDisablePlayer(true);
     }
