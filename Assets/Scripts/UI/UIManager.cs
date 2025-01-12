@@ -7,8 +7,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _interactionPanel;
     [SerializeField] private GameObject _inventorySlotsContainer;
     [SerializeField] private GameObject _inventoryIconsContainer;
-    [SerializeField] private Color      _unselectedSlotColor;
-    [SerializeField] private Color      _selectedSlotColor;
+    [SerializeField] private Sprite     _unselectedSlotSprite;
+    [SerializeField] private Sprite     _selectedSlotSprite;
     
     private TextMeshProUGUI _interactionMessage;
     private Image[]         _inventorySlots;
@@ -52,7 +52,7 @@ public class UIManager : MonoBehaviour
     private void ResetInventorySlots()
     {
         foreach (Image image in _inventorySlots)
-            image.color = _unselectedSlotColor;
+            image.sprite = _unselectedSlotSprite;
     }
 
     public void ShowInventoryIcon(int index, Sprite icon)
@@ -64,11 +64,11 @@ public class UIManager : MonoBehaviour
     public void SelectInventorySlot(int index)
     {
         if (_selectedSlotIndex != -1)
-            _inventorySlots[_selectedSlotIndex].color = _unselectedSlotColor;
+            _inventorySlots[_selectedSlotIndex].sprite = _unselectedSlotSprite;
 
         if (index != -1)
         {
-            _inventorySlots[index].color = _selectedSlotColor;
+            _inventorySlots[index].sprite = _selectedSlotSprite;
             _selectedSlotIndex = index;
         }
     }
