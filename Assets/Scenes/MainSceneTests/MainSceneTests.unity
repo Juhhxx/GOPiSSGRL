@@ -14007,6 +14007,10 @@ PrefabInstance:
       propertyPath: _thermostat
       value: 
       objectReference: {fileID: 1645582959}
+    - target: {fileID: 5390398120763960948, guid: dd691b7311146464092be6e6650ab766, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 262355a9aaa7da946983cf525695eac8, type: 2}
     - target: {fileID: 5986985989351359007, guid: dd691b7311146464092be6e6650ab766, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5400009
