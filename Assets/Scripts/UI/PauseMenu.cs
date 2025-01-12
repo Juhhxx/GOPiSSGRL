@@ -18,10 +18,11 @@ public class PauseMenu : MonoBehaviour
     }
     private void CheckIfInteractiveHolding(bool set)
     {
-        ViewBookUI scriptUI = _holdingCamera.GetComponentInChildren<ViewBookUI>();
-
-        if (scriptUI != null)
-            scriptUI.enabled = set;
+        if (_holdingCamera.transform.childCount > 0)
+        {
+            GameObject holdingObject = _holdingCamera.transform.GetChild(0).gameObject;
+            holdingObject.SetActive(set);
+        }
     }
     public void Pause()
     {
