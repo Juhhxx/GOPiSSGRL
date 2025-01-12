@@ -46,6 +46,10 @@ public class PlayerBehaviorControl : MonoBehaviour
 
         return _playerInteraction.CurrentInteractive == null;
     }
+    public bool CanInteractItems()
+    {
+        return _playerInteraction.CurrentInteractive == null;
+    }
 
     public bool InventoryContains(Interactive requirement) => _playerInventory.Contains(requirement);
 
