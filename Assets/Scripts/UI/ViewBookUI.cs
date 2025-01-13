@@ -4,14 +4,18 @@ using UnityEngine.UI;
 public class ViewBookUI : MonoBehaviour
 {
     [SerializeField] GameObject _viewUI;
+    [SerializeField] AudioClip _openSound;
+    [SerializeField] AudioClip _closeSound;
     private Texture2D _bookTexture;
     private PlayerBehaviorControl _playerControl;
+    private AudioSource _audioSource;
     private GameObject _uiObject;
     private PauseMenu _pause;
 
     private void OnEnable()
     {
         _pause = FindFirstObjectByType<PauseMenu>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -52,6 +56,8 @@ public class ViewBookUI : MonoBehaviour
 
         // Cursor.lockState = CursorLockMode.None;
         _playerControl.EnableDisablePlayer(false);
+        _audioSource.clip = _openSound;
+        _audioSource.Play();
     }
     private void HideUI()
     {
@@ -59,6 +65,8 @@ public class ViewBookUI : MonoBehaviour
 
         // Cursor.lockState = CursorLockMode.Locked;
         _playerControl.EnableDisablePlayer(true);
+        _audioSource.clip = _closeSound;
+        _audioSource.Play();
     }
 
     private void OnDestroy()
