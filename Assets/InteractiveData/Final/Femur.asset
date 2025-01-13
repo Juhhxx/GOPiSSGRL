@@ -17,7 +17,7 @@ MonoBehaviour:
   inventoryName: Tibia
   inventoryIcon: {fileID: 21300000, guid: 35ee24a0183e55e4fa47335ebbd9354a, type: 3}
   requirements: []
-  deleteRequirementsOnUse: 1
+  deleteRequirementsOnUse: 0
   requirementsMessage: A half decomposed tibia
   interactionMessages:
   - Pry open the door with tibia
