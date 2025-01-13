@@ -5,12 +5,6 @@ public class LightingControl : MonoBehaviour
 {
     public void ChangeLighting(LightingPresets preset)
     {
-        if (preset.LightingSettings != null)
-        {
-            // Lightmapping.lightingSettings = preset.LightingSettings;
-            // Lightmappping só pode ser usado no Editor, nas builds dá erro
-        }
-
         if (preset.SkyboxMaterial != null)
         {
             RenderSettings.skybox = preset.SkyboxMaterial;
