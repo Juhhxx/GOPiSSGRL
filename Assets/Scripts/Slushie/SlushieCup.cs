@@ -26,7 +26,6 @@ public class SlushieCup : MonoBehaviour
     
     public void GiveSlushie(PlayerInventory inventory)
     {
-        
         Debug.Log($"Is Slushie being used? {IsUsed}");
         if (!IsUsed)
         {

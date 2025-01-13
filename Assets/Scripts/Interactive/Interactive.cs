@@ -65,6 +65,11 @@ public class Interactive : MonoBehaviour
             return null;
     }
 
+    public void SetInteractionMessage(string message)
+    {
+        interactiveData.interactionMessages[0] = message;
+    }
+
     private bool PlayerHasRequirementSelected()
     {
         foreach (Interactive requirement in _requirements)
