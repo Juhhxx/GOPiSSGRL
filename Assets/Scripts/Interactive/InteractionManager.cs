@@ -14,6 +14,7 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private string             _pickMessage;
 
     private List<Interactive> _interactives;
+    private AudioSource       _audioSource;
 
     private InteractionManager()
     {
@@ -38,7 +39,10 @@ public class InteractionManager : MonoBehaviour
 
     void Start()
     {
+        _audioSource = gameObject.AddComponent<AudioSource>();
+
         ProcessDependencies();
+        AddAudioSource();
         _interactives = null;
     }
 
@@ -54,6 +58,14 @@ public class InteractionManager : MonoBehaviour
                 Debug.Log($"Adding {interactive.gameObject.name} as dependent of {requirementData.name}");
                 requirement.AddDependent(interactive);
             }
+        }
+    }
+
+    private void AddAudioSource()
+    {
+        foreach (Interactive interactive in _interactives)
+        {
+            interactive.SetPickAudioSource(_audioSource);
         }
     }
 

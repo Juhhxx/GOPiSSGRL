@@ -12,10 +12,10 @@ public class Interactive : MonoBehaviour
     private List<Interactive>   _dependents;
     private List<Interactive>   _interactables;
     private Animator            _animator;
+    private AudioSource         _audioSource;
     private bool                _requirementsMet;
     public bool RequirementsMet => _requirementsMet;
     private int                 _interactionCount;
-    private AudioSource         _audioSource;
 
     public bool isOn;
 
@@ -26,6 +26,7 @@ public class Interactive : MonoBehaviour
     public GameObject holdingObject => _interactiveData.holdingObject;
     public bool deleteRequirementsOnUse => _interactiveData.deleteRequirementsOnUse;
     private bool IsType(InteractiveData.Type type) => _interactiveData.type == type;
+    public void SetPickAudioSource(AudioSource source) => _audioSource = source;
 
     void Awake()
     {
