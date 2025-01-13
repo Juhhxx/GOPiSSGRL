@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _viewUI: {fileID: 8690401023422727191, guid: 3dd9863adcfc6e2499a2b9e85ca14ba9, type: 3}
   _openSound: {fileID: 8300000, guid: 6a8e158bb06482541892004e82047d62, type: 3}
-  _closeSound: {fileID: 8300000, guid: 7399ebea31b59fb4c8b9217492c17b0a, type: 3}
+  _closeSound: {fileID: 8300000, guid: e41d06cb55edf5445bcc4989a662e107, type: 3}
 --- !u!82 &-5108559181814815849
 AudioSource:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
