@@ -6,6 +6,7 @@ using UnityEngine.Timeline;
 public class CutsceneControl : MonoBehaviour
 {
     [SerializeField] private SecurityCameraSwitcher _cameraSwitcher;
+    [SerializeField] private Animator _animator;
     [SerializeField] private LightingControl _lightingControl;
     [SerializeField] private GameObject _baseScene;
     [SerializeField] private LightingPresets _basePreset;
@@ -26,8 +27,13 @@ public class CutsceneControl : MonoBehaviour
     private PlayerBehaviorControl _playerBehaviorControl;
 
 
+    [SerializeField] private ParticleSystem _disableParticles;
+    [SerializeField] private ConeRotation _disableRotation;
+
+
     private void Start()
     {
+
         _playerBehaviorControl = FindFirstObjectByType<PlayerBehaviorControl>();
         _demonObject.SetActive(false);
         _demonScene.SetActive(false);
@@ -108,8 +114,11 @@ public class CutsceneControl : MonoBehaviour
 
     public void UnSummonDemon()
     {
-        ShakeSecurityCam(2.0f);
-        _demonObject.SetActive(true);
+        Debug.Log("unsommoning circle");
+        _animator.SetTrigger("Circle");
+
+        _disableParticles.Stop();
+        _disableRotation.enabled = false;
     }
 
     private void ShakeSecurityCam(float time)

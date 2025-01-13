@@ -7,6 +7,7 @@ public class VerifySlushie : MonoBehaviour
 {
     [SerializeField] private List<Flavours> _correctCombination;
     [SerializeField] private Animator _mainAnimator;
+    [SerializeField] private CutsceneControl _cutsceneControl;
     private Interactive _interactive;
     private SlushieCup _slushieCup;
     private GiveItem _giveItem;
@@ -53,6 +54,8 @@ public class VerifySlushie : MonoBehaviour
             yield return null;
         }
         
+        
+        _cutsceneControl.UnSummonDemon();
         _mainAnimator.SetTrigger("UnSummon");
     }
 }
