@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
   m_Name: DeadBody
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   startsOn: 1
   inventoryName: 
   inventoryIcon: {fileID: 0}
   requirements: []
   deleteRequirementsOnUse: 1
   requirementsMessage: 
-  interactionMessages: []
+  interactionMessages:
+  - He couldn't piss...
   pickUpSound: {fileID: 0}
   holdingObject: {fileID: 0}
