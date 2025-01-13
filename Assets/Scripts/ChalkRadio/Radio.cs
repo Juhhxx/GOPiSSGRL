@@ -104,7 +104,8 @@ public class Radio : MonoBehaviour
     }  
     private void ChangeAudioVolumeDistance (float distance)
     {
-        _mainAudio.volume = Mathf.InverseLerp(20f,0.5f,distance);
+        // _mainAudio.volume = Mathf.InverseLerp(20f,0.5f,distance);
+        _mainAudio.volume = Mathf.Pow( 1.2f, -distance) + 0.05f;
     }
     private void ShakeRadioByDistance(float distance)
     {
