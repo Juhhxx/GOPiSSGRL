@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7972489168737286503
+--- !u!114 &-6489412875279232768
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lambert1
+  m_Name: CerealBox
   m_Shader: {fileID: -6465566751694194690, guid: 4d95351251a68c74ab5a53e425cb3c9e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -39,7 +39,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AO:
-        m_Texture: {fileID: 2800000, guid: d15d8e9ded1aa504b9fdcf827804c78a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8a4fa7cf3062da24eb8f502876dc828d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -47,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Base_Color:
-        m_Texture: {fileID: 2800000, guid: 2d51409cfb9eeab419c6af4cf6e15cf1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 71013bea8b8aca749bb8e6a98fcd8104, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -79,7 +79,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic:
-        m_Texture: {fileID: 2800000, guid: 269ff4fe47fb81747a72b4fad2d5f9e7, type: 3}
+        m_Texture: {fileID: 2800000, guid: ff6b745c82cd2f0429866e08113dbb99, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -87,7 +87,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: 1ab5f659b830bbd4dbf3591db4c513de, type: 3}
+        m_Texture: {fileID: 2800000, guid: 30095e26fa90c2042a8f358835df51a4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -103,7 +103,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Smoothness:
-        m_Texture: {fileID: 2800000, guid: a3e0eab581fb6cd409a1d865aedbddff, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5886a66fcaf630243bbfc02df5cc3546, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
