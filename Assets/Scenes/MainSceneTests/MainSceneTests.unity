@@ -6609,6 +6609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 133954523}
   _slushieCup: {fileID: 610582323}
+  _pickSound: {fileID: 8300000, guid: d702f2ec1276dc64aa7be2fd04d9e8fe, type: 3}
 --- !u!224 &503527242 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2418188099958749353, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}
