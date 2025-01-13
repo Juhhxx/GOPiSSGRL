@@ -5,15 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 4f09c12adf400854487257b734da30a7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainSceneTests/MainSceneTests.unity
     guid: ba8fd77920c2f284c97d09a4f3baeaee
   - enabled: 0
     path: Assets/Scenes/GabiTest/GabiTest.unity
     guid: a759feff58138e247884e70b2b7eed51
+  - enabled: 1
+    path: Assets/Scenes/EntregaAmbientes.unity
+    guid: c02ed82b299e333429b1da6bf9c453f2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
