@@ -77,7 +77,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 16777375
+    m_Bits: 16785567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: e18d83204c5a6d34f96ed01a363eb3da, type: 2}
   m_TargetDisplay: 0
@@ -210,7 +210,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -225,13 +225,13 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -536,7 +536,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -627,7 +627,7 @@ CharacterController:
   serializedVersion: 3
   m_Height: 3
   m_Radius: 0.6
-  m_SlopeLimit: 45
+  m_SlopeLimit: 0
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -693,6 +693,8 @@ MonoBehaviour:
   _playerMovement: {fileID: 2761203105367862506}
   _playerInteraction: {fileID: 107595982787153906}
   _playerInventory: {fileID: 7437518743940774994}
+  _inventoryUI: {fileID: 0}
+  _interactionPanel: {fileID: 0}
   _speechControl: {fileID: 0}
 --- !u!1001 &4720706548218203739
 PrefabInstance:
