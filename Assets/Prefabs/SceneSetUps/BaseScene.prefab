@@ -60446,7 +60446,7 @@ GameObject:
   - component: {fileID: 6940765992103320038}
   - component: {fileID: 738444220085311769}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Light Buzzing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
