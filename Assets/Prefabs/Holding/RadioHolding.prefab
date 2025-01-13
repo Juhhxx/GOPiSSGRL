@@ -231,7 +231,7 @@ MonoBehaviour:
   _staticAudio: {fileID: 8626895259712936745}
   _fadeAudioSpeed: 1.5
   _staticVolumeChange: {x: 0.1, y: 0.4}
-  _demonSound: {fileID: 8300000, guid: 71120c4512ae87e459931b1480c24eb7, type: 3}
+  _demonSound: {fileID: 8300000, guid: b19f469a5b530404099b9ae4221fd736, type: 3}
   _radioChannels:
   - <Frequency>k__BackingField: 100
     <Audio>k__BackingField: {fileID: 8300000, guid: 9e9d70cf4df82704098fe0be55f11f77, type: 3}
