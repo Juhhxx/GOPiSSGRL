@@ -74,6 +74,8 @@ public class SecurityCameraSwitcher : MonoBehaviour
 
         animator.SetFloat("MoveSpeed", moveSpeed);
     }
+    
+    #endif
     private void TurnPlayer(bool on)
     {
         foreach (Camera component in _playerCameras)
@@ -85,7 +87,6 @@ public class SecurityCameraSwitcher : MonoBehaviour
             component.enabled = on;
         }
     }
-    #endif
 
     public void SwitchToPlayerCamera()
     {
