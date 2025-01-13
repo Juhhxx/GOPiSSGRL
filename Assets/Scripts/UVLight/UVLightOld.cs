@@ -121,7 +121,11 @@ public class UVLightOld : MonoBehaviour
 
     private void OnDisable()
     {
+        DimLights(false);
         Shader.SetGlobalFloat(_lightedID, 0);
+
+        if (_necroCollider != null)
+            _necroCollider.enabled = false;
     }
 
     private void DimLights(bool trueOrFalse)
