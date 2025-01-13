@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
-  m_Name: Sticky Note
+  m_Name: CrowBar
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   startsOn: 1
-  inventoryName: Sticky Note
-  inventoryIcon: {fileID: 21300000, guid: b3a8b224ef7c4d546ad6694d949476cd, type: 3}
+  inventoryName: 
+  inventoryIcon: {fileID: 0}
   requirements: []
-  deleteRequirementsOnUse: 0
+  deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - They left a sticky note
-  activatesUI: 0
-  holdingObject: {fileID: 8866752462327682379, guid: 93a0988c036136c4bb631e08fb37e0c2, type: 3}
+  - A crow bar
+  pickUpSound: {fileID: 0}
+  holdingObject: {fileID: 0}

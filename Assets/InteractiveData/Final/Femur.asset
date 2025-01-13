@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d29f49dfd04384691b3525a603437a, type: 3}
-  m_Name: DemonSequenceNote
+  m_Name: Femur
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
-  inventoryName: Demon's sequence
-  inventoryIcon: {fileID: 21300000, guid: a81812f69064efe41815307e2bc7233b, type: 3}
+  inventoryName: Tibia
+  inventoryIcon: {fileID: 21300000, guid: 35ee24a0183e55e4fa47335ebbd9354a, type: 3}
   requirements: []
   deleteRequirementsOnUse: 1
-  requirementsMessage: 
-  interactionMessages: []
+  requirementsMessage: A half decomposed tibia
+  interactionMessages:
+  - Pry open the door with tibia
   pickUpSound: {fileID: 0}
-  holdingObject: {fileID: 3310751724994561192, guid: adb29a987359e6949b11468e23f1344c, type: 3}
+  holdingObject: {fileID: 774204161524076571, guid: bd5aa6c104fc58240b3e514cd1825fc2, type: 3}

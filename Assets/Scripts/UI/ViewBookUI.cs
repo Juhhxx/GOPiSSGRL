@@ -71,6 +71,8 @@ public class ViewBookUI : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (_uiObject == null) return;
+
         _pause.AddRemoveUIToCheck(_uiObject.GetComponentInChildren<Canvas>(), false);
 
         if ( _uiObject.activeSelf )
@@ -79,6 +81,6 @@ public class ViewBookUI : MonoBehaviour
             _playerControl.EnableDisablePlayer(true);
         }
 
-        Destroy(_uiObject);
+            Destroy(_uiObject);
     }
 }

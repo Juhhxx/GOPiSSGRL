@@ -16,11 +16,10 @@ MonoBehaviour:
   startsOn: 1
   inventoryName: Slushie cup
   inventoryIcon: {fileID: 21300000, guid: e5d68ee7ffe7d70468047f1febd4d2c8, type: 3}
-  requirements:
-  - {fileID: 11400000, guid: 0603bd160477c724d836cfec711d5c4d, type: 2}
-  deleteRequirementsOnUse: 1
+  requirements: []
+  deleteRequirementsOnUse: 0
   requirementsMessage: 
   interactionMessages:
   - Take slushie cup
-  activatesUI: 0
+  pickUpSound: {fileID: 0}
   holdingObject: {fileID: 8866752462327682379, guid: d290e08d18cbd794e930d0a739edfbc7, type: 3}
