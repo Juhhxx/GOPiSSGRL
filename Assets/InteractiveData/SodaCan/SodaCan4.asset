@@ -21,5 +21,5 @@ MonoBehaviour:
   requirementsMessage: 
   interactionMessages:
   - Insert can
-  activatesUI: 0
+  pickUpSound: {fileID: 8300000, guid: 396da1b3a0c668f479e3b167f7d71370, type: 3}
   holdingObject: {fileID: 4490522552082893936, guid: ea5c903267804c847bb341c919ca8771, type: 3}
