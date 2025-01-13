@@ -74,6 +74,7 @@ public class SlushieCup : MonoBehaviour
         if (_slushieFlavours.Count() == 0) 
         {
             _material.color = Color.white; 
+            _slushieObject.transform.localScale = new Vector3(1f,0f,1f);
             _slushieObject.SetActive(false);
             return;
         }
