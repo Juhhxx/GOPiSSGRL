@@ -21,5 +21,5 @@ MonoBehaviour:
   deleteRequirementsOnUse: 0
   requirementsMessage: Creppy...
   interactionMessages: []
-  activatesUI: 0
+  pickUpSound: {fileID: 8300000, guid: 3cc10e0ee9bd72143a6e44b171e8053b, type: 3}
   holdingObject: {fileID: 7213500950990017174, guid: 8b415feee08b7454c9f518f5a5751669, type: 3}

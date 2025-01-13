@@ -40,6 +40,7 @@ public class InteractionManager : MonoBehaviour
     void Start()
     {
         _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource.volume = 0.2f;
 
         ProcessDependencies();
         AddAudioSource();
