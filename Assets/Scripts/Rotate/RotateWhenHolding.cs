@@ -13,6 +13,7 @@ public class RotateWhenHolding : MonoBehaviour
     [SerializeField] private float _maxRotation;
     [SerializeField] private bool _wrapRotation = false;
     [SerializeField] private bool _invertRotationValues = false;
+    [SerializeField] private bool _allowMouseBasedMovement = true;
     [SerializeField] private float _currentValue;
     private Vector3 _currentRotation;
     [SerializeField] private float _visualizeCurrentRotationValue;
@@ -96,7 +97,8 @@ public class RotateWhenHolding : MonoBehaviour
 
         _mouseMovement = Input.GetAxisRaw("Mouse ScrollWheel") * _scrollSensitivity * 10;
 
-        _mouseMovement += GlobalValues.GetAxisX() * _mouseSensitivity;
+        if (_allowMouseBasedMovement)
+            _mouseMovement += GlobalValues.GetAxisX() * _mouseSensitivity;
         
         _currentValue += _mouseMovement;
         // Debug.Log($"rotation z : {_currentRotation.z}");

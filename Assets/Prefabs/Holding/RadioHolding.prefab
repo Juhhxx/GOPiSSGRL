@@ -172,6 +172,7 @@ MonoBehaviour:
   _maxRotation: 359
   _wrapRotation: 1
   _invertRotationValues: 0
+  _allowMouseBasedMovement: 0
   _currentValue: 0
   _visualizeCurrentRotationValue: 0
 --- !u!1 &5072748983818107920
