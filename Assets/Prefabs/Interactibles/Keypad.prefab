@@ -677,9 +677,11 @@ MonoBehaviour:
   _sequence: 09000000070000000800000004000000060000000500000003000000020000000100000000000000
   _combinationSize: 5
   _correctCombination: 
-  _uvMaterial: {fileID: 2100000, guid: a3995774dbacef1469894471fc8e01ac, type: 2}
+  _uvMaterial: {fileID: 2100000, guid: 9b3fa76a6fec627409bead53e033cd7f, type: 2}
   _uvTextures:
-  - {fileID: 2800000, guid: 48748dbf77dd05541931736bf3b64219, type: 3}
+  - {fileID: 2800000, guid: 3392ef3add8d47a4f9324d24100bf6a9, type: 3}
+  - {fileID: 2800000, guid: 30fc6de1ebefa5f4786cebbfdf29cdd7, type: 3}
+  - {fileID: 2800000, guid: 1c2f19842181116478c1835312ee4afb, type: 3}
   _requirement: {fileID: 0}
 --- !u!1 &3311518069023703718
 GameObject:
