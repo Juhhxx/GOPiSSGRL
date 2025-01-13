@@ -48,7 +48,7 @@ public class CutsceneControl : MonoBehaviour
         _timeline.playableAsset = _demonTimeline;
         _timeline.Play();
 
-        StartCoroutine(StartSceneSwitch(_baseScene, _demonPreset, _demonScene));
+        //StartCoroutine(StartSceneSwitch(_baseScene, _demonPreset, _demonScene));
 
         ShakeSecurityCam(1.0f);
     }
