@@ -6097,6 +6097,10 @@ PrefabInstance:
       propertyPath: m_RenderingLayers
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[4]'
+      value: I CRAVE A TASTY COLORFUL TREAT !
+      objectReference: {fileID: 0}
     - target: {fileID: 7292719238497966714, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: '_itemPrefab.Array.data[0]'
       value: 
@@ -6533,6 +6537,7 @@ GameObject:
   - component: {fileID: 502494154}
   - component: {fileID: 502494155}
   - component: {fileID: 502494156}
+  - component: {fileID: 502494157}
   m_Layer: 0
   m_Name: Cup Dispenser
   m_TagString: Untagged
@@ -6629,7 +6634,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 133954523}
   _slushieCup: {fileID: 610582323}
-  _pickSound: {fileID: 8300000, guid: d702f2ec1276dc64aa7be2fd04d9e8fe, type: 3}
+  _returnSound: {fileID: 0}
+--- !u!114 &502494157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502494148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703ab4f3092a64d43b643c74c5cb84a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemPrefabs:
+  - {fileID: 406578146}
 --- !u!224 &503527242 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2418188099958749353, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}

@@ -20,6 +20,6 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages:
-  - Take slushie cup
-  activatesUI: 0
+  - Return slushie cup
+  pickUpSound: {fileID: 0}
   holdingObject: {fileID: 0}
