@@ -13,7 +13,7 @@ public class InteractiveData : ScriptableObject
     public bool                 deleteRequirementsOnUse = true;
     public string               requirementsMessage;
     public string[]             interactionMessages;
-    public bool                 activatesUI;
+    public AudioClip            pickUpSound;
     public GameObject           holdingObject;
 }
 

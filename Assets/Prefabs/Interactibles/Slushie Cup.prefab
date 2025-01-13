@@ -152,6 +152,7 @@ Transform:
   m_Children:
   - {fileID: 1832849412830520963}
   - {fileID: 8230251259386485454}
+  - {fileID: 6339182690856200509}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2116909812436423660
@@ -204,6 +205,80 @@ MonoBehaviour:
   _slushieFlavours: 
   _slushieObject: {fileID: 3978211361513734094}
   _slushieUpdateSpeed: 0.02
+--- !u!1001 &5797245904418541270
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8197757780432717654}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7608712
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7608712
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7608712
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.82
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.333332
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -39.39
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+      propertyPath: m_Name
+      value: Slushie
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+--- !u!4 &6339182690856200509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7765d621ade787146b8c620c12aa4afd, type: 3}
+  m_PrefabInstance: {fileID: 5797245904418541270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8483937923074112805
 PrefabInstance:
   m_ObjectHideFlags: 0

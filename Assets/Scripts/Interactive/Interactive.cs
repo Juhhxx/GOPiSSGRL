@@ -15,6 +15,7 @@ public class Interactive : MonoBehaviour
     private bool                _requirementsMet;
     public bool RequirementsMet => _requirementsMet;
     private int                 _interactionCount;
+    private AudioSource         _audioSource;
 
     public bool isOn;
 
@@ -123,6 +124,11 @@ public class Interactive : MonoBehaviour
     private void PickUpInteractive()
     {
         Debug.Log($"Picking up {gameObject.name}");
+        if (_audioSource != null || interactiveData.pickUpSound != null)
+        {
+            _audioSource.clip = interactiveData.pickUpSound;
+            _audioSource.Play();
+        }
         _playerInventory.Add(this);
         gameObject.SetActive(false);
     }
