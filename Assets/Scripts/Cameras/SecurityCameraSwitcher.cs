@@ -59,8 +59,8 @@ public class SecurityCameraSwitcher : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F10)) SwitchSecurityCamera(1, false);
         if (Input.GetKeyDown(KeyCode.F11)) SwitchSecurityCamera(2, false);
 
-        if (Input.GetKey(KeyCode.LeftArrow)) ToggleCurrentCameraMovement(2f);
-        else if (Input.GetKey(KeyCode.RightArrow)) ToggleCurrentCameraMovement(-2f);
+        if (Input.GetKey(KeyCode.LeftArrow)) ToggleCurrentCameraMovement(1f);
+        else if (Input.GetKey(KeyCode.RightArrow)) ToggleCurrentCameraMovement(-1f);
         else ToggleCurrentCameraMovement(0f);
     }
     private float moveSpeed = 0f;
@@ -72,7 +72,7 @@ public class SecurityCameraSwitcher : MonoBehaviour
 
         moveSpeed = Mathf.Lerp(moveSpeed, dir, Time.deltaTime / 1.3f);
 
-        animator.SetFloat("MoveSpeed", moveSpeed);
+        // animator.SetFloat("MoveSpeed", moveSpeed);
     }
     private void TurnPlayer(bool on)
     {
