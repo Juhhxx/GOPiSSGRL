@@ -77,8 +77,11 @@ public class Radio : MonoBehaviour
     }
     private void PlayDemonSound(int index)
     {
-        _mainAudio.clip = _demonSound;
-        if (!_mainAudio.isPlaying) _mainAudio.Play();
+        if (_mainAudio.clip != _demonSound)
+        {
+            _mainAudio.clip = _demonSound;
+            _mainAudio.Play();
+        }
         DetectDistance(index);
     }
     private void DetectDistance(int index)
@@ -163,7 +166,7 @@ public class Radio : MonoBehaviour
         float   newVolume = startVolume;
         float           i = 0;
 
-        while(newVolume >= endVolume)
+        while(newVolume > endVolume)
         {
             newVolume = Mathf.Lerp(startVolume,endVolume,i);
 
@@ -177,7 +180,6 @@ public class Radio : MonoBehaviour
                 _isTurningOff   = false;
                 Debug.Log("Finish Fade Out");
             }
-
             yield return _wff;
         }
     }
