@@ -19,7 +19,7 @@ public class PlayerBehaviorControl : MonoBehaviour
             _disabledNumber -= 1;
         }
         
-        Debug.Log($"Diabled Player Times : {_disabledNumber}");
+        // Debug.Log($"Diabled Player Times : {_disabledNumber}");
 
         if (_disabledNumber == 0)
         {
@@ -37,7 +37,7 @@ public class PlayerBehaviorControl : MonoBehaviour
             _disabledNumber += 1;
         }
 
-        Debug.Log($"Diabled Player Times : {_disabledNumber}");
+        // Debug.Log($"Diabled Player Times : {_disabledNumber}");
     }
 
     public bool CanInteract()

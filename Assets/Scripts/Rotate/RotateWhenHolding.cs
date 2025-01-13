@@ -29,9 +29,7 @@ public class RotateWhenHolding : MonoBehaviour
 
         _currentRotationData = GetComponentInParent<CurrentRadioRotation>();
         _currentRotation = transform.localRotation.eulerAngles;
-    }
-    private void Start()
-    {
+
         if (_currentRotationData != null
             && _currentRotationData.Value.HasValue)
             {

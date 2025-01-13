@@ -20,5 +20,5 @@ MonoBehaviour:
   deleteRequirementsOnUse: 1
   requirementsMessage: 
   interactionMessages: []
-  activatesUI: 0
-  holdingObject: {fileID: 3310751724994561192, guid: 01ccf25c9b8b7d34586c998d5c51ec26, type: 3}
+  pickUpSound: {fileID: 0}
+  holdingObject: {fileID: 3310751724994561192, guid: adb29a987359e6949b11468e23f1344c, type: 3}
