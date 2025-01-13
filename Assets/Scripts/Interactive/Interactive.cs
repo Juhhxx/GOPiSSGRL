@@ -127,11 +127,16 @@ public class Interactive : MonoBehaviour
         Debug.Log($"Picking up {gameObject.name}");
         if (_audioSource != null || interactiveData.pickUpSound != null)
         {
-            _audioSource.clip = interactiveData.pickUpSound;
-            _audioSource.Play();
+            PlayPickUpSound();
         }
         _playerInventory.Add(this);
         gameObject.SetActive(false);
+    }
+
+    public void PlayPickUpSound()
+    {
+        _audioSource.clip = interactiveData.pickUpSound;
+        _audioSource.Play();
     }
 
     private void DoDirectInteraction()

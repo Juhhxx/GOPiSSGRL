@@ -13,6 +13,7 @@ public class SlushieCup : MonoBehaviour
     private Vector3 _initialPos;
     public bool IsUsed { get; private set; }
     private WaitForEndOfFrame wait = new WaitForEndOfFrame();
+    Interactive _slushie;
 
     private void Start()
     {
@@ -20,16 +21,18 @@ public class SlushieCup : MonoBehaviour
         _slushieObject.SetActive(false);
         _initialPos = transform.position;
         IsUsed = false;
+        _slushie = GetComponent<Interactive>();
     }
     
     public void GiveSlushie(PlayerInventory inventory)
     {
-        Interactive slushie = GetComponent<Interactive>();
+        
         Debug.Log($"Is Slushie being used? {IsUsed}");
         if (!IsUsed)
         {
             IsUsed = true;
-            inventory.Add(slushie);
+            inventory.Add(_slushie);
+            _slushie.PlayPickUpSound();
         }
     }
     public void ResetSlushie()
