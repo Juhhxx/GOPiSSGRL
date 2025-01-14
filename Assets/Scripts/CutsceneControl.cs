@@ -57,7 +57,7 @@ public class CutsceneControl : MonoBehaviour
 
         _baseScene.SetActive(true);
 
-        _lightingControl.ChangeLighting(_basePreset);
+        // _lightingControl.ChangeLighting(_basePreset);
     }
 
     public void AwakeDemon()
