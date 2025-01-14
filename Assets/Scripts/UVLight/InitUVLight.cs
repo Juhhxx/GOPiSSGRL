@@ -4,7 +4,7 @@ public class InitUVLight : MonoBehaviour
 {
     void Start()
     {
-        TagNecro necro = FindAnyObjectByType<TagNecro>();
+        TagNecro necro = FindFirstObjectByType<TagNecro>();
         if (necro != null)
             necro.GetComponent<Collider>().enabled = false;
 

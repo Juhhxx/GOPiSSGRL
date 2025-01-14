@@ -22,7 +22,7 @@ public class ViewBookUI : MonoBehaviour
     {
         _bookTexture = GetComponent<Renderer>().material.mainTexture as Texture2D;
 
-        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
+        _playerControl = FindFirstObjectByType<PlayerBehaviorControl>();
 
         _uiObject = Instantiate(_viewUI);
 

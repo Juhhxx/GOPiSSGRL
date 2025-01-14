@@ -14,7 +14,7 @@ public class EndTest : MonoBehaviour
         /*_holdingCamera.SetActive(false);
         _finnishUI.SetActive(true);
 
-        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
+        _playerControl = FindFirstObjectByType<PlayerBehaviorControl>();
         _playerControl.EnableDisablePlayer(false);
 
         Cursor.lockState = CursorLockMode.None;*/

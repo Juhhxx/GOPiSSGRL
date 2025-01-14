@@ -26,7 +26,7 @@ public class Radio : MonoBehaviour
     {
         _intialPosition = transform.localPosition;
         _rotateHolding = GetComponentInChildren<RotateWhenHolding>();
-        _summonDemon = FindAnyObjectByType<SummonDemon>();
+        _summonDemon = FindFirstObjectByType<SummonDemon>();
         _wff = new WaitForEndOfFrame();
     }
     private void OnEnable()

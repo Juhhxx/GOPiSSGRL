@@ -17,9 +17,9 @@ public class SpecialCommands : MonoBehaviour
 
     private void Start()
     {
-        _playerInv = FindAnyObjectByType<PlayerInventory>();
+        _playerInv = FindFirstObjectByType<PlayerInventory>();
         _chalkPoints = FindObjectsByType<ChalkDrawingPoint>(0);
-        _slushieCup = FindAnyObjectByType<SlushieCup>();
+        _slushieCup = FindFirstObjectByType<SlushieCup>();
     }
     private void Update()
     {

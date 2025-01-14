@@ -49,7 +49,7 @@ public class SpeechControl : MonoBehaviour
     {
         _characterInfo.ReadDictionaries();
         
-        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
+        _playerControl = FindFirstObjectByType<PlayerBehaviorControl>();
 
         _pitchID = "PitchShifterPitch";
 

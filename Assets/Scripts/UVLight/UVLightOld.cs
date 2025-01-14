@@ -19,7 +19,7 @@ public class UVLightOld : MonoBehaviour
 
     private void Start()
     {
-        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
+        _playerControl = FindFirstObjectByType<PlayerBehaviorControl>();
 
         // Convert the strings IDs of the Revealing Shader properties into
         // shader IDs for best performance
@@ -59,7 +59,7 @@ public class UVLightOld : MonoBehaviour
         isOn = false;
 
 
-        TagNecro necro = FindAnyObjectByType<TagNecro>();
+        TagNecro necro = FindFirstObjectByType<TagNecro>();
         if (necro != null)
             _necroCollider = necro.GetComponent<Collider>();
         if (_necroCollider != null)

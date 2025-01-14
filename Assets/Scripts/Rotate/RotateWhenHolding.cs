@@ -25,7 +25,7 @@ public class RotateWhenHolding : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
+        _playerControl = FindFirstObjectByType<PlayerBehaviorControl>();
 
         _currentRotationData = GetComponentInParent<CurrentRadioRotation>();
         _currentRotation = transform.localRotation.eulerAngles;

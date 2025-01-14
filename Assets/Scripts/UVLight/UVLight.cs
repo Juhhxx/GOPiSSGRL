@@ -20,7 +20,7 @@ public class UVLight : MonoBehaviour
 
     private void Start()
     {
-        _playerControl = FindAnyObjectByType<PlayerBehaviorControl>();
+        _playerControl = FindFirstObjectByType<PlayerBehaviorControl>();
         // If the spotlightobject and uv light arent referenced or cant be found,
         // the script won't work
         // So we just disable it.
@@ -61,7 +61,7 @@ public class UVLight : MonoBehaviour
             _uvSpotLightReboundObject.SetActive(false);
         Shader.SetGlobalFloat(_lightedID, 0);
         isOn = false;
-        TagNecro necro = FindAnyObjectByType<TagNecro>();
+        TagNecro necro = FindFirstObjectByType<TagNecro>();
         if (necro != null)
             _necroCollider = necro.GetComponent<Collider>();
         if (_necroCollider != null)

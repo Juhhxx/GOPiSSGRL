@@ -13,7 +13,7 @@ public class DrawChalk : MonoBehaviour
     private void Start()
     {
         _cameraTrans = GetComponentInParent<Camera>().gameObject.transform;
-        _chalkPool   = FindAnyObjectByType<ChalkPool>();
+        _chalkPool   = FindFirstObjectByType<ChalkPool>();
     }
     private void Update()
     {
