@@ -57,6 +57,9 @@ public class CutsceneControl : MonoBehaviour
 
         _baseScene.SetActive(true);
 
+        _cameraSwitcher.SwitchSecurityCamera(2, false);
+        _cameraSwitcher.SwitchToPlayerCamera();
+
         // _lightingControl.ChangeLighting(_basePreset);
     }
 
