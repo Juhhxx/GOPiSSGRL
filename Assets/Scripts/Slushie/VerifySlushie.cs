@@ -18,7 +18,7 @@ public class VerifySlushie : MonoBehaviour
     private void Start()
     {
         _interactive = GetComponent<Interactive>();
-        _slushieCup = FindAnyObjectByType<SlushieCup>();
+        _slushieCup = FindFirstObjectByType<SlushieCup>();
         _giveItem = GetComponent<GiveItem>();
         _takeItem = GetComponent<TakeItem>();
     }
@@ -45,7 +45,7 @@ public class VerifySlushie : MonoBehaviour
 
     private IEnumerator CheckIfDoneSpeaking()
     {
-        SpeechControl _speech = FindAnyObjectByType<SpeechControl>();
+        SpeechControl _speech = FindFirstObjectByType<SpeechControl>();
 
         yield return new WaitUntil(() => _speech.ShowingSpeech());
 

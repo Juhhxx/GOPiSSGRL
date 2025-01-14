@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 
 public class CutsceneControl : MonoBehaviour
@@ -186,10 +187,7 @@ public class CutsceneControl : MonoBehaviour
 
     public void EndGame()
     {
-        _finnishUI.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        _pauseUI.SetActive(false);
-        _finnishUI.SetActive(true);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Pause(bool pauseOrNot)

@@ -10,7 +10,7 @@ public class SlushieCupPlacer : MonoBehaviour
 
     private void Start()
     {
-        _cup = FindAnyObjectByType<SlushieCup>();
+        _cup = FindFirstObjectByType<SlushieCup>();
         _cupInteractive = _cup.GetComponent<Interactive>();
         _takeItem = GetComponent<TakeItem>();
         _collider = GetComponent<BoxCollider>();

@@ -21,5 +21,5 @@ MonoBehaviour:
   requirementsMessage: A half decomposed tibia
   interactionMessages:
   - Pry open the door with tibia
-  pickUpSound: {fileID: 0}
+  pickUpSound: {fileID: 8300000, guid: 7f7f7435cb4a7484aa8f93f3c05b08d3, type: 3}
   holdingObject: {fileID: 774204161524076571, guid: bd5aa6c104fc58240b3e514cd1825fc2, type: 3}
