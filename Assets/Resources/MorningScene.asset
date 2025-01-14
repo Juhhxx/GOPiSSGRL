@@ -16,4 +16,4 @@ MonoBehaviour:
   FogEnabled: 1
   FogMode: 3
   FogColor: {r: 0.25992346, g: 0.35197392, b: 0.5566038, a: 0}
-  FogDensity: 0.03
+  FogDensity: 0.05

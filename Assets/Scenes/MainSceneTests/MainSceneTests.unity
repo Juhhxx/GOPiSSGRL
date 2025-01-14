@@ -12472,6 +12472,22 @@ PrefabInstance:
       propertyPath: '_itemPrefab.Array.data[0]'
       value: 
       objectReference: {fileID: 776003852}
+    - target: {fileID: 7543734774499583045, guid: 1a39a51affed5cd43bc97b1f70b2e7c8, type: 3}
+      propertyPath: _dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7543734774499583045, guid: 1a39a51affed5cd43bc97b1f70b2e7c8, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[0]'
+      value: Okay, okay, I get it.\nThe leg.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7543734774499583045, guid: 1a39a51affed5cd43bc97b1f70b2e7c8, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[1]'
+      value: I do not want to face whatever horros\nhappened to this guy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7543734774499583045, guid: 1a39a51affed5cd43bc97b1f70b2e7c8, type: 3}
+      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[2]'
+      value: Whatever.. I just want to go!
+      objectReference: {fileID: 0}
     - target: {fileID: 8331055558494967571, guid: 1a39a51affed5cd43bc97b1f70b2e7c8, type: 3}
       propertyPath: m_Name
       value: Crow Bar
@@ -14785,6 +14801,14 @@ PrefabInstance:
     - target: {fileID: 1884920752237427836, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467325650110982105, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
+      propertyPath: '_dialogList.Array.data[2].characterDialogs.Array.data[0].dialogLines.Array.data[4]'
+      value: He went into the freezer. I don't know...\nLike three weeks ago?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467325650110982105, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
+      propertyPath: '_dialogList.Array.data[2].characterDialogs.Array.data[0].dialogLines.Array.data[8]'
+      value: Z z z z z z ...
       objectReference: {fileID: 0}
     - target: {fileID: 8112074029179182827, guid: 6eb2ccddca777f041b6401d1bf2b93b6, type: 3}
       propertyPath: m_Mesh
