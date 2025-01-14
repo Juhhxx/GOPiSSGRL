@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GabiTest/GabiTest.unity
     guid: a759feff58138e247884e70b2b7eed51
   - enabled: 1
-    path: Assets/Scenes/EntregaAmbientes.unity
+    path: Assets/Scenes/EntregaAmbientes/EntregaAmbientes.unity
     guid: c02ed82b299e333429b1da6bf9c453f2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
