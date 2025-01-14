@@ -54,6 +54,12 @@ public class PlayerInventory : MonoBehaviour
         return _inventory.Contains(item);
     }
 
+    public bool Contains(Interactive item, out int slot)
+    {
+        slot = _inventory.IndexOf(item);
+        return _inventory.Contains(item);
+    }
+
     public bool IsFull()
     {
         return _inventory.Count == _uiManager.GetInventorySlotCount();

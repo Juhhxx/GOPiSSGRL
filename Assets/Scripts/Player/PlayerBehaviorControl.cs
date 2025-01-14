@@ -51,7 +51,14 @@ public class PlayerBehaviorControl : MonoBehaviour
         return _playerInteraction.CurrentInteractive == null;
     }
 
-    public bool InventoryContains(Interactive requirement) => _playerInventory.Contains(requirement);
+    public bool InventoryContains(Interactive requirement) => 
+    _playerInventory.Contains(requirement);
+
+    public bool InventoryContains(Interactive interactive, out int slot) =>
+    _playerInventory.Contains(interactive,out slot);
+
+    public bool InventoryIsSelected(Interactive interactive) =>
+    _playerInventory.IsSelected(interactive);
 
     public void ChangePlayerPosition(Vector3 position)
     {
