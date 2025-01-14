@@ -44,11 +44,13 @@ public class UVLightOld : MonoBehaviour
 
         _lights = new Dictionary<Light, float>();
 
-        foreach(Light l in lights)
+        foreach(Light i in lights)
         {
-            if (l != _uvLight)
+            if (i == null) continue;
+
+            if (i != _uvLight)
             {
-                _lights[l] = l.intensity;
+                _lights[i] = i.intensity;
             }
         }
 
@@ -132,6 +134,8 @@ public class UVLightOld : MonoBehaviour
     {
         foreach(Light light in _lights.Keys)
         {
+            if (light == null) continue;
+
             if (trueOrFalse)
                 light.intensity = _lights[light] * 0.35f;
             else
