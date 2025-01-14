@@ -2084,7 +2084,14 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.016666668
+  - time: 0.48333332
+    functionName: PlayThisSound
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 4fb2947b82b7dc44194bcdd77a3c117b, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
     functionName: GiveItemToPlayer
     data: 
     objectReferenceParameter: {fileID: 0}

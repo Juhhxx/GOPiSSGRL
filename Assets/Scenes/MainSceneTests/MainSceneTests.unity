@@ -6876,6 +6876,10 @@ PrefabInstance:
       propertyPath: '_itemPrefab.Array.data[0]'
       value: 
       objectReference: {fileID: 1670480747}
+    - target: {fileID: 2407013379625914301, guid: b1b2c6e90af1ad147b3f3e380ef92cb7, type: 3}
+      propertyPath: _volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3963874626759610366, guid: b1b2c6e90af1ad147b3f3e380ef92cb7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -9115,6 +9119,10 @@ PrefabInstance:
       propertyPath: '_itemPrefab.Array.data[0]'
       value: 
       objectReference: {fileID: 391238673}
+    - target: {fileID: 2407013379625914301, guid: b1b2c6e90af1ad147b3f3e380ef92cb7, type: 3}
+      propertyPath: _volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3963874626759610366, guid: b1b2c6e90af1ad147b3f3e380ef92cb7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -14882,6 +14890,10 @@ PrefabInstance:
       propertyPath: '_itemPrefab.Array.data[0]'
       value: 
       objectReference: {fileID: 910309732}
+    - target: {fileID: 2407013379625914301, guid: b1b2c6e90af1ad147b3f3e380ef92cb7, type: 3}
+      propertyPath: _volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3963874626759610366, guid: b1b2c6e90af1ad147b3f3e380ef92cb7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -17979,6 +17991,10 @@ PrefabInstance:
       propertyPath: '_itemPrefab.Array.data[0]'
       value: 
       objectReference: {fileID: 1078956178}
+    - target: {fileID: 2407013379625914301, guid: b1b2c6e90af1ad147b3f3e380ef92cb7, type: 3}
+      propertyPath: _volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4490522552082893936, guid: b1b2c6e90af1ad147b3f3e380ef92cb7, type: 3}
       propertyPath: m_Name
       value: Soda Can (1)
