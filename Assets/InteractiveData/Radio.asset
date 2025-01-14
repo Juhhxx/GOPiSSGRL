@@ -21,5 +21,5 @@ MonoBehaviour:
   deleteRequirementsOnUse: 0
   requirementsMessage: Radio's playing a dirty beat
   interactionMessages: []
-  activatesUI: 0
+  pickUpSound: {fileID: 8300000, guid: 46eb94b86375bd347b285cf85e2c4a8d, type: 3}
   holdingObject: {fileID: 5072748983818107920, guid: 34d60e3d05eed70498e86aa3ec051a4e, type: 3}
