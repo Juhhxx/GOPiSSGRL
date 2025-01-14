@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f39b48bd6755ff42a38103a1f9ff0f5, type: 3}
   m_Name: MorningScene
   m_EditorClassIdentifier: 
-  LightingSettings: {fileID: 4890085278179872738, guid: 98ee975b74776234986f4d35f14c4ccc, type: 2}
-  SkyboxMaterial: {fileID: 2100000, guid: c82a334cf5a5e47978749c210cee72a7, type: 2}
+  SkyboxMaterial: {fileID: 2100000, guid: bcaf6512a50a73c4382b35a25006a2d1, type: 2}
   FogEnabled: 1
   FogMode: 3
-  FogColor: {r: 0.23529412, g: 0.047058824, b: 0.05882353, a: 0}
-  FogDensity: 0.08
+  FogColor: {r: 0.25992346, g: 0.35197392, b: 0.5566038, a: 0}
+  FogDensity: 0.03

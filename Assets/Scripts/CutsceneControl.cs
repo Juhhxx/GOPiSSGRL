@@ -8,39 +8,55 @@ public class CutsceneControl : MonoBehaviour
     [SerializeField] private SecurityCameraSwitcher _cameraSwitcher;
     [SerializeField] private Animator _animator;
     [SerializeField] private LightingControl _lightingControl;
+
     [SerializeField] private GameObject _baseScene;
     [SerializeField] private LightingPresets _basePreset;
+
     [SerializeField] private GameObject _demonScene;
     [SerializeField] private LightingPresets _demonPreset;
+
+    [SerializeField] private GameObject _postScene;
+    [SerializeField] private LightingPresets _postPreset;
+
     [SerializeField] private GameObject _endScene;
     [SerializeField] private LightingPresets _endPreset;
+
     [SerializeField] private Transform _newPlayerPosition;
     [SerializeField] private Transform _newPlayerDirection;
 
     [SerializeField] private Transform _endPlayerPosition;
 
     [SerializeField] private GameObject _demonObject;
+
     [SerializeField] private PlayableDirector _timeline;
     [SerializeField] private TimelineAsset _demonTimeline;
     [SerializeField] private TimelineAsset _endTimeline;
+
+
     [SerializeField] private Animator _pissyMissy;
     private PlayerBehaviorControl _playerBehaviorControl;
 
+    [SerializeField] private GameObject _finnishUI;
+    [SerializeField] private GameObject _pauseUI;
+    [SerializeField] private GameObject[] _disablePlayerView;
 
-    [SerializeField] private ParticleSystem _disableParticles;
-    [SerializeField] private ConeRotation _disableRotation;
 
-
+    private void Awake()
+    {
+        _timeline.playableAsset = null;
+    }
     private void Start()
     {
 
         _playerBehaviorControl = FindFirstObjectByType<PlayerBehaviorControl>();
         _demonObject.SetActive(false);
         _demonScene.SetActive(false);
+        _postScene.SetActive(false);
+        _endScene.SetActive(false);
+
+        _baseScene.SetActive(true);
 
         _lightingControl.ChangeLighting(_basePreset);
-
-        _timeline.playableAsset = null;
     }
 
     public void AwakeDemon()
@@ -107,18 +123,13 @@ public class CutsceneControl : MonoBehaviour
         _pissyMissy.SetTrigger("Scare");
     }
 
-    public void PlayerDie()
-    {
-        _pissyMissy.SetTrigger("Die");
-    }
-
     public void UnSummonDemon()
     {
         Debug.Log("unsommoning circle");
         _animator.SetTrigger("Circle");
 
-        _disableParticles.Stop();
-        _disableRotation.enabled = false;
+        StartCoroutine(
+                StartSceneSwitch(_demonScene, _demonPreset, _postScene));
     }
 
     private void ShakeSecurityCam(float time)
@@ -132,15 +143,50 @@ public class CutsceneControl : MonoBehaviour
     public void StartEndCutscene()
     {
         _playerBehaviorControl.EnableDisablePlayer(false);
-        _playerBehaviorControl.ChangePlayerPosition(_endPlayerPosition.position);
-
-        _lightingControl.ChangeLighting(_endPreset);
-
-        _demonScene.SetActive(false);
-        _endScene.SetActive(true);
 
         _timeline.playableAsset = _endTimeline;
         _timeline.Play();
+    }
+
+    public void SwitchEndScene()
+    {
+        _lightingControl.ChangeLighting(_endPreset);
+
+        _endScene.SetActive(true);
+        _baseScene.SetActive(false);
+        _demonScene.SetActive(false);
+        _postScene.SetActive(false);
+
+        foreach(GameObject go in _disablePlayerView)
+        {
+            go.SetActive(false);
+        }
+
+        _playerBehaviorControl.ChangePlayerPosition(_endPlayerPosition.position);
+        _pissyMissy.SetTrigger("Die");
+    }
+
+    public void SwitchCam1()
+    {
+        _cameraSwitcher.SwitchSecurityCamera(0, false);
+    }
+
+    public void SwitchCam2()
+    {
+        _cameraSwitcher.SwitchSecurityCamera(1, false);
+    }
+
+    public void SwitchCam3()
+    {
+        _cameraSwitcher.SwitchSecurityCamera(2, false);
+    }
+
+    public void EndGame()
+    {
+        _finnishUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        _pauseUI.SetActive(false);
+        _finnishUI.SetActive(true);
     }
 
     public void Pause(bool pauseOrNot)
