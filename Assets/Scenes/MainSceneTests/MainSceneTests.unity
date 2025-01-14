@@ -3739,6 +3739,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1188219039}
+    - target: {fileID: 5126876432072957139, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: m_Range
+      value: 178.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126876432072957139, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
+      propertyPath: m_Intensity
+      value: 151.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5725930287305337685, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: '_itemPrefabs.Array.data[0]'
       value: 
@@ -3751,22 +3759,10 @@ PrefabInstance:
       propertyPath: '_itemPrefabs.Array.data[2]'
       value: 
       objectReference: {fileID: 243975823}
-    - target: {fileID: 5940842656230569889, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
-      propertyPath: m_RenderingLayers
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6034252109690154704, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
-      propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[4]'
-      value: I CRAVE A TASTY COLORFUL TREAT !
-      objectReference: {fileID: 0}
     - target: {fileID: 7292719238497966714, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: '_itemPrefab.Array.data[0]'
       value: 
       objectReference: {fileID: 1030488216}
-    - target: {fileID: 8053000707414377658, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
-      propertyPath: m_RenderingLayerMask
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8950911561876532059, guid: 2142789fc64db3646a8d32b46f6a708a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.25
@@ -9295,7 +9291,7 @@ MonoBehaviour:
   priority: 1
   blendDistance: 0
   weight: 0
-  sharedProfile: {fileID: 11400000, guid: 325a7a605b1b30648aea9eb641f2b677, type: 2}
+  sharedProfile: {fileID: 11400000, guid: f192bd26fe540074bbe1b2b5933e3d18, type: 2}
 --- !u!95 &1296525250
 Animator:
   serializedVersion: 7

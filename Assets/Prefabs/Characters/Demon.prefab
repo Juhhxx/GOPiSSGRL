@@ -173,7 +173,6 @@ Transform:
   - {fileID: 2705512392790416992}
   - {fileID: 497938310963606314}
   - {fileID: 8427146585878743622}
-  - {fileID: 8382716158458073638}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6034252109690154704
@@ -196,7 +195,7 @@ MonoBehaviour:
       - YOU NEED TO GET TO THE BATHROOM ?
       - FOR ME TO HELP WITH YOUR QUEST ,\nYOU MUST FIRST MEET MY REQUEST !
       - MY FIERY REALM IS SCORCHING HOT ,\nBEYOND ALL HUMAN GRIEF .
-      - I CRAVE A FROZEN TREAT !
+      - I CRAVE A TASTY COLORFUL TREAT !
   - characterDialogs:
     - characterID: 1
       dialogLines:
@@ -325,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _correctCombination: 00000000010000000300000002000000
   _mainAnimator: {fileID: 7322583586691402081}
+  _cutsceneControl: {fileID: 0}
   _correctSpeech: {fileID: 5600788499183063828}
   _wrongSpeech: {fileID: 7870365593948039548}
 --- !u!114 &6675843043076270086
@@ -400,7 +400,7 @@ MonoBehaviour:
   _itemPrefabs:
   - {fileID: 0}
   - {fileID: 0}
---- !u!1 &7527562955508819751
+--- !u!1 &9209169904724784569
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,44 +408,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8382716158458073638}
-  - component: {fileID: 8053000707414377658}
-  - component: {fileID: 5940842656230569889}
+  - component: {fileID: 7275656467491956528}
+  - component: {fileID: 5126876432072957139}
+  - component: {fileID: 4305982419879613533}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8382716158458073638
+--- !u!4 &7275656467491956528
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7527562955508819751}
+  m_GameObject: {fileID: 9209169904724784569}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.037, z: -0.282}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.095, y: 0.51850814, z: 1.23}
+  m_LocalScale: {x: 0.7194244, y: 0.7194244, z: 0.7194244}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8950911561876532059}
+  m_Father: {fileID: 8427146585878743622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &8053000707414377658
+--- !u!108 &5126876432072957139
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7527562955508819751}
+  m_GameObject: {fileID: 9209169904724784569}
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.8862745, g: 0.08676908, b: 0.05490193, a: 1}
   m_Intensity: 30.3
-  m_Range: 26.5
+  m_Range: 39.32
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -482,7 +482,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 3
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
@@ -498,13 +498,13 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &5940842656230569889
+--- !u!114 &4305982419879613533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7527562955508819751}
+  m_GameObject: {fileID: 9209169904724784569}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
   m_LightLayerMask: 1
-  m_RenderingLayers: 1
+  m_RenderingLayers: 3
   m_CustomShadowLayers: 0
   m_ShadowLayerMask: 1
   m_ShadowRenderingLayers: 1
@@ -591,7 +591,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5bc1026a7d089584ba13a912377f6285, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7275656467491956528}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5bc1026a7d089584ba13a912377f6285, type: 3}
       insertIndex: -1
