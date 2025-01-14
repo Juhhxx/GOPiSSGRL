@@ -157,13 +157,16 @@ public class CutsceneControl : MonoBehaviour
         _demonScene.SetActive(false);
         _postScene.SetActive(false);
 
+        _playerBehaviorControl.ChangePlayerPosition(_endPlayerPosition.position);
+        _pissyMissy.SetTrigger("Die");
+    }
+
+    public void DisableUIs()
+    {
         foreach(GameObject go in _disablePlayerView)
         {
             go.SetActive(false);
         }
-
-        _playerBehaviorControl.ChangePlayerPosition(_endPlayerPosition.position);
-        _pissyMissy.SetTrigger("Die");
     }
 
     public void SwitchCam1()
