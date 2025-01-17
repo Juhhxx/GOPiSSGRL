@@ -71,6 +71,8 @@ public class UVLightOld : MonoBehaviour
         if (isOn)
         {
             Shader.SetGlobalFloat(_lightedID, 1);
+            if (_necroCollider != null)
+                _necroCollider.enabled = true;
         }
     }
 
@@ -137,7 +139,7 @@ public class UVLightOld : MonoBehaviour
             if (light == null) continue;
 
             if (trueOrFalse)
-                light.intensity = _lights[light] * 0.35f;
+                light.intensity = _lights[light] * 0.3f;
             else
                 light.intensity = _lights[light];
         }
