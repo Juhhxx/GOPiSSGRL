@@ -8,6 +8,9 @@ public class InitUVLight : MonoBehaviour
         if (necro != null)
             necro.GetComponent<Collider>().enabled = false;
 
-        Shader.SetGlobalFloat("_Lighted", 0);
+        UVLightOld initUv = GetComponentInChildren<UVLightOld>();
+
+        if (initUv != null)
+            Destroy(initUv.gameObject);
     }
 }

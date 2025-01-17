@@ -17,7 +17,7 @@ public class UVLightOld : MonoBehaviour
 
     private Dictionary<Light, float> _lights;
 
-    private void Start()
+    private void Awake()
     {
         _playerControl = FindFirstObjectByType<PlayerBehaviorControl>();
 
