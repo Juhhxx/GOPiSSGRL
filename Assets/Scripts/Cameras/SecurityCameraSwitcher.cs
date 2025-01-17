@@ -100,6 +100,7 @@ public class SecurityCameraSwitcher : MonoBehaviour
         TurnPlayer(true);
         _currentCamera = null;
 
+        StopCoroutine(_staticCoroutine);
         _static.SetActive(false);
     }
 
@@ -150,6 +151,7 @@ public class SecurityCameraSwitcher : MonoBehaviour
         }
 
         _static.SetActive(false);
+        _staticCoroutine = null;
     }
 
     /// <summary>
