@@ -5,10 +5,13 @@ public class GiveItem : MonoBehaviour
 {
     private PlayerInventory _playerInventory;
     [SerializeField] private List<GameObject> _itemPrefab;
+    [SerializeField] private AudioSource _audioSource;
 
     private void Awake()
     {
         _playerInventory = FindFirstObjectByType<PlayerInventory>();
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void GiveItemToPlayer()
@@ -21,6 +24,10 @@ public class GiveItem : MonoBehaviour
             {
                 Debug.Log($"{gameObject.name} is giving item");
                 _playerInventory.Add(itemInteractive);
+
+                if (_audioSource == null) continue;
+                _audioSource.clip = itemInteractive.interactiveData.pickUpSound;
+                _audioSource.Play();
             }
         }
     }
