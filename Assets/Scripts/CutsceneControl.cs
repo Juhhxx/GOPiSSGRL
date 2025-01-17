@@ -60,7 +60,7 @@ public class CutsceneControl : MonoBehaviour
         _cameraSwitcher.SwitchSecurityCamera(2, false);
         _cameraSwitcher.SwitchToPlayerCamera();
 
-        // _lightingControl.ChangeLighting(_basePreset);
+        _lightingControl.ChangeLighting(_basePreset);
     }
 
     public void AwakeDemon()
