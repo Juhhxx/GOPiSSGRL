@@ -15,7 +15,7 @@ public class SecurityCameraSwitcher : MonoBehaviour
     private GameObject _currentCamera;
     private int _currentIndex = -1;
 
-    [SerializeField] private Image _static;
+    [SerializeField] private GameObject _static;
 
     private void Start()
     {
@@ -100,8 +100,11 @@ public class SecurityCameraSwitcher : MonoBehaviour
         TurnPlayer(true);
         _currentCamera = null;
 
-        _static.enabled = false;
+        _static.SetActive(false);
     }
+
+
+    private Coroutine _staticCoroutine;
 
     public void SwitchSecurityCamera(int index, bool keepStatic = true)
     {
@@ -122,9 +125,13 @@ public class SecurityCameraSwitcher : MonoBehaviour
         _currentIndex = index;
 
         if (keepStatic)
-            _static.enabled = true;
+            _static.SetActive(true);
         else
-            StartCoroutine(StartStatic());
+        {
+            if (_staticCoroutine != null)
+                StopCoroutine(_staticCoroutine);
+            _staticCoroutine = StartCoroutine(StartStatic());
+        }
     }
 
     private IEnumerator StartStatic()
@@ -135,14 +142,14 @@ public class SecurityCameraSwitcher : MonoBehaviour
 
         while (passedTime < 0.18f)
         {
-            _static.enabled = !_static.enabled;
+            _static.SetActive( !_static.activeSelf);
 
             passedTime += Time.deltaTime;
 
             yield return new WaitForSeconds(0.22f - passedTime);
         }
 
-        _static.enabled = false;
+        _static.SetActive(false);
     }
 
     /// <summary>
