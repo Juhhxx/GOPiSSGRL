@@ -2120,6 +2120,10 @@ PrefabInstance:
       propertyPath: '_slushieButtons.Array.data[3]'
       value: 
       objectReference: {fileID: 782505839}
+    - target: {fileID: 8956288736053532627, guid: 7c24dcd1dea48b44b91281f4ab41758d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
