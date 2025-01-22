@@ -28,7 +28,9 @@ public class PlayerBehaviorControl : MonoBehaviour
             _playerInteraction.enabled = falseOrTrue;
             _playerInventory.enabled = falseOrTrue;
             _inventoryUI.SetActive(falseOrTrue);
-            _interactionPanel.SetActive(falseOrTrue);
+
+            _playerInteraction.ClearCurrentInteractive();
+            
             _disabledNumber = 0;
         }
 
