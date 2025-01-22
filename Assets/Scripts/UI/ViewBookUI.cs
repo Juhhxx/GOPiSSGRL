@@ -25,8 +25,12 @@ public class ViewBookUI : MonoBehaviour
         _playerControl = FindFirstObjectByType<PlayerBehaviorControl>();
 
         _uiObject = Instantiate(_viewUI);
+        
+        Canvas canvas = _uiObject.GetComponentInChildren<Canvas>();
+        canvas.worldCamera = FindFirstObjectByType<TagUICamera>().GetComponent<Camera>();
+        canvas.planeDistance = 1f;
 
-        _pause.AddRemoveUIToCheck(_uiObject.GetComponentInChildren<Canvas>().gameObject, true);
+        _pause.AddRemoveUIToCheck(_uiObject, true);
 
         Image uiImage = _uiObject.GetComponentInChildren<Image>();
         Rect textureRect = new Rect(0f,0f,_bookTexture.width,_bookTexture.height);
