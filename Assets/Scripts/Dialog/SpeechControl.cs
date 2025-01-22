@@ -170,6 +170,9 @@ public class SpeechControl : MonoBehaviour
 
             if (wasPaused)
             {
+                yield return _waitUntilNotPaused;
+                yield return _waitForEndOfFrame;
+
                 yield return _waitUntilOrDisplayed;
                 yield return _waitForEndOfFrame;
             }
