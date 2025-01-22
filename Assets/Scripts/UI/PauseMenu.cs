@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private SecurityCameraSwitcher _cameraSwitcher;
     [SerializeField] private PlayerBehaviorControl _playerBehaviorControl;
     [SerializeField] private CutsceneControl _cutsceneControl;
-    [SerializeField] private List<Canvas> _uiToCheck;
+    [SerializeField] private List<GameObject> _uiToCheck;
     private List<bool> _uiSetting;
     private int _lastCameraIndex = -1;
     private void Start()
@@ -105,7 +105,7 @@ public class PauseMenu : MonoBehaviour
             _uiToCheck[i].gameObject.SetActive(_uiSetting[i]);
         }
     }
-    public void AddRemoveUIToCheck(Canvas ui, bool addOrRemove)
+    public void AddRemoveUIToCheck(GameObject ui, bool addOrRemove)
     {
         if (ui == null) return;
 

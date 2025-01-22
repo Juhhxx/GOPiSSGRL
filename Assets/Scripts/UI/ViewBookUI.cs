@@ -26,7 +26,7 @@ public class ViewBookUI : MonoBehaviour
 
         _uiObject = Instantiate(_viewUI);
 
-        _pause.AddRemoveUIToCheck(_uiObject.GetComponentInChildren<Canvas>(), true);
+        _pause.AddRemoveUIToCheck(_uiObject.GetComponentInChildren<Canvas>().gameObject, true);
 
         Image uiImage = _uiObject.GetComponentInChildren<Image>();
         Rect textureRect = new Rect(0f,0f,_bookTexture.width,_bookTexture.height);
@@ -73,7 +73,7 @@ public class ViewBookUI : MonoBehaviour
     {
         if (_uiObject == null) return;
 
-        _pause.AddRemoveUIToCheck(_uiObject.GetComponentInChildren<Canvas>(), false);
+        _pause.AddRemoveUIToCheck(_uiObject.GetComponentInChildren<Canvas>().gameObject, false);
 
         if ( _uiObject.activeSelf )
         {

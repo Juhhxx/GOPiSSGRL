@@ -8609,6 +8609,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc27456ac2fd23e45976cbf06d13dc75, type: 3}
+--- !u!1 &1092585188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 713719640852122799, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}
+  m_PrefabInstance: {fileID: 254100484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1098904271
 GameObject:
   m_ObjectHideFlags: 0
@@ -15570,11 +15575,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3917446654255766363, guid: b2ce0929744ec6a47a0fbdd9bd725b07, type: 3}
   m_PrefabInstance: {fileID: 8642127907823769095}
   m_PrefabAsset: {fileID: 0}
---- !u!223 &1738719959435227813 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 6519129439296659000, guid: b2ce0929744ec6a47a0fbdd9bd725b07, type: 3}
-  m_PrefabInstance: {fileID: 8642127907823769095}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1738719959435227814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18437,13 +18437,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 642313093}
     - target: {fileID: 7305888715549975103, guid: b9582afc0f23789448181cbd45717786, type: 3}
+      propertyPath: _uiToCheck.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305888715549975103, guid: b9582afc0f23789448181cbd45717786, type: 3}
       propertyPath: _playerBehaviorControl
       value: 
       objectReference: {fileID: 1188219040}
     - target: {fileID: 7305888715549975103, guid: b9582afc0f23789448181cbd45717786, type: 3}
       propertyPath: '_uiToCheck.Array.data[0]'
       value: 
-      objectReference: {fileID: 1738719959435227813}
+      objectReference: {fileID: 1738719959435227808}
+    - target: {fileID: 7305888715549975103, guid: b9582afc0f23789448181cbd45717786, type: 3}
+      propertyPath: '_uiToCheck.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1092585188}
     - target: {fileID: 7774871169728462314, guid: b9582afc0f23789448181cbd45717786, type: 3}
       propertyPath: m_Name
       value: Pause Canvas

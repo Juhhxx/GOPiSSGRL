@@ -187,15 +187,22 @@ public class SpeechControl : MonoBehaviour
             }
 
             yield return _waitUntil;
+            Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
 
             wasPaused = Paused;
 
             yield return _waitForEndOfFrame;
+            Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
 
             if (wasPaused)
             {
-                yield return _waitUntil;
+                yield return _waitUntilNotPaused;
                 yield return _waitForEndOfFrame;
+
+                yield return _waitUntil;
+                Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
+                yield return _waitForEndOfFrame;
+                Debug.Log("paus: " + Paused + "   mous: " + Input.GetButtonDown("Talk") + "   time: " + Time.time);
             }
 
             if (dialogQueue.Count > 1)

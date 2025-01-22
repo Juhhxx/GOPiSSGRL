@@ -102,5 +102,7 @@ public class PlayerBehaviorControl : MonoBehaviour
         }
         else
             _speechControl.Paused = true;
+
+        Debug.Log("speech control pause is " + _speechControl.Paused);
     }
 }
