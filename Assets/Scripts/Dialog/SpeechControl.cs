@@ -5,14 +5,12 @@ using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
 
 public class SpeechControl : MonoBehaviour
 {
     [SerializeField] private GameObject _dialogUI;
     [SerializeField] private TMP_Text _dialogText;
     [SerializeField] private float _typingSpeed = 0.05f;
-    [SerializeField] private GameObject _inventoryUI;
 
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioMixer _audioMixer;
@@ -80,8 +78,6 @@ public class SpeechControl : MonoBehaviour
     {
         if (_dialogCoroutine != null)
             return null;
-        
-        // _inventoryUI.SetActive(false);
 
         _playerControl.EnableDisablePlayer(false);
 
@@ -289,7 +285,6 @@ public class SpeechControl : MonoBehaviour
     private void EndDialog()
     {
         _dialogUI.SetActive(false);
-        // _inventoryUI.SetActive(true);
 
         _playerControl.EnableDisablePlayer(true);
 
