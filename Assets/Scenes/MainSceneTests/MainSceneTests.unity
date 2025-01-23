@@ -1791,7 +1791,17 @@ PrefabInstance:
       objectReference: {fileID: 1967811085}
     - target: {fileID: 8788129303869717857, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}
       propertyPath: m_text
-      value: highlighted text - Dialog will show here
+      value: 'highlighted text - Dialog will show here
+
+        oooooooooadsDADASDAWAS'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788129303869717857, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}
+      propertyPath: m_lineSpacing
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788129303869717857, guid: 8e384f25ad2d2454f8ef6840aa9e5c2a, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

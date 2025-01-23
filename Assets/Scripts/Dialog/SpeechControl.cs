@@ -155,7 +155,7 @@ public class SpeechControl : MonoBehaviour
 
             ClearStringBuilder(name);
 
-            _dialogText.text = _stringBuilder.ToString();
+            // _dialogText.text = _stringBuilder.ToString();
             dialogToShow = dialogQueue.Peek();
 
             _typingCoroutine = StartCoroutine(BeginTyping(dialogToShow, sound));
@@ -240,29 +240,55 @@ public class SpeechControl : MonoBehaviour
     /// <returns></returns>
     private IEnumerator BeginTyping(string dialogToShow, AudioClip sound)
     {
-        foreach (char letter in dialogToShow)
+        string currentText = _stringBuilder.ToString();
+        int currentLength = currentText.Length;
+
+        string fullDialog = currentText + dialogToShow;
+
+        // Create an array to track visibility for each character in the final string
+        bool[] isVisible = new bool[fullDialog.Length];
+        for (int i = 0; i < currentLength; i++)
+            isVisible[i] = true; // Mark pre-existing text as already visible
+
+        for (int i = currentLength; i < fullDialog.Length; i++)
         {
-            // dont play if pause menu is on
+            // Wait if the game is paused
             yield return _waitUntilNotPaused;
 
-            _stringBuilder.Append(letter);
+            // Reveal the current letter
+            isVisible[i] = true;
+
+            // Build the visible text progressively
+            _stringBuilder.Clear();
+            for (int j = 0; j < fullDialog.Length; j++)
+            {
+                if (fullDialog[j] == '\\' && fullDialog[j + 1] == 'n')
+                {
+                    _stringBuilder.Append('\n');
+                }
+                else if (isVisible[j] && (j == 0 || fullDialog[j - 1] != '\\'))
+                    _stringBuilder.Append(fullDialog[j]);
+                else
+                {
+                    _stringBuilder.Append("<color=#00000000>")
+                                .Append(fullDialog[j])
+                                .Append("</color>");
+                }
+            }
+
             _dialogText.text = _stringBuilder.ToString();
 
-            if (letter == '\\')
-                continue;
+            // Skip certain characters and handle sound effects
+            if (fullDialog[i] == '\\') continue;
 
-            if (IsNotAllowed(letter))
-                // it waits double time on non letters
-                yield return _waitForTypingSpeed;
+            if (IsNotAllowed(fullDialog[i]))
+            {
+                yield return _waitForTypingSpeed; // Double wait for non-letters (kawaii)
+            }
             else if (sound != null)
             {
-                // Debug.Log("Sound is not null and letter isnt white or pressed talk");
-                _audioMixer.SetFloat(_pitchID,
-                    (float) UnityEngine.Random.Range(_pitchRange.x, _pitchRange.y));
+                _audioMixer.SetFloat(_pitchID, Random.Range(_pitchRange.x, _pitchRange.y));
                 _audioSource.PlayOneShot(sound);
-                /*float f;
-                _audioMixer.GetFloat(_pitchID, out f);
-                Debug.Log("Pitch is: " + f);*/
             }
 
             yield return _waitForTypingSpeed;
