@@ -42,8 +42,9 @@ public class ViewBookUI : MonoBehaviour
 
     private void Update()
     {
-        // if ( ! _playerControl.CanInteract() ) return;
 
+        // Debug.Log(_playerControl.CanInteractItems());
+        // Debug.Log(_playerControl.CanInteract());
         if (Input.GetButtonDown("Interact") && _playerControl.CanInteractItems())
         {
             if (!_uiObject.activeSelf)

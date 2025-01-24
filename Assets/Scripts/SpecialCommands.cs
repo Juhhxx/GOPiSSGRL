@@ -21,10 +21,12 @@ public class SpecialCommands : MonoBehaviour
         _chalkPoints = FindObjectsByType<ChalkDrawingPoint>(0);
         _slushieCup = FindFirstObjectByType<SlushieCup>();
     }
+    #if UNITY_EDITOR
     private void Update()
     {
         Cheats();
     }
+    #endif
     private void Cheats()
     {   
         if (Input.GetKey(KeyCode.Z))

@@ -11131,6 +11131,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2064826685155883090, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: _uiManager
+      value: 
+      objectReference: {fileID: 1401897910}
+    - target: {fileID: 2064826685155883090, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: _inventoryUI
       value: 
       objectReference: {fileID: 891945278}

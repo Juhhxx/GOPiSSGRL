@@ -54,12 +54,14 @@ public class PlayerInteraction : MonoBehaviour
 
     public void ClearCurrentInteractive()
     {
+        // Debug.Log("nulled interactive");
         _currentInteractive = null;
         _uiManager.HideInteractionPanel();
     }
 
     private void SetCurrentInteractive(Interactive interactive)
     {
+        // Debug.Log("set interactive");
         _currentInteractive         = interactive;
         _refreshCurrentInteractive  = false;
 

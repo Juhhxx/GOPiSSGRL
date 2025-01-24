@@ -9,7 +9,13 @@ public class PlayerBehaviorControl : MonoBehaviour
     [SerializeField] private GameObject _inventoryUI;
     [SerializeField] private GameObject _interactionPanel;
     [SerializeField] private SpeechControl _speechControl;
+    private UIManager _uiManager;
     private int _disabledNumber = 0;
+
+    private void Start()
+    {
+        _uiManager = _inventoryUI.GetComponent<UIManager>();
+    }
 
     public void EnableDisablePlayer(bool falseOrTrue)
     {
@@ -29,7 +35,9 @@ public class PlayerBehaviorControl : MonoBehaviour
             _playerInventory.enabled = falseOrTrue;
             _inventoryUI.SetActive(falseOrTrue);
 
-            _playerInteraction.ClearCurrentInteractive();
+            // Bug in speech needs interaction to be off, and bug in view book needs current interactive to not be null, so this is how we are gonna do it
+            // _playerInteraction.ClearCurrentInteractive();
+            _uiManager.HideInteractionPanel();
             
             _disabledNumber = 0;
         }
