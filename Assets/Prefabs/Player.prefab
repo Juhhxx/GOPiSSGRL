@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1063256970958461126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7268867402082372851}
+  m_Layer: 0
+  m_Name: HoldingAnimator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7268867402082372851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063256970958461126}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9095215296538507944}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1283671582116311622
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +43,6 @@ GameObject:
   - component: {fileID: 1396375226764982198}
   - component: {fileID: 6433188247124631369}
   - component: {fileID: 5133805531466037624}
-  - component: {fileID: 5135735895438537503}
   m_Layer: 0
   m_Name: Head
   m_TagString: MainCamera
@@ -45,7 +75,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283671582116311622}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -96,7 +126,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283671582116311622}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &5133805531466037624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,22 +173,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &5135735895438537503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283671582116311622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EventMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_MaxRayIntersections: 0
 --- !u!1 &3550453968941236527
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +332,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7268867402082372851}
   m_Father: {fileID: 117518014794013450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &5075372789813321252
@@ -328,7 +343,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3988790047952159049}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -440,6 +455,7 @@ GameObject:
   - component: {fileID: 2210687395888936441}
   - component: {fileID: 4501629409349251277}
   - component: {fileID: 3452498786944425507}
+  - component: {fileID: 6438405998794512929}
   m_Layer: 0
   m_Name: UI Camera
   m_TagString: Untagged
@@ -469,7 +485,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6114414182394664073}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -567,6 +583,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9932ac6cf5f173d4f9b9bb9809168f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6438405998794512929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6114414182394664073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c556d40e2653e2a4cad42dec32fa0ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8602676614936545698
@@ -678,6 +706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiManager: {fileID: 0}
   _holdingCamera: {fileID: 5075372789813321252}
+  _holdingAnimator: {fileID: 0}
 --- !u!114 &2064826685155883090
 MonoBehaviour:
   m_ObjectHideFlags: 0

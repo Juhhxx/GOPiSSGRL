@@ -6,6 +6,7 @@ public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private UIManager _uiManager;
     [SerializeField] private Camera _holdingCamera;
+    [SerializeField] private Animator _holdingAnimator;
 
     private PlayerInteraction   _playerInteraction;
     private List<Interactive>   _inventory;
@@ -78,6 +79,8 @@ public class PlayerInventory : MonoBehaviour
             _selectedSlotIndex = index;
 
         _uiManager.SelectInventorySlot(_selectedSlotIndex);
+        
+        _holdingAnimator.SetTrigger("Grab");
 
         
         if (_currentHoldingObject != null)
@@ -88,7 +91,7 @@ public class PlayerInventory : MonoBehaviour
         if (_selectedSlotIndex != -1)
         {
             if (_inventory[_selectedSlotIndex].holdingObject != null)
-                _currentHoldingObject = Instantiate(_inventory[_selectedSlotIndex].holdingObject,_holdingCamera.transform);
+                _currentHoldingObject = Instantiate(_inventory[_selectedSlotIndex].holdingObject,_holdingCamera.transform.GetChild(0));
         }
         
         _playerInteraction.RefreshCurrentInteractive();

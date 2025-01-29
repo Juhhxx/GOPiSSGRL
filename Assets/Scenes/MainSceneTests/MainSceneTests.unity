@@ -10925,23 +10925,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428366102}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1439060728 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6114414182394664073, guid: f13e948752912db47912b897752824ee, type: 3}
-  m_PrefabInstance: {fileID: 1458801444}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1439060732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439060728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c556d40e2653e2a4cad42dec32fa0ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1443652436
 GameObject:
   m_ObjectHideFlags: 0
@@ -11128,12 +11111,8 @@ PrefabInstance:
       objectReference: {fileID: 1401897910}
     - target: {fileID: 1396375226764982198, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2064826685155883090, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: _uiManager
-      value: 
-      objectReference: {fileID: 1401897910}
     - target: {fileID: 2064826685155883090, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: _inventoryUI
       value: 
@@ -11148,7 +11127,7 @@ PrefabInstance:
       objectReference: {fileID: 1030104021}
     - target: {fileID: 2210687395888936441, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2350312957828698397, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11190,51 +11169,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3550453968941236527, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3743064849333952974, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3988790047952159049, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5075372789813321252, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6433188247124631369, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508144568658210477, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_Dithering
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508144568658210477, guid: f13e948752912db47912b897752824ee, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7437518743940774994, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: _uiManager
       value: 
       objectReference: {fileID: 1401897910}
+    - target: {fileID: 7437518743940774994, guid: f13e948752912db47912b897752824ee, type: 3}
+      propertyPath: _holdingAnimator
+      value: 
+      objectReference: {fileID: 1458801446}
     - target: {fileID: 8602676614936545698, guid: f13e948752912db47912b897752824ee, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5135735895438537503, guid: f13e948752912db47912b897752824ee, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6114414182394664073, guid: f13e948752912db47912b897752824ee, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 1063256970958461126, guid: f13e948752912db47912b897752824ee, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1439060732}
+      addedObject: {fileID: 1458801446}
   m_SourcePrefab: {fileID: 100100000, guid: f13e948752912db47912b897752824ee, type: 3}
+--- !u!1 &1458801445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1063256970958461126, guid: f13e948752912db47912b897752824ee, type: 3}
+  m_PrefabInstance: {fileID: 1458801444}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1458801446
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458801445}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc32953591c6cfc48ad1585bf07b470a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1469321770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2350896134883915775, guid: b2ce0929744ec6a47a0fbdd9bd725b07, type: 3}
@@ -13042,11 +13027,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7543734774499583045, guid: 1a39a51affed5cd43bc97b1f70b2e7c8, type: 3}
       propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[0]'
-      value: Okay, okay, I get it.\nThe leg.
+      value: Okay, okay, I get it.\nI have to use the leg.
       objectReference: {fileID: 0}
     - target: {fileID: 7543734774499583045, guid: 1a39a51affed5cd43bc97b1f70b2e7c8, type: 3}
       propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[1]'
-      value: I do not want to face whatever horros\nhappened to this guy.
+      value: I do not want to face whatever horrors\nhappened to this guy.
       objectReference: {fileID: 0}
     - target: {fileID: 7543734774499583045, guid: 1a39a51affed5cd43bc97b1f70b2e7c8, type: 3}
       propertyPath: '_dialogList.Array.data[0].characterDialogs.Array.data[0].dialogLines.Array.data[2]'
