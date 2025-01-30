@@ -27,8 +27,9 @@ public class ViewBookUI : MonoBehaviour
         _uiObject = Instantiate(_viewUI);
         
         Canvas canvas = _uiObject.GetComponentInChildren<Canvas>();
-        // canvas.worldCamera = FindFirstObjectByType<TagUICamera>().GetComponent<Camera>();
-        // canvas.planeDistance = 1f;
+
+        canvas.worldCamera = FindFirstObjectByType<TagUICamera>().GetComponent<Camera>();
+        canvas.planeDistance = 1f;
 
         _pause.AddRemoveUIToCheck(_uiObject, true);
 
