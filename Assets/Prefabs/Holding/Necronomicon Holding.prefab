@@ -103,6 +103,7 @@ MonoBehaviour:
   _viewUI: {fileID: 8690401023422727191, guid: 3dd9863adcfc6e2499a2b9e85ca14ba9, type: 3}
   _openSound: {fileID: 8300000, guid: 6a8e158bb06482541892004e82047d62, type: 3}
   _closeSound: {fileID: 8300000, guid: e41d06cb55edf5445bcc4989a662e107, type: 3}
+  _bookTexture: {fileID: 2800000, guid: 451cd45683a1df1478287109702e3850, type: 3}
 --- !u!82 &-5108559181814815849
 AudioSource:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class ViewBookUI : MonoBehaviour
     [SerializeField] GameObject _viewUI;
     [SerializeField] AudioClip _openSound;
     [SerializeField] AudioClip _closeSound;
-    private Texture2D _bookTexture;
+    [SerializeField] private Texture2D _bookTexture;
     private PlayerBehaviorControl _playerControl;
     private AudioSource _audioSource;
     private GameObject _uiObject;
@@ -25,18 +25,22 @@ public class ViewBookUI : MonoBehaviour
         _playerControl = FindFirstObjectByType<PlayerBehaviorControl>();
 
         _uiObject = Instantiate(_viewUI);
-        
-        Canvas canvas = _uiObject.GetComponentInChildren<Canvas>();
-
-        canvas.worldCamera = FindFirstObjectByType<TagUICamera>().GetComponent<Camera>();
-        canvas.planeDistance = 1f;
 
         _pause.AddRemoveUIToCheck(_uiObject, true);
 
-        Image uiImage = _uiObject.GetComponentInChildren<Image>();
-        Rect textureRect = new Rect(0f,0f,_bookTexture.width,_bookTexture.height);
-        Sprite bookSprite = Sprite.Create(_bookTexture,textureRect,Vector2.zero);
-        uiImage.sprite = bookSprite;
+        // Image uiImage = _uiObject.GetComponentInChildren<Image>();
+        // Rect textureRect = new Rect(0f,0f,_bookTexture.width,_bookTexture.height);
+        // Sprite bookSprite = Sprite.Create(_bookTexture,textureRect,Vector2.zero);
+        // uiImage.sprite = bookSprite;
+
+        _uiObject.GetComponentInChildren<RawImage>().texture = _bookTexture;
+
+        Canvas canvas = _uiObject.GetComponentInChildren<Canvas>();
+
+        canvas.pixelPerfect = true;
+
+        // canvas.worldCamera = FindFirstObjectByType<TagUICamera>().GetComponent<Camera>();
+        // canvas.planeDistance = 1f;
 
         _uiObject.SetActive(false);
     }

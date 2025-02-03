@@ -89,6 +89,15 @@ public class SecurityCameraSwitcher : MonoBehaviour
         }
     }
 
+    public void TurnOffForEnd()
+    {
+        TurnPlayer(false);
+        foreach(GameObject cam in _securityCameras)
+        {
+            cam.SetActive(false);
+        }
+    }
+
     public void SwitchToPlayerCamera()
     {
         if (_currentCamera != null)

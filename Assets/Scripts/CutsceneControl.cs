@@ -172,6 +172,10 @@ public class CutsceneControl : MonoBehaviour
             go.SetActive(false);
         }
     }
+    public void DisablePlayer()
+    {
+        _cameraSwitcher.TurnOffForEnd();
+    }
 
     public void SwitchCam1()
     {
