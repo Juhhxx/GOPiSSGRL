@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e1992447e900b34f923bd6e6af1f7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonOneScene: MainSceneTests
+  _buttonOneScene: Intro
   _buttonTwoScene: 
 --- !u!1 &1146177054
 GameObject:

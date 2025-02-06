@@ -196,11 +196,4 @@ public class CutsceneControl : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
-
-    public void Pause(bool pauseOrNot)
-    {
-        if (pauseOrNot)
-            _timeline.Pause();
-        else _timeline.Play();
-    }
 }
