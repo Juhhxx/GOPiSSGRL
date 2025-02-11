@@ -16,8 +16,12 @@ public class CutsceneControl : MonoBehaviour
     [SerializeField] private GameObject _demonScene;
     [SerializeField] private LightingPresets _demonPreset;
 
+    [SerializeField] private GameObject _ceilingLights;
+
     [SerializeField] private GameObject _postScene;
     [SerializeField] private LightingPresets _postPreset;
+
+    [SerializeField] private GameObject _outsideLights;
 
     [SerializeField] private GameObject _endScene;
     [SerializeField] private LightingPresets _endPreset;
@@ -85,6 +89,7 @@ public class CutsceneControl : MonoBehaviour
 
         float passedTime = 0f;
         bool onOrOff = false;
+        bool lights = !  _ceilingLights.activeSelf;
 
         _lightingControl.ChangeLighting(pres2);
 
@@ -92,6 +97,9 @@ public class CutsceneControl : MonoBehaviour
         {
             scene1.SetActive(onOrOff);
             scene2.SetActive(!onOrOff);
+
+            // _ceilingLights.SetActive(!onOrOff);
+            Debug.Log("ceilings " + _ceilingLights.activeSelf);
 
             onOrOff = !onOrOff;
 
@@ -102,6 +110,8 @@ public class CutsceneControl : MonoBehaviour
 
         scene1.SetActive(false);
         scene2.SetActive(true);
+        _ceilingLights.SetActive(lights);
+        Debug.Log("ceilings " + _ceilingLights.activeSelf);
     }
 
     public void EndTimeline()
@@ -163,6 +173,8 @@ public class CutsceneControl : MonoBehaviour
 
         _playerBehaviorControl.ChangePlayerPosition(_endPlayerPosition.position);
         _pissyMissy.SetTrigger("Die");
+
+        _outsideLights.SetActive(false);
     }
 
     public void DisableUIs()
