@@ -1873,7 +1873,7 @@ MonoBehaviour:
   _holdingCamera: {fileID: 0}
   _cameraSwitcher: {fileID: 0}
   _playerBehaviorControl: {fileID: 0}
-  _cutsceneControl: {fileID: 0}
+  _timeline: {fileID: 0}
   _uiToCheck:
   - {fileID: 0}
 --- !u!114 &8403867216877053216

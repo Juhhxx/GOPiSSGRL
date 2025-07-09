@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemPrefab:
   - {fileID: 0}
+  _audioSource: {fileID: 0}
 --- !u!114 &2407013379625914301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d96672cda42e47459c140df373dee30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _volume: 0
 --- !u!1 &8799288808669521902
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +290,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b631b41e5ef9b4086fc8d075694c6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c0b631b41e5ef9b4086fc8d075694c6d, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c0b631b41e5ef9b4086fc8d075694c6d, type: 3}
+      propertyPath: m_LightProbeUsage
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c0b631b41e5ef9b4086fc8d075694c6d, type: 3}

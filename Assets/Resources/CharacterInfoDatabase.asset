@@ -20,7 +20,7 @@ MonoBehaviour:
     _audioClip: {fileID: 8300000, guid: a621d642c7231ff428f6ab4636b0db05, type: 3}
     _characterName: 
   - _characterID: 2
-    _audioClip: {fileID: 8300000, guid: 697bc4f58cdf8804aa52670f184589de, type: 3}
+    _audioClip: {fileID: 8300000, guid: c9e80ddd2a7fd274395c9c51f6278f4e, type: 3}
     _characterName: Clerk
   - _characterID: 3
     _audioClip: {fileID: 0}

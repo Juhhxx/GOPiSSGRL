@@ -106,7 +106,7 @@ public class Radio : MonoBehaviour
     {
         float volume = Mathf.Pow(1.15f, -distance) + 0.05f;
 
-        volume = Mathf.Lerp(0f, 1.8f, Mathf.Clamp01(volume));
+        volume = Mathf.Lerp(0.4f, 2f, Mathf.Clamp01(volume));
 
         _mainAudio.volume = volume;
     }

@@ -206,6 +206,6 @@ public class CutsceneControl : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.LoadScene("MainMenu");
+        _finnishUI.SetActive(true);
     }
 }

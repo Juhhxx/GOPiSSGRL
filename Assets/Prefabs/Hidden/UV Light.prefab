@@ -112,6 +112,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UV Light Holding
       objectReference: {fileID: 0}
+    - target: {fileID: 7899801828252694011, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899801828252694011, guid: 059070f17be81ac4e9bd297863b5d42c, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

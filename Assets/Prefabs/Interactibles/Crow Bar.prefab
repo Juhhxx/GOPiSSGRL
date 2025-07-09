@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemPrefab:
   - {fileID: 931289515988874997}
+  _audioSource: {fileID: 0}
 --- !u!114 &7543734774499583045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +193,14 @@ PrefabInstance:
       value: -9.603
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 8d96d9909d1edc7499d5cdc859a53ac9, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8d96d9909d1edc7499d5cdc859a53ac9, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8d96d9909d1edc7499d5cdc859a53ac9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d3317e3cb85bfe14ea770c7a1e901b26, type: 2}
@@ -217,6 +226,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1920096790532225123}
     m_Modifications:
+    - target: {fileID: 426587244805599771, guid: 750d06b9d600e4a45b57d3f0454c4bf5, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426587244805599771, guid: 750d06b9d600e4a45b57d3f0454c4bf5, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1723935795225258982, guid: 750d06b9d600e4a45b57d3f0454c4bf5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2670002

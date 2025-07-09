@@ -163,6 +163,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrokenKey
       objectReference: {fileID: 0}
+    - target: {fileID: 5901893356585517859, guid: 4c267e242d8f2a5499427c0df17753c6, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901893356585517859, guid: 4c267e242d8f2a5499427c0df17753c6, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
